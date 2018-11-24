@@ -21,7 +21,7 @@ namespace JustRipeFarm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            testing.Text = UserClass.Instance.Username;
+            testing.Text = UserSession.Instance.UserID;
         }
     }
 }

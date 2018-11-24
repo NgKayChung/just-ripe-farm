@@ -1,6 +1,6 @@
 ﻿namespace JustRipeFarm
 {
-    partial class Login
+    partial class LoginScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -77,7 +77,7 @@
             this.LoginBtn.UseVisualStyleBackColor = true;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
-            // Login
+            // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,8 +87,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LoginID);
-            this.Name = "Login";
-            this.Text = "Login";
+            this.Name = "LoginScreen";
+            this.Text = "JustRipe Farm - User Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
