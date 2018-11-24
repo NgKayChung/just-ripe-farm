@@ -16,7 +16,7 @@ namespace JustRipeFarm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MGMainScreen());
+            Application.Run(new LoginScreen());
         }
     }
 }

@@ -38,6 +38,8 @@
             this.storage_button = new System.Windows.Forms.Button();
             this.timetable_btn = new System.Windows.Forms.Button();
             this.home_btn = new System.Windows.Forms.Button();
+            this.greeting_label = new System.Windows.Forms.Label();
+            this.timetable_panel = new System.Windows.Forms.Panel();
             this.home_panel = new System.Windows.Forms.Panel();
             this.sections_groupBox = new System.Windows.Forms.GroupBox();
             this.section8_panel = new System.Windows.Forms.Panel();
@@ -52,12 +54,26 @@
             this.fieldTitle_label = new System.Windows.Forms.Label();
             this.homeTitle_label = new System.Windows.Forms.Label();
             this.section_toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.timetableTitle_label = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.storageTitle_label = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.labourTitle_label = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.shopTitle_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).BeginInit();
             this.SplitContainer_Menu_Content.Panel1.SuspendLayout();
             this.SplitContainer_Menu_Content.Panel2.SuspendLayout();
             this.SplitContainer_Menu_Content.SuspendLayout();
+            this.timetable_panel.SuspendLayout();
             this.home_panel.SuspendLayout();
             this.sections_groupBox.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // SplitContainer_Menu_Content
@@ -78,9 +94,15 @@
             this.SplitContainer_Menu_Content.Panel1.Controls.Add(this.storage_button);
             this.SplitContainer_Menu_Content.Panel1.Controls.Add(this.timetable_btn);
             this.SplitContainer_Menu_Content.Panel1.Controls.Add(this.home_btn);
+            this.SplitContainer_Menu_Content.Panel1.Controls.Add(this.greeting_label);
             // 
             // SplitContainer_Menu_Content.Panel2
             // 
+            this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.panel4);
+            this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.panel3);
+            this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.panel2);
+            this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.panel1);
+            this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.timetable_panel);
             this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.home_panel);
             this.SplitContainer_Menu_Content.Size = new System.Drawing.Size(579, 371);
             this.SplitContainer_Menu_Content.SplitterDistance = 120;
@@ -94,7 +116,7 @@
             this.exit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit_button.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exit_button.ForeColor = System.Drawing.Color.White;
-            this.exit_button.Location = new System.Drawing.Point(0, 280);
+            this.exit_button.Location = new System.Drawing.Point(0, 313);
             this.exit_button.Name = "exit_button";
             this.exit_button.Size = new System.Drawing.Size(120, 40);
             this.exit_button.TabIndex = 7;
@@ -109,12 +131,13 @@
             this.logout_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logout_button.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout_button.ForeColor = System.Drawing.Color.White;
-            this.logout_button.Location = new System.Drawing.Point(0, 240);
+            this.logout_button.Location = new System.Drawing.Point(0, 273);
             this.logout_button.Name = "logout_button";
             this.logout_button.Size = new System.Drawing.Size(120, 40);
             this.logout_button.TabIndex = 6;
             this.logout_button.Text = "Logout";
             this.logout_button.UseVisualStyleBackColor = false;
+            this.logout_button.Click += new System.EventHandler(this.logout_button_Click);
             // 
             // shop_button
             // 
@@ -124,7 +147,7 @@
             this.shop_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.shop_button.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shop_button.ForeColor = System.Drawing.Color.White;
-            this.shop_button.Location = new System.Drawing.Point(0, 200);
+            this.shop_button.Location = new System.Drawing.Point(0, 233);
             this.shop_button.Name = "shop_button";
             this.shop_button.Size = new System.Drawing.Size(120, 40);
             this.shop_button.TabIndex = 5;
@@ -139,7 +162,7 @@
             this.machine_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.machine_button.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.machine_button.ForeColor = System.Drawing.Color.White;
-            this.machine_button.Location = new System.Drawing.Point(0, 160);
+            this.machine_button.Location = new System.Drawing.Point(0, 193);
             this.machine_button.Name = "machine_button";
             this.machine_button.Size = new System.Drawing.Size(120, 40);
             this.machine_button.TabIndex = 4;
@@ -154,11 +177,11 @@
             this.labour_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labour_button.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labour_button.ForeColor = System.Drawing.Color.White;
-            this.labour_button.Location = new System.Drawing.Point(0, 120);
+            this.labour_button.Location = new System.Drawing.Point(0, 153);
             this.labour_button.Name = "labour_button";
             this.labour_button.Size = new System.Drawing.Size(120, 40);
             this.labour_button.TabIndex = 3;
-            this.labour_button.Text = "Labour";
+            this.labour_button.Text = "Labourer";
             this.labour_button.UseVisualStyleBackColor = false;
             // 
             // storage_button
@@ -169,7 +192,7 @@
             this.storage_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.storage_button.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.storage_button.ForeColor = System.Drawing.Color.White;
-            this.storage_button.Location = new System.Drawing.Point(0, 80);
+            this.storage_button.Location = new System.Drawing.Point(0, 113);
             this.storage_button.Name = "storage_button";
             this.storage_button.Size = new System.Drawing.Size(120, 40);
             this.storage_button.TabIndex = 2;
@@ -184,12 +207,13 @@
             this.timetable_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.timetable_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timetable_btn.ForeColor = System.Drawing.Color.White;
-            this.timetable_btn.Location = new System.Drawing.Point(0, 40);
+            this.timetable_btn.Location = new System.Drawing.Point(0, 73);
             this.timetable_btn.Name = "timetable_btn";
             this.timetable_btn.Size = new System.Drawing.Size(120, 40);
             this.timetable_btn.TabIndex = 1;
             this.timetable_btn.Text = "Timetable";
             this.timetable_btn.UseVisualStyleBackColor = false;
+            this.timetable_btn.Click += new System.EventHandler(this.timetable_btn_Click);
             // 
             // home_btn
             // 
@@ -199,12 +223,36 @@
             this.home_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.home_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.home_btn.ForeColor = System.Drawing.Color.White;
-            this.home_btn.Location = new System.Drawing.Point(0, 0);
+            this.home_btn.Location = new System.Drawing.Point(0, 33);
             this.home_btn.Name = "home_btn";
             this.home_btn.Size = new System.Drawing.Size(120, 40);
             this.home_btn.TabIndex = 0;
             this.home_btn.Text = "Home";
             this.home_btn.UseVisualStyleBackColor = false;
+            this.home_btn.Click += new System.EventHandler(this.home_btn_Click);
+            // 
+            // greeting_label
+            // 
+            this.greeting_label.BackColor = System.Drawing.Color.DarkGreen;
+            this.greeting_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.greeting_label.Dock = System.Windows.Forms.DockStyle.Top;
+            this.greeting_label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.greeting_label.ForeColor = System.Drawing.Color.White;
+            this.greeting_label.Location = new System.Drawing.Point(0, 0);
+            this.greeting_label.Name = "greeting_label";
+            this.greeting_label.Size = new System.Drawing.Size(120, 33);
+            this.greeting_label.TabIndex = 8;
+            this.greeting_label.Text = "Welcome, John!";
+            this.greeting_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timetable_panel
+            // 
+            this.timetable_panel.Controls.Add(this.timetableTitle_label);
+            this.timetable_panel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.timetable_panel.Location = new System.Drawing.Point(41, 0);
+            this.timetable_panel.Name = "timetable_panel";
+            this.timetable_panel.Size = new System.Drawing.Size(54, 371);
+            this.timetable_panel.TabIndex = 0;
             // 
             // home_panel
             // 
@@ -212,10 +260,10 @@
             this.home_panel.Controls.Add(this.sections_groupBox);
             this.home_panel.Controls.Add(this.fieldTitle_label);
             this.home_panel.Controls.Add(this.homeTitle_label);
-            this.home_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.home_panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.home_panel.Location = new System.Drawing.Point(0, 0);
             this.home_panel.Name = "home_panel";
-            this.home_panel.Size = new System.Drawing.Size(455, 371);
+            this.home_panel.Size = new System.Drawing.Size(41, 371);
             this.home_panel.TabIndex = 0;
             // 
             // sections_groupBox
@@ -277,7 +325,7 @@
             // 
             // section2_panel
             // 
-            this.section2_panel.BackColor = System.Drawing.Color.Gold;
+            this.section2_panel.BackColor = System.Drawing.Color.LightGray;
             this.section2_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.section2_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.section2_panel.Location = new System.Drawing.Point(158, 19);
@@ -317,7 +365,7 @@
             // 
             // section1_panel
             // 
-            this.section1_panel.BackColor = System.Drawing.Color.LimeGreen;
+            this.section1_panel.BackColor = System.Drawing.Color.LightGray;
             this.section1_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.section1_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.section1_panel.Location = new System.Drawing.Point(10, 19);
@@ -351,6 +399,92 @@
             this.section_toolTip.InitialDelay = 100;
             this.section_toolTip.ReshowDelay = 100;
             // 
+            // timetableTitle_label
+            // 
+            this.timetableTitle_label.AutoSize = true;
+            this.timetableTitle_label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.timetableTitle_label.Location = new System.Drawing.Point(8, 8);
+            this.timetableTitle_label.Name = "timetableTitle_label";
+            this.timetableTitle_label.Size = new System.Drawing.Size(112, 25);
+            this.timetableTitle_label.TabIndex = 1;
+            this.timetableTitle_label.Text = "TIMETABLE";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.storageTitle_label);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(95, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(59, 371);
+            this.panel1.TabIndex = 1;
+            // 
+            // storageTitle_label
+            // 
+            this.storageTitle_label.AutoSize = true;
+            this.storageTitle_label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageTitle_label.Location = new System.Drawing.Point(8, 8);
+            this.storageTitle_label.Name = "storageTitle_label";
+            this.storageTitle_label.Size = new System.Drawing.Size(96, 25);
+            this.storageTitle_label.TabIndex = 2;
+            this.storageTitle_label.Text = "STORAGE";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.labourTitle_label);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(154, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(62, 371);
+            this.panel2.TabIndex = 2;
+            // 
+            // labourTitle_label
+            // 
+            this.labourTitle_label.AutoSize = true;
+            this.labourTitle_label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourTitle_label.Location = new System.Drawing.Point(8, 8);
+            this.labourTitle_label.Name = "labourTitle_label";
+            this.labourTitle_label.Size = new System.Drawing.Size(109, 25);
+            this.labourTitle_label.TabIndex = 3;
+            this.labourTitle_label.Text = "LABOURER";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(216, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(78, 371);
+            this.panel3.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(8, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(125, 25);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "MACHINERY";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.shopTitle_label);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(294, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(73, 371);
+            this.panel4.TabIndex = 0;
+            // 
+            // shopTitle_label
+            // 
+            this.shopTitle_label.AutoSize = true;
+            this.shopTitle_label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.shopTitle_label.Location = new System.Drawing.Point(8, 8);
+            this.shopTitle_label.Name = "shopTitle_label";
+            this.shopTitle_label.Size = new System.Drawing.Size(194, 25);
+            this.shopTitle_label.TabIndex = 4;
+            this.shopTitle_label.Text = "SHOP / WHOLESALE";
+            // 
             // MGMainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,9 +503,19 @@
             this.SplitContainer_Menu_Content.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).EndInit();
             this.SplitContainer_Menu_Content.ResumeLayout(false);
+            this.timetable_panel.ResumeLayout(false);
+            this.timetable_panel.PerformLayout();
             this.home_panel.ResumeLayout(false);
             this.home_panel.PerformLayout();
             this.sections_groupBox.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -401,5 +545,16 @@
         private System.Windows.Forms.Panel section3_panel;
         private System.Windows.Forms.Panel section1_panel;
         private System.Windows.Forms.ToolTip section_toolTip;
+        private System.Windows.Forms.Panel timetable_panel;
+        private System.Windows.Forms.Label greeting_label;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label storageTitle_label;
+        private System.Windows.Forms.Label timetableTitle_label;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label labourTitle_label;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label shopTitle_label;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
     }
 }

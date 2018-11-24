@@ -38,6 +38,8 @@ namespace JustRipeFarm
                 }
             }
 
+            if (!reader.IsClosed) reader.Close();
+
             return farmSections;
         }
     }

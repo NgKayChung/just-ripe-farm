@@ -40,6 +40,7 @@ namespace JustRipeFarm
                     UserSession.Instance.LoggedIn = true;
                     UserSession.Instance.UserID = user_id;
                     UserSession.Instance.UserType = rd.GetString("user_type");
+                    rd.Close();
 
                     if(UserSession.Instance.UserType.Equals("MANAGER"))
                     {
@@ -62,6 +63,8 @@ namespace JustRipeFarm
                 {
                     MessageBox.Show("Invalid login ID and password");
                 }
+
+                rd.Close();
             }
         }
     }
