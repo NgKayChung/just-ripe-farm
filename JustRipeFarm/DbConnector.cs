@@ -5,22 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace Panel
+namespace JustRipeFarm
 {
     public class DbConnector
     {
         MySqlConnection conn;
-
-        private static DbConnector instance;
-
         
-
-
+        private static DbConnector instance;
 
         private DbConnector()
         {
             //initialise the objects
-
         }
 
         public static DbConnector Instance
@@ -29,18 +24,15 @@ namespace Panel
             {
                 if (instance == null)
                 {
-
                     instance = new DbConnector();
-
                 }
-
                 return instance;
             }
         }
 
         public string connect()
         {
-            string connStr = "server=localhost; user=dbcli;database=demojustripedb;port=3306;password=dbcli123";
+            string connStr = "server=localhost; user=root;database=justripe_farm_db;port=3306;password=";
             conn = new MySqlConnection(connStr);
             try
             {

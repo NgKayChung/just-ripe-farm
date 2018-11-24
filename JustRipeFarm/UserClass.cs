@@ -9,7 +9,8 @@ namespace JustRipeFarm
     class UserClass
     {
         private bool loggin = false;
-        private string username, usertype, password;
+        private string username;
+        private string usertype;
         private static UserClass instance;
 
         private UserClass()
@@ -23,18 +24,11 @@ namespace JustRipeFarm
             {
                 if (instance == null)
                 {
-
                     instance = new UserClass();
-
                 }
-
                 return instance;
             }
-        }
-
-
-       
-
+        }       
 
         public bool Loggerin { get => loggin; set => loggin = value; }
         public string Username { get => username; set => username = value; }

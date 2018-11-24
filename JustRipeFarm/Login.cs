@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using Panel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +11,9 @@ using System.Windows.Forms;
 
 namespace JustRipeFarm
 {
-    public partial class LoginButton : Form
+    public partial class Login : Form
     {
-        public LoginButton()
+        public Login()
         {
             InitializeComponent();
         }
@@ -22,59 +21,45 @@ namespace JustRipeFarm
         private void LoginBtn_Click(object sender, EventArgs e)
         {
 
-            string username = LoginID.Text;
+            string user_id = LoginID.Text;
             string password = LoginPassword.Text;
 
-            if ((username == "") && (password == ""))
+            if ((user_id == "") || (password == ""))
             {
-                MessageBox.Show("User name and password cannnot  be emprty");
+                MessageBox.Show("Login ID and password cannnot be empty");
             }
             else
             {
-
-
-
-
                 DbConnector.Instance.connect();
-
-
-
-                MySqlCommand cmd = new MySqlCommand("select username,password from login where username='" + username + "'and password='" + password + "'", DbConnector.Instance.getConn());
-
-
-
+                
+                MySqlCommand cmd = new MySqlCommand("select user_type from users where user_id='" + user_id + "' and secret_password='" + password + "'", DbConnector.Instance.getConn());
+                
                 MySqlDataReader rd = cmd.ExecuteReader();
-
-
+                
                 MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
-                //DataTable dt = new DataTable();
-                //sda.Fill(rd);
 
                 if (rd.HasRows)
                 {
+                    rd.Read();
                     UserClass.Instance.Loggerin = true;
-                    UserClass.Instance.Username = username;
+                    UserClass.Instance.Username = user_id;
+                    UserClass.Instance.Usertype = rd.GetString("user_type");
 
-                    if (username.StartsWith("a"))
+                    if (UserClass.Instance.Usertype.Equals("MANAGER"))
                     {
-                        Testing_page ts = new Testing_page();
+                        Main ts = new Main();
                         this.Hide();
                         ts.Show();
                     }
                     else
                     {
-                        MessageBox.Show("Welcome adam");
+                        MessageBox.Show("Welcome LABOURER");
                     }
-
                 }
                 else
                 {
-                    MessageBox.Show("Invalid username and password");
+                    MessageBox.Show("Invalid login ID and password");
                 }
-
-
-
-
             }
         }
     }
