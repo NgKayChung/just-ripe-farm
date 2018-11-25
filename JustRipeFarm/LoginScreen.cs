@@ -30,7 +30,7 @@ namespace JustRipeFarm
             }
             else
             {
-                MySqlCommand cmd = new MySqlCommand("SELECT user_type from users where user_id = '" + user_id + "' and secret_password = '" + password + "'", DbConnector.Instance.getConn());
+                MySqlCommand cmd = new MySqlCommand("SELECT user_type, first_name from users where user_id = '" + user_id + "' and secret_password = '" + password + "'", DbConnector.Instance.getConn());
                 
                 MySqlDataReader rd = cmd.ExecuteReader();
                 
@@ -39,20 +39,21 @@ namespace JustRipeFarm
                     rd.Read();
                     UserSession.Instance.LoggedIn = true;
                     UserSession.Instance.UserID = user_id;
+                    UserSession.Instance.UserFirstName = rd.GetString("first_name");
                     UserSession.Instance.UserType = rd.GetString("user_type");
                     rd.Close();
 
                     if(UserSession.Instance.UserType.Equals("MANAGER"))
                     {
-                        MGMainScreen ts = new MGMainScreen();
-                        this.Hide();
-                        ts.Show();
+                        MGMainScreen mainScreen = new MGMainScreen();
+                        mainScreen.Show();
+                        this.Close();
                     }
                     else if(UserSession.Instance.UserType.Equals("LABOURER"))
                     {
-                        MGMainScreen ts = new MGMainScreen();
-                        this.Hide();
-                        ts.Show();
+                        MGMainScreen mainScreen = new MGMainScreen();
+                        mainScreen.Show();
+                        this.Close();
                     }
                     else
                     {

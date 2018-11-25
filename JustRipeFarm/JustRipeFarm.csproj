@@ -46,9 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbConnector.cs" />
-    <Compile Include="FarmSection.cs" />
-    <Compile Include="FarmSectionHandler.cs" />
+    <Compile Include="classes\DbConnector.cs" />
+    <Compile Include="classes\FarmSection.cs" />
+    <Compile Include="classes\FarmSectionHandler.cs" />
+    <Compile Include="classes\Labourer.cs" />
+    <Compile Include="classes\LabourerHandler.cs" />
+    <Compile Include="classes\User.cs" />
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,7 +72,7 @@
     <Compile Include="Testing page.Designer.cs">
       <DependentUpon>Testing page.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserSession.cs" />
+    <Compile Include="classes\UserSession.cs" />
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>

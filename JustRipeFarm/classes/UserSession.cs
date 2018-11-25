@@ -10,6 +10,7 @@ namespace JustRipeFarm
     {
         private bool loggedIn = false;
         private string userID;
+        private string userFirstName;
         private string userType;
         private static UserSession instance;
 
@@ -32,6 +33,7 @@ namespace JustRipeFarm
 
         public bool LoggedIn { get => loggedIn; set => loggedIn = value; }
         public string UserID { get => userID; set => userID = value; }
+        public string UserFirstName { get => userFirstName; set => userFirstName = value; }
         public string UserType { get => userType; set => userType = value; }
     }
 }
