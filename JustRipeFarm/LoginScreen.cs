@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace JustRipeFarm
 {
-    public partial class Login : Form
+    public partial class LoginScreen : Form
     {
-        public Login()
+        public LoginScreen()
         {
             InitializeComponent();
         }
@@ -30,36 +30,41 @@ namespace JustRipeFarm
             }
             else
             {
-                DbConnector.Instance.connect();
-                
-                MySqlCommand cmd = new MySqlCommand("select user_type from users where user_id='" + user_id + "' and secret_password='" + password + "'", DbConnector.Instance.getConn());
+                MySqlCommand cmd = new MySqlCommand("SELECT user_type from users where user_id = '" + user_id + "' and secret_password = '" + password + "'", DbConnector.Instance.getConn());
                 
                 MySqlDataReader rd = cmd.ExecuteReader();
                 
-                MySqlDataAdapter sda = new MySqlDataAdapter(cmd);
-
-                if (rd.HasRows)
+                if(rd.HasRows)
                 {
                     rd.Read();
-                    UserClass.Instance.Loggerin = true;
-                    UserClass.Instance.Username = user_id;
-                    UserClass.Instance.Usertype = rd.GetString("user_type");
+                    UserSession.Instance.LoggedIn = true;
+                    UserSession.Instance.UserID = user_id;
+                    UserSession.Instance.UserType = rd.GetString("user_type");
+                    rd.Close();
 
-                    if (UserClass.Instance.Usertype.Equals("MANAGER"))
+                    if(UserSession.Instance.UserType.Equals("MANAGER"))
                     {
-                        Main ts = new Main();
+                        MGMainScreen ts = new MGMainScreen();
+                        this.Hide();
+                        ts.Show();
+                    }
+                    else if(UserSession.Instance.UserType.Equals("LABOURER"))
+                    {
+                        MGMainScreen ts = new MGMainScreen();
                         this.Hide();
                         ts.Show();
                     }
                     else
                     {
-                        MessageBox.Show("Welcome LABOURER");
+                        MessageBox.Show("Incorrect login");
                     }
                 }
                 else
                 {
                     MessageBox.Show("Invalid login ID and password");
                 }
+
+                rd.Close();
             }
         }
     }
