@@ -63,9 +63,39 @@ namespace JustRipeFarm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fertiliser_icon {
+            get {
+                object obj = ResourceManager.GetObject("fertiliser_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap h8ujpY {
             get {
                 object obj = ResourceManager.GetObject("h8ujpY", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pesticide_icon {
+            get {
+                object obj = ResourceManager.GetObject("pesticide_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap seed_icon {
+            get {
+                object obj = ResourceManager.GetObject("seed_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
