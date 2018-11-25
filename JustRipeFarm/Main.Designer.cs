@@ -39,11 +39,26 @@
             this.home_btn = new System.Windows.Forms.Button();
             this.home_panel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbrpanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.add_lbr = new System.Windows.Forms.Button();
+            this.id_box = new System.Windows.Forms.TextBox();
+            this.fname_box = new System.Windows.Forms.TextBox();
+            this.lname_box = new System.Windows.Forms.TextBox();
+            this.pass_box = new System.Windows.Forms.TextBox();
+            this.email_box = new System.Windows.Forms.TextBox();
+            this.pnumber_box = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).BeginInit();
             this.SplitContainer_Menu_Content.Panel1.SuspendLayout();
             this.SplitContainer_Menu_Content.Panel2.SuspendLayout();
             this.SplitContainer_Menu_Content.SuspendLayout();
             this.home_panel.SuspendLayout();
+            this.lbrpanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // SplitContainer_Menu_Content
@@ -140,6 +155,7 @@
             this.labour_button.TabIndex = 3;
             this.labour_button.Text = "Labour";
             this.labour_button.UseVisualStyleBackColor = false;
+            this.labour_button.Click += new System.EventHandler(this.labour_button_Click);
             // 
             // storage_button
             // 
@@ -186,6 +202,7 @@
             // home_panel
             // 
             this.home_panel.BackColor = System.Drawing.SystemColors.Control;
+            this.home_panel.Controls.Add(this.lbrpanel);
             this.home_panel.Controls.Add(this.label1);
             this.home_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.home_panel.Location = new System.Drawing.Point(0, 0);
@@ -202,6 +219,132 @@
             this.label1.Size = new System.Drawing.Size(58, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "HOME";
+            // 
+            // lbrpanel
+            // 
+            this.lbrpanel.Controls.Add(this.pnumber_box);
+            this.lbrpanel.Controls.Add(this.email_box);
+            this.lbrpanel.Controls.Add(this.pass_box);
+            this.lbrpanel.Controls.Add(this.lname_box);
+            this.lbrpanel.Controls.Add(this.fname_box);
+            this.lbrpanel.Controls.Add(this.id_box);
+            this.lbrpanel.Controls.Add(this.add_lbr);
+            this.lbrpanel.Controls.Add(this.label7);
+            this.lbrpanel.Controls.Add(this.label6);
+            this.lbrpanel.Controls.Add(this.label5);
+            this.lbrpanel.Controls.Add(this.label4);
+            this.lbrpanel.Controls.Add(this.label3);
+            this.lbrpanel.Controls.Add(this.label2);
+            this.lbrpanel.Location = new System.Drawing.Point(15, 14);
+            this.lbrpanel.Name = "lbrpanel";
+            this.lbrpanel.Size = new System.Drawing.Size(428, 306);
+            this.lbrpanel.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(39, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "FirstName";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(38, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "LastName";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(38, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Labour ID";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(40, 133);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Password";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(60, 160);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Email";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 186);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 13);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Phone Number";
+            // 
+            // add_lbr
+            // 
+            this.add_lbr.Location = new System.Drawing.Point(124, 226);
+            this.add_lbr.Name = "add_lbr";
+            this.add_lbr.Size = new System.Drawing.Size(75, 23);
+            this.add_lbr.TabIndex = 6;
+            this.add_lbr.Text = "Add";
+            this.add_lbr.UseVisualStyleBackColor = true;
+            this.add_lbr.Click += new System.EventHandler(this.add_lbr_Click);
+            // 
+            // id_box
+            // 
+            this.id_box.Location = new System.Drawing.Point(134, 50);
+            this.id_box.Name = "id_box";
+            this.id_box.Size = new System.Drawing.Size(100, 20);
+            this.id_box.TabIndex = 7;
+            // 
+            // fname_box
+            // 
+            this.fname_box.Location = new System.Drawing.Point(134, 77);
+            this.fname_box.Name = "fname_box";
+            this.fname_box.Size = new System.Drawing.Size(100, 20);
+            this.fname_box.TabIndex = 8;
+            // 
+            // lname_box
+            // 
+            this.lname_box.Location = new System.Drawing.Point(134, 103);
+            this.lname_box.Name = "lname_box";
+            this.lname_box.Size = new System.Drawing.Size(100, 20);
+            this.lname_box.TabIndex = 9;
+            // 
+            // pass_box
+            // 
+            this.pass_box.Location = new System.Drawing.Point(134, 129);
+            this.pass_box.Name = "pass_box";
+            this.pass_box.Size = new System.Drawing.Size(100, 20);
+            this.pass_box.TabIndex = 10;
+            // 
+            // email_box
+            // 
+            this.email_box.Location = new System.Drawing.Point(134, 157);
+            this.email_box.Name = "email_box";
+            this.email_box.Size = new System.Drawing.Size(100, 20);
+            this.email_box.TabIndex = 11;
+            // 
+            // pnumber_box
+            // 
+            this.pnumber_box.Location = new System.Drawing.Point(134, 183);
+            this.pnumber_box.Name = "pnumber_box";
+            this.pnumber_box.Size = new System.Drawing.Size(100, 20);
+            this.pnumber_box.TabIndex = 12;
             // 
             // Main
             // 
@@ -222,6 +365,8 @@
             this.SplitContainer_Menu_Content.ResumeLayout(false);
             this.home_panel.ResumeLayout(false);
             this.home_panel.PerformLayout();
+            this.lbrpanel.ResumeLayout(false);
+            this.lbrpanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -239,6 +384,20 @@
         private System.Windows.Forms.Button logout_button;
         private System.Windows.Forms.Panel home_panel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel lbrpanel;
+        private System.Windows.Forms.TextBox pnumber_box;
+        private System.Windows.Forms.TextBox email_box;
+        private System.Windows.Forms.TextBox pass_box;
+        private System.Windows.Forms.TextBox lname_box;
+        private System.Windows.Forms.TextBox fname_box;
+        private System.Windows.Forms.TextBox id_box;
+        private System.Windows.Forms.Button add_lbr;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
 
