@@ -73,6 +73,8 @@
       <DependentUpon>Testing page.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\UserSession.cs" />
+    <Compile Include="Vehicle.cs" />
+    <Compile Include="VehicleHandler.cs" />
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>

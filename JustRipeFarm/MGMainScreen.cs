@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +22,7 @@ namespace JustRipeFarm
         private void Main_Load(object sender, EventArgs e)
         {
             greeting_label.Text = "Welcome, " + UserSession.Instance.UserFirstName + "!";
-            LoadHome();
+            //LoadHome();
         }
 
         private void LoadHome()
@@ -126,6 +127,27 @@ namespace JustRipeFarm
             labourerTop_panel.Visible = false;
             machineTop_panel.Visible = true;
             shopTop_panel.Visible = false;
+
+
+
+            List<Vehicle> lv = new List<Vehicle>;
+
+            foreach (Vehicle v in lv)
+            {
+                ListViewItem lvi = new ListViewItem(v.mac_id);
+                
+                lvi.SubItems.Add(v.mac_name);
+                lvi.SubItems.Add(v.mac_man);
+                lvi.SubItems.Add(v.mac_model);
+                lvi.SubItems.Add(v.mac_desc);
+                lvi.SubItems.Add(v.mac_type);
+                lvi.SubItems.Add(v.mac_status);
+
+                listView.Items.Add(lvi);
+
+                return lv;
+            }
+
         }
 
         private void shop_btn_Click(object sender, EventArgs e)
@@ -235,5 +257,7 @@ namespace JustRipeFarm
             addLabEmail_txtBox.Clear();
             addLabPhoneNum_txtBox.Clear();
         }
+
+       
     }
 }

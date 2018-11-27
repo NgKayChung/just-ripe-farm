@@ -45,17 +45,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labourerTop_panel = new System.Windows.Forms.Panel();
             this.addLabourer_panel = new System.Windows.Forms.Panel();
+            this.addLabForm_panel = new System.Windows.Forms.Panel();
+            this.addLabfName_label = new System.Windows.Forms.Label();
+            this.addLablName_label = new System.Windows.Forms.Label();
+            this.addLabEmail_label = new System.Windows.Forms.Label();
+            this.addLabPhoneNum_label = new System.Windows.Forms.Label();
+            this.addLabPhoneNum_txtBox = new System.Windows.Forms.TextBox();
+            this.submitAddLab_btn = new System.Windows.Forms.Button();
+            this.addLabEmail_txtBox = new System.Windows.Forms.TextBox();
+            this.addLabfName_txtBox = new System.Windows.Forms.TextBox();
+            this.addLablName_txtBox = new System.Windows.Forms.TextBox();
+            this.addLabInst_label = new System.Windows.Forms.Label();
             this.addLabTitle_btn = new System.Windows.Forms.Label();
             this.addLab_back = new System.Windows.Forms.Button();
-            this.addLabPhoneNum_txtBox = new System.Windows.Forms.TextBox();
-            this.addLabEmail_txtBox = new System.Windows.Forms.TextBox();
-            this.addLablName_txtBox = new System.Windows.Forms.TextBox();
-            this.addLabfName_txtBox = new System.Windows.Forms.TextBox();
-            this.submitAddLab_btn = new System.Windows.Forms.Button();
-            this.addLabPhoneNum_label = new System.Windows.Forms.Label();
-            this.addLabEmail_label = new System.Windows.Forms.Label();
-            this.addLablName_label = new System.Windows.Forms.Label();
-            this.addLabfName_label = new System.Windows.Forms.Label();
             this.labourer_panel = new System.Windows.Forms.Panel();
             this.addLabourer_btn = new System.Windows.Forms.Button();
             this.labourTitle_label = new System.Windows.Forms.Label();
@@ -77,8 +79,14 @@
             this.fieldTitle_label = new System.Windows.Forms.Label();
             this.homeTitle_label = new System.Windows.Forms.Label();
             this.section_toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.addLabInst_label = new System.Windows.Forms.Label();
-            this.addLabForm_panel = new System.Windows.Forms.Panel();
+            this.listView = new System.Windows.Forms.ListView();
+            this.machinery_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.machine_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.manufacturer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.machine_type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).BeginInit();
             this.SplitContainer_Menu_Content.Panel1.SuspendLayout();
             this.SplitContainer_Menu_Content.Panel2.SuspendLayout();
@@ -87,12 +95,12 @@
             this.machineTop_panel.SuspendLayout();
             this.labourerTop_panel.SuspendLayout();
             this.addLabourer_panel.SuspendLayout();
+            this.addLabForm_panel.SuspendLayout();
             this.labourer_panel.SuspendLayout();
             this.storageTop_panel.SuspendLayout();
             this.timetable_panel.SuspendLayout();
             this.home_panel.SuspendLayout();
             this.sections_groupBox.SuspendLayout();
-            this.addLabForm_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // SplitContainer_Menu_Content
@@ -273,10 +281,10 @@
             // shopTop_panel
             // 
             this.shopTop_panel.Controls.Add(this.label8);
-            this.shopTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shopTop_panel.Location = new System.Drawing.Point(0, 0);
+            this.shopTop_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.shopTop_panel.Location = new System.Drawing.Point(466, 0);
             this.shopTop_panel.Name = "shopTop_panel";
-            this.shopTop_panel.Size = new System.Drawing.Size(516, 371);
+            this.shopTop_panel.Size = new System.Drawing.Size(50, 371);
             this.shopTop_panel.TabIndex = 0;
             this.shopTop_panel.Visible = false;
             // 
@@ -292,6 +300,7 @@
             // 
             // machineTop_panel
             // 
+            this.machineTop_panel.Controls.Add(this.listView);
             this.machineTop_panel.Controls.Add(this.label2);
             this.machineTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.machineTop_panel.Location = new System.Drawing.Point(0, 0);
@@ -335,6 +344,116 @@
             this.addLabourer_panel.TabIndex = 6;
             this.addLabourer_panel.Visible = false;
             // 
+            // addLabForm_panel
+            // 
+            this.addLabForm_panel.BackColor = System.Drawing.Color.White;
+            this.addLabForm_panel.Controls.Add(this.addLabfName_label);
+            this.addLabForm_panel.Controls.Add(this.addLablName_label);
+            this.addLabForm_panel.Controls.Add(this.addLabEmail_label);
+            this.addLabForm_panel.Controls.Add(this.addLabPhoneNum_label);
+            this.addLabForm_panel.Controls.Add(this.addLabPhoneNum_txtBox);
+            this.addLabForm_panel.Controls.Add(this.submitAddLab_btn);
+            this.addLabForm_panel.Controls.Add(this.addLabEmail_txtBox);
+            this.addLabForm_panel.Controls.Add(this.addLabfName_txtBox);
+            this.addLabForm_panel.Controls.Add(this.addLablName_txtBox);
+            this.addLabForm_panel.Location = new System.Drawing.Point(46, 88);
+            this.addLabForm_panel.Name = "addLabForm_panel";
+            this.addLabForm_panel.Size = new System.Drawing.Size(436, 239);
+            this.addLabForm_panel.TabIndex = 14;
+            // 
+            // addLabfName_label
+            // 
+            this.addLabfName_label.AutoSize = true;
+            this.addLabfName_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.addLabfName_label.Location = new System.Drawing.Point(44, 37);
+            this.addLabfName_label.Name = "addLabfName_label";
+            this.addLabfName_label.Size = new System.Drawing.Size(67, 13);
+            this.addLabfName_label.TabIndex = 0;
+            this.addLabfName_label.Text = "First Name :";
+            // 
+            // addLablName_label
+            // 
+            this.addLablName_label.AutoSize = true;
+            this.addLablName_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.addLablName_label.Location = new System.Drawing.Point(46, 69);
+            this.addLablName_label.Name = "addLablName_label";
+            this.addLablName_label.Size = new System.Drawing.Size(65, 13);
+            this.addLablName_label.TabIndex = 1;
+            this.addLablName_label.Text = "Last Name :";
+            // 
+            // addLabEmail_label
+            // 
+            this.addLabEmail_label.AutoSize = true;
+            this.addLabEmail_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.addLabEmail_label.Location = new System.Drawing.Point(27, 103);
+            this.addLabEmail_label.Name = "addLabEmail_label";
+            this.addLabEmail_label.Size = new System.Drawing.Size(84, 13);
+            this.addLabEmail_label.TabIndex = 4;
+            this.addLabEmail_label.Text = "Email Address :";
+            // 
+            // addLabPhoneNum_label
+            // 
+            this.addLabPhoneNum_label.AutoSize = true;
+            this.addLabPhoneNum_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.addLabPhoneNum_label.Location = new System.Drawing.Point(22, 135);
+            this.addLabPhoneNum_label.Name = "addLabPhoneNum_label";
+            this.addLabPhoneNum_label.Size = new System.Drawing.Size(90, 13);
+            this.addLabPhoneNum_label.TabIndex = 5;
+            this.addLabPhoneNum_label.Text = "Phone Number :";
+            // 
+            // addLabPhoneNum_txtBox
+            // 
+            this.addLabPhoneNum_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.addLabPhoneNum_txtBox.Location = new System.Drawing.Point(139, 132);
+            this.addLabPhoneNum_txtBox.Name = "addLabPhoneNum_txtBox";
+            this.addLabPhoneNum_txtBox.Size = new System.Drawing.Size(210, 22);
+            this.addLabPhoneNum_txtBox.TabIndex = 12;
+            // 
+            // submitAddLab_btn
+            // 
+            this.submitAddLab_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.submitAddLab_btn.Location = new System.Drawing.Point(36, 191);
+            this.submitAddLab_btn.Name = "submitAddLab_btn";
+            this.submitAddLab_btn.Size = new System.Drawing.Size(75, 23);
+            this.submitAddLab_btn.TabIndex = 6;
+            this.submitAddLab_btn.Text = "Submit";
+            this.submitAddLab_btn.UseVisualStyleBackColor = true;
+            this.submitAddLab_btn.Click += new System.EventHandler(this.submitAddLab_btn_Click);
+            // 
+            // addLabEmail_txtBox
+            // 
+            this.addLabEmail_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.addLabEmail_txtBox.Location = new System.Drawing.Point(139, 100);
+            this.addLabEmail_txtBox.Name = "addLabEmail_txtBox";
+            this.addLabEmail_txtBox.Size = new System.Drawing.Size(275, 22);
+            this.addLabEmail_txtBox.TabIndex = 11;
+            // 
+            // addLabfName_txtBox
+            // 
+            this.addLabfName_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.addLabfName_txtBox.Location = new System.Drawing.Point(139, 34);
+            this.addLabfName_txtBox.Name = "addLabfName_txtBox";
+            this.addLabfName_txtBox.Size = new System.Drawing.Size(176, 22);
+            this.addLabfName_txtBox.TabIndex = 8;
+            // 
+            // addLablName_txtBox
+            // 
+            this.addLablName_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.addLablName_txtBox.Location = new System.Drawing.Point(139, 67);
+            this.addLablName_txtBox.Name = "addLablName_txtBox";
+            this.addLablName_txtBox.Size = new System.Drawing.Size(176, 22);
+            this.addLablName_txtBox.TabIndex = 9;
+            // 
+            // addLabInst_label
+            // 
+            this.addLabInst_label.AutoSize = true;
+            this.addLabInst_label.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.addLabInst_label.Location = new System.Drawing.Point(43, 56);
+            this.addLabInst_label.Name = "addLabInst_label";
+            this.addLabInst_label.Size = new System.Drawing.Size(331, 19);
+            this.addLabInst_label.TabIndex = 13;
+            this.addLabInst_label.Text = "Fill in the following details   * indicates required fields";
+            // 
             // addLabTitle_btn
             // 
             this.addLabTitle_btn.AutoSize = true;
@@ -355,89 +474,6 @@
             this.addLab_back.Text = "Back";
             this.addLab_back.UseVisualStyleBackColor = true;
             this.addLab_back.Click += new System.EventHandler(this.addLab_back_Click);
-            // 
-            // addLabPhoneNum_txtBox
-            // 
-            this.addLabPhoneNum_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.addLabPhoneNum_txtBox.Location = new System.Drawing.Point(139, 132);
-            this.addLabPhoneNum_txtBox.Name = "addLabPhoneNum_txtBox";
-            this.addLabPhoneNum_txtBox.Size = new System.Drawing.Size(210, 22);
-            this.addLabPhoneNum_txtBox.TabIndex = 12;
-            // 
-            // addLabEmail_txtBox
-            // 
-            this.addLabEmail_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.addLabEmail_txtBox.Location = new System.Drawing.Point(139, 100);
-            this.addLabEmail_txtBox.Name = "addLabEmail_txtBox";
-            this.addLabEmail_txtBox.Size = new System.Drawing.Size(275, 22);
-            this.addLabEmail_txtBox.TabIndex = 11;
-            // 
-            // addLablName_txtBox
-            // 
-            this.addLablName_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.addLablName_txtBox.Location = new System.Drawing.Point(139, 67);
-            this.addLablName_txtBox.Name = "addLablName_txtBox";
-            this.addLablName_txtBox.Size = new System.Drawing.Size(176, 22);
-            this.addLablName_txtBox.TabIndex = 9;
-            // 
-            // addLabfName_txtBox
-            // 
-            this.addLabfName_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.addLabfName_txtBox.Location = new System.Drawing.Point(139, 34);
-            this.addLabfName_txtBox.Name = "addLabfName_txtBox";
-            this.addLabfName_txtBox.Size = new System.Drawing.Size(176, 22);
-            this.addLabfName_txtBox.TabIndex = 8;
-            // 
-            // submitAddLab_btn
-            // 
-            this.submitAddLab_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.submitAddLab_btn.Location = new System.Drawing.Point(36, 191);
-            this.submitAddLab_btn.Name = "submitAddLab_btn";
-            this.submitAddLab_btn.Size = new System.Drawing.Size(75, 23);
-            this.submitAddLab_btn.TabIndex = 6;
-            this.submitAddLab_btn.Text = "Submit";
-            this.submitAddLab_btn.UseVisualStyleBackColor = true;
-            this.submitAddLab_btn.Click += new System.EventHandler(this.submitAddLab_btn_Click);
-            // 
-            // addLabPhoneNum_label
-            // 
-            this.addLabPhoneNum_label.AutoSize = true;
-            this.addLabPhoneNum_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.addLabPhoneNum_label.Location = new System.Drawing.Point(22, 135);
-            this.addLabPhoneNum_label.Name = "addLabPhoneNum_label";
-            this.addLabPhoneNum_label.Size = new System.Drawing.Size(90, 13);
-            this.addLabPhoneNum_label.TabIndex = 5;
-            this.addLabPhoneNum_label.Text = "Phone Number :";
-            // 
-            // addLabEmail_label
-            // 
-            this.addLabEmail_label.AutoSize = true;
-            this.addLabEmail_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.addLabEmail_label.Location = new System.Drawing.Point(27, 103);
-            this.addLabEmail_label.Name = "addLabEmail_label";
-            this.addLabEmail_label.Size = new System.Drawing.Size(84, 13);
-            this.addLabEmail_label.TabIndex = 4;
-            this.addLabEmail_label.Text = "Email Address :";
-            // 
-            // addLablName_label
-            // 
-            this.addLablName_label.AutoSize = true;
-            this.addLablName_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.addLablName_label.Location = new System.Drawing.Point(46, 69);
-            this.addLablName_label.Name = "addLablName_label";
-            this.addLablName_label.Size = new System.Drawing.Size(65, 13);
-            this.addLablName_label.TabIndex = 1;
-            this.addLablName_label.Text = "Last Name :";
-            // 
-            // addLabfName_label
-            // 
-            this.addLabfName_label.AutoSize = true;
-            this.addLabfName_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.addLabfName_label.Location = new System.Drawing.Point(44, 37);
-            this.addLabfName_label.Name = "addLabfName_label";
-            this.addLabfName_label.Size = new System.Drawing.Size(67, 13);
-            this.addLabfName_label.TabIndex = 0;
-            this.addLabfName_label.Text = "First Name :";
             // 
             // labourer_panel
             // 
@@ -654,32 +690,60 @@
             this.section_toolTip.InitialDelay = 100;
             this.section_toolTip.ReshowDelay = 100;
             // 
-            // addLabInst_label
+            // listView
             // 
-            this.addLabInst_label.AutoSize = true;
-            this.addLabInst_label.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.addLabInst_label.Location = new System.Drawing.Point(43, 56);
-            this.addLabInst_label.Name = "addLabInst_label";
-            this.addLabInst_label.Size = new System.Drawing.Size(331, 19);
-            this.addLabInst_label.TabIndex = 13;
-            this.addLabInst_label.Text = "Fill in the following details   * indicates required fields";
+            this.listView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.machinery_id,
+            this.machine_name,
+            this.manufacturer,
+            this.model,
+            this.Description,
+            this.machine_type,
+            this.Status});
+            this.listView.Location = new System.Drawing.Point(46, 90);
+            this.listView.Name = "listView";
+            this.listView.Size = new System.Drawing.Size(349, 156);
+            this.listView.TabIndex = 5;
+            this.listView.UseCompatibleStateImageBehavior = false;
+            this.listView.View = System.Windows.Forms.View.Details;
             // 
-            // addLabForm_panel
+            // machinery_id
             // 
-            this.addLabForm_panel.BackColor = System.Drawing.Color.White;
-            this.addLabForm_panel.Controls.Add(this.addLabfName_label);
-            this.addLabForm_panel.Controls.Add(this.addLablName_label);
-            this.addLabForm_panel.Controls.Add(this.addLabEmail_label);
-            this.addLabForm_panel.Controls.Add(this.addLabPhoneNum_label);
-            this.addLabForm_panel.Controls.Add(this.addLabPhoneNum_txtBox);
-            this.addLabForm_panel.Controls.Add(this.submitAddLab_btn);
-            this.addLabForm_panel.Controls.Add(this.addLabEmail_txtBox);
-            this.addLabForm_panel.Controls.Add(this.addLabfName_txtBox);
-            this.addLabForm_panel.Controls.Add(this.addLablName_txtBox);
-            this.addLabForm_panel.Location = new System.Drawing.Point(46, 88);
-            this.addLabForm_panel.Name = "addLabForm_panel";
-            this.addLabForm_panel.Size = new System.Drawing.Size(436, 239);
-            this.addLabForm_panel.TabIndex = 14;
+            this.machinery_id.Text = "machinery_id";
+            this.machinery_id.Width = 80;
+            // 
+            // machine_name
+            // 
+            this.machine_name.Text = "machine_name";
+            this.machine_name.Width = 100;
+            // 
+            // manufacturer
+            // 
+            this.manufacturer.Text = "manufacturer";
+            this.manufacturer.Width = 80;
+            // 
+            // model
+            // 
+            this.model.Text = "model";
+            this.model.Width = 80;
+            // 
+            // Description
+            // 
+            this.Description.Text = "Description";
+            this.Description.Width = 100;
+            // 
+            // machine_type
+            // 
+            this.machine_type.Text = "machine_type";
+            this.machine_type.Width = 100;
+            // 
+            // Status
+            // 
+            this.Status.Text = "Status";
+            this.Status.Width = 80;
             // 
             // MGMainScreen
             // 
@@ -706,6 +770,8 @@
             this.labourerTop_panel.ResumeLayout(false);
             this.addLabourer_panel.ResumeLayout(false);
             this.addLabourer_panel.PerformLayout();
+            this.addLabForm_panel.ResumeLayout(false);
+            this.addLabForm_panel.PerformLayout();
             this.labourer_panel.ResumeLayout(false);
             this.labourer_panel.PerformLayout();
             this.storageTop_panel.ResumeLayout(false);
@@ -715,8 +781,6 @@
             this.home_panel.ResumeLayout(false);
             this.home_panel.PerformLayout();
             this.sections_groupBox.ResumeLayout(false);
-            this.addLabForm_panel.ResumeLayout(false);
-            this.addLabForm_panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -773,5 +837,13 @@
         private System.Windows.Forms.Label labourTitle_label;
         private System.Windows.Forms.Label addLabInst_label;
         private System.Windows.Forms.Panel addLabForm_panel;
+        private System.Windows.Forms.ListView listView;
+        private System.Windows.Forms.ColumnHeader machinery_id;
+        private System.Windows.Forms.ColumnHeader machine_name;
+        private System.Windows.Forms.ColumnHeader manufacturer;
+        private System.Windows.Forms.ColumnHeader model;
+        private System.Windows.Forms.ColumnHeader Description;
+        private System.Windows.Forms.ColumnHeader machine_type;
+        private System.Windows.Forms.ColumnHeader Status;
     }
 }
