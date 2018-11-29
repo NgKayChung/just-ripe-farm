@@ -18,7 +18,7 @@ namespace JustRipeFarm
 
             if (reader.HasRows)
             {
-                
+                List<Vehicle> vl = new List<Vehicle>();
 
                 while (reader.Read())
                 {
@@ -30,19 +30,17 @@ namespace JustRipeFarm
                     string mactype = reader.GetString("machine_type");
                     string mac_stat = reader.GetString("status");
 
-                    Vehicle v = new Vehicle();
-                    macid=v.mac_id;
-                    macname=v.mac_name;
-                    macman=v.mac_man;
-                    mac_cod=v.mac_model;
-                    macdesc=v.mac_desc;
-                    mactype=v.mac_type;
-                    mac_stat=v.mac_status;
+                    Vehicle v = new Vehicle(macid,macname,macman,mac_mod,macdesc,mactype,mac_stat);
 
-                   
+                    vl.Add(v);
+                    
                 }
-
+                reader.Close();
+                return vl;
                
+                
+                
+
             }
             else
             {

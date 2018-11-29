@@ -128,26 +128,28 @@ namespace JustRipeFarm
             machineTop_panel.Visible = true;
             shopTop_panel.Visible = false;
 
+           
+            VehicleHandler vh = new VehicleHandler();
 
-
-            List<Vehicle> lv = new List<Vehicle>;
+            List<Vehicle> lv = vh.getVehicle(DbConnector.Instance.getConn());
 
             foreach (Vehicle v in lv)
             {
                 ListViewItem lvi = new ListViewItem(v.mac_id);
-                
+
                 lvi.SubItems.Add(v.mac_name);
                 lvi.SubItems.Add(v.mac_man);
                 lvi.SubItems.Add(v.mac_model);
                 lvi.SubItems.Add(v.mac_desc);
                 lvi.SubItems.Add(v.mac_type);
                 lvi.SubItems.Add(v.mac_status);
+                
+                listView1.Items.Add(lvi);
 
-                listView.Items.Add(lvi);
 
-                return lv;
+                
             }
-
+            
         }
 
         private void shop_btn_Click(object sender, EventArgs e)

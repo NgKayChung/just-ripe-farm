@@ -110,5 +110,14 @@
   <ItemGroup>
     <None Include="Resources\h8ujpY.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seed-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fertiliser-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pesticide_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

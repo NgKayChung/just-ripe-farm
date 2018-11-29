@@ -20,7 +20,6 @@ namespace JustRipeFarm
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-
             string user_id = LoginID.Text;
             string password = LoginPassword.Text;
 
@@ -30,8 +29,7 @@ namespace JustRipeFarm
             }
             else
             {
-                MySqlCommand cmd = new MySqlCommand("SELECT user_type, first_name from users where user_id = '" + user_id + "' and secret_password = '" + password + "'", DbConnector.Instance.getConn());
-                
+                MySqlCommand cmd = new MySqlCommand("SELECT user_type, first_name from users where user_id = BINARY '" + user_id + "' and secret_password = BINARY '" + password + "'", DbConnector.Instance.getConn());
                 MySqlDataReader rd = cmd.ExecuteReader();
                 
                 if(rd.HasRows)

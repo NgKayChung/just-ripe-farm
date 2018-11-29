@@ -62,7 +62,6 @@
             this.addLabourer_btn = new System.Windows.Forms.Button();
             this.labourTitle_label = new System.Windows.Forms.Label();
             this.storageTop_panel = new System.Windows.Forms.Panel();
-            this.storageTitle_label = new System.Windows.Forms.Label();
             this.timetable_panel = new System.Windows.Forms.Panel();
             this.timetableTitle_label = new System.Windows.Forms.Label();
             this.home_panel = new System.Windows.Forms.Panel();
@@ -78,15 +77,16 @@
             this.section1_panel = new System.Windows.Forms.Panel();
             this.fieldTitle_label = new System.Windows.Forms.Label();
             this.homeTitle_label = new System.Windows.Forms.Label();
+            this.storageTitle_label = new System.Windows.Forms.Label();
             this.section_toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.listView = new System.Windows.Forms.ListView();
-            this.machinery_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.machine_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.manufacturer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.machine_type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).BeginInit();
             this.SplitContainer_Menu_Content.Panel1.SuspendLayout();
             this.SplitContainer_Menu_Content.Panel2.SuspendLayout();
@@ -97,7 +97,6 @@
             this.addLabourer_panel.SuspendLayout();
             this.addLabForm_panel.SuspendLayout();
             this.labourer_panel.SuspendLayout();
-            this.storageTop_panel.SuspendLayout();
             this.timetable_panel.SuspendLayout();
             this.home_panel.SuspendLayout();
             this.sections_groupBox.SuspendLayout();
@@ -266,6 +265,7 @@
             // 
             // greeting_label
             // 
+            this.greeting_label.AutoEllipsis = true;
             this.greeting_label.BackColor = System.Drawing.Color.DarkGreen;
             this.greeting_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.greeting_label.Dock = System.Windows.Forms.DockStyle.Top;
@@ -300,7 +300,7 @@
             // 
             // machineTop_panel
             // 
-            this.machineTop_panel.Controls.Add(this.listView);
+            this.machineTop_panel.Controls.Add(this.listView1);
             this.machineTop_panel.Controls.Add(this.label2);
             this.machineTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.machineTop_panel.Location = new System.Drawing.Point(0, 0);
@@ -507,23 +507,12 @@
             // 
             // storageTop_panel
             // 
-            this.storageTop_panel.Controls.Add(this.storageTitle_label);
             this.storageTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.storageTop_panel.Location = new System.Drawing.Point(0, 0);
             this.storageTop_panel.Name = "storageTop_panel";
             this.storageTop_panel.Size = new System.Drawing.Size(516, 371);
             this.storageTop_panel.TabIndex = 1;
             this.storageTop_panel.Visible = false;
-            // 
-            // storageTitle_label
-            // 
-            this.storageTitle_label.AutoSize = true;
-            this.storageTitle_label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.storageTitle_label.Location = new System.Drawing.Point(8, 8);
-            this.storageTitle_label.Name = "storageTitle_label";
-            this.storageTitle_label.Size = new System.Drawing.Size(96, 25);
-            this.storageTitle_label.TabIndex = 2;
-            this.storageTitle_label.Text = "STORAGE";
             // 
             // timetable_panel
             // 
@@ -684,66 +673,66 @@
             this.homeTitle_label.TabIndex = 0;
             this.homeTitle_label.Text = "HOME";
             // 
+            // storageTitle_label
+            // 
+            this.storageTitle_label.AutoSize = true;
+            this.storageTitle_label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageTitle_label.Location = new System.Drawing.Point(12, 11);
+            this.storageTitle_label.Name = "storageTitle_label";
+            this.storageTitle_label.Size = new System.Drawing.Size(96, 25);
+            this.storageTitle_label.TabIndex = 2;
+            this.storageTitle_label.Text = "STORAGE";
+            // 
             // section_toolTip
             // 
             this.section_toolTip.AutoPopDelay = 5000;
             this.section_toolTip.InitialDelay = 100;
             this.section_toolTip.ReshowDelay = 100;
             // 
-            // listView
+            // listView1
             // 
-            this.listView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.machinery_id,
-            this.machine_name,
-            this.manufacturer,
-            this.model,
-            this.Description,
-            this.machine_type,
-            this.Status});
-            this.listView.Location = new System.Drawing.Point(46, 90);
-            this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(349, 156);
-            this.listView.TabIndex = 5;
-            this.listView.UseCompatibleStateImageBehavior = false;
-            this.listView.View = System.Windows.Forms.View.Details;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.listView1.Location = new System.Drawing.Point(33, 56);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(392, 191);
+            this.listView1.TabIndex = 5;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // machinery_id
+            // columnHeader1
             // 
-            this.machinery_id.Text = "machinery_id";
-            this.machinery_id.Width = 80;
+            this.columnHeader1.Text = "ID";
             // 
-            // machine_name
+            // columnHeader2
             // 
-            this.machine_name.Text = "machine_name";
-            this.machine_name.Width = 100;
+            this.columnHeader2.Text = "Name";
             // 
-            // manufacturer
+            // columnHeader3
             // 
-            this.manufacturer.Text = "manufacturer";
-            this.manufacturer.Width = 80;
+            this.columnHeader3.Text = "Manufacturer";
             // 
-            // model
+            // columnHeader4
             // 
-            this.model.Text = "model";
-            this.model.Width = 80;
+            this.columnHeader4.Text = "Model";
             // 
-            // Description
+            // columnHeader5
             // 
-            this.Description.Text = "Description";
-            this.Description.Width = 100;
+            this.columnHeader5.Text = "Description";
             // 
-            // machine_type
+            // columnHeader6
             // 
-            this.machine_type.Text = "machine_type";
-            this.machine_type.Width = 100;
+            this.columnHeader6.Text = "Type";
             // 
-            // Status
+            // columnHeader7
             // 
-            this.Status.Text = "Status";
-            this.Status.Width = 80;
+            this.columnHeader7.Text = "Status";
             // 
             // MGMainScreen
             // 
@@ -774,8 +763,6 @@
             this.addLabForm_panel.PerformLayout();
             this.labourer_panel.ResumeLayout(false);
             this.labourer_panel.PerformLayout();
-            this.storageTop_panel.ResumeLayout(false);
-            this.storageTop_panel.PerformLayout();
             this.timetable_panel.ResumeLayout(false);
             this.timetable_panel.PerformLayout();
             this.home_panel.ResumeLayout(false);
@@ -837,13 +824,13 @@
         private System.Windows.Forms.Label labourTitle_label;
         private System.Windows.Forms.Label addLabInst_label;
         private System.Windows.Forms.Panel addLabForm_panel;
-        private System.Windows.Forms.ListView listView;
-        private System.Windows.Forms.ColumnHeader machinery_id;
-        private System.Windows.Forms.ColumnHeader machine_name;
-        private System.Windows.Forms.ColumnHeader manufacturer;
-        private System.Windows.Forms.ColumnHeader model;
-        private System.Windows.Forms.ColumnHeader Description;
-        private System.Windows.Forms.ColumnHeader machine_type;
-        private System.Windows.Forms.ColumnHeader Status;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }
