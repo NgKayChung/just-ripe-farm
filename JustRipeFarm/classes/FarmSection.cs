@@ -8,7 +8,7 @@ namespace JustRipeFarm
 {
     class FarmSection
     {
-        private string sectionID;
+        private string sectionID; 
         private string cropName;
         private string status;
         private DateTime sowDate;
