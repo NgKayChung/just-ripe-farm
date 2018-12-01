@@ -51,6 +51,10 @@
     <Compile Include="classes\FarmSectionHandler.cs" />
     <Compile Include="classes\Labourer.cs" />
     <Compile Include="classes\LabourerHandler.cs" />
+    <Compile Include="classes\Stock.cs" />
+    <Compile Include="classes\StockHandler.cs" />
+    <Compile Include="classes\StockStorage.cs" />
+    <Compile Include="classes\StockStorageHandler.cs" />
     <Compile Include="classes\User.cs" />
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
