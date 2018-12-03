@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\Buyer.cs" />
+    <Compile Include="classes\BuyerHandler.cs" />
     <Compile Include="classes\DbConnector.cs" />
     <Compile Include="classes\FarmSection.cs" />
     <Compile Include="classes\FarmSectionHandler.cs" />
