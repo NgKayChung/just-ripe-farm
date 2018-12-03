@@ -43,20 +43,20 @@ namespace JustRipeFarm
             FarmSectionHandler farmSectionHandler = new FarmSectionHandler();
             List<FarmSection> farmSections = farmSectionHandler.FindFarmSections();
 
-            for(int i = 0;i < section_panels.Count;i++)
+            for (int i = 0; i < section_panels.Count; i++)
             {
                 Panel currentPanel = section_panels.ElementAt(i);
                 FarmSection section = farmSections.ElementAt(i);
-                    
-                if(section.Status == "CULTIVATING")
+
+                if (section.Status == "CULTIVATING")
                 {
                     currentPanel.BackColor = Color.Gold;
                 }
-                else if(section.Status == "HARVEST")
+                else if (section.Status == "HARVEST")
                 {
                     currentPanel.BackColor = Color.LimeGreen;
                 }
-                else if(section.Status == "NOT USED")
+                else if (section.Status == "NOT USED")
                 {
                     currentPanel.BackColor = Color.LightGray;
                 }
@@ -128,7 +128,7 @@ namespace JustRipeFarm
             machineTop_panel.Visible = true;
             shopTop_panel.Visible = false;
 
-           
+            listView1.Items.Clear();
             VehicleHandler vh = new VehicleHandler();
 
             List<Vehicle> lv = vh.getVehicle(DbConnector.Instance.getConn());
@@ -143,13 +143,13 @@ namespace JustRipeFarm
                 lvi.SubItems.Add(v.mac_desc);
                 lvi.SubItems.Add(v.mac_type);
                 lvi.SubItems.Add(v.mac_status);
-                
+
                 listView1.Items.Add(lvi);
 
 
-                
+
             }
-            
+
         }
 
         private void shop_btn_Click(object sender, EventArgs e)
@@ -201,14 +201,14 @@ namespace JustRipeFarm
             {
                 if (last_name != "")
                 {
-                    if(email_address != "")
+                    if (email_address != "")
                     {
-                        if(Regex.IsMatch(email_address, evalEmail))
+                        if (Regex.IsMatch(email_address, evalEmail))
                         {
                             Labourer labourer = new Labourer(uID, first_name, last_name, "DefaultPass", email_address, phone_number, u_type, DateTime.Today);
                             LabourerHandler labourerHandler = new LabourerHandler();
                             string result = labourerHandler.addNewLabourer(DbConnector.Instance.getConn(), labourer);
-                            if(result.Equals("SUCCESS"))
+                            if (result.Equals("SUCCESS"))
                             {
                                 MessageBox.Show("Labourer is added successfully!");
                             }
@@ -227,7 +227,7 @@ namespace JustRipeFarm
                         Labourer labourer = new Labourer(uID, first_name, last_name, "DefaultPass", email_address, phone_number, u_type, DateTime.Today);
                         LabourerHandler labourerHandler = new LabourerHandler();
                         string result = labourerHandler.addNewLabourer(DbConnector.Instance.getConn(), labourer);
-                        if(result.Equals("SUCCESS"))
+                        if (result.Equals("SUCCESS"))
                         {
                             MessageBox.Show("Labourer is added successfully!");
                         }
@@ -260,6 +260,32 @@ namespace JustRipeFarm
             addLabPhoneNum_txtBox.Clear();
         }
 
-       
+        private void m_search_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+
+            string Type;
+            Type = (string)comboBox1.SelectedItem;
+            VehicleHandler vh = new VehicleHandler();
+            
+
+            List<Vehicle> lv = vh.getSelected(DbConnector.Instance.getConn(), Type);
+
+            foreach (Vehicle v in lv)
+            {
+                ListViewItem lvi = new ListViewItem(v.mac_id);
+
+                lvi.SubItems.Add(v.mac_name);
+                lvi.SubItems.Add(v.mac_man);
+                lvi.SubItems.Add(v.mac_model);
+                lvi.SubItems.Add(v.mac_desc);
+                lvi.SubItems.Add(v.mac_type);
+                lvi.SubItems.Add(v.mac_status);
+
+                listView1.Items.Add(lvi);
+
+            }
+            
+        }
     }
 }

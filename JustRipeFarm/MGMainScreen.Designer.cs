@@ -64,6 +64,9 @@
             this.labourTitle_label = new System.Windows.Forms.Label();
             this.storageTop_panel = new System.Windows.Forms.Panel();
             this.storage_panel = new System.Windows.Forms.Panel();
+            this.pesticideStorage_btn = new System.Windows.Forms.Button();
+            this.seedStorage_btn = new System.Windows.Forms.Button();
+            this.fertiliserStorage_btn = new System.Windows.Forms.Button();
             this.storageTitle_label = new System.Windows.Forms.Label();
             this.timetable_panel = new System.Windows.Forms.Panel();
             this.timetableTitle_label = new System.Windows.Forms.Label();
@@ -81,9 +84,16 @@
             this.fieldTitle_label = new System.Windows.Forms.Label();
             this.homeTitle_label = new System.Windows.Forms.Label();
             this.section_toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.pesticideStorage_btn = new System.Windows.Forms.Button();
-            this.seedStorage_btn = new System.Windows.Forms.Button();
-            this.fertiliserStorage_btn = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.m_search = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).BeginInit();
             this.SplitContainer_Menu_Content.Panel1.SuspendLayout();
             this.SplitContainer_Menu_Content.Panel2.SuspendLayout();
@@ -280,10 +290,10 @@
             // shopTop_panel
             // 
             this.shopTop_panel.Controls.Add(this.label8);
-            this.shopTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shopTop_panel.Location = new System.Drawing.Point(0, 0);
+            this.shopTop_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.shopTop_panel.Location = new System.Drawing.Point(475, 0);
             this.shopTop_panel.Name = "shopTop_panel";
-            this.shopTop_panel.Size = new System.Drawing.Size(516, 371);
+            this.shopTop_panel.Size = new System.Drawing.Size(41, 371);
             this.shopTop_panel.TabIndex = 0;
             this.shopTop_panel.Visible = false;
             // 
@@ -299,6 +309,9 @@
             // 
             // machineTop_panel
             // 
+            this.machineTop_panel.Controls.Add(this.m_search);
+            this.machineTop_panel.Controls.Add(this.listView1);
+            this.machineTop_panel.Controls.Add(this.comboBox1);
             this.machineTop_panel.Controls.Add(this.label2);
             this.machineTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.machineTop_panel.Location = new System.Drawing.Point(0, 0);
@@ -525,6 +538,51 @@
             this.storage_panel.Size = new System.Drawing.Size(516, 371);
             this.storage_panel.TabIndex = 3;
             // 
+            // pesticideStorage_btn
+            // 
+            this.pesticideStorage_btn.FlatAppearance.BorderSize = 0;
+            this.pesticideStorage_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pesticideStorage_btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pesticideStorage_btn.Image = global::JustRipeFarm.Properties.Resources.pesticide_icon;
+            this.pesticideStorage_btn.Location = new System.Drawing.Point(322, 91);
+            this.pesticideStorage_btn.Name = "pesticideStorage_btn";
+            this.pesticideStorage_btn.Size = new System.Drawing.Size(90, 90);
+            this.pesticideStorage_btn.TabIndex = 5;
+            this.pesticideStorage_btn.Text = "Pesticides";
+            this.pesticideStorage_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.pesticideStorage_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.pesticideStorage_btn.UseVisualStyleBackColor = true;
+            // 
+            // seedStorage_btn
+            // 
+            this.seedStorage_btn.FlatAppearance.BorderSize = 0;
+            this.seedStorage_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.seedStorage_btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.seedStorage_btn.Image = ((System.Drawing.Image)(resources.GetObject("seedStorage_btn.Image")));
+            this.seedStorage_btn.Location = new System.Drawing.Point(173, 91);
+            this.seedStorage_btn.Name = "seedStorage_btn";
+            this.seedStorage_btn.Size = new System.Drawing.Size(90, 90);
+            this.seedStorage_btn.TabIndex = 4;
+            this.seedStorage_btn.Text = "Seeds";
+            this.seedStorage_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.seedStorage_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.seedStorage_btn.UseVisualStyleBackColor = true;
+            // 
+            // fertiliserStorage_btn
+            // 
+            this.fertiliserStorage_btn.FlatAppearance.BorderSize = 0;
+            this.fertiliserStorage_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fertiliserStorage_btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fertiliserStorage_btn.Image = ((System.Drawing.Image)(resources.GetObject("fertiliserStorage_btn.Image")));
+            this.fertiliserStorage_btn.Location = new System.Drawing.Point(23, 91);
+            this.fertiliserStorage_btn.Name = "fertiliserStorage_btn";
+            this.fertiliserStorage_btn.Size = new System.Drawing.Size(90, 90);
+            this.fertiliserStorage_btn.TabIndex = 3;
+            this.fertiliserStorage_btn.Text = "Fertilisers";
+            this.fertiliserStorage_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.fertiliserStorage_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.fertiliserStorage_btn.UseVisualStyleBackColor = true;
+            // 
             // storageTitle_label
             // 
             this.storageTitle_label.AutoSize = true;
@@ -700,50 +758,73 @@
             this.section_toolTip.InitialDelay = 100;
             this.section_toolTip.ReshowDelay = 100;
             // 
-            // pesticideStorage_btn
+            // listView1
             // 
-            this.pesticideStorage_btn.FlatAppearance.BorderSize = 0;
-            this.pesticideStorage_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pesticideStorage_btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pesticideStorage_btn.Image = global::JustRipeFarm.Properties.Resources.pesticide_icon;
-            this.pesticideStorage_btn.Location = new System.Drawing.Point(322, 91);
-            this.pesticideStorage_btn.Name = "pesticideStorage_btn";
-            this.pesticideStorage_btn.Size = new System.Drawing.Size(90, 90);
-            this.pesticideStorage_btn.TabIndex = 5;
-            this.pesticideStorage_btn.Text = "Pesticides";
-            this.pesticideStorage_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.pesticideStorage_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.pesticideStorage_btn.UseVisualStyleBackColor = true;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.listView1.Location = new System.Drawing.Point(28, 107);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(441, 166);
+            this.listView1.TabIndex = 5;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
-            // seedStorage_btn
+            // columnHeader1
             // 
-            this.seedStorage_btn.FlatAppearance.BorderSize = 0;
-            this.seedStorage_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.seedStorage_btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seedStorage_btn.Image = ((System.Drawing.Image)(resources.GetObject("seedStorage_btn.Image")));
-            this.seedStorage_btn.Location = new System.Drawing.Point(173, 91);
-            this.seedStorage_btn.Name = "seedStorage_btn";
-            this.seedStorage_btn.Size = new System.Drawing.Size(90, 90);
-            this.seedStorage_btn.TabIndex = 4;
-            this.seedStorage_btn.Text = "Seeds";
-            this.seedStorage_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.seedStorage_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.seedStorage_btn.UseVisualStyleBackColor = true;
+            this.columnHeader1.Text = "ID";
             // 
-            // fertiliserStorage_btn
+            // columnHeader2
             // 
-            this.fertiliserStorage_btn.FlatAppearance.BorderSize = 0;
-            this.fertiliserStorage_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fertiliserStorage_btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fertiliserStorage_btn.Image = ((System.Drawing.Image)(resources.GetObject("fertiliserStorage_btn.Image")));
-            this.fertiliserStorage_btn.Location = new System.Drawing.Point(23, 91);
-            this.fertiliserStorage_btn.Name = "fertiliserStorage_btn";
-            this.fertiliserStorage_btn.Size = new System.Drawing.Size(90, 90);
-            this.fertiliserStorage_btn.TabIndex = 3;
-            this.fertiliserStorage_btn.Text = "Fertilisers";
-            this.fertiliserStorage_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.fertiliserStorage_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.fertiliserStorage_btn.UseVisualStyleBackColor = true;
+            this.columnHeader2.Text = "Name";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Manufacturer";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Model";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Description";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Type";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Status";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "HARVESTER",
+            "SOWING",
+            "TREATMENT",
+            "TRANSPORT"});
+            this.comboBox1.Location = new System.Drawing.Point(66, 61);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // m_search
+            // 
+            this.m_search.Location = new System.Drawing.Point(237, 61);
+            this.m_search.Name = "m_search";
+            this.m_search.Size = new System.Drawing.Size(75, 23);
+            this.m_search.TabIndex = 7;
+            this.m_search.Text = "search";
+            this.m_search.UseVisualStyleBackColor = true;
+            this.m_search.Click += new System.EventHandler(this.m_search_Click);
             // 
             // MGMainScreen
             // 
@@ -842,5 +923,15 @@
         private System.Windows.Forms.Button fertiliserStorage_btn;
         private System.Windows.Forms.Button seedStorage_btn;
         private System.Windows.Forms.Button pesticideStorage_btn;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.Button m_search;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
