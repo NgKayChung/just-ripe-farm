@@ -345,6 +345,28 @@ namespace JustRipeFarm
             }
         }
 
+        private void m_search_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            string Type;
+            Type = (string)comboBox1.SelectedItem;
+            VehicleHandler vh = new VehicleHandler();
+
+            List<Vehicle> lv = vh.getSelected(DbConnector.Instance.getConn(), Type);
+            foreach (Vehicle v in lv)
+            {
+                ListViewItem lvi = new ListViewItem(v.mac_id);
+                lvi.SubItems.Add(v.mac_name);
+                lvi.SubItems.Add(v.mac_man);
+                lvi.SubItems.Add(v.mac_model);
+                lvi.SubItems.Add(v.mac_desc);
+                lvi.SubItems.Add(v.mac_type);
+                lvi.SubItems.Add(v.mac_status);
+                listView1.Items.Add(lvi);
+            }
+
+        }
+
         private void shopBack_btn_Click(object sender, EventArgs e)
         {
             ShopBackTopPanel();

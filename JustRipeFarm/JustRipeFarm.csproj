@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\Buyer.cs" />
+    <Compile Include="classes\BuyerHandler.cs" />
     <Compile Include="classes\Crop.cs" />
     <Compile Include="classes\CropHandler.cs" />
     <Compile Include="classes\CropMethod.cs" />
@@ -55,8 +57,14 @@
     <Compile Include="classes\FarmSectionHandler.cs" />
     <Compile Include="classes\Labourer.cs" />
     <Compile Include="classes\LabourerHandler.cs" />
+    <Compile Include="classes\Product.cs" />
+    <Compile Include="classes\ProductHandler.cs" />
     <Compile Include="classes\Sale.cs" />
     <Compile Include="classes\SaleHandler.cs" />
+    <Compile Include="classes\Stock.cs" />
+    <Compile Include="classes\StockHandler.cs" />
+    <Compile Include="classes\StockStorage.cs" />
+    <Compile Include="classes\StockStorageHandler.cs" />
     <Compile Include="classes\Task.cs" />
     <Compile Include="classes\TaskHandler.cs" />
     <Compile Include="classes\User.cs" />
@@ -81,6 +89,8 @@
       <DependentUpon>Testing page.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\UserSession.cs" />
+    <Compile Include="classes\Vehicle.cs" />
+    <Compile Include="classes\VehicleHandler.cs" />
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>

@@ -99,6 +99,16 @@
             this.shop_btn = new System.Windows.Forms.Button();
             this.shopWholeTitle_label = new System.Windows.Forms.Label();
             this.machineTop_panel = new System.Windows.Forms.Panel();
+            this.m_search = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.machineryTitle_label = new System.Windows.Forms.Label();
             this.labourerTop_panel = new System.Windows.Forms.Panel();
             this.assignTask_panel = new System.Windows.Forms.Panel();
@@ -177,8 +187,13 @@
             this.storageInst_label = new System.Windows.Forms.Label();
             this.storageTitle_label = new System.Windows.Forms.Label();
             this.timetable_panel = new System.Windows.Forms.Panel();
+            this.timetable_listView = new System.Windows.Forms.ListView();
+            this.timetableDate_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.timetableFarmField_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.timetableFarmStatus_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
             this.timetableSearch_btn = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.timetableType_comboBox = new System.Windows.Forms.ComboBox();
             this.timetableType_label = new System.Windows.Forms.Label();
             this.timetableEndDate_datePicker = new System.Windows.Forms.DateTimePicker();
             this.timetableEndDate_label = new System.Windows.Forms.Label();
@@ -199,11 +214,6 @@
             this.fieldTitle_label = new System.Windows.Forms.Label();
             this.homeTitle_label = new System.Windows.Forms.Label();
             this.section_toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.timetable_listView = new System.Windows.Forms.ListView();
-            this.timetableDate_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.timetableFarmField_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.timetableFarmStatus_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).BeginInit();
             this.SplitContainer_Menu_Content.Panel1.SuspendLayout();
             this.SplitContainer_Menu_Content.Panel2.SuspendLayout();
@@ -414,10 +424,10 @@
             this.shopWholesaleTop_panel.Controls.Add(this.shopProducts_panel);
             this.shopWholesaleTop_panel.Controls.Add(this.shop_panel);
             this.shopWholesaleTop_panel.Controls.Add(this.shopWholesale_panel);
-            this.shopWholesaleTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shopWholesaleTop_panel.Location = new System.Drawing.Point(0, 0);
+            this.shopWholesaleTop_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.shopWholesaleTop_panel.Location = new System.Drawing.Point(496, 0);
             this.shopWholesaleTop_panel.Name = "shopWholesaleTop_panel";
-            this.shopWholesaleTop_panel.Size = new System.Drawing.Size(506, 371);
+            this.shopWholesaleTop_panel.Size = new System.Drawing.Size(10, 371);
             this.shopWholesaleTop_panel.TabIndex = 0;
             this.shopWholesaleTop_panel.Visible = false;
             this.shopWholesaleTop_panel.VisibleChanged += new System.EventHandler(this.shopWholesaleTop_panel_VisibleChanged);
@@ -436,7 +446,7 @@
             this.salesReport_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.salesReport_panel.Location = new System.Drawing.Point(0, 0);
             this.salesReport_panel.Name = "salesReport_panel";
-            this.salesReport_panel.Size = new System.Drawing.Size(506, 371);
+            this.salesReport_panel.Size = new System.Drawing.Size(10, 371);
             this.salesReport_panel.TabIndex = 13;
             this.salesReport_panel.Visible = false;
             // 
@@ -585,7 +595,7 @@
             this.buyers_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buyers_panel.Location = new System.Drawing.Point(0, 0);
             this.buyers_panel.Name = "buyers_panel";
-            this.buyers_panel.Size = new System.Drawing.Size(506, 371);
+            this.buyers_panel.Size = new System.Drawing.Size(10, 371);
             this.buyers_panel.TabIndex = 12;
             this.buyers_panel.Visible = false;
             // 
@@ -691,7 +701,7 @@
             this.shopProducts_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shopProducts_panel.Location = new System.Drawing.Point(0, 0);
             this.shopProducts_panel.Name = "shopProducts_panel";
-            this.shopProducts_panel.Size = new System.Drawing.Size(506, 371);
+            this.shopProducts_panel.Size = new System.Drawing.Size(10, 371);
             this.shopProducts_panel.TabIndex = 11;
             this.shopProducts_panel.Visible = false;
             // 
@@ -870,7 +880,7 @@
             this.shop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shop_panel.Location = new System.Drawing.Point(0, 0);
             this.shop_panel.Name = "shop_panel";
-            this.shop_panel.Size = new System.Drawing.Size(506, 371);
+            this.shop_panel.Size = new System.Drawing.Size(10, 371);
             this.shop_panel.TabIndex = 10;
             this.shop_panel.Visible = false;
             // 
@@ -965,7 +975,7 @@
             this.shopWholesale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shopWholesale_panel.Location = new System.Drawing.Point(0, 0);
             this.shopWholesale_panel.Name = "shopWholesale_panel";
-            this.shopWholesale_panel.Size = new System.Drawing.Size(506, 371);
+            this.shopWholesale_panel.Size = new System.Drawing.Size(10, 371);
             this.shopWholesale_panel.TabIndex = 9;
             // 
             // wholesale_btn
@@ -1011,6 +1021,9 @@
             // 
             // machineTop_panel
             // 
+            this.machineTop_panel.Controls.Add(this.m_search);
+            this.machineTop_panel.Controls.Add(this.listView1);
+            this.machineTop_panel.Controls.Add(this.comboBox1);
             this.machineTop_panel.Controls.Add(this.machineryTitle_label);
             this.machineTop_panel.Cursor = System.Windows.Forms.Cursors.Default;
             this.machineTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1019,6 +1032,74 @@
             this.machineTop_panel.Size = new System.Drawing.Size(506, 371);
             this.machineTop_panel.TabIndex = 3;
             this.machineTop_panel.Visible = false;
+            // 
+            // m_search
+            // 
+            this.m_search.Location = new System.Drawing.Point(237, 61);
+            this.m_search.Name = "m_search";
+            this.m_search.Size = new System.Drawing.Size(75, 23);
+            this.m_search.TabIndex = 7;
+            this.m_search.Text = "search";
+            this.m_search.UseVisualStyleBackColor = true;
+            this.m_search.Click += new System.EventHandler(this.m_search_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.listView1.Location = new System.Drawing.Point(28, 107);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(441, 166);
+            this.listView1.TabIndex = 5;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Name";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Manufacturer";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Model";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Description";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Type";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Status";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "HARVESTER",
+            "SOWER",
+            "TREATMENT",
+            "TRANSPORT"});
+            this.comboBox1.Location = new System.Drawing.Point(66, 61);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 6;
             // 
             // machineryTitle_label
             // 
@@ -1836,7 +1917,7 @@
             this.timetable_panel.Controls.Add(this.timetable_listView);
             this.timetable_panel.Controls.Add(this.label1);
             this.timetable_panel.Controls.Add(this.timetableSearch_btn);
-            this.timetable_panel.Controls.Add(this.comboBox1);
+            this.timetable_panel.Controls.Add(this.timetableType_comboBox);
             this.timetable_panel.Controls.Add(this.timetableType_label);
             this.timetable_panel.Controls.Add(this.timetableEndDate_datePicker);
             this.timetable_panel.Controls.Add(this.timetableEndDate_label);
@@ -1850,6 +1931,46 @@
             this.timetable_panel.TabIndex = 0;
             this.timetable_panel.Visible = false;
             // 
+            // timetable_listView
+            // 
+            this.timetable_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.timetableDate_header,
+            this.timetableFarmField_header,
+            this.timetableFarmStatus_header});
+            this.timetable_listView.FullRowSelect = true;
+            this.timetable_listView.GridLines = true;
+            this.timetable_listView.Location = new System.Drawing.Point(13, 139);
+            this.timetable_listView.Name = "timetable_listView";
+            this.timetable_listView.Size = new System.Drawing.Size(483, 221);
+            this.timetable_listView.TabIndex = 8;
+            this.timetable_listView.UseCompatibleStateImageBehavior = false;
+            this.timetable_listView.View = System.Windows.Forms.View.Details;
+            // 
+            // timetableDate_header
+            // 
+            this.timetableDate_header.Text = "Date";
+            this.timetableDate_header.Width = 90;
+            // 
+            // timetableFarmField_header
+            // 
+            this.timetableFarmField_header.Text = "Farm Field";
+            this.timetableFarmField_header.Width = 70;
+            // 
+            // timetableFarmStatus_header
+            // 
+            this.timetableFarmStatus_header.Text = "Status";
+            this.timetableFarmStatus_header.Width = 80;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(9, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(313, 19);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Choose and Submit below fields to view timetable";
+            // 
             // timetableSearch_btn
             // 
             this.timetableSearch_btn.Location = new System.Drawing.Point(385, 103);
@@ -1859,18 +1980,18 @@
             this.timetableSearch_btn.Text = "Search";
             this.timetableSearch_btn.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // timetableType_comboBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.timetableType_comboBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.timetableType_comboBox.FormattingEnabled = true;
+            this.timetableType_comboBox.Items.AddRange(new object[] {
             "",
             "SOW",
             "HARVEST"});
-            this.comboBox1.Location = new System.Drawing.Point(115, 103);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(129, 23);
-            this.comboBox1.TabIndex = 5;
+            this.timetableType_comboBox.Location = new System.Drawing.Point(115, 103);
+            this.timetableType_comboBox.Name = "timetableType_comboBox";
+            this.timetableType_comboBox.Size = new System.Drawing.Size(129, 23);
+            this.timetableType_comboBox.TabIndex = 5;
             // 
             // timetableType_label
             // 
@@ -2072,46 +2193,6 @@
             this.section_toolTip.AutoPopDelay = 5000;
             this.section_toolTip.InitialDelay = 100;
             this.section_toolTip.ReshowDelay = 100;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(9, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(313, 19);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Choose and Submit below fields to view timetable";
-            // 
-            // timetable_listView
-            // 
-            this.timetable_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.timetableDate_header,
-            this.timetableFarmField_header,
-            this.timetableFarmStatus_header});
-            this.timetable_listView.FullRowSelect = true;
-            this.timetable_listView.GridLines = true;
-            this.timetable_listView.Location = new System.Drawing.Point(13, 139);
-            this.timetable_listView.Name = "timetable_listView";
-            this.timetable_listView.Size = new System.Drawing.Size(483, 221);
-            this.timetable_listView.TabIndex = 8;
-            this.timetable_listView.UseCompatibleStateImageBehavior = false;
-            this.timetable_listView.View = System.Windows.Forms.View.Details;
-            // 
-            // timetableDate_header
-            // 
-            this.timetableDate_header.Text = "Date";
-            this.timetableDate_header.Width = 90;
-            // 
-            // timetableFarmField_header
-            // 
-            this.timetableFarmField_header.Text = "Farm Field";
-            this.timetableFarmField_header.Width = 70;
-            // 
-            // timetableFarmStatus_header
-            // 
-            this.timetableFarmStatus_header.Text = "Status";
-            this.timetableFarmStatus_header.Width = 80;
             // 
             // MGMainScreen
             // 
@@ -2335,7 +2416,7 @@
         private System.Windows.Forms.Label assignTaskLabInst_label;
         private System.Windows.Forms.Label assignTaskWarningMsg_label;
         private System.Windows.Forms.Button timetableSearch_btn;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox timetableType_comboBox;
         private System.Windows.Forms.Label timetableType_label;
         private System.Windows.Forms.DateTimePicker timetableEndDate_datePicker;
         private System.Windows.Forms.Label timetableEndDate_label;
@@ -2346,5 +2427,15 @@
         private System.Windows.Forms.ColumnHeader timetableDate_header;
         private System.Windows.Forms.ColumnHeader timetableFarmField_header;
         private System.Windows.Forms.ColumnHeader timetableFarmStatus_header;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.Button m_search;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
