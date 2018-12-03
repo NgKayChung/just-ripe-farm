@@ -51,6 +51,8 @@
     <Compile Include="classes\FarmSectionHandler.cs" />
     <Compile Include="classes\Labourer.cs" />
     <Compile Include="classes\LabourerHandler.cs" />
+    <Compile Include="classes\Product.cs" />
+    <Compile Include="classes\ProductHandler.cs" />
     <Compile Include="classes\Stock.cs" />
     <Compile Include="classes\StockHandler.cs" />
     <Compile Include="classes\StockStorage.cs" />
