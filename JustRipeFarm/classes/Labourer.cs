@@ -9,6 +9,7 @@ namespace JustRipeFarm
     class Labourer : User
     {
         private DateTime date_joined;
+        private string status;
 
         public Labourer() :base()
         {
@@ -21,6 +22,23 @@ namespace JustRipeFarm
             date_joined = joinDate;
         }
 
+        public Labourer(string uID, string fName, string lName, string emailAddress, string phoneNumber, DateTime joinDate, string stat) : base()
+        {
+            UserID = uID;
+            Firstname = fName;
+            Lastname = lName;
+            EmailAddress = emailAddress;
+            PhoneNumber = phoneNumber;
+            date_joined = joinDate;
+            Status = stat;
+        }
+
+        public override string ToString()
+        {
+            return (Firstname + " " + Lastname);
+        }
+
         public DateTime DateJoined { get => date_joined; set => date_joined = value; }
+        public string Status { get => status; set => status = value; }
     }
 }

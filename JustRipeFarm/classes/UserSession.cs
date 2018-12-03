@@ -19,6 +19,8 @@ namespace JustRipeFarm
 
         }
 
+        
+
         public static UserSession Instance
         {
             get
@@ -35,5 +37,14 @@ namespace JustRipeFarm
         public string UserID { get => userID; set => userID = value; }
         public string UserFirstName { get => userFirstName; set => userFirstName = value; }
         public string UserType { get => userType; set => userType = value; }
+
+        ~UserSession()
+        {
+            instance.loggedIn = false;
+            instance.userID = "";
+            instance.userFirstName = "";
+            instance.userType = "";
+            instance = null;
+        }
     }
 }
