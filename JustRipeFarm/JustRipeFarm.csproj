@@ -48,10 +48,6 @@
   <ItemGroup>
     <Compile Include="classes\Buyer.cs" />
     <Compile Include="classes\BuyerHandler.cs" />
-    <Compile Include="classes\Crop.cs" />
-    <Compile Include="classes\CropHandler.cs" />
-    <Compile Include="classes\CropMethod.cs" />
-    <Compile Include="classes\CropMethodHandler.cs" />
     <Compile Include="classes\DbConnector.cs" />
     <Compile Include="classes\FarmSection.cs" />
     <Compile Include="classes\FarmSectionHandler.cs" />
@@ -59,14 +55,10 @@
     <Compile Include="classes\LabourerHandler.cs" />
     <Compile Include="classes\Product.cs" />
     <Compile Include="classes\ProductHandler.cs" />
-    <Compile Include="classes\Sale.cs" />
-    <Compile Include="classes\SaleHandler.cs" />
     <Compile Include="classes\Stock.cs" />
     <Compile Include="classes\StockHandler.cs" />
     <Compile Include="classes\StockStorage.cs" />
     <Compile Include="classes\StockStorageHandler.cs" />
-    <Compile Include="classes\Task.cs" />
-    <Compile Include="classes\TaskHandler.cs" />
     <Compile Include="classes\User.cs" />
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
@@ -89,8 +81,8 @@
       <DependentUpon>Testing page.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\UserSession.cs" />
-    <Compile Include="classes\Vehicle.cs" />
-    <Compile Include="classes\VehicleHandler.cs" />
+    <Compile Include="Vehicle.cs" />
+    <Compile Include="VehicleHandler.cs" />
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,28 +119,13 @@
     <None Include="Resources\h8ujpY.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\fertiliser_icon.png" />
+    <None Include="Resources\seed-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fertiliser-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pesticide_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\seed_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shop_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wholesale_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\products_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\buyers_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\reports_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

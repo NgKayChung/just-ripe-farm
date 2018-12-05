@@ -13,7 +13,6 @@ namespace JustRipeFarm
         {
             List<FarmSection> farmSections = null;
             string queryString = "SELECT `farm_fields`.`field_id`, " +
-                                        "`crops`.`crop_id`, " +
                                         "`crops`.`crop_name`, " +
                                         "`farm_fields`.`status`, " +
                                         "`farm_fields`.`date_sowed`, " +
@@ -30,18 +29,16 @@ namespace JustRipeFarm
                 while(reader.Read())
                 {
                     string sect_id = reader.GetString(0);
-                    string crop_id = (reader.IsDBNull(1) ? "-" : reader.GetString(1));
-                    string crop_name = (reader.IsDBNull(2) ? "-" : reader.GetString(2));
-                    string status = reader.GetString(3);
-                    DateTime sow_date = (reader.IsDBNull(4) ? new DateTime(1900, 1, 1) : reader.GetDateTime(4));
-                    DateTime harvest_date = (reader.IsDBNull(5) ? new DateTime(1900, 1, 1) : reader.GetDateTime(5));
+                    string crop_name = (reader.IsDBNull(1) ? "-" : reader.GetString(1));
+                    string status = reader.GetString(2);
+                    DateTime sow_date = (reader.IsDBNull(3) ? new DateTime(1900, 1, 1) : reader.GetDateTime(3));
+                    DateTime harvest_date = (reader.IsDBNull(4) ? new DateTime(1900, 1, 1) : reader.GetDateTime(4));
 
-                    farmSections.Add(new FarmSection(sect_id, crop_id, crop_name, status, sow_date, harvest_date));
+                    farmSections.Add(new FarmSection(sect_id, crop_name, status, sow_date, harvest_date));
                 }
             }
 
             if (!reader.IsClosed) reader.Close();
-            sqlCommand.Dispose();
 
             return farmSections;
         }
