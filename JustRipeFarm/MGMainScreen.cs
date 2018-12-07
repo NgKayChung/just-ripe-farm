@@ -299,13 +299,19 @@ namespace JustRipeFarm
             shopTop_panel.Visible = false;
             panel1.Visible = true;
 
-            
+            UserHandler uh = new UserHandler();
 
-            labelID.Text = UserSession.Instance.UserID;
-            txtFname.Text = UserSession.Instance.UserFirstName;
-            txtLname.Text = UserSession.Instance.UserLastName;
-            txtmail.Text = UserSession.Instance.Email;
-            txtNumber.Text = UserSession.Instance.PhoneNumber;
+
+            List<User> ul = uh.getUser(DbConnector.Instance.getConn(), UserSession.Instance.UserID);
+
+            foreach (User u in ul)
+            {
+                labelID.Text = u.UserID;
+                txtFname.Text = u.Firstname;
+                txtLname.Text = u.Lastname;
+                txtmail.Text = u.EmailAddress;
+                txtNumber.Text = u.PhoneNumber;
+            }
         }
 
         private void udt_btn_Click(object sender, EventArgs e)
@@ -331,7 +337,7 @@ namespace JustRipeFarm
                     {
                         if (Regex.IsMatch(txtmail.Text, evalEmail))
                         {
-                            LabourerHandler lbh = new LabourerHandler();
+                            UserHandler lbh = new UserHandler();
                             lbh.Updateinfo(DbConnector.Instance.getConn(), u);
                             MessageBox.Show("Update Succesfull");
                         }
@@ -343,26 +349,42 @@ namespace JustRipeFarm
                     MessageBox.Show("Last name cannot be empty");
             }
             else
+            {
                 MessageBox.Show("First Name cannot be empty");
+            }
+
+
             
 
         }
 
         private void udt_pas_Click(object sender, EventArgs e)
         {
+
+            
+
             string opass = old_pass.Text;
             string npass = New_pass.Text;
             string cpass = Con_pass.Text;
-
-            User u = new User();
-            u.Password = npass;
             
 
-            if (opass == UserSession.Instance.Password)
+
+            UserHandler uh = new UserHandler();
+
+
+            List<User> ul = uh.getUser(DbConnector.Instance.getConn(), UserSession.Instance.UserID);
+
+            foreach (User u in ul)
+            
+
+            
+            
+
+            if (opass ==u.Password)
             {
                 if (npass == cpass)
                 {
-                    LabourerHandler lbh = new LabourerHandler();
+                    UserHandler lbh = new UserHandler();
                     lbh.changePass(DbConnector.Instance.getConn(), u);
                     MessageBox.Show("Password change successfull");
                 }

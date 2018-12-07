@@ -10,19 +10,7 @@ namespace JustRipeFarm
     class LabourerHandler
     {
 
-        public string Updateinfo(MySqlConnection conn, User u)
-        {
-            string sql = "Update users set first_name='" + u.Firstname + "', last_name='" + u.Lastname + "', email_address='" + u.EmailAddress + "',phone_number='" + u.PhoneNumber + "' where user_id='"+UserSession.Instance.UserID+"' and secret_password='"+UserSession.Instance.Password+"'";
-            MySqlCommand sqlComm = new MySqlCommand(sql, DbConnector.Instance.getConn());
-            return sqlComm.ExecuteNonQuery().ToString();
-        }
-
-        public string changePass(MySqlConnection conn, User u)
-        {
-            string sql = "Update users set secret_password='" + u.Password + "'where user_id='" + UserSession.Instance.UserID + "' and secret_password='" + UserSession.Instance.Password + "'";
-            MySqlCommand sqlComm = new MySqlCommand(sql, DbConnector.Instance.getConn());
-            return sqlComm.ExecuteNonQuery().ToString();
-        }
+        
 
         public string addNewLabourer(MySqlConnection conn, Labourer labourer)
         {
