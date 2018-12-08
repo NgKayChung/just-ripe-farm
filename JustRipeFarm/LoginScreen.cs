@@ -30,7 +30,7 @@ namespace JustRipeFarm
             }
             else
             {
-                MySqlCommand cmd = new MySqlCommand("SELECT user_type, first_name from users where user_id = BINARY '" + user_id + "' and secret_password = BINARY '" + password + "'", DbConnector.Instance.getConn());
+                MySqlCommand cmd = new MySqlCommand("SELECT * from users where user_id = BINARY '" + user_id + "' and secret_password = BINARY '" + password + "'", DbConnector.Instance.getConn());
                 MySqlDataReader rd = cmd.ExecuteReader();
                 
                 if(rd.HasRows)
@@ -39,6 +39,9 @@ namespace JustRipeFarm
                     UserSession.Instance.LoggedIn = true;
                     UserSession.Instance.UserID = user_id;
                     UserSession.Instance.UserFirstName = rd.GetString("first_name");
+                    UserSession.Instance.UserLastName = rd.GetString("last_name");
+                    UserSession.Instance.Email = rd.GetString("email_address");
+                    UserSession.Instance.PhoneNumber = rd.GetString("phone_number");
                     UserSession.Instance.UserType = rd.GetString("user_type");
                     rd.Close();
 
