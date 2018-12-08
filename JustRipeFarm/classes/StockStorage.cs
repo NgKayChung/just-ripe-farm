@@ -12,6 +12,7 @@ namespace JustRipeFarm
         private int totalCapacity;
         private int usedCapacity;
         private string status;
+        private List<Stock> stocks;
 
         public StockStorage()
         {
@@ -30,5 +31,6 @@ namespace JustRipeFarm
         public int TotalCapacity { get => totalCapacity; set => totalCapacity = value; }
         public int UsedCapacity { get => usedCapacity; set => usedCapacity = value; }
         public string Status { get => status; set => status = value; }
+        public List<Stock> Stocks { get => stocks; set => stocks = value; }
     }
 }

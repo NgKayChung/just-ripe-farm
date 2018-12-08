@@ -20,6 +20,8 @@ namespace JustRipeFarm
 
         public MGMainScreen()
         {
+            UserSession.Instance.UserID = "MG18290";
+            UserSession.Instance.UserFirstName = "John";
             InitializeComponent();
         }
 
@@ -188,34 +190,124 @@ namespace JustRipeFarm
                 {
                     if (!taskDescription.Equals(""))
                     {
-                        if (assignTaskLab_listBox.SelectedItems.Count > 0)
+                        if (assignTaskLab_listBox.SelectedItems.Count > 0 && assignTaskLab_listBox.SelectedItems.Count >= (int)assignTaskWarningMsg_label.Tag)
                         {
                             FarmSection taskSelectedField = (FarmSection)taskField_comboBox.SelectedItem;
                             string taskType = taskType_txtBox.Text;
                             Crop taskSelectedCrop = (Crop)taskCrop_comboBox.SelectedItem;
                             CropMethod taskSelectdCropMethod = (CropMethod)taskMethod_comboBox.SelectedItem;
                             List<Labourer> taskSelectedLabourers = new List<Labourer>();
+                            List<TaskStock> taskSelectedStocks = new List<TaskStock>();
 
                             for (int i = 0; i < assignTaskLab_listBox.SelectedItems.Count; i++)
                             {
                                 taskSelectedLabourers.Add((Labourer)assignTaskLab_listBox.SelectedItems[i]);
                             }
 
-                            if (taskType.Equals("TREATMENT"))
+                            switch(taskType)
                             {
-                                if (taskEndDateTime.TimeOfDay.Subtract(taskStartDateTime.TimeOfDay).Days < 7)
-                                {
-                                    MessageBox.Show("Please select task time at least 7 days");
-                                    return;
-                                }
+                                case "SOW":
+                                    Stock seed, sow_fertiliser;
+
+                                    if(taskSeed_comboBox.SelectedItem != null)
+                                    {
+                                        seed = ((Stock)taskSeed_comboBox.SelectedItem);
+
+                                        if (taskSeed_numeric.Value > 0 || taskSeed_numeric.Value <= seed.Quantity)
+                                        {
+                                            if (taskFertiliser_comboBox.SelectedItem != null)
+                                            {
+                                                sow_fertiliser = ((Stock)taskFertiliser_comboBox.SelectedItem);
+
+                                                if (taskFertiliser_numeric.Value > 0 || taskFertiliser_numeric.Value <= sow_fertiliser.Quantity)
+                                                {
+                                                    taskSelectedStocks.Add(new TaskStock(seed, (int)taskSeed_numeric.Value));
+                                                    taskSelectedStocks.Add(new TaskStock(sow_fertiliser, (int)taskFertiliser_numeric.Value));
+                                                }
+                                                else
+                                                {
+                                                    MessageBox.Show("Please input valid fertiliser quantity for sowing");
+                                                    return;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Please select fertiliser for sowing");
+                                                return;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Please input valid seed quantity for sowing");
+                                            return;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Please select seed for sowing");
+                                        return;
+                                    }
+                                    break;
+                                
+                                case "TREATMENT":
+                                    Stock treatment_fertiliser, pesticide = null;
+
+                                    if (taskFertiliser_comboBox.SelectedItem != null)
+                                    {
+                                        treatment_fertiliser = ((Stock)taskFertiliser_comboBox.SelectedItem);
+
+                                        if (taskFertiliser_numeric.Value > 0 || taskFertiliser_numeric.Value <= treatment_fertiliser.Quantity)
+                                        {
+                                            if (taskFertiliser_comboBox.SelectedItem != null)
+                                            {
+                                                pesticide = ((Stock)taskPesticide_comboBox.SelectedItem);
+
+                                                if (taskPesticide_numeric.Value <= 0 || taskPesticide_numeric.Value > pesticide.Quantity)
+                                                {
+                                                    MessageBox.Show("Please input valid fertiliser quantity for sowing");
+                                                    return;
+                                                }
+                                            }
+
+                                            if (taskEndDateTime.TimeOfDay.Subtract(taskStartDateTime.TimeOfDay).Days >= 7)
+                                            {
+                                                taskSelectedStocks.Add(new TaskStock(treatment_fertiliser, (int)taskFertiliser_numeric.Value));
+                                                
+                                                if (pesticide != null) {
+                                                    taskSelectedStocks.Add(new TaskStock(pesticide, (int)taskPesticide_numeric.Value));
+                                                }
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Please select task time at least 7 days");
+                                                return;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Please input valid fertiliser quantity for treating crops");
+                                            return;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Please select fertiliser for treating crops");
+                                        return;
+                                    }
+                                    break;
+                                
+                                default:
+                                    break;
                             }
 
-                            Task newTask = new Task(taskTitle, taskType, taskDescription, "PENDING", taskStartDateTime, taskEndDateTime, taskSelectedField.SectionID, taskSelectedCrop.CropID, taskSelectdCropMethod.MethodID, DateTime.Now, UserSession.Instance.UserID, taskSelectedLabourers);
-                            string insertResult = new TaskHandler().AddNewTask(newTask);
+                            Task newTask = new Task(taskTitle, taskType, taskDescription, "PENDING", taskStartDateTime, taskEndDateTime, taskSelectedField.SectionID, taskSelectedCrop.CropID, taskSelectdCropMethod.MethodID, DateTime.Now, UserSession.Instance.UserID);
 
+                            string insertResult = new TaskHandler().AddNewTask(newTask, taskSelectedLabourers, taskSelectedStocks);
+                            Console.WriteLine(insertResult);
                             if (insertResult.Equals("SUCCESS"))
                             {
                                 MessageBox.Show("New task is successfully assigned");
+                                LabourerBackTopPanel();
                             }
                             else
                             {
@@ -243,6 +335,39 @@ namespace JustRipeFarm
             }
         }
 
+        private void ResetAssignTaskPage()
+        {
+            taskStartDate_datePicker.ResetText();
+            taskStartTime_datePicker.ResetText();
+            taskEndDate_datePicker.ResetText();
+            taskEndTime_datePicker.ResetText();
+            taskTitle_txtBox.Clear();
+            taskDesc_txtBox.Clear();
+            taskField_comboBox.Items.Clear();
+            taskType_txtBox.Clear();
+            taskCrop_comboBox.Items.Clear();
+            taskCrop_comboBox.Enabled = false;
+            taskMethod_comboBox.Items.Clear();
+            taskMethod_comboBox.Enabled = false;
+            taskSeed_comboBox.Items.Clear();
+            taskSeed_comboBox.Enabled = false;
+            taskSeed_numeric.ResetText();
+            taskSeed_numeric.Enabled = false;
+            seedStockQty_label.ResetText();
+            taskFertiliser_comboBox.Items.Clear();
+            taskFertiliser_comboBox.Enabled = false;
+            taskFertiliser_numeric.ResetText();
+            taskFertiliser_numeric.Enabled = false;
+            fertiliserStockQty_label.ResetText();
+            taskPesticide_comboBox.Items.Clear();
+            taskPesticide_comboBox.Enabled = false;
+            taskPesticide_numeric.ResetText();
+            taskPesticide_numeric.Enabled = false;
+            pesticideStockQty_label.ResetText();
+            assignTaskLab_listBox.Items.Clear();
+            assignTaskWarningMsg_label.ResetText();
+        }
+
         private void labourerAssignTask_btn_Click(object sender, EventArgs e)
         {
             labourer_panel.Visible = false;
@@ -251,36 +376,28 @@ namespace JustRipeFarm
             PopulateAssignTaskInputOptions();
         }
 
+        private void storageContainer_btn_Click(object sender, EventArgs e)
+        {
+            storage_panel.Visible = false;
+            container_panel.Visible = true;
+
+            LoadContainers();
+        }
+
+        private void wholesale_btn_Click(object sender, EventArgs e)
+        {
+            shopWholesale_panel.Visible = false;
+            wholesale_panel.Visible = true;
+
+            LoadWholesale();
+        }
+
         private void shopProducts_btn_Click(object sender, EventArgs e)
         {
             shop_panel.Visible = false;
             shopProducts_panel.Visible = true;
 
             LoadProducts();
-        }
-
-        private void stockFertiliserFilter_btn_Click(object sender, EventArgs e)
-        {
-            var storage = (StockStorage)stockFertiliserFilter_btn.Tag;
-            string type = "FERTILISER";
-
-            LoadStocks(storage, type);
-        }
-
-        private void stockSeedFilter_btn_Click(object sender, EventArgs e)
-        {
-            var storage = (StockStorage)stockSeedFilter_btn.Tag;
-            string type = "SEED";
-
-            LoadStocks(storage, type);
-        }
-
-        private void stockPesticideFilter_btn_Click(object sender, EventArgs e)
-        {
-            var storage = (StockStorage)stockSeedFilter_btn.Tag;
-            string type = "PESTICIDE";
-
-            LoadStocks(storage, type);
         }
 
         private void shop_btn_Click(object sender, EventArgs e)
@@ -353,18 +470,254 @@ namespace JustRipeFarm
             VehicleHandler vh = new VehicleHandler();
 
             List<Vehicle> lv = vh.getSelected(DbConnector.Instance.getConn(), Type);
-            foreach (Vehicle v in lv)
+            if(lv != null)
             {
-                ListViewItem lvi = new ListViewItem(v.mac_id);
-                lvi.SubItems.Add(v.mac_name);
-                lvi.SubItems.Add(v.mac_man);
-                lvi.SubItems.Add(v.mac_model);
-                lvi.SubItems.Add(v.mac_desc);
-                lvi.SubItems.Add(v.mac_type);
-                lvi.SubItems.Add(v.mac_status);
-                listView1.Items.Add(lvi);
+                foreach (Vehicle v in lv)
+                {
+                    ListViewItem lvi = new ListViewItem(v.mac_id);
+                    lvi.SubItems.Add(v.mac_name);
+                    lvi.SubItems.Add(v.mac_man);
+                    lvi.SubItems.Add(v.mac_model);
+                    lvi.SubItems.Add(v.mac_desc);
+                    lvi.SubItems.Add(v.mac_type);
+                    lvi.SubItems.Add(v.mac_status);
+                    listView1.Items.Add(lvi);
+                }
             }
+        }
 
+        private void timetableSearch_btn_Click(object sender, EventArgs e)
+        {
+            timetable_listView.Items.Clear();
+
+            DateTime startDate = timetableStartDate_datePicker.Value.Date;
+            DateTime endDate = timetableEndDate_datePicker.Value.Date;
+
+            List<Task> tasks_list = new TaskHandler().GetAllPendingTasks(startDate, endDate);
+            List<TaskStock> tasksStocks = new List<TaskStock>();
+            List<List<Labourer>> tasksLabourers = new List<List<Labourer>>();
+            List<FarmSection> tasksSection = new List<FarmSection>();
+            List<Crop> tasksCrop = new List<Crop>();
+
+            List<FarmSection> farmSections = new FarmSectionHandler().FindFarmSections();
+
+            if (tasks_list != null)
+            {
+                foreach (Task task in tasks_list)
+                {
+                    if (task.TaskType == "")
+                    {
+                        tasksStocks.Add(new TaskStock());
+                        tasksLabourers.Add(new List<Labourer>());
+                    }
+                    else
+                    {
+                        tasksStocks.Add(new TaskHandler().GetStocksForTask(task.TaskID));
+                        tasksLabourers.Add(new TaskHandler().GetLabourersForTask(task.TaskID));
+                    }
+                    tasksSection.Add(new FarmSectionHandler().FindFarmSectionWithID(task.FieldID));
+                    tasksCrop.Add(new CropHandler().GetCropWithID(task.CropID));
+                }
+
+                const int containerSize = 200;
+                int totalFertilisersRequired = 0;
+
+                // to iterate for date
+                DateTime itDate = startDate;
+
+                while (itDate <= endDate)
+                {
+                    // to indicate data added to the list
+                    bool addedTask = false;
+
+                    for (int i = 0; i < tasks_list.Count; i++)
+                    {
+                        if (itDate == tasks_list[i].StartDateTime.Date)
+                        {
+                            string labourers = "";
+                            foreach (Labourer lab in tasksLabourers[i])
+                            {
+                                labourers += lab.Firstname + " " + lab.Lastname;
+                                if (lab != tasksLabourers[i].Last()) labourers += ", ";
+                            }
+
+                            decimal containerRequired = 0;
+                            if (tasks_list[i].TaskType == "HARVEST")
+                            {
+                                containerRequired = ((tasksSection[i].Dimension_x * tasksSection[i].Dimension_y) * tasksCrop[i].CapacityUse) / containerSize;
+                                if (containerRequired < 1) containerRequired = 1;
+                            }
+
+                            ListViewItem item = new ListViewItem(new string[] { itDate.ToString("dd/MM/yyyy"), tasks_list[i].FieldID, tasksCrop[i].CropName, tasks_list[i].TaskType, (tasksStocks[i] != null ? tasksStocks[i].QuantityUse.ToString() : "-"), (containerRequired == 0 ? "-" : ((int)containerRequired).ToString() + " - " + tasksCrop[i].ContainerType), labourers });
+                            timetable_listView.Items.Add(item);
+                            totalFertilisersRequired += (tasksStocks[i] != null ? tasksStocks[i].QuantityUse : 0);
+                            addedTask = true;
+                        }
+                    }
+
+                    foreach (FarmSection section in farmSections)
+                    {
+                        if (itDate == section.ExpHarvestDate)
+                        {
+                            decimal containerRequired = 0;
+                            Crop crop = new CropHandler().GetCropWithID(section.CropID);
+
+                            containerRequired = ((section.Dimension_x * section.Dimension_y) * crop.CapacityUse) / containerSize;
+                            if (containerRequired < 1) containerRequired = 1;
+
+                            ListViewItem item = new ListViewItem(new string[] { itDate.ToString("dd/MM/yyyy"), section.SectionID, section.CropName, "READY", "-", ((int)containerRequired).ToString() + " - " + crop.ContainerType, "-" });
+                            timetable_listView.Items.Add(item);
+                            addedTask = true;
+                        }
+                    }
+
+                    if (!addedTask)
+                    {
+                        ListViewItem item = new ListViewItem(new string[] { itDate.ToString("dd/MM/yyyy"), "", "", "", "", "", "" });
+                        timetable_listView.Items.Add(item);
+                    }
+
+                    itDate = itDate.AddDays(1);
+                }
+
+                requiredFertiliser_label.Text = totalFertilisersRequired.ToString();
+            }
+            else
+            {
+                const int containerSize = 200;
+
+                // to iterate for date
+                DateTime itDate = startDate;
+
+                while (itDate <= endDate)
+                {
+                    // to indicate data added to the list
+                    bool addedTask = false;
+
+                    foreach (FarmSection section in farmSections)
+                    {
+                        if (itDate == section.ExpHarvestDate)
+                        {
+                            decimal containerRequired = 0;
+                            Crop crop = new CropHandler().GetCropWithID(section.CropID);
+
+                            containerRequired = ((section.Dimension_x * section.Dimension_y) * crop.CapacityUse) / containerSize;
+                            if (containerRequired < 1) containerRequired = 1;
+
+                            ListViewItem item = new ListViewItem(new string[] { itDate.ToString("dd/MM/yyyy"), section.SectionID, section.CropName, "READY", "-", ((int)containerRequired).ToString() + " - " + crop.ContainerType, "-" });
+                            timetable_listView.Items.Add(item);
+                            addedTask = true;
+                        }
+                    }
+
+                    if (!addedTask)
+                    {
+                        ListViewItem item = new ListViewItem(new string[] { itDate.ToString("dd/MM/yyyy"), "", "", "", "", "", "" });
+                        timetable_listView.Items.Add(item);
+                    }
+
+                    itDate = itDate.AddDays(1);
+                }
+            }
+        }
+
+        private void wholesaleTransport_btn_Click(object sender, EventArgs e)
+        {
+            if (wholesaleContainer_listView.CheckedItems.Count > 0)
+            {
+                DateTime transportDateTime = transportDate_datePicker.Value.Date + transportTime_datePicker.Value.TimeOfDay;
+
+                List<Container> selectedContainers = new List<Container>();
+                foreach(ListViewItem listItem in wholesaleContainer_listView.CheckedItems)
+                {
+                    selectedContainers.Add((Container)listItem.Tag);
+                }
+
+                int numberOfContainers = selectedContainers.Count;
+
+                // Obtain list of trucks for calculating number of required trucks for transport
+                TruckHandler truckHandler = new TruckHandler();
+                List<Truck> allTrucks = truckHandler.GetTrucks();
+
+                // list to store required trucks for transport
+                List<Truck> requiredTrucks = new List<Truck>();
+                List<int> numOfRequiredTruck = new List<int>();
+
+                foreach(Truck truck in allTrucks)
+                {
+                    if(numberOfContainers / truck.ContainerQuantity > 0)
+                    {
+                        int reqNumTruck = numberOfContainers / truck.ContainerQuantity;
+
+                        if (truck.QuantityAvailable > 0)
+                        {
+                            if (truck.QuantityAvailable >= reqNumTruck)
+                            {
+                                requiredTrucks.Add(truck);
+                                numOfRequiredTruck.Add(reqNumTruck);
+                                numberOfContainers %= truck.ContainerQuantity;
+                            }
+                            else
+                            {
+                                requiredTrucks.Add(truck);
+                                numOfRequiredTruck.Add(truck.QuantityAvailable);
+                                numberOfContainers -= truck.QuantityAvailable * truck.ContainerQuantity;
+                            }
+                        }
+                        else continue;
+                    }
+                }
+
+                if(numberOfContainers <= 0)
+                {
+                    string promptMessage = "This wholesale transport requires:\n";
+                    for(int i = 0;i < requiredTrucks.Count;i++)
+                    {
+                        promptMessage += requiredTrucks[i].mac_name + " -- " + numOfRequiredTruck[i].ToString() + "\n";
+                    }
+                    promptMessage += "Are you sure to do this ?";
+
+                    DialogResult promptResult =  MessageBox.Show(promptMessage, "Wholesale - Containers Transport", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                    switch (promptResult)
+                    {
+                        case DialogResult.Yes:
+                            // Update containers status
+                            foreach (Container container in selectedContainers)
+                            {
+                                new ContainerHandler().ClearContainer(container);
+                            }
+
+                            // Update trucks quantity
+                            for (int i = 0;i < requiredTrucks.Count;i++)
+                            {
+                                truckHandler.UpdateTruckQuantity(requiredTrucks[i], requiredTrucks[i].QuantityInUse + numOfRequiredTruck[i]);
+                            }
+
+                            DateTime arrivalDateTime = transportDateTime.Add(requiredTrucks[0].TimeRequired.TimeOfDay);
+                            MessageBox.Show("Success !\nTransport will start on " + transportDateTime.ToString("dd/MMM/yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")) + " and expected arrival at " + arrivalDateTime.ToString("dd/MMM/yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")));
+                            LoadWholesale();
+                            break;
+
+                        case DialogResult.No:
+                            break;
+
+                        case DialogResult.Cancel:
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("There is no enough number of trucks to transport all the selected containers");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please check at least one container to transport for wholesale");
+            }
         }
 
         private void shopBack_btn_Click(object sender, EventArgs e)
@@ -387,8 +740,18 @@ namespace JustRipeFarm
         private void stock_back_Click(object sender, EventArgs e)
         {
             StorageBackTopPanel();
-
             LoadStockStorage();
+        }
+
+        private void storageContainer_back_Click(object sender, EventArgs e)
+        {
+            StorageBackTopPanel();
+            LoadStockStorage();
+        }
+
+        private void wholesale_back_Click(object sender, EventArgs e)
+        {
+            ShopBackTopPanel();
         }
 
         private void shopProducts_back_Click(object sender, EventArgs e)
@@ -415,6 +778,9 @@ namespace JustRipeFarm
             addLabourer_panel.Visible = false;
             assignTask_panel.Visible = false;
 
+            ResetAssignTaskPage();
+            LoadLabourers();
+
             addLabfName_txtBox.Clear();
             addLablName_txtBox.Clear();
             addLabEmail_txtBox.Clear();
@@ -435,6 +801,9 @@ namespace JustRipeFarm
             shopWholesale_panel.Visible = true;
             shop_panel.Visible = false;
             shopProducts_panel.Visible = false;
+            buyers_panel.Visible = false;
+            salesReport_panel.Visible = false;
+            wholesale_panel.Visible = false;
         }
 
         private void taskMethod_comboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -458,7 +827,7 @@ namespace JustRipeFarm
                     taskTimeMinutes = taskEndDateTime.TimeOfDay.Subtract(taskStartDateTime.TimeOfDay).TotalMinutes;
                     useTimeMinutes = selectedCropMethod.TimeRequired.TimeOfDay.TotalMinutes;
 
-                    int labourersNeeded = Convert.ToInt32(useTimeMinutes / taskTimeMinutes);
+                    int labourersNeeded = (int)(useTimeMinutes / taskTimeMinutes);
                     if (labourersNeeded <= 0) labourersNeeded = 1;
                     assignTaskWarningMsg_label.Text = "Minimum " + labourersNeeded.ToString() + " labourers are needed";
                     assignTaskWarningMsg_label.Tag = labourersNeeded;
@@ -477,9 +846,17 @@ namespace JustRipeFarm
             taskType_txtBox.Text = "";
             taskCrop_comboBox.Enabled = false;
             taskCrop_comboBox.Items.Clear();
-            taskCrop_comboBox.SelectedText = "";
             taskMethod_comboBox.Enabled = false;
             assignTaskSubmit_btn.Enabled = false;
+            taskSeed_comboBox.Enabled = false;
+            taskSeed_numeric.Enabled = false;
+            seedStockQty_label.Text = "";
+            taskFertiliser_comboBox.Enabled = false;
+            taskFertiliser_numeric.Enabled = false;
+            fertiliserStockQty_label.Text = "";
+            taskPesticide_comboBox.Enabled = false;
+            taskPesticide_numeric.Enabled = false;
+            pesticideStockQty_label.Text = "";
 
             FarmSection farmSection = (FarmSection)taskField_comboBox.SelectedItem;
 
@@ -488,13 +865,19 @@ namespace JustRipeFarm
                 case "NOT USED" :
                     taskType_txtBox.Text = "SOW";
                     taskCrop_comboBox.Enabled = true;
-                    PopulateCropsList();
+                    PopulateAssignTaskCrops();
                     break;
 
                 case "CULTIVATING":
                     taskType_txtBox.Text = "TREATMENT";
                     taskCrop_comboBox.Items.Add(new CropHandler().GetCropWithID(farmSection.CropID));
                     taskCrop_comboBox.SelectedIndex = 0;
+                    taskFertiliser_comboBox.Enabled = true;
+                    taskFertiliser_numeric.Enabled = true;
+                    PopulateAssignTaskFertilisers();
+                    taskPesticide_comboBox.Enabled = true;
+                    taskPesticide_numeric.Enabled = true;
+                    PopulateAssignTaskPesticides();
                     break;
 
                 case "HARVEST" :
@@ -518,9 +901,6 @@ namespace JustRipeFarm
                 stock_panel.Visible = true;
 
                 storageIDTitle_label.Text = "Storage " + selectedItem.StorageID;
-                stockFertiliserFilter_btn.Tag = selectedItem;
-                stockSeedFilter_btn.Tag = selectedItem;
-                stockPesticideFilter_btn.Tag = selectedItem;
 
                 LoadStocks(selectedItem);
             }
@@ -544,8 +924,36 @@ namespace JustRipeFarm
 
         private void taskCrop_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (taskType_txtBox.Text == "SOW") {
+                taskSeed_comboBox.Enabled = true;
+                taskSeed_numeric.Enabled = true;
+                PopulateAssignTaskSeeds();
+            }
+
+            if (taskType_txtBox.Text != "HARVEST")
+            {
+                taskFertiliser_comboBox.Enabled = true;
+                taskFertiliser_numeric.Enabled = true;
+                PopulateAssignTaskFertilisers();
+            }
+
             taskMethod_comboBox.Enabled = true;
-            PopulateCropMethodsList();
+            PopulateAssignTaskCropMethods();
+        }
+
+        private void taskSeed_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            seedStockQty_label.Text = ((Stock)taskSeed_comboBox.SelectedItem).Quantity.ToString() + " in stock";
+        }
+
+        private void taskFertiliser_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fertiliserStockQty_label.Text = ((Stock)taskFertiliser_comboBox.SelectedItem).Quantity.ToString() + " in stock";
+        }
+
+        private void taskPesticide_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pesticideStockQty_label.Text = ((Stock)taskPesticide_comboBox.SelectedItem).Quantity.ToString() + " in stock";
         }
 
         private void LoadHome()
@@ -594,18 +1002,34 @@ namespace JustRipeFarm
             }
         }
 
+        private void LoadWholesale()
+        {
+            ContainerHandler containerHandler = new ContainerHandler();
+            List<Container> containers = containerHandler.GetWholesaleContainers();
+            PopulateWholesaleContainers(containers);
+        }
+
+        private void PopulateWholesaleContainers(List<Container> wholesaleContainers)
+        {
+            wholesaleContainer_listView.Items.Clear();
+
+            if(wholesaleContainers != null)
+            {
+                foreach(Container container in wholesaleContainers)
+                {
+                    string[] row = { container.ContainerID, container.ContainerType, container.Crop.CropName, container.ContainerStatus };
+                    ListViewItem containerListItem = new ListViewItem(row);
+                    containerListItem.Tag = container;
+
+                    wholesaleContainer_listView.Items.Add(containerListItem);
+                }
+            }
+        }
+
         private void LoadStocks(StockStorage storage)
         {
             StockHandler stockHandler = new StockHandler();
             List<Stock> stocks = stockHandler.FindStocksForStorage(storage.StorageID);
-
-            PopulateStocksList(stocks);
-        }
-
-        private void LoadStocks(StockStorage storage, string stock_type)
-        {
-            StockHandler stockHandler = new StockHandler();
-            List<Stock> stocks = stockHandler.FindStocksFilterType(storage.StorageID, stock_type);
 
             PopulateStocksList(stocks);
         }
@@ -641,6 +1065,23 @@ namespace JustRipeFarm
                 listViewItem.Tag = storage;
 
                 storage_listView.Items.Add(listViewItem);
+            }
+        }
+
+        private void LoadContainers()
+        {
+            ContainerHandler containerHandler = new ContainerHandler();
+            List<Container> containers = containerHandler.GetAllContainers();
+
+            container_listView.Items.Clear();
+
+            foreach (Container container in containers)
+            {
+                string[] row = new string[] { container.ContainerID, container.ContainerType, (container.ContainerType == "REFRIGERATED" ? container.TemperatureSet.ToString() : "-"), (container.Crop.CropName != "" ? container.Crop.CropName : "-"), container.TotalCapacity.ToString(), container.ContainerStatus };
+                ListViewItem listViewItem = new ListViewItem(row);
+                listViewItem.Tag = container;
+
+                container_listView.Items.Add(listViewItem);
             }
         }
 
@@ -744,10 +1185,12 @@ namespace JustRipeFarm
             }
         }
 
-        private void PopulateCropsList()
+        private void PopulateAssignTaskCrops()
         {
             CropHandler cropHandler = new CropHandler();
-            List<Crop> crops = cropHandler.GetAllCrops();
+            List<Crop> crops = cropHandler.GetAllCropsForSow();
+
+            taskCrop_comboBox.Items.Clear();
 
             if (crops != null)
             {
@@ -758,7 +1201,7 @@ namespace JustRipeFarm
             }
         }
 
-        private void PopulateCropMethodsList()
+        private void PopulateAssignTaskCropMethods()
         {
             Crop selectedCrop = (Crop)taskCrop_comboBox.SelectedItem;
             string taskType = taskType_txtBox.Text;
@@ -774,6 +1217,54 @@ namespace JustRipeFarm
                 foreach (CropMethod cropMethod in cropMethods)
                 {
                     taskMethod_comboBox.Items.Add(cropMethod);
+                }
+            }
+        }
+
+        private void PopulateAssignTaskSeeds()
+        {
+            SeedHandler seedHandler = new SeedHandler();
+            List<Seed> seeds = seedHandler.GetSeedsForCrop(((Crop)taskCrop_comboBox.SelectedItem).CropID);
+
+            taskSeed_comboBox.Items.Clear();
+
+            if (seeds != null)
+            {
+                foreach (Seed seed in seeds)
+                {
+                    taskSeed_comboBox.Items.Add(seed);
+                }
+            }
+        }
+
+        private void PopulateAssignTaskFertilisers()
+        {
+            FertiliserHandler fertiliserHandler = new FertiliserHandler();
+            List<Fertiliser> fertilisers = fertiliserHandler.GetAllFertilisers();
+
+            taskFertiliser_comboBox.Items.Clear();
+
+            if (fertilisers != null)
+            {
+                foreach (Fertiliser fertiliser in fertilisers)
+                {
+                    taskFertiliser_comboBox.Items.Add(fertiliser);
+                }
+            }
+        }
+
+        private void PopulateAssignTaskPesticides()
+        {
+            PesticideHandler pesticideHandler = new PesticideHandler();
+            List<Pesticide> pesticides = pesticideHandler.GetAllPesticides();
+
+            taskPesticide_comboBox.Items.Clear();
+
+            if (pesticides != null)
+            {
+                foreach (Pesticide pesticide in pesticides)
+                {
+                    taskPesticide_comboBox.Items.Add(pesticide);
                 }
             }
         }

@@ -13,6 +13,7 @@ namespace JustRipeFarm
         private decimal minTemperature;
         private decimal maxTemperature;
         private int harvestDays;
+        private int capacityUse;
         private string containerType;
 
         public Crop()
@@ -20,13 +21,14 @@ namespace JustRipeFarm
 
         }
 
-        public Crop(string crop_id, string crop_name, decimal min_temp, decimal max_temp, int harvest_days, string container_type)
+        public Crop(string crop_id, string crop_name, decimal min_temp, decimal max_temp, int harvest_days, int capacity_use, string container_type)
         {
             CropID = crop_id;
             CropName = crop_name;
             MinTemperature = min_temp;
             MaxTemperature = max_temp;
             HarvestDays = harvest_days;
+            CapacityUse = capacity_use;
             ContainerType = container_type;
         }
 
@@ -40,6 +42,7 @@ namespace JustRipeFarm
         public decimal MinTemperature { get => minTemperature; set => minTemperature = value; }
         public decimal MaxTemperature { get => maxTemperature; set => maxTemperature = value; }
         public int HarvestDays { get => harvestDays; set => harvestDays = value; }
+        public int CapacityUse { get => capacityUse; set => capacityUse = value; }
         public string ContainerType { get => containerType; set => containerType = value; }
     }
 }

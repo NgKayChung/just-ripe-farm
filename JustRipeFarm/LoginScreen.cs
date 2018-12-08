@@ -16,6 +16,7 @@ namespace JustRipeFarm
         public LoginScreen()
         {
             InitializeComponent();
+            panel1.BackColor = Color.FromArgb(70, Color.White);
         }
 
         private void LoginBtn_Click(object sender, EventArgs e)

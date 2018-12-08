@@ -8,7 +8,7 @@ namespace JustRipeFarm
 {
     class Task
     {
-        private string taskID;
+        private int taskID;
         private string taskTitle;
         private string taskType;
         private string taskDescription;
@@ -20,14 +20,13 @@ namespace JustRipeFarm
         private int methodID;
         private DateTime assignedDateTime;
         private string assignedByID;
-        private List<Labourer> labourers = null;
 
         public Task()
         {
 
         }
 
-        public Task(string task_title, string task_type, string task_desc, string stat, DateTime start_dateTime, DateTime end_dateTime, string field_id, string crop_id, int method_id, DateTime assigned_dateTime, string assignedBy_id, List<Labourer> labourers)
+        public Task(string task_title, string task_type, string task_desc, string stat, DateTime start_dateTime, DateTime end_dateTime, string field_id, string crop_id, int method_id, DateTime assigned_dateTime, string assignedBy_id)
         {
             taskTitle = task_title;
             taskType = task_type;
@@ -40,10 +39,9 @@ namespace JustRipeFarm
             methodID = method_id;
             assignedDateTime = assigned_dateTime;
             assignedByID = assignedBy_id;
-            this.Labourers = labourers;
         }
 
-        public Task(string task_id, string task_title, string task_type, string task_desc, string stat, DateTime start_dateTime, DateTime end_dateTime, string field_id, string crop_id, int method_id, DateTime assigned_dateTime, string assignedBy_id)
+        public Task(int task_id, string task_title, string task_type, string task_desc, string stat, DateTime start_dateTime, DateTime end_dateTime, string field_id, string crop_id, int method_id, DateTime assigned_dateTime, string assignedBy_id)
         {
             taskID = task_id;
             taskTitle = task_title;
@@ -59,7 +57,7 @@ namespace JustRipeFarm
             assignedByID = assignedBy_id;
         }
 
-        public string TaskID { get => taskID; set => taskID = value; }
+        public int TaskID { get => taskID; set => taskID = value; }
         public string TaskTitle { get => taskTitle; set => taskTitle = value; }
         public string TaskType { get => taskType; set => taskType = value; }
         public string TaskDescription { get => taskDescription; set => taskDescription = value; }
@@ -71,6 +69,5 @@ namespace JustRipeFarm
         public int MethodID { get => methodID; set => methodID = value; }
         public DateTime AssignedDateTime { get => assignedDateTime; set => assignedDateTime = value; }
         public string AssignedByID { get => assignedByID; set => assignedByID = value; }
-        internal List<Labourer> Labourers { get => labourers; set => labourers = value; }
     }
 }

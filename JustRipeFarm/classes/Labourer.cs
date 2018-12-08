@@ -33,6 +33,16 @@ namespace JustRipeFarm
             Status = stat;
         }
 
+        public Labourer(string uID, string fName, string lName, string emailAddress, string phoneNumber, DateTime joinDate) : base()
+        {
+            UserID = uID;
+            Firstname = fName;
+            Lastname = lName;
+            EmailAddress = emailAddress;
+            PhoneNumber = phoneNumber;
+            date_joined = joinDate;
+        }
+
         public override string ToString()
         {
             return (Firstname + " " + Lastname);

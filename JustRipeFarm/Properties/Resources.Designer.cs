@@ -93,6 +93,16 @@ namespace JustRipeFarm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap just_ripe_farm_icon {
+            get {
+                object obj = ResourceManager.GetObject("just-ripe-farm-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pesticide_icon {
             get {
                 object obj = ResourceManager.GetObject("pesticide_icon", resourceCulture);

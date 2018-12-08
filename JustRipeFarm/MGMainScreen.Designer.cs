@@ -41,6 +41,19 @@
             this.home_btn = new System.Windows.Forms.Button();
             this.greeting_label = new System.Windows.Forms.Label();
             this.shopWholesaleTop_panel = new System.Windows.Forms.Panel();
+            this.wholesale_panel = new System.Windows.Forms.Panel();
+            this.transportTime_datePicker = new System.Windows.Forms.DateTimePicker();
+            this.transportDate_datePicker = new System.Windows.Forms.DateTimePicker();
+            this.wholesaleTransport_btn = new System.Windows.Forms.Button();
+            this.wholesaleContainer_listView = new System.Windows.Forms.ListView();
+            this.wholesaleContID_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.wholesaleContType_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.wholesaleContCrop_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.wholesaleContCapacity_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.transportDate_label = new System.Windows.Forms.Label();
+            this.wholesaleInst_label = new System.Windows.Forms.Label();
+            this.wholesaleTitle_label = new System.Windows.Forms.Label();
+            this.wholesale_back = new System.Windows.Forms.Button();
             this.salesReport_panel = new System.Windows.Forms.Panel();
             this.sales_listView = new System.Windows.Forms.ListView();
             this.saleID_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -114,6 +127,9 @@
             this.assignTask_panel = new System.Windows.Forms.Panel();
             this.assignTaskInst_label = new System.Windows.Forms.Label();
             this.assignTaskForm_panel = new System.Windows.Forms.Panel();
+            this.taskPesticide_numeric = new System.Windows.Forms.NumericUpDown();
+            this.taskSeed_numeric = new System.Windows.Forms.NumericUpDown();
+            this.taskFertiliser_numeric = new System.Windows.Forms.NumericUpDown();
             this.assignTaskWarningMsg_label = new System.Windows.Forms.Label();
             this.assignTaskLabInst_label = new System.Windows.Forms.Label();
             this.taskEndTime_datePicker = new System.Windows.Forms.DateTimePicker();
@@ -121,7 +137,16 @@
             this.assignTaskLab_listBox = new System.Windows.Forms.ListBox();
             this.assignTaskLabourer_label = new System.Windows.Forms.Label();
             this.taskMethod_comboBox = new System.Windows.Forms.ComboBox();
+            this.taskPesticide_comboBox = new System.Windows.Forms.ComboBox();
             this.assignTaskMethod_label = new System.Windows.Forms.Label();
+            this.taskSeed_comboBox = new System.Windows.Forms.ComboBox();
+            this.assignTaskPesticide_label = new System.Windows.Forms.Label();
+            this.pesticideStockQty_label = new System.Windows.Forms.Label();
+            this.fertiliserStockQty_label = new System.Windows.Forms.Label();
+            this.seedStockQty_label = new System.Windows.Forms.Label();
+            this.assignTaskSeed_label = new System.Windows.Forms.Label();
+            this.taskFertiliser_comboBox = new System.Windows.Forms.ComboBox();
+            this.assignTaskFertiliser_label = new System.Windows.Forms.Label();
             this.taskCrop_comboBox = new System.Windows.Forms.ComboBox();
             this.assignTaskCrop_label = new System.Windows.Forms.Label();
             this.taskType_txtBox = new System.Windows.Forms.TextBox();
@@ -174,11 +199,7 @@
             this.stockCapacity_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stockType_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stockQty_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.stockStorageInst_label = new System.Windows.Forms.Label();
             this.storageIDTitle_label = new System.Windows.Forms.Label();
-            this.stockPesticideFilter_btn = new System.Windows.Forms.Button();
-            this.stockSeedFilter_btn = new System.Windows.Forms.Button();
-            this.stockFertiliserFilter_btn = new System.Windows.Forms.Button();
             this.storage_panel = new System.Windows.Forms.Panel();
             this.storage_listView = new System.Windows.Forms.ListView();
             this.storageID_listHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -190,11 +211,15 @@
             this.timetable_listView = new System.Windows.Forms.ListView();
             this.timetableDate_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.timetableFarmField_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.timetableCrop_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.timetableFarmStatus_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.timetableFertiliser_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.timetableContainer_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.timetableLabourer_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.timetableSearch_btn = new System.Windows.Forms.Button();
-            this.timetableType_comboBox = new System.Windows.Forms.ComboBox();
-            this.timetableType_label = new System.Windows.Forms.Label();
+            this.requiredFertiliser_label = new System.Windows.Forms.Label();
+            this.requiredFertiliserTitle_label = new System.Windows.Forms.Label();
             this.timetableEndDate_datePicker = new System.Windows.Forms.DateTimePicker();
             this.timetableEndDate_label = new System.Windows.Forms.Label();
             this.timetableStartDate_datePicker = new System.Windows.Forms.DateTimePicker();
@@ -214,11 +239,23 @@
             this.fieldTitle_label = new System.Windows.Forms.Label();
             this.homeTitle_label = new System.Windows.Forms.Label();
             this.section_toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.storageContainer_btn = new System.Windows.Forms.Button();
+            this.container_panel = new System.Windows.Forms.Panel();
+            this.storageContainer_back = new System.Windows.Forms.Button();
+            this.containerTitle_label = new System.Windows.Forms.Label();
+            this.container_listView = new System.Windows.Forms.ListView();
+            this.containerID_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.containerType_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.containerCapacity_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.containerStatus_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.containerTemperature_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.containerCrop_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).BeginInit();
             this.SplitContainer_Menu_Content.Panel1.SuspendLayout();
             this.SplitContainer_Menu_Content.Panel2.SuspendLayout();
             this.SplitContainer_Menu_Content.SuspendLayout();
             this.shopWholesaleTop_panel.SuspendLayout();
+            this.wholesale_panel.SuspendLayout();
             this.salesReport_panel.SuspendLayout();
             this.buyers_panel.SuspendLayout();
             this.shopProducts_panel.SuspendLayout();
@@ -229,6 +266,9 @@
             this.labourerTop_panel.SuspendLayout();
             this.assignTask_panel.SuspendLayout();
             this.assignTaskForm_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.taskPesticide_numeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taskSeed_numeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taskFertiliser_numeric)).BeginInit();
             this.addLabourer_panel.SuspendLayout();
             this.addLabForm_panel.SuspendLayout();
             this.labourer_panel.SuspendLayout();
@@ -238,6 +278,7 @@
             this.timetable_panel.SuspendLayout();
             this.home_panel.SuspendLayout();
             this.sections_groupBox.SuspendLayout();
+            this.container_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // SplitContainer_Menu_Content
@@ -269,8 +310,8 @@
             this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.storageTop_panel);
             this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.timetable_panel);
             this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.home_panel);
-            this.SplitContainer_Menu_Content.Size = new System.Drawing.Size(602, 371);
-            this.SplitContainer_Menu_Content.SplitterDistance = 92;
+            this.SplitContainer_Menu_Content.Size = new System.Drawing.Size(604, 371);
+            this.SplitContainer_Menu_Content.SplitterDistance = 94;
             this.SplitContainer_Menu_Content.TabIndex = 0;
             // 
             // exit_btn
@@ -283,7 +324,7 @@
             this.exit_btn.ForeColor = System.Drawing.Color.White;
             this.exit_btn.Location = new System.Drawing.Point(0, 325);
             this.exit_btn.Name = "exit_btn";
-            this.exit_btn.Size = new System.Drawing.Size(92, 40);
+            this.exit_btn.Size = new System.Drawing.Size(94, 40);
             this.exit_btn.TabIndex = 7;
             this.exit_btn.Text = "Exit";
             this.exit_btn.UseVisualStyleBackColor = false;
@@ -299,7 +340,7 @@
             this.logout_btn.ForeColor = System.Drawing.Color.White;
             this.logout_btn.Location = new System.Drawing.Point(0, 285);
             this.logout_btn.Name = "logout_btn";
-            this.logout_btn.Size = new System.Drawing.Size(92, 40);
+            this.logout_btn.Size = new System.Drawing.Size(94, 40);
             this.logout_btn.TabIndex = 6;
             this.logout_btn.Text = "Logout";
             this.logout_btn.UseVisualStyleBackColor = false;
@@ -315,7 +356,7 @@
             this.shopWholesale_btn.ForeColor = System.Drawing.Color.White;
             this.shopWholesale_btn.Location = new System.Drawing.Point(0, 245);
             this.shopWholesale_btn.Name = "shopWholesale_btn";
-            this.shopWholesale_btn.Size = new System.Drawing.Size(92, 40);
+            this.shopWholesale_btn.Size = new System.Drawing.Size(94, 40);
             this.shopWholesale_btn.TabIndex = 5;
             this.shopWholesale_btn.Text = "Shop / Wholesale";
             this.shopWholesale_btn.UseVisualStyleBackColor = false;
@@ -331,7 +372,7 @@
             this.machine_btn.ForeColor = System.Drawing.Color.White;
             this.machine_btn.Location = new System.Drawing.Point(0, 205);
             this.machine_btn.Name = "machine_btn";
-            this.machine_btn.Size = new System.Drawing.Size(92, 40);
+            this.machine_btn.Size = new System.Drawing.Size(94, 40);
             this.machine_btn.TabIndex = 4;
             this.machine_btn.Text = "Machinery";
             this.machine_btn.UseVisualStyleBackColor = false;
@@ -347,7 +388,7 @@
             this.labour_btn.ForeColor = System.Drawing.Color.White;
             this.labour_btn.Location = new System.Drawing.Point(0, 165);
             this.labour_btn.Name = "labour_btn";
-            this.labour_btn.Size = new System.Drawing.Size(92, 40);
+            this.labour_btn.Size = new System.Drawing.Size(94, 40);
             this.labour_btn.TabIndex = 3;
             this.labour_btn.Text = "Labourer";
             this.labour_btn.UseVisualStyleBackColor = false;
@@ -363,7 +404,7 @@
             this.storage_btn.ForeColor = System.Drawing.Color.White;
             this.storage_btn.Location = new System.Drawing.Point(0, 125);
             this.storage_btn.Name = "storage_btn";
-            this.storage_btn.Size = new System.Drawing.Size(92, 40);
+            this.storage_btn.Size = new System.Drawing.Size(94, 40);
             this.storage_btn.TabIndex = 2;
             this.storage_btn.Text = "Storage";
             this.storage_btn.UseVisualStyleBackColor = false;
@@ -379,7 +420,7 @@
             this.timetable_btn.ForeColor = System.Drawing.Color.White;
             this.timetable_btn.Location = new System.Drawing.Point(0, 85);
             this.timetable_btn.Name = "timetable_btn";
-            this.timetable_btn.Size = new System.Drawing.Size(92, 40);
+            this.timetable_btn.Size = new System.Drawing.Size(94, 40);
             this.timetable_btn.TabIndex = 1;
             this.timetable_btn.Text = "Timetable";
             this.timetable_btn.UseVisualStyleBackColor = false;
@@ -395,7 +436,7 @@
             this.home_btn.ForeColor = System.Drawing.Color.White;
             this.home_btn.Location = new System.Drawing.Point(0, 45);
             this.home_btn.Name = "home_btn";
-            this.home_btn.Size = new System.Drawing.Size(92, 40);
+            this.home_btn.Size = new System.Drawing.Size(94, 40);
             this.home_btn.TabIndex = 0;
             this.home_btn.Text = "Home";
             this.home_btn.UseVisualStyleBackColor = false;
@@ -413,24 +454,155 @@
             this.greeting_label.Location = new System.Drawing.Point(0, 0);
             this.greeting_label.Name = "greeting_label";
             this.greeting_label.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
-            this.greeting_label.Size = new System.Drawing.Size(92, 45);
+            this.greeting_label.Size = new System.Drawing.Size(94, 45);
             this.greeting_label.TabIndex = 8;
             this.greeting_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // shopWholesaleTop_panel
             // 
+            this.shopWholesaleTop_panel.Controls.Add(this.wholesale_panel);
             this.shopWholesaleTop_panel.Controls.Add(this.salesReport_panel);
             this.shopWholesaleTop_panel.Controls.Add(this.buyers_panel);
             this.shopWholesaleTop_panel.Controls.Add(this.shopProducts_panel);
             this.shopWholesaleTop_panel.Controls.Add(this.shop_panel);
             this.shopWholesaleTop_panel.Controls.Add(this.shopWholesale_panel);
-            this.shopWholesaleTop_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.shopWholesaleTop_panel.Location = new System.Drawing.Point(496, 0);
+            this.shopWholesaleTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shopWholesaleTop_panel.Location = new System.Drawing.Point(0, 0);
             this.shopWholesaleTop_panel.Name = "shopWholesaleTop_panel";
-            this.shopWholesaleTop_panel.Size = new System.Drawing.Size(10, 371);
+            this.shopWholesaleTop_panel.Size = new System.Drawing.Size(506, 371);
             this.shopWholesaleTop_panel.TabIndex = 0;
             this.shopWholesaleTop_panel.Visible = false;
             this.shopWholesaleTop_panel.VisibleChanged += new System.EventHandler(this.shopWholesaleTop_panel_VisibleChanged);
+            // 
+            // wholesale_panel
+            // 
+            this.wholesale_panel.Controls.Add(this.transportTime_datePicker);
+            this.wholesale_panel.Controls.Add(this.transportDate_datePicker);
+            this.wholesale_panel.Controls.Add(this.wholesaleTransport_btn);
+            this.wholesale_panel.Controls.Add(this.wholesaleContainer_listView);
+            this.wholesale_panel.Controls.Add(this.transportDate_label);
+            this.wholesale_panel.Controls.Add(this.wholesaleInst_label);
+            this.wholesale_panel.Controls.Add(this.wholesaleTitle_label);
+            this.wholesale_panel.Controls.Add(this.wholesale_back);
+            this.wholesale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wholesale_panel.Location = new System.Drawing.Point(0, 0);
+            this.wholesale_panel.Name = "wholesale_panel";
+            this.wholesale_panel.Size = new System.Drawing.Size(506, 371);
+            this.wholesale_panel.TabIndex = 14;
+            this.wholesale_panel.Visible = false;
+            // 
+            // transportTime_datePicker
+            // 
+            this.transportTime_datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.transportTime_datePicker.Location = new System.Drawing.Point(259, 284);
+            this.transportTime_datePicker.Name = "transportTime_datePicker";
+            this.transportTime_datePicker.ShowUpDown = true;
+            this.transportTime_datePicker.Size = new System.Drawing.Size(76, 20);
+            this.transportTime_datePicker.TabIndex = 31;
+            // 
+            // transportDate_datePicker
+            // 
+            this.transportDate_datePicker.Location = new System.Drawing.Point(113, 284);
+            this.transportDate_datePicker.Name = "transportDate_datePicker";
+            this.transportDate_datePicker.Size = new System.Drawing.Size(125, 20);
+            this.transportDate_datePicker.TabIndex = 30;
+            // 
+            // wholesaleTransport_btn
+            // 
+            this.wholesaleTransport_btn.Location = new System.Drawing.Point(357, 322);
+            this.wholesaleTransport_btn.Name = "wholesaleTransport_btn";
+            this.wholesaleTransport_btn.Size = new System.Drawing.Size(129, 23);
+            this.wholesaleTransport_btn.TabIndex = 29;
+            this.wholesaleTransport_btn.Text = "Transport to Wholesale";
+            this.wholesaleTransport_btn.UseVisualStyleBackColor = true;
+            this.wholesaleTransport_btn.Click += new System.EventHandler(this.wholesaleTransport_btn_Click);
+            // 
+            // wholesaleContainer_listView
+            // 
+            this.wholesaleContainer_listView.CheckBoxes = true;
+            this.wholesaleContainer_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.wholesaleContID_header,
+            this.wholesaleContType_header,
+            this.wholesaleContCrop_header,
+            this.wholesaleContCapacity_header});
+            this.wholesaleContainer_listView.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.wholesaleContainer_listView.FullRowSelect = true;
+            this.wholesaleContainer_listView.GridLines = true;
+            this.wholesaleContainer_listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.wholesaleContainer_listView.HideSelection = false;
+            this.wholesaleContainer_listView.Location = new System.Drawing.Point(13, 74);
+            this.wholesaleContainer_listView.MultiSelect = false;
+            this.wholesaleContainer_listView.Name = "wholesaleContainer_listView";
+            this.wholesaleContainer_listView.Size = new System.Drawing.Size(473, 189);
+            this.wholesaleContainer_listView.TabIndex = 27;
+            this.wholesaleContainer_listView.UseCompatibleStateImageBehavior = false;
+            this.wholesaleContainer_listView.View = System.Windows.Forms.View.Details;
+            // 
+            // wholesaleContID_header
+            // 
+            this.wholesaleContID_header.Text = "ID";
+            this.wholesaleContID_header.Width = 112;
+            // 
+            // wholesaleContType_header
+            // 
+            this.wholesaleContType_header.Text = "Type";
+            this.wholesaleContType_header.Width = 127;
+            // 
+            // wholesaleContCrop_header
+            // 
+            this.wholesaleContCrop_header.Text = "Crop";
+            this.wholesaleContCrop_header.Width = 136;
+            // 
+            // wholesaleContCapacity_header
+            // 
+            this.wholesaleContCapacity_header.Text = "Total Capacity";
+            this.wholesaleContCapacity_header.Width = 91;
+            // 
+            // transportDate_label
+            // 
+            this.transportDate_label.AutoSize = true;
+            this.transportDate_label.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.transportDate_label.Location = new System.Drawing.Point(9, 287);
+            this.transportDate_label.Name = "transportDate_label";
+            this.transportDate_label.Size = new System.Drawing.Size(88, 13);
+            this.transportDate_label.TabIndex = 25;
+            this.transportDate_label.Text = "Date Transport :";
+            // 
+            // wholesaleInst_label
+            // 
+            this.wholesaleInst_label.AutoSize = true;
+            this.wholesaleInst_label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.wholesaleInst_label.Location = new System.Drawing.Point(9, 49);
+            this.wholesaleInst_label.Name = "wholesaleInst_label";
+            this.wholesaleInst_label.Size = new System.Drawing.Size(292, 19);
+            this.wholesaleInst_label.TabIndex = 25;
+            this.wholesaleInst_label.Text = "Choose container(s) to transport for wholesale";
+            // 
+            // wholesaleTitle_label
+            // 
+            this.wholesaleTitle_label.AutoSize = true;
+            this.wholesaleTitle_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.wholesaleTitle_label.Location = new System.Drawing.Point(68, 15);
+            this.wholesaleTitle_label.Name = "wholesaleTitle_label";
+            this.wholesaleTitle_label.Size = new System.Drawing.Size(90, 21);
+            this.wholesaleTitle_label.TabIndex = 20;
+            this.wholesaleTitle_label.Text = "Wholesale";
+            // 
+            // wholesale_back
+            // 
+            this.wholesale_back.BackColor = System.Drawing.Color.SeaGreen;
+            this.wholesale_back.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.wholesale_back.FlatAppearance.BorderSize = 0;
+            this.wholesale_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.wholesale_back.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wholesale_back.ForeColor = System.Drawing.Color.White;
+            this.wholesale_back.Location = new System.Drawing.Point(0, 8);
+            this.wholesale_back.Name = "wholesale_back";
+            this.wholesale_back.Size = new System.Drawing.Size(61, 33);
+            this.wholesale_back.TabIndex = 17;
+            this.wholesale_back.Text = "Back";
+            this.wholesale_back.UseVisualStyleBackColor = false;
+            this.wholesale_back.Click += new System.EventHandler(this.wholesale_back_Click);
             // 
             // salesReport_panel
             // 
@@ -446,7 +618,7 @@
             this.salesReport_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.salesReport_panel.Location = new System.Drawing.Point(0, 0);
             this.salesReport_panel.Name = "salesReport_panel";
-            this.salesReport_panel.Size = new System.Drawing.Size(10, 371);
+            this.salesReport_panel.Size = new System.Drawing.Size(506, 371);
             this.salesReport_panel.TabIndex = 13;
             this.salesReport_panel.Visible = false;
             // 
@@ -595,7 +767,7 @@
             this.buyers_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buyers_panel.Location = new System.Drawing.Point(0, 0);
             this.buyers_panel.Name = "buyers_panel";
-            this.buyers_panel.Size = new System.Drawing.Size(10, 371);
+            this.buyers_panel.Size = new System.Drawing.Size(506, 371);
             this.buyers_panel.TabIndex = 12;
             this.buyers_panel.Visible = false;
             // 
@@ -701,7 +873,7 @@
             this.shopProducts_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shopProducts_panel.Location = new System.Drawing.Point(0, 0);
             this.shopProducts_panel.Name = "shopProducts_panel";
-            this.shopProducts_panel.Size = new System.Drawing.Size(10, 371);
+            this.shopProducts_panel.Size = new System.Drawing.Size(506, 371);
             this.shopProducts_panel.TabIndex = 11;
             this.shopProducts_panel.Visible = false;
             // 
@@ -880,7 +1052,7 @@
             this.shop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shop_panel.Location = new System.Drawing.Point(0, 0);
             this.shop_panel.Name = "shop_panel";
-            this.shop_panel.Size = new System.Drawing.Size(10, 371);
+            this.shop_panel.Size = new System.Drawing.Size(506, 371);
             this.shop_panel.TabIndex = 10;
             this.shop_panel.Visible = false;
             // 
@@ -975,7 +1147,7 @@
             this.shopWholesale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shopWholesale_panel.Location = new System.Drawing.Point(0, 0);
             this.shopWholesale_panel.Name = "shopWholesale_panel";
-            this.shopWholesale_panel.Size = new System.Drawing.Size(10, 371);
+            this.shopWholesale_panel.Size = new System.Drawing.Size(506, 371);
             this.shopWholesale_panel.TabIndex = 9;
             // 
             // wholesale_btn
@@ -992,6 +1164,7 @@
             this.wholesale_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.wholesale_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.wholesale_btn.UseVisualStyleBackColor = true;
+            this.wholesale_btn.Click += new System.EventHandler(this.wholesale_btn_Click);
             // 
             // shop_btn
             // 
@@ -1151,6 +1324,9 @@
             // 
             this.assignTaskForm_panel.AutoScroll = true;
             this.assignTaskForm_panel.BackColor = System.Drawing.Color.White;
+            this.assignTaskForm_panel.Controls.Add(this.taskPesticide_numeric);
+            this.assignTaskForm_panel.Controls.Add(this.taskSeed_numeric);
+            this.assignTaskForm_panel.Controls.Add(this.taskFertiliser_numeric);
             this.assignTaskForm_panel.Controls.Add(this.assignTaskWarningMsg_label);
             this.assignTaskForm_panel.Controls.Add(this.assignTaskLabInst_label);
             this.assignTaskForm_panel.Controls.Add(this.taskEndTime_datePicker);
@@ -1158,7 +1334,16 @@
             this.assignTaskForm_panel.Controls.Add(this.assignTaskLab_listBox);
             this.assignTaskForm_panel.Controls.Add(this.assignTaskLabourer_label);
             this.assignTaskForm_panel.Controls.Add(this.taskMethod_comboBox);
+            this.assignTaskForm_panel.Controls.Add(this.taskPesticide_comboBox);
             this.assignTaskForm_panel.Controls.Add(this.assignTaskMethod_label);
+            this.assignTaskForm_panel.Controls.Add(this.taskSeed_comboBox);
+            this.assignTaskForm_panel.Controls.Add(this.assignTaskPesticide_label);
+            this.assignTaskForm_panel.Controls.Add(this.pesticideStockQty_label);
+            this.assignTaskForm_panel.Controls.Add(this.fertiliserStockQty_label);
+            this.assignTaskForm_panel.Controls.Add(this.seedStockQty_label);
+            this.assignTaskForm_panel.Controls.Add(this.assignTaskSeed_label);
+            this.assignTaskForm_panel.Controls.Add(this.taskFertiliser_comboBox);
+            this.assignTaskForm_panel.Controls.Add(this.assignTaskFertiliser_label);
             this.assignTaskForm_panel.Controls.Add(this.taskCrop_comboBox);
             this.assignTaskForm_panel.Controls.Add(this.assignTaskCrop_label);
             this.assignTaskForm_panel.Controls.Add(this.taskType_txtBox);
@@ -1179,19 +1364,44 @@
             this.assignTaskForm_panel.Size = new System.Drawing.Size(482, 290);
             this.assignTaskForm_panel.TabIndex = 18;
             // 
+            // taskPesticide_numeric
+            // 
+            this.taskPesticide_numeric.Enabled = false;
+            this.taskPesticide_numeric.Location = new System.Drawing.Point(335, 359);
+            this.taskPesticide_numeric.Name = "taskPesticide_numeric";
+            this.taskPesticide_numeric.Size = new System.Drawing.Size(48, 20);
+            this.taskPesticide_numeric.TabIndex = 32;
+            // 
+            // taskSeed_numeric
+            // 
+            this.taskSeed_numeric.Enabled = false;
+            this.taskSeed_numeric.Location = new System.Drawing.Point(335, 297);
+            this.taskSeed_numeric.Name = "taskSeed_numeric";
+            this.taskSeed_numeric.Size = new System.Drawing.Size(48, 20);
+            this.taskSeed_numeric.TabIndex = 32;
+            // 
+            // taskFertiliser_numeric
+            // 
+            this.taskFertiliser_numeric.Enabled = false;
+            this.taskFertiliser_numeric.Location = new System.Drawing.Point(335, 327);
+            this.taskFertiliser_numeric.Name = "taskFertiliser_numeric";
+            this.taskFertiliser_numeric.Size = new System.Drawing.Size(48, 20);
+            this.taskFertiliser_numeric.TabIndex = 32;
+            // 
             // assignTaskWarningMsg_label
             // 
             this.assignTaskWarningMsg_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.assignTaskWarningMsg_label.ForeColor = System.Drawing.Color.Red;
-            this.assignTaskWarningMsg_label.Location = new System.Drawing.Point(286, 343);
+            this.assignTaskWarningMsg_label.Location = new System.Drawing.Point(286, 427);
             this.assignTaskWarningMsg_label.Name = "assignTaskWarningMsg_label";
             this.assignTaskWarningMsg_label.Size = new System.Drawing.Size(174, 30);
             this.assignTaskWarningMsg_label.TabIndex = 31;
+            this.assignTaskWarningMsg_label.Tag = "1";
             // 
             // assignTaskLabInst_label
             // 
             this.assignTaskLabInst_label.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.assignTaskLabInst_label.Location = new System.Drawing.Point(96, 374);
+            this.assignTaskLabInst_label.Location = new System.Drawing.Point(96, 461);
             this.assignTaskLabInst_label.Name = "assignTaskLabInst_label";
             this.assignTaskLabInst_label.Size = new System.Drawing.Size(187, 16);
             this.assignTaskLabInst_label.TabIndex = 30;
@@ -1224,7 +1434,7 @@
             // 
             this.assignTaskLab_listBox.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.assignTaskLab_listBox.FormattingEnabled = true;
-            this.assignTaskLab_listBox.Location = new System.Drawing.Point(98, 304);
+            this.assignTaskLab_listBox.Location = new System.Drawing.Point(98, 391);
             this.assignTaskLab_listBox.Name = "assignTaskLab_listBox";
             this.assignTaskLab_listBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.assignTaskLab_listBox.Size = new System.Drawing.Size(185, 69);
@@ -1234,7 +1444,7 @@
             // 
             this.assignTaskLabourer_label.AutoSize = true;
             this.assignTaskLabourer_label.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.assignTaskLabourer_label.Location = new System.Drawing.Point(27, 306);
+            this.assignTaskLabourer_label.Location = new System.Drawing.Point(27, 393);
             this.assignTaskLabourer_label.Name = "assignTaskLabourer_label";
             this.assignTaskLabourer_label.Size = new System.Drawing.Size(64, 13);
             this.assignTaskLabourer_label.TabIndex = 26;
@@ -1255,6 +1465,17 @@
             this.taskMethod_comboBox.TabIndex = 25;
             this.taskMethod_comboBox.SelectedIndexChanged += new System.EventHandler(this.taskMethod_comboBox_SelectedIndexChanged);
             // 
+            // taskPesticide_comboBox
+            // 
+            this.taskPesticide_comboBox.Enabled = false;
+            this.taskPesticide_comboBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.taskPesticide_comboBox.FormattingEnabled = true;
+            this.taskPesticide_comboBox.Location = new System.Drawing.Point(99, 358);
+            this.taskPesticide_comboBox.Name = "taskPesticide_comboBox";
+            this.taskPesticide_comboBox.Size = new System.Drawing.Size(226, 21);
+            this.taskPesticide_comboBox.TabIndex = 23;
+            this.taskPesticide_comboBox.SelectedIndexChanged += new System.EventHandler(this.taskCrop_comboBox_SelectedIndexChanged);
+            // 
             // assignTaskMethod_label
             // 
             this.assignTaskMethod_label.AutoSize = true;
@@ -1264,6 +1485,82 @@
             this.assignTaskMethod_label.Size = new System.Drawing.Size(78, 13);
             this.assignTaskMethod_label.TabIndex = 24;
             this.assignTaskMethod_label.Text = "Task Method :";
+            // 
+            // taskSeed_comboBox
+            // 
+            this.taskSeed_comboBox.Enabled = false;
+            this.taskSeed_comboBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.taskSeed_comboBox.FormattingEnabled = true;
+            this.taskSeed_comboBox.Location = new System.Drawing.Point(99, 296);
+            this.taskSeed_comboBox.Name = "taskSeed_comboBox";
+            this.taskSeed_comboBox.Size = new System.Drawing.Size(226, 21);
+            this.taskSeed_comboBox.TabIndex = 23;
+            this.taskSeed_comboBox.SelectedIndexChanged += new System.EventHandler(this.taskSeed_comboBox_SelectedIndexChanged);
+            // 
+            // assignTaskPesticide_label
+            // 
+            this.assignTaskPesticide_label.AutoSize = true;
+            this.assignTaskPesticide_label.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.assignTaskPesticide_label.Location = new System.Drawing.Point(34, 361);
+            this.assignTaskPesticide_label.Name = "assignTaskPesticide_label";
+            this.assignTaskPesticide_label.Size = new System.Drawing.Size(58, 13);
+            this.assignTaskPesticide_label.TabIndex = 22;
+            this.assignTaskPesticide_label.Text = "Pesticide :";
+            // 
+            // pesticideStockQty_label
+            // 
+            this.pesticideStockQty_label.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pesticideStockQty_label.Location = new System.Drawing.Point(388, 362);
+            this.pesticideStockQty_label.Name = "pesticideStockQty_label";
+            this.pesticideStockQty_label.Size = new System.Drawing.Size(65, 13);
+            this.pesticideStockQty_label.TabIndex = 22;
+            // 
+            // fertiliserStockQty_label
+            // 
+            this.fertiliserStockQty_label.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fertiliserStockQty_label.Location = new System.Drawing.Point(388, 330);
+            this.fertiliserStockQty_label.Name = "fertiliserStockQty_label";
+            this.fertiliserStockQty_label.Size = new System.Drawing.Size(66, 13);
+            this.fertiliserStockQty_label.TabIndex = 22;
+            // 
+            // seedStockQty_label
+            // 
+            this.seedStockQty_label.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.seedStockQty_label.Location = new System.Drawing.Point(388, 300);
+            this.seedStockQty_label.Name = "seedStockQty_label";
+            this.seedStockQty_label.Size = new System.Drawing.Size(65, 13);
+            this.seedStockQty_label.TabIndex = 22;
+            // 
+            // assignTaskSeed_label
+            // 
+            this.assignTaskSeed_label.AutoSize = true;
+            this.assignTaskSeed_label.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.assignTaskSeed_label.Location = new System.Drawing.Point(53, 299);
+            this.assignTaskSeed_label.Name = "assignTaskSeed_label";
+            this.assignTaskSeed_label.Size = new System.Drawing.Size(38, 13);
+            this.assignTaskSeed_label.TabIndex = 22;
+            this.assignTaskSeed_label.Text = "Seed :";
+            // 
+            // taskFertiliser_comboBox
+            // 
+            this.taskFertiliser_comboBox.Enabled = false;
+            this.taskFertiliser_comboBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.taskFertiliser_comboBox.FormattingEnabled = true;
+            this.taskFertiliser_comboBox.Location = new System.Drawing.Point(99, 326);
+            this.taskFertiliser_comboBox.Name = "taskFertiliser_comboBox";
+            this.taskFertiliser_comboBox.Size = new System.Drawing.Size(226, 21);
+            this.taskFertiliser_comboBox.TabIndex = 23;
+            this.taskFertiliser_comboBox.SelectedIndexChanged += new System.EventHandler(this.taskFertiliser_comboBox_SelectedIndexChanged);
+            // 
+            // assignTaskFertiliser_label
+            // 
+            this.assignTaskFertiliser_label.AutoSize = true;
+            this.assignTaskFertiliser_label.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.assignTaskFertiliser_label.Location = new System.Drawing.Point(34, 329);
+            this.assignTaskFertiliser_label.Name = "assignTaskFertiliser_label";
+            this.assignTaskFertiliser_label.Size = new System.Drawing.Size(57, 13);
+            this.assignTaskFertiliser_label.TabIndex = 22;
+            this.assignTaskFertiliser_label.Text = "Fertiliser :";
             // 
             // taskCrop_comboBox
             // 
@@ -1392,7 +1689,7 @@
             // 
             this.assignTaskSubmit_btn.Enabled = false;
             this.assignTaskSubmit_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.assignTaskSubmit_btn.Location = new System.Drawing.Point(379, 386);
+            this.assignTaskSubmit_btn.Location = new System.Drawing.Point(379, 473);
             this.assignTaskSubmit_btn.Name = "assignTaskSubmit_btn";
             this.assignTaskSubmit_btn.Size = new System.Drawing.Size(75, 23);
             this.assignTaskSubmit_btn.TabIndex = 6;
@@ -1688,6 +1985,7 @@
             // 
             // storageTop_panel
             // 
+            this.storageTop_panel.Controls.Add(this.container_panel);
             this.storageTop_panel.Controls.Add(this.stock_panel);
             this.storageTop_panel.Controls.Add(this.storage_panel);
             this.storageTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1703,11 +2001,7 @@
             this.stock_panel.BackColor = System.Drawing.SystemColors.Control;
             this.stock_panel.Controls.Add(this.stock_back);
             this.stock_panel.Controls.Add(this.stock_listView);
-            this.stock_panel.Controls.Add(this.stockStorageInst_label);
             this.stock_panel.Controls.Add(this.storageIDTitle_label);
-            this.stock_panel.Controls.Add(this.stockPesticideFilter_btn);
-            this.stock_panel.Controls.Add(this.stockSeedFilter_btn);
-            this.stock_panel.Controls.Add(this.stockFertiliserFilter_btn);
             this.stock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stock_panel.Location = new System.Drawing.Point(0, 0);
             this.stock_panel.Name = "stock_panel";
@@ -1744,7 +2038,7 @@
             this.stock_listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.stock_listView.HideSelection = false;
             this.stock_listView.LabelEdit = true;
-            this.stock_listView.Location = new System.Drawing.Point(8, 139);
+            this.stock_listView.Location = new System.Drawing.Point(8, 88);
             this.stock_listView.Name = "stock_listView";
             this.stock_listView.Size = new System.Drawing.Size(488, 223);
             this.stock_listView.TabIndex = 11;
@@ -1780,76 +2074,19 @@
             // 
             this.stockQty_header.Text = "Quantity";
             // 
-            // stockStorageInst_label
-            // 
-            this.stockStorageInst_label.AutoSize = true;
-            this.stockStorageInst_label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.stockStorageInst_label.Location = new System.Drawing.Point(166, 44);
-            this.stockStorageInst_label.Name = "stockStorageInst_label";
-            this.stockStorageInst_label.Size = new System.Drawing.Size(134, 19);
-            this.stockStorageInst_label.TabIndex = 10;
-            this.stockStorageInst_label.Text = "Click to filter records";
-            // 
             // storageIDTitle_label
             // 
             this.storageIDTitle_label.AutoSize = true;
             this.storageIDTitle_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.storageIDTitle_label.Location = new System.Drawing.Point(179, 12);
+            this.storageIDTitle_label.Location = new System.Drawing.Point(179, 32);
             this.storageIDTitle_label.Name = "storageIDTitle_label";
             this.storageIDTitle_label.Size = new System.Drawing.Size(111, 21);
             this.storageIDTitle_label.TabIndex = 9;
             this.storageIDTitle_label.Text = "Storage 120A";
             // 
-            // stockPesticideFilter_btn
-            // 
-            this.stockPesticideFilter_btn.FlatAppearance.BorderSize = 0;
-            this.stockPesticideFilter_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stockPesticideFilter_btn.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockPesticideFilter_btn.Image = global::JustRipeFarm.Properties.Resources.pesticide_icon;
-            this.stockPesticideFilter_btn.Location = new System.Drawing.Point(269, 73);
-            this.stockPesticideFilter_btn.Name = "stockPesticideFilter_btn";
-            this.stockPesticideFilter_btn.Size = new System.Drawing.Size(68, 56);
-            this.stockPesticideFilter_btn.TabIndex = 8;
-            this.stockPesticideFilter_btn.Text = "Pesticides";
-            this.stockPesticideFilter_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.stockPesticideFilter_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.stockPesticideFilter_btn.UseVisualStyleBackColor = true;
-            this.stockPesticideFilter_btn.Click += new System.EventHandler(this.stockPesticideFilter_btn_Click);
-            // 
-            // stockSeedFilter_btn
-            // 
-            this.stockSeedFilter_btn.FlatAppearance.BorderSize = 0;
-            this.stockSeedFilter_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stockSeedFilter_btn.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockSeedFilter_btn.Image = global::JustRipeFarm.Properties.Resources.seed_icon;
-            this.stockSeedFilter_btn.Location = new System.Drawing.Point(205, 73);
-            this.stockSeedFilter_btn.Name = "stockSeedFilter_btn";
-            this.stockSeedFilter_btn.Size = new System.Drawing.Size(57, 56);
-            this.stockSeedFilter_btn.TabIndex = 7;
-            this.stockSeedFilter_btn.Text = "Seeds";
-            this.stockSeedFilter_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.stockSeedFilter_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.stockSeedFilter_btn.UseVisualStyleBackColor = true;
-            this.stockSeedFilter_btn.Click += new System.EventHandler(this.stockSeedFilter_btn_Click);
-            // 
-            // stockFertiliserFilter_btn
-            // 
-            this.stockFertiliserFilter_btn.FlatAppearance.BorderSize = 0;
-            this.stockFertiliserFilter_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stockFertiliserFilter_btn.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockFertiliserFilter_btn.Image = global::JustRipeFarm.Properties.Resources.fertiliser_icon;
-            this.stockFertiliserFilter_btn.Location = new System.Drawing.Point(131, 71);
-            this.stockFertiliserFilter_btn.Name = "stockFertiliserFilter_btn";
-            this.stockFertiliserFilter_btn.Size = new System.Drawing.Size(67, 58);
-            this.stockFertiliserFilter_btn.TabIndex = 6;
-            this.stockFertiliserFilter_btn.Text = "Fertilisers";
-            this.stockFertiliserFilter_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.stockFertiliserFilter_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.stockFertiliserFilter_btn.UseVisualStyleBackColor = true;
-            this.stockFertiliserFilter_btn.Click += new System.EventHandler(this.stockFertiliserFilter_btn_Click);
-            // 
             // storage_panel
             // 
+            this.storage_panel.Controls.Add(this.storageContainer_btn);
             this.storage_panel.Controls.Add(this.storage_listView);
             this.storage_panel.Controls.Add(this.storageInst_label);
             this.storage_panel.Controls.Add(this.storageTitle_label);
@@ -1917,8 +2154,8 @@
             this.timetable_panel.Controls.Add(this.timetable_listView);
             this.timetable_panel.Controls.Add(this.label1);
             this.timetable_panel.Controls.Add(this.timetableSearch_btn);
-            this.timetable_panel.Controls.Add(this.timetableType_comboBox);
-            this.timetable_panel.Controls.Add(this.timetableType_label);
+            this.timetable_panel.Controls.Add(this.requiredFertiliser_label);
+            this.timetable_panel.Controls.Add(this.requiredFertiliserTitle_label);
             this.timetable_panel.Controls.Add(this.timetableEndDate_datePicker);
             this.timetable_panel.Controls.Add(this.timetableEndDate_label);
             this.timetable_panel.Controls.Add(this.timetableStartDate_datePicker);
@@ -1936,12 +2173,16 @@
             this.timetable_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.timetableDate_header,
             this.timetableFarmField_header,
-            this.timetableFarmStatus_header});
+            this.timetableCrop_header,
+            this.timetableFarmStatus_header,
+            this.timetableFertiliser_header,
+            this.timetableContainer_header,
+            this.timetableLabourer_header});
             this.timetable_listView.FullRowSelect = true;
             this.timetable_listView.GridLines = true;
-            this.timetable_listView.Location = new System.Drawing.Point(13, 139);
+            this.timetable_listView.Location = new System.Drawing.Point(10, 134);
             this.timetable_listView.Name = "timetable_listView";
-            this.timetable_listView.Size = new System.Drawing.Size(483, 221);
+            this.timetable_listView.Size = new System.Drawing.Size(483, 229);
             this.timetable_listView.TabIndex = 8;
             this.timetable_listView.UseCompatibleStateImageBehavior = false;
             this.timetable_listView.View = System.Windows.Forms.View.Details;
@@ -1949,17 +2190,34 @@
             // timetableDate_header
             // 
             this.timetableDate_header.Text = "Date";
-            this.timetableDate_header.Width = 90;
+            this.timetableDate_header.Width = 70;
             // 
             // timetableFarmField_header
             // 
             this.timetableFarmField_header.Text = "Farm Field";
-            this.timetableFarmField_header.Width = 70;
+            // 
+            // timetableCrop_header
+            // 
+            this.timetableCrop_header.Text = "Crop";
             // 
             // timetableFarmStatus_header
             // 
             this.timetableFarmStatus_header.Text = "Status";
-            this.timetableFarmStatus_header.Width = 80;
+            this.timetableFarmStatus_header.Width = 70;
+            // 
+            // timetableFertiliser_header
+            // 
+            this.timetableFertiliser_header.Text = "Fertiliser Required";
+            // 
+            // timetableContainer_header
+            // 
+            this.timetableContainer_header.Text = "Container Required";
+            this.timetableContainer_header.Width = 66;
+            // 
+            // timetableLabourer_header
+            // 
+            this.timetableLabourer_header.Text = "Labourers";
+            this.timetableLabourer_header.Width = 80;
             // 
             // label1
             // 
@@ -1979,29 +2237,26 @@
             this.timetableSearch_btn.TabIndex = 6;
             this.timetableSearch_btn.Text = "Search";
             this.timetableSearch_btn.UseVisualStyleBackColor = true;
+            this.timetableSearch_btn.Click += new System.EventHandler(this.timetableSearch_btn_Click);
             // 
-            // timetableType_comboBox
+            // requiredFertiliser_label
             // 
-            this.timetableType_comboBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.timetableType_comboBox.FormattingEnabled = true;
-            this.timetableType_comboBox.Items.AddRange(new object[] {
-            "",
-            "SOW",
-            "HARVEST"});
-            this.timetableType_comboBox.Location = new System.Drawing.Point(115, 103);
-            this.timetableType_comboBox.Name = "timetableType_comboBox";
-            this.timetableType_comboBox.Size = new System.Drawing.Size(129, 23);
-            this.timetableType_comboBox.TabIndex = 5;
+            this.requiredFertiliser_label.AutoSize = true;
+            this.requiredFertiliser_label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.requiredFertiliser_label.Location = new System.Drawing.Point(144, 110);
+            this.requiredFertiliser_label.Name = "requiredFertiliser_label";
+            this.requiredFertiliser_label.Size = new System.Drawing.Size(0, 19);
+            this.requiredFertiliser_label.TabIndex = 4;
             // 
-            // timetableType_label
+            // requiredFertiliserTitle_label
             // 
-            this.timetableType_label.AutoSize = true;
-            this.timetableType_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.timetableType_label.Location = new System.Drawing.Point(67, 105);
-            this.timetableType_label.Name = "timetableType_label";
-            this.timetableType_label.Size = new System.Drawing.Size(38, 15);
-            this.timetableType_label.TabIndex = 4;
-            this.timetableType_label.Text = "Type :";
+            this.requiredFertiliserTitle_label.AutoSize = true;
+            this.requiredFertiliserTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.requiredFertiliserTitle_label.Location = new System.Drawing.Point(7, 112);
+            this.requiredFertiliserTitle_label.Name = "requiredFertiliserTitle_label";
+            this.requiredFertiliserTitle_label.Size = new System.Drawing.Size(136, 15);
+            this.requiredFertiliserTitle_label.TabIndex = 4;
+            this.requiredFertiliserTitle_label.Text = "Total Required Fertiliser :";
             // 
             // timetableEndDate_datePicker
             // 
@@ -2194,6 +2449,105 @@
             this.section_toolTip.InitialDelay = 100;
             this.section_toolTip.ReshowDelay = 100;
             // 
+            // storageContainer_btn
+            // 
+            this.storageContainer_btn.Location = new System.Drawing.Point(17, 296);
+            this.storageContainer_btn.Name = "storageContainer_btn";
+            this.storageContainer_btn.Size = new System.Drawing.Size(124, 23);
+            this.storageContainer_btn.TabIndex = 6;
+            this.storageContainer_btn.Text = "Manage Containers";
+            this.storageContainer_btn.UseVisualStyleBackColor = true;
+            this.storageContainer_btn.Click += new System.EventHandler(this.storageContainer_btn_Click);
+            // 
+            // container_panel
+            // 
+            this.container_panel.Controls.Add(this.container_listView);
+            this.container_panel.Controls.Add(this.containerTitle_label);
+            this.container_panel.Controls.Add(this.storageContainer_back);
+            this.container_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container_panel.Location = new System.Drawing.Point(0, 0);
+            this.container_panel.Name = "container_panel";
+            this.container_panel.Size = new System.Drawing.Size(506, 371);
+            this.container_panel.TabIndex = 13;
+            this.container_panel.Visible = false;
+            // 
+            // storageContainer_back
+            // 
+            this.storageContainer_back.BackColor = System.Drawing.Color.SeaGreen;
+            this.storageContainer_back.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.storageContainer_back.FlatAppearance.BorderSize = 0;
+            this.storageContainer_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.storageContainer_back.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storageContainer_back.ForeColor = System.Drawing.Color.White;
+            this.storageContainer_back.Location = new System.Drawing.Point(0, 8);
+            this.storageContainer_back.Name = "storageContainer_back";
+            this.storageContainer_back.Size = new System.Drawing.Size(61, 33);
+            this.storageContainer_back.TabIndex = 13;
+            this.storageContainer_back.Text = "Back";
+            this.storageContainer_back.UseVisualStyleBackColor = false;
+            this.storageContainer_back.Click += new System.EventHandler(this.storageContainer_back_Click);
+            // 
+            // containerTitle_label
+            // 
+            this.containerTitle_label.AutoSize = true;
+            this.containerTitle_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.containerTitle_label.Location = new System.Drawing.Point(68, 15);
+            this.containerTitle_label.Name = "containerTitle_label";
+            this.containerTitle_label.Size = new System.Drawing.Size(92, 21);
+            this.containerTitle_label.TabIndex = 21;
+            this.containerTitle_label.Text = "Containers";
+            // 
+            // container_listView
+            // 
+            this.container_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.containerID_header,
+            this.containerType_header,
+            this.containerTemperature_header,
+            this.containerCrop_header,
+            this.containerCapacity_header,
+            this.containerStatus_header});
+            this.container_listView.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.container_listView.FullRowSelect = true;
+            this.container_listView.GridLines = true;
+            this.container_listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.container_listView.HideSelection = false;
+            this.container_listView.Location = new System.Drawing.Point(6, 73);
+            this.container_listView.MultiSelect = false;
+            this.container_listView.Name = "container_listView";
+            this.container_listView.Size = new System.Drawing.Size(494, 179);
+            this.container_listView.TabIndex = 28;
+            this.container_listView.UseCompatibleStateImageBehavior = false;
+            this.container_listView.View = System.Windows.Forms.View.Details;
+            // 
+            // containerID_header
+            // 
+            this.containerID_header.Text = "ID";
+            // 
+            // containerType_header
+            // 
+            this.containerType_header.Text = "Type";
+            this.containerType_header.Width = 90;
+            // 
+            // containerCapacity_header
+            // 
+            this.containerCapacity_header.Text = "Total Capacity";
+            this.containerCapacity_header.Width = 90;
+            // 
+            // containerStatus_header
+            // 
+            this.containerStatus_header.Text = "Status";
+            this.containerStatus_header.Width = 90;
+            // 
+            // containerTemperature_header
+            // 
+            this.containerTemperature_header.Text = "Temperature Set";
+            this.containerTemperature_header.Width = 95;
+            // 
+            // containerCrop_header
+            // 
+            this.containerCrop_header.Text = "Crop";
+            this.containerCrop_header.Width = 75;
+            // 
             // MGMainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2201,7 +2555,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(602, 371);
+            this.ClientSize = new System.Drawing.Size(604, 371);
             this.Controls.Add(this.SplitContainer_Menu_Content);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -2213,6 +2567,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).EndInit();
             this.SplitContainer_Menu_Content.ResumeLayout(false);
             this.shopWholesaleTop_panel.ResumeLayout(false);
+            this.wholesale_panel.ResumeLayout(false);
+            this.wholesale_panel.PerformLayout();
             this.salesReport_panel.ResumeLayout(false);
             this.salesReport_panel.PerformLayout();
             this.buyers_panel.ResumeLayout(false);
@@ -2231,6 +2587,9 @@
             this.assignTask_panel.PerformLayout();
             this.assignTaskForm_panel.ResumeLayout(false);
             this.assignTaskForm_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.taskPesticide_numeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taskSeed_numeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taskFertiliser_numeric)).EndInit();
             this.addLabourer_panel.ResumeLayout(false);
             this.addLabourer_panel.PerformLayout();
             this.addLabForm_panel.ResumeLayout(false);
@@ -2247,6 +2606,8 @@
             this.home_panel.ResumeLayout(false);
             this.home_panel.PerformLayout();
             this.sections_groupBox.ResumeLayout(false);
+            this.container_panel.ResumeLayout(false);
+            this.container_panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2303,9 +2664,6 @@
         private System.Windows.Forms.Panel addLabForm_panel;
         private System.Windows.Forms.Panel storage_panel;
         private System.Windows.Forms.Panel stock_panel;
-        private System.Windows.Forms.Button stockPesticideFilter_btn;
-        private System.Windows.Forms.Button stockSeedFilter_btn;
-        private System.Windows.Forms.Button stockFertiliserFilter_btn;
         private System.Windows.Forms.Label storageInst_label;
         private System.Windows.Forms.ListView storage_listView;
         private System.Windows.Forms.ColumnHeader storageID_listHeader;
@@ -2314,7 +2672,6 @@
         private System.Windows.Forms.Button addLab_back;
         private System.Windows.Forms.Button stock_back;
         private System.Windows.Forms.ListView stock_listView;
-        private System.Windows.Forms.Label stockStorageInst_label;
         private System.Windows.Forms.Label storageIDTitle_label;
         private System.Windows.Forms.ColumnHeader stockID_header;
         private System.Windows.Forms.ColumnHeader stockName_header;
@@ -2416,8 +2773,7 @@
         private System.Windows.Forms.Label assignTaskLabInst_label;
         private System.Windows.Forms.Label assignTaskWarningMsg_label;
         private System.Windows.Forms.Button timetableSearch_btn;
-        private System.Windows.Forms.ComboBox timetableType_comboBox;
-        private System.Windows.Forms.Label timetableType_label;
+        private System.Windows.Forms.Label requiredFertiliserTitle_label;
         private System.Windows.Forms.DateTimePicker timetableEndDate_datePicker;
         private System.Windows.Forms.Label timetableEndDate_label;
         private System.Windows.Forms.DateTimePicker timetableStartDate_datePicker;
@@ -2425,8 +2781,6 @@
         private System.Windows.Forms.ListView timetable_listView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ColumnHeader timetableDate_header;
-        private System.Windows.Forms.ColumnHeader timetableFarmField_header;
-        private System.Windows.Forms.ColumnHeader timetableFarmStatus_header;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -2437,5 +2791,48 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.Button m_search;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.NumericUpDown taskPesticide_numeric;
+        private System.Windows.Forms.NumericUpDown taskFertiliser_numeric;
+        private System.Windows.Forms.ComboBox taskPesticide_comboBox;
+        private System.Windows.Forms.Label assignTaskPesticide_label;
+        private System.Windows.Forms.ComboBox taskFertiliser_comboBox;
+        private System.Windows.Forms.Label assignTaskFertiliser_label;
+        private System.Windows.Forms.NumericUpDown taskSeed_numeric;
+        private System.Windows.Forms.ComboBox taskSeed_comboBox;
+        private System.Windows.Forms.Label assignTaskSeed_label;
+        private System.Windows.Forms.Label pesticideStockQty_label;
+        private System.Windows.Forms.Label fertiliserStockQty_label;
+        private System.Windows.Forms.Label seedStockQty_label;
+        private System.Windows.Forms.ColumnHeader timetableFarmField_header;
+        private System.Windows.Forms.ColumnHeader timetableFarmStatus_header;
+        private System.Windows.Forms.ColumnHeader timetableCrop_header;
+        private System.Windows.Forms.ColumnHeader timetableFertiliser_header;
+        private System.Windows.Forms.ColumnHeader timetableContainer_header;
+        private System.Windows.Forms.ColumnHeader timetableLabourer_header;
+        private System.Windows.Forms.Label requiredFertiliser_label;
+        private System.Windows.Forms.Panel wholesale_panel;
+        private System.Windows.Forms.ListView wholesaleContainer_listView;
+        private System.Windows.Forms.ColumnHeader wholesaleContID_header;
+        private System.Windows.Forms.ColumnHeader wholesaleContType_header;
+        private System.Windows.Forms.ColumnHeader wholesaleContCrop_header;
+        private System.Windows.Forms.ColumnHeader wholesaleContCapacity_header;
+        private System.Windows.Forms.Label wholesaleInst_label;
+        private System.Windows.Forms.Label wholesaleTitle_label;
+        private System.Windows.Forms.Button wholesale_back;
+        private System.Windows.Forms.Label transportDate_label;
+        private System.Windows.Forms.Button wholesaleTransport_btn;
+        private System.Windows.Forms.DateTimePicker transportDate_datePicker;
+        private System.Windows.Forms.DateTimePicker transportTime_datePicker;
+        private System.Windows.Forms.Panel container_panel;
+        private System.Windows.Forms.ListView container_listView;
+        private System.Windows.Forms.ColumnHeader containerID_header;
+        private System.Windows.Forms.ColumnHeader containerType_header;
+        private System.Windows.Forms.ColumnHeader containerTemperature_header;
+        private System.Windows.Forms.ColumnHeader containerCrop_header;
+        private System.Windows.Forms.ColumnHeader containerCapacity_header;
+        private System.Windows.Forms.ColumnHeader containerStatus_header;
+        private System.Windows.Forms.Label containerTitle_label;
+        private System.Windows.Forms.Button storageContainer_back;
+        private System.Windows.Forms.Button storageContainer_btn;
     }
 }
