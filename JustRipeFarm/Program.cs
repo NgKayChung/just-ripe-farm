@@ -16,7 +16,7 @@ namespace JustRipeFarm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var main = new LoginScreen();
+            var main = new MGMainScreen();
             main.FormClosed += new FormClosedEventHandler(FormClosed);
             main.Show();
             Application.Run();

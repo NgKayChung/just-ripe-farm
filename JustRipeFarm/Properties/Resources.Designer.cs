@@ -63,6 +63,16 @@ namespace JustRipeFarm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap buyers_icon {
+            get {
+                object obj = ResourceManager.GetObject("buyers_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fertiliser_icon {
             get {
                 object obj = ResourceManager.GetObject("fertiliser_icon", resourceCulture);
@@ -85,7 +95,7 @@ namespace JustRipeFarm.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap just_ripe_farm_icon {
             get {
-                object obj = ResourceManager.GetObject("just-ripe-farm-icon", resourceCulture);
+                object obj = ResourceManager.GetObject("just_ripe_farm_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +113,49 @@ namespace JustRipeFarm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap products_icon {
+            get {
+                object obj = ResourceManager.GetObject("products_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reports_icon {
+            get {
+                object obj = ResourceManager.GetObject("reports_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap seed_icon {
             get {
                 object obj = ResourceManager.GetObject("seed_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shop_icon {
+            get {
+                object obj = ResourceManager.GetObject("shop_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wholesale_icon {
+            get {
+                object obj = ResourceManager.GetObject("wholesale_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

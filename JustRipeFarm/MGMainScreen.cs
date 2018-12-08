@@ -22,6 +22,7 @@ namespace JustRipeFarm
         {
             UserSession.Instance.UserID = "MG18290";
             UserSession.Instance.UserFirstName = "John";
+            UserSession.Instance.UserType = "MANAGER";
             InitializeComponent();
         }
 
@@ -39,6 +40,7 @@ namespace JustRipeFarm
             labourerTop_panel.Visible = false;
             machineTop_panel.Visible = false;
             shopWholesaleTop_panel.Visible = false;
+            profile_panel.Visible = false;
 
             LoadHome();
         }
@@ -51,6 +53,7 @@ namespace JustRipeFarm
             labourerTop_panel.Visible = false;
             machineTop_panel.Visible = false;
             shopWholesaleTop_panel.Visible = false;
+            profile_panel.Visible = false;
         }
 
         private void storage_btn_Click(object sender, EventArgs e)
@@ -61,6 +64,7 @@ namespace JustRipeFarm
             labourerTop_panel.Visible = false;
             machineTop_panel.Visible = false;
             shopWholesaleTop_panel.Visible = false;
+            profile_panel.Visible = false;
 
             LoadStockStorage();
         }
@@ -73,6 +77,7 @@ namespace JustRipeFarm
             labourerTop_panel.Visible = true;
             machineTop_panel.Visible = false;
             shopWholesaleTop_panel.Visible = false;
+            profile_panel.Visible = false;
 
             LoadLabourers();
         }
@@ -85,6 +90,7 @@ namespace JustRipeFarm
             labourerTop_panel.Visible = false;
             machineTop_panel.Visible = true;
             shopWholesaleTop_panel.Visible = false;
+            profile_panel.Visible = false;
         }
 
         private void shopWholesale_btn_Click(object sender, EventArgs e)
@@ -95,6 +101,20 @@ namespace JustRipeFarm
             labourerTop_panel.Visible = false;
             machineTop_panel.Visible = false;
             shopWholesaleTop_panel.Visible = true;
+            profile_panel.Visible = false;
+        }
+
+        private void edit_btn_Click(object sender, EventArgs e)
+        {
+            home_panel.Visible = false;
+            timetable_panel.Visible = false;
+            storageTop_panel.Visible = false;
+            labourerTop_panel.Visible = false;
+            machineTop_panel.Visible = false;
+            shopWholesaleTop_panel.Visible = false;
+            profile_panel.Visible = true;
+
+            LoadUserProfileInfo();
         }
 
         private void logout_button_Click(object sender, EventArgs e)
@@ -1282,6 +1302,93 @@ namespace JustRipeFarm
         private void shopWholesaleTop_panel_VisibleChanged(object sender, EventArgs e)
         {
             ShopBackTopPanel();
+        }
+
+        private void LoadUserProfileInfo()
+        {
+            profileFName_txtBox.Clear();
+            profileLName_txtBox.Clear();
+            profileEmail_txtBox.Clear();
+            profilePhone_txtBox.Clear();
+            profileOldPassword_txtBox.Clear();
+            profileNewPassword_txtBox.Clear();
+            profileConfirmPassword_txtBox.Clear();
+
+            UserHandler userHandler = new UserHandler();
+            User user = userHandler.GetUser(DbConnector.Instance.getConn(), UserSession.Instance.UserID);
+
+            profileFName_txtBox.Text = user.Firstname;
+            profileLName_txtBox.Text = user.Lastname;
+            profileEmail_txtBox.Text = user.EmailAddress;
+            profilePhone_txtBox.Text = user.PhoneNumber;
+        }
+
+        private void updateProfile_btn_Click(object sender, EventArgs e)
+        {
+            string firstName = profileFName_txtBox.Text.Trim();
+            string lastName = profileLName_txtBox.Text.Trim();
+            string emailAddress = profileEmail_txtBox.Text.Trim();
+            string phoneNumber = profilePhone_txtBox.Text.Trim();
+
+            if (firstName != "")
+            {
+                if (lastName != "")
+                {
+                    if (Regex.IsMatch(emailAddress, EVAL_EMAIL))
+                    {
+                        User u = new User();
+                        u.UserID = UserSession.Instance.UserID;
+                        u.Firstname = firstName;
+                        u.Lastname = lastName;
+                        u.EmailAddress = emailAddress;
+                        u.PhoneNumber = phoneNumber;
+
+                        UserHandler userHandler = new UserHandler();
+                        userHandler.UpdateUserInfo(DbConnector.Instance.getConn(), u);
+
+                        MessageBox.Show("Profile is successfully updated !");
+                        LoadUserProfileInfo();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid email");
+                    }
+                }
+                else
+                    MessageBox.Show("Last name cannot be empty");
+            }
+            else
+            {
+                MessageBox.Show("First name cannot be empty");
+            }
+        }
+
+        private void updatePassword_btn_Click(object sender, EventArgs e)
+        {
+            string oldPassword = profileOldPassword_txtBox.Text;
+            string newPassword = profileNewPassword_txtBox.Text;
+            string confirmPassword = profileConfirmPassword_txtBox.Text;
+
+            UserHandler userHandler = new UserHandler();
+            User user = userHandler.GetUser(DbConnector.Instance.getConn(), UserSession.Instance.UserID);
+
+            if (oldPassword == user.Password)
+            {
+                if (newPassword == confirmPassword)
+                {
+                    userHandler.ChangePass(DbConnector.Instance.getConn(), user, newPassword);
+                    MessageBox.Show("Password is successfully updated !");
+                    LoadUserProfileInfo();
+                }
+                else
+                {
+                    MessageBox.Show("New password and confirm password are not match");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid password");
+            }
         }
     }
 }

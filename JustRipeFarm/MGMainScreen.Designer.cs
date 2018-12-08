@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MGMainScreen));
             this.SplitContainer_Menu_Content = new System.Windows.Forms.SplitContainer();
             this.exit_btn = new System.Windows.Forms.Button();
             this.logout_btn = new System.Windows.Forms.Button();
+            this.edit_btn = new System.Windows.Forms.Button();
             this.shopWholesale_btn = new System.Windows.Forms.Button();
             this.machine_btn = new System.Windows.Forms.Button();
             this.labour_btn = new System.Windows.Forms.Button();
@@ -40,6 +40,23 @@
             this.timetable_btn = new System.Windows.Forms.Button();
             this.home_btn = new System.Windows.Forms.Button();
             this.greeting_label = new System.Windows.Forms.Label();
+            this.profile_panel = new System.Windows.Forms.Panel();
+            this.updatePassword_btn = new System.Windows.Forms.Button();
+            this.profileConfirmPassword_txtBox = new System.Windows.Forms.TextBox();
+            this.profileNewPassword_txtBox = new System.Windows.Forms.TextBox();
+            this.profileOldPassword_txtBox = new System.Windows.Forms.TextBox();
+            this.profileConfirmPassword_label = new System.Windows.Forms.Label();
+            this.profileNewPassword_label = new System.Windows.Forms.Label();
+            this.profileOldPassword_label = new System.Windows.Forms.Label();
+            this.updateProfile_btn = new System.Windows.Forms.Button();
+            this.profilePhone_txtBox = new System.Windows.Forms.TextBox();
+            this.profileEmail_txtBox = new System.Windows.Forms.TextBox();
+            this.profileLName_txtBox = new System.Windows.Forms.TextBox();
+            this.profileFName_txtBox = new System.Windows.Forms.TextBox();
+            this.profilePhone_label = new System.Windows.Forms.Label();
+            this.profileEmail_label = new System.Windows.Forms.Label();
+            this.profileLName_label = new System.Windows.Forms.Label();
+            this.profileFName_label = new System.Windows.Forms.Label();
             this.shopWholesaleTop_panel = new System.Windows.Forms.Panel();
             this.wholesale_panel = new System.Windows.Forms.Panel();
             this.transportTime_datePicker = new System.Windows.Forms.DateTimePicker();
@@ -190,6 +207,16 @@
             this.addLabourer_btn = new System.Windows.Forms.Button();
             this.labourTitle_label = new System.Windows.Forms.Label();
             this.storageTop_panel = new System.Windows.Forms.Panel();
+            this.container_panel = new System.Windows.Forms.Panel();
+            this.container_listView = new System.Windows.Forms.ListView();
+            this.containerID_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.containerType_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.containerTemperature_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.containerCrop_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.containerCapacity_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.containerStatus_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.containerTitle_label = new System.Windows.Forms.Label();
+            this.storageContainer_back = new System.Windows.Forms.Button();
             this.stock_panel = new System.Windows.Forms.Panel();
             this.stock_back = new System.Windows.Forms.Button();
             this.stock_listView = new System.Windows.Forms.ListView();
@@ -201,6 +228,7 @@
             this.stockQty_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.storageIDTitle_label = new System.Windows.Forms.Label();
             this.storage_panel = new System.Windows.Forms.Panel();
+            this.storageContainer_btn = new System.Windows.Forms.Button();
             this.storage_listView = new System.Windows.Forms.ListView();
             this.storageID_listHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.capacity_listHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -216,7 +244,7 @@
             this.timetableFertiliser_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.timetableContainer_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.timetableLabourer_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
+            this.timetableInst_label = new System.Windows.Forms.Label();
             this.timetableSearch_btn = new System.Windows.Forms.Button();
             this.requiredFertiliser_label = new System.Windows.Forms.Label();
             this.requiredFertiliserTitle_label = new System.Windows.Forms.Label();
@@ -239,21 +267,14 @@
             this.fieldTitle_label = new System.Windows.Forms.Label();
             this.homeTitle_label = new System.Windows.Forms.Label();
             this.section_toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.storageContainer_btn = new System.Windows.Forms.Button();
-            this.container_panel = new System.Windows.Forms.Panel();
-            this.storageContainer_back = new System.Windows.Forms.Button();
-            this.containerTitle_label = new System.Windows.Forms.Label();
-            this.container_listView = new System.Windows.Forms.ListView();
-            this.containerID_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.containerType_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.containerCapacity_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.containerStatus_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.containerTemperature_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.containerCrop_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.profileTitle_label = new System.Windows.Forms.Label();
+            this.profileInfoInst_label = new System.Windows.Forms.Label();
+            this.profilePasswordInst_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).BeginInit();
             this.SplitContainer_Menu_Content.Panel1.SuspendLayout();
             this.SplitContainer_Menu_Content.Panel2.SuspendLayout();
             this.SplitContainer_Menu_Content.SuspendLayout();
+            this.profile_panel.SuspendLayout();
             this.shopWholesaleTop_panel.SuspendLayout();
             this.wholesale_panel.SuspendLayout();
             this.salesReport_panel.SuspendLayout();
@@ -273,12 +294,12 @@
             this.addLabForm_panel.SuspendLayout();
             this.labourer_panel.SuspendLayout();
             this.storageTop_panel.SuspendLayout();
+            this.container_panel.SuspendLayout();
             this.stock_panel.SuspendLayout();
             this.storage_panel.SuspendLayout();
             this.timetable_panel.SuspendLayout();
             this.home_panel.SuspendLayout();
             this.sections_groupBox.SuspendLayout();
-            this.container_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // SplitContainer_Menu_Content
@@ -294,6 +315,7 @@
             this.SplitContainer_Menu_Content.Panel1.BackColor = System.Drawing.SystemColors.Control;
             this.SplitContainer_Menu_Content.Panel1.Controls.Add(this.exit_btn);
             this.SplitContainer_Menu_Content.Panel1.Controls.Add(this.logout_btn);
+            this.SplitContainer_Menu_Content.Panel1.Controls.Add(this.edit_btn);
             this.SplitContainer_Menu_Content.Panel1.Controls.Add(this.shopWholesale_btn);
             this.SplitContainer_Menu_Content.Panel1.Controls.Add(this.machine_btn);
             this.SplitContainer_Menu_Content.Panel1.Controls.Add(this.labour_btn);
@@ -304,13 +326,14 @@
             // 
             // SplitContainer_Menu_Content.Panel2
             // 
+            this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.profile_panel);
             this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.shopWholesaleTop_panel);
             this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.machineTop_panel);
             this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.labourerTop_panel);
             this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.storageTop_panel);
             this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.timetable_panel);
             this.SplitContainer_Menu_Content.Panel2.Controls.Add(this.home_panel);
-            this.SplitContainer_Menu_Content.Size = new System.Drawing.Size(604, 371);
+            this.SplitContainer_Menu_Content.Size = new System.Drawing.Size(604, 405);
             this.SplitContainer_Menu_Content.SplitterDistance = 94;
             this.SplitContainer_Menu_Content.TabIndex = 0;
             // 
@@ -322,10 +345,10 @@
             this.exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exit_btn.ForeColor = System.Drawing.Color.White;
-            this.exit_btn.Location = new System.Drawing.Point(0, 325);
+            this.exit_btn.Location = new System.Drawing.Point(0, 365);
             this.exit_btn.Name = "exit_btn";
             this.exit_btn.Size = new System.Drawing.Size(94, 40);
-            this.exit_btn.TabIndex = 7;
+            this.exit_btn.TabIndex = 8;
             this.exit_btn.Text = "Exit";
             this.exit_btn.UseVisualStyleBackColor = false;
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
@@ -338,13 +361,29 @@
             this.logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logout_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout_btn.ForeColor = System.Drawing.Color.White;
-            this.logout_btn.Location = new System.Drawing.Point(0, 285);
+            this.logout_btn.Location = new System.Drawing.Point(0, 325);
             this.logout_btn.Name = "logout_btn";
             this.logout_btn.Size = new System.Drawing.Size(94, 40);
-            this.logout_btn.TabIndex = 6;
+            this.logout_btn.TabIndex = 7;
             this.logout_btn.Text = "Logout";
             this.logout_btn.UseVisualStyleBackColor = false;
             this.logout_btn.Click += new System.EventHandler(this.logout_button_Click);
+            // 
+            // edit_btn
+            // 
+            this.edit_btn.BackColor = System.Drawing.Color.Green;
+            this.edit_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.edit_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.edit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.edit_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edit_btn.ForeColor = System.Drawing.Color.White;
+            this.edit_btn.Location = new System.Drawing.Point(0, 285);
+            this.edit_btn.Name = "edit_btn";
+            this.edit_btn.Size = new System.Drawing.Size(94, 40);
+            this.edit_btn.TabIndex = 6;
+            this.edit_btn.Text = "Profile";
+            this.edit_btn.UseVisualStyleBackColor = false;
+            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
             // shopWholesale_btn
             // 
@@ -458,6 +497,186 @@
             this.greeting_label.TabIndex = 8;
             this.greeting_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // profile_panel
+            // 
+            this.profile_panel.AutoScroll = true;
+            this.profile_panel.Controls.Add(this.profilePasswordInst_label);
+            this.profile_panel.Controls.Add(this.profileInfoInst_label);
+            this.profile_panel.Controls.Add(this.profileTitle_label);
+            this.profile_panel.Controls.Add(this.updatePassword_btn);
+            this.profile_panel.Controls.Add(this.profileConfirmPassword_txtBox);
+            this.profile_panel.Controls.Add(this.profileNewPassword_txtBox);
+            this.profile_panel.Controls.Add(this.profileOldPassword_txtBox);
+            this.profile_panel.Controls.Add(this.profileConfirmPassword_label);
+            this.profile_panel.Controls.Add(this.profileNewPassword_label);
+            this.profile_panel.Controls.Add(this.profileOldPassword_label);
+            this.profile_panel.Controls.Add(this.updateProfile_btn);
+            this.profile_panel.Controls.Add(this.profilePhone_txtBox);
+            this.profile_panel.Controls.Add(this.profileEmail_txtBox);
+            this.profile_panel.Controls.Add(this.profileLName_txtBox);
+            this.profile_panel.Controls.Add(this.profileFName_txtBox);
+            this.profile_panel.Controls.Add(this.profilePhone_label);
+            this.profile_panel.Controls.Add(this.profileEmail_label);
+            this.profile_panel.Controls.Add(this.profileLName_label);
+            this.profile_panel.Controls.Add(this.profileFName_label);
+            this.profile_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.profile_panel.Location = new System.Drawing.Point(0, 0);
+            this.profile_panel.Name = "profile_panel";
+            this.profile_panel.Size = new System.Drawing.Size(506, 405);
+            this.profile_panel.TabIndex = 5;
+            this.profile_panel.Visible = false;
+            // 
+            // updatePassword_btn
+            // 
+            this.updatePassword_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.updatePassword_btn.Location = new System.Drawing.Point(364, 400);
+            this.updatePassword_btn.Name = "updatePassword_btn";
+            this.updatePassword_btn.Size = new System.Drawing.Size(112, 23);
+            this.updatePassword_btn.TabIndex = 17;
+            this.updatePassword_btn.Text = "Update Password";
+            this.updatePassword_btn.UseVisualStyleBackColor = true;
+            this.updatePassword_btn.Click += new System.EventHandler(this.updatePassword_btn_Click);
+            // 
+            // profileConfirmPassword_txtBox
+            // 
+            this.profileConfirmPassword_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profileConfirmPassword_txtBox.Location = new System.Drawing.Point(155, 362);
+            this.profileConfirmPassword_txtBox.Name = "profileConfirmPassword_txtBox";
+            this.profileConfirmPassword_txtBox.PasswordChar = '*';
+            this.profileConfirmPassword_txtBox.Size = new System.Drawing.Size(206, 23);
+            this.profileConfirmPassword_txtBox.TabIndex = 16;
+            // 
+            // profileNewPassword_txtBox
+            // 
+            this.profileNewPassword_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profileNewPassword_txtBox.Location = new System.Drawing.Point(155, 327);
+            this.profileNewPassword_txtBox.Name = "profileNewPassword_txtBox";
+            this.profileNewPassword_txtBox.PasswordChar = '*';
+            this.profileNewPassword_txtBox.Size = new System.Drawing.Size(206, 23);
+            this.profileNewPassword_txtBox.TabIndex = 15;
+            // 
+            // profileOldPassword_txtBox
+            // 
+            this.profileOldPassword_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profileOldPassword_txtBox.Location = new System.Drawing.Point(155, 294);
+            this.profileOldPassword_txtBox.Name = "profileOldPassword_txtBox";
+            this.profileOldPassword_txtBox.PasswordChar = '*';
+            this.profileOldPassword_txtBox.Size = new System.Drawing.Size(206, 23);
+            this.profileOldPassword_txtBox.TabIndex = 14;
+            // 
+            // profileConfirmPassword_label
+            // 
+            this.profileConfirmPassword_label.AutoSize = true;
+            this.profileConfirmPassword_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profileConfirmPassword_label.Location = new System.Drawing.Point(6, 365);
+            this.profileConfirmPassword_label.Name = "profileConfirmPassword_label";
+            this.profileConfirmPassword_label.Size = new System.Drawing.Size(137, 15);
+            this.profileConfirmPassword_label.TabIndex = 13;
+            this.profileConfirmPassword_label.Text = "Confirm New Password :";
+            // 
+            // profileNewPassword_label
+            // 
+            this.profileNewPassword_label.AutoSize = true;
+            this.profileNewPassword_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profileNewPassword_label.Location = new System.Drawing.Point(53, 330);
+            this.profileNewPassword_label.Name = "profileNewPassword_label";
+            this.profileNewPassword_label.Size = new System.Drawing.Size(90, 15);
+            this.profileNewPassword_label.TabIndex = 12;
+            this.profileNewPassword_label.Text = "New Password :";
+            // 
+            // profileOldPassword_label
+            // 
+            this.profileOldPassword_label.AutoSize = true;
+            this.profileOldPassword_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profileOldPassword_label.Location = new System.Drawing.Point(58, 297);
+            this.profileOldPassword_label.Name = "profileOldPassword_label";
+            this.profileOldPassword_label.Size = new System.Drawing.Size(85, 15);
+            this.profileOldPassword_label.TabIndex = 11;
+            this.profileOldPassword_label.Text = "Old Password :";
+            // 
+            // updateProfile_btn
+            // 
+            this.updateProfile_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.updateProfile_btn.Location = new System.Drawing.Point(364, 216);
+            this.updateProfile_btn.Name = "updateProfile_btn";
+            this.updateProfile_btn.Size = new System.Drawing.Size(112, 23);
+            this.updateProfile_btn.TabIndex = 10;
+            this.updateProfile_btn.Text = "Update Profile";
+            this.updateProfile_btn.UseVisualStyleBackColor = true;
+            this.updateProfile_btn.Click += new System.EventHandler(this.updateProfile_btn_Click);
+            // 
+            // profilePhone_txtBox
+            // 
+            this.profilePhone_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profilePhone_txtBox.Location = new System.Drawing.Point(155, 181);
+            this.profilePhone_txtBox.Name = "profilePhone_txtBox";
+            this.profilePhone_txtBox.Size = new System.Drawing.Size(223, 23);
+            this.profilePhone_txtBox.TabIndex = 9;
+            // 
+            // profileEmail_txtBox
+            // 
+            this.profileEmail_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profileEmail_txtBox.Location = new System.Drawing.Point(155, 149);
+            this.profileEmail_txtBox.Name = "profileEmail_txtBox";
+            this.profileEmail_txtBox.Size = new System.Drawing.Size(257, 23);
+            this.profileEmail_txtBox.TabIndex = 8;
+            // 
+            // profileLName_txtBox
+            // 
+            this.profileLName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profileLName_txtBox.Location = new System.Drawing.Point(155, 116);
+            this.profileLName_txtBox.Name = "profileLName_txtBox";
+            this.profileLName_txtBox.Size = new System.Drawing.Size(257, 23);
+            this.profileLName_txtBox.TabIndex = 7;
+            // 
+            // profileFName_txtBox
+            // 
+            this.profileFName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profileFName_txtBox.Location = new System.Drawing.Point(155, 84);
+            this.profileFName_txtBox.Name = "profileFName_txtBox";
+            this.profileFName_txtBox.Size = new System.Drawing.Size(257, 23);
+            this.profileFName_txtBox.TabIndex = 6;
+            // 
+            // profilePhone_label
+            // 
+            this.profilePhone_label.AutoSize = true;
+            this.profilePhone_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profilePhone_label.Location = new System.Drawing.Point(47, 184);
+            this.profilePhone_label.Name = "profilePhone_label";
+            this.profilePhone_label.Size = new System.Drawing.Size(94, 15);
+            this.profilePhone_label.TabIndex = 4;
+            this.profilePhone_label.Text = "Phone Number :";
+            // 
+            // profileEmail_label
+            // 
+            this.profileEmail_label.AutoSize = true;
+            this.profileEmail_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profileEmail_label.Location = new System.Drawing.Point(54, 151);
+            this.profileEmail_label.Name = "profileEmail_label";
+            this.profileEmail_label.Size = new System.Drawing.Size(87, 15);
+            this.profileEmail_label.TabIndex = 3;
+            this.profileEmail_label.Text = "Email Address :";
+            // 
+            // profileLName_label
+            // 
+            this.profileLName_label.AutoSize = true;
+            this.profileLName_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profileLName_label.Location = new System.Drawing.Point(72, 119);
+            this.profileLName_label.Name = "profileLName_label";
+            this.profileLName_label.Size = new System.Drawing.Size(69, 15);
+            this.profileLName_label.TabIndex = 2;
+            this.profileLName_label.Text = "Last Name :";
+            // 
+            // profileFName_label
+            // 
+            this.profileFName_label.AutoSize = true;
+            this.profileFName_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profileFName_label.Location = new System.Drawing.Point(71, 88);
+            this.profileFName_label.Name = "profileFName_label";
+            this.profileFName_label.Size = new System.Drawing.Size(70, 15);
+            this.profileFName_label.TabIndex = 1;
+            this.profileFName_label.Text = "First Name :";
+            // 
             // shopWholesaleTop_panel
             // 
             this.shopWholesaleTop_panel.Controls.Add(this.wholesale_panel);
@@ -469,7 +688,7 @@
             this.shopWholesaleTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shopWholesaleTop_panel.Location = new System.Drawing.Point(0, 0);
             this.shopWholesaleTop_panel.Name = "shopWholesaleTop_panel";
-            this.shopWholesaleTop_panel.Size = new System.Drawing.Size(506, 371);
+            this.shopWholesaleTop_panel.Size = new System.Drawing.Size(506, 405);
             this.shopWholesaleTop_panel.TabIndex = 0;
             this.shopWholesaleTop_panel.Visible = false;
             this.shopWholesaleTop_panel.VisibleChanged += new System.EventHandler(this.shopWholesaleTop_panel_VisibleChanged);
@@ -487,7 +706,7 @@
             this.wholesale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wholesale_panel.Location = new System.Drawing.Point(0, 0);
             this.wholesale_panel.Name = "wholesale_panel";
-            this.wholesale_panel.Size = new System.Drawing.Size(506, 371);
+            this.wholesale_panel.Size = new System.Drawing.Size(506, 405);
             this.wholesale_panel.TabIndex = 14;
             this.wholesale_panel.Visible = false;
             // 
@@ -618,7 +837,7 @@
             this.salesReport_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.salesReport_panel.Location = new System.Drawing.Point(0, 0);
             this.salesReport_panel.Name = "salesReport_panel";
-            this.salesReport_panel.Size = new System.Drawing.Size(506, 371);
+            this.salesReport_panel.Size = new System.Drawing.Size(506, 405);
             this.salesReport_panel.TabIndex = 13;
             this.salesReport_panel.Visible = false;
             // 
@@ -767,7 +986,7 @@
             this.buyers_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buyers_panel.Location = new System.Drawing.Point(0, 0);
             this.buyers_panel.Name = "buyers_panel";
-            this.buyers_panel.Size = new System.Drawing.Size(506, 371);
+            this.buyers_panel.Size = new System.Drawing.Size(506, 405);
             this.buyers_panel.TabIndex = 12;
             this.buyers_panel.Visible = false;
             // 
@@ -873,7 +1092,7 @@
             this.shopProducts_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shopProducts_panel.Location = new System.Drawing.Point(0, 0);
             this.shopProducts_panel.Name = "shopProducts_panel";
-            this.shopProducts_panel.Size = new System.Drawing.Size(506, 371);
+            this.shopProducts_panel.Size = new System.Drawing.Size(506, 405);
             this.shopProducts_panel.TabIndex = 11;
             this.shopProducts_panel.Visible = false;
             // 
@@ -1052,7 +1271,7 @@
             this.shop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shop_panel.Location = new System.Drawing.Point(0, 0);
             this.shop_panel.Name = "shop_panel";
-            this.shop_panel.Size = new System.Drawing.Size(506, 371);
+            this.shop_panel.Size = new System.Drawing.Size(506, 405);
             this.shop_panel.TabIndex = 10;
             this.shop_panel.Visible = false;
             // 
@@ -1147,7 +1366,7 @@
             this.shopWholesale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shopWholesale_panel.Location = new System.Drawing.Point(0, 0);
             this.shopWholesale_panel.Name = "shopWholesale_panel";
-            this.shopWholesale_panel.Size = new System.Drawing.Size(506, 371);
+            this.shopWholesale_panel.Size = new System.Drawing.Size(506, 405);
             this.shopWholesale_panel.TabIndex = 9;
             // 
             // wholesale_btn
@@ -1155,7 +1374,6 @@
             this.wholesale_btn.FlatAppearance.BorderSize = 0;
             this.wholesale_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.wholesale_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wholesale_btn.Image = ((System.Drawing.Image)(resources.GetObject("wholesale_btn.Image")));
             this.wholesale_btn.Location = new System.Drawing.Point(277, 120);
             this.wholesale_btn.Name = "wholesale_btn";
             this.wholesale_btn.Size = new System.Drawing.Size(99, 93);
@@ -1202,7 +1420,7 @@
             this.machineTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.machineTop_panel.Location = new System.Drawing.Point(0, 0);
             this.machineTop_panel.Name = "machineTop_panel";
-            this.machineTop_panel.Size = new System.Drawing.Size(506, 371);
+            this.machineTop_panel.Size = new System.Drawing.Size(506, 405);
             this.machineTop_panel.TabIndex = 3;
             this.machineTop_panel.Visible = false;
             // 
@@ -1292,7 +1510,7 @@
             this.labourerTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labourerTop_panel.Location = new System.Drawing.Point(0, 0);
             this.labourerTop_panel.Name = "labourerTop_panel";
-            this.labourerTop_panel.Size = new System.Drawing.Size(506, 371);
+            this.labourerTop_panel.Size = new System.Drawing.Size(506, 405);
             this.labourerTop_panel.TabIndex = 2;
             this.labourerTop_panel.Visible = false;
             this.labourerTop_panel.VisibleChanged += new System.EventHandler(this.labourerTop_panel_VisibleChanged);
@@ -1306,7 +1524,7 @@
             this.assignTask_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.assignTask_panel.Location = new System.Drawing.Point(0, 0);
             this.assignTask_panel.Name = "assignTask_panel";
-            this.assignTask_panel.Size = new System.Drawing.Size(506, 371);
+            this.assignTask_panel.Size = new System.Drawing.Size(506, 405);
             this.assignTask_panel.TabIndex = 7;
             this.assignTask_panel.Visible = false;
             // 
@@ -1750,7 +1968,7 @@
             this.addLabourer_panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.addLabourer_panel.Location = new System.Drawing.Point(0, 0);
             this.addLabourer_panel.Name = "addLabourer_panel";
-            this.addLabourer_panel.Size = new System.Drawing.Size(506, 371);
+            this.addLabourer_panel.Size = new System.Drawing.Size(506, 405);
             this.addLabourer_panel.TabIndex = 6;
             this.addLabourer_panel.Visible = false;
             // 
@@ -1899,7 +2117,7 @@
             this.labourer_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labourer_panel.Location = new System.Drawing.Point(0, 0);
             this.labourer_panel.Name = "labourer_panel";
-            this.labourer_panel.Size = new System.Drawing.Size(506, 371);
+            this.labourer_panel.Size = new System.Drawing.Size(506, 405);
             this.labourer_panel.TabIndex = 5;
             // 
             // labourerAssignTask_btn
@@ -1991,10 +2209,99 @@
             this.storageTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.storageTop_panel.Location = new System.Drawing.Point(0, 0);
             this.storageTop_panel.Name = "storageTop_panel";
-            this.storageTop_panel.Size = new System.Drawing.Size(506, 371);
+            this.storageTop_panel.Size = new System.Drawing.Size(506, 405);
             this.storageTop_panel.TabIndex = 1;
             this.storageTop_panel.Visible = false;
             this.storageTop_panel.VisibleChanged += new System.EventHandler(this.storageTop_panel_VisibleChanged);
+            // 
+            // container_panel
+            // 
+            this.container_panel.Controls.Add(this.container_listView);
+            this.container_panel.Controls.Add(this.containerTitle_label);
+            this.container_panel.Controls.Add(this.storageContainer_back);
+            this.container_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container_panel.Location = new System.Drawing.Point(0, 0);
+            this.container_panel.Name = "container_panel";
+            this.container_panel.Size = new System.Drawing.Size(506, 405);
+            this.container_panel.TabIndex = 13;
+            this.container_panel.Visible = false;
+            // 
+            // container_listView
+            // 
+            this.container_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.containerID_header,
+            this.containerType_header,
+            this.containerTemperature_header,
+            this.containerCrop_header,
+            this.containerCapacity_header,
+            this.containerStatus_header});
+            this.container_listView.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.container_listView.FullRowSelect = true;
+            this.container_listView.GridLines = true;
+            this.container_listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.container_listView.HideSelection = false;
+            this.container_listView.Location = new System.Drawing.Point(6, 73);
+            this.container_listView.MultiSelect = false;
+            this.container_listView.Name = "container_listView";
+            this.container_listView.Size = new System.Drawing.Size(494, 179);
+            this.container_listView.TabIndex = 28;
+            this.container_listView.UseCompatibleStateImageBehavior = false;
+            this.container_listView.View = System.Windows.Forms.View.Details;
+            // 
+            // containerID_header
+            // 
+            this.containerID_header.Text = "ID";
+            // 
+            // containerType_header
+            // 
+            this.containerType_header.Text = "Type";
+            this.containerType_header.Width = 90;
+            // 
+            // containerTemperature_header
+            // 
+            this.containerTemperature_header.Text = "Temperature Set";
+            this.containerTemperature_header.Width = 95;
+            // 
+            // containerCrop_header
+            // 
+            this.containerCrop_header.Text = "Crop";
+            this.containerCrop_header.Width = 75;
+            // 
+            // containerCapacity_header
+            // 
+            this.containerCapacity_header.Text = "Total Capacity";
+            this.containerCapacity_header.Width = 90;
+            // 
+            // containerStatus_header
+            // 
+            this.containerStatus_header.Text = "Status";
+            this.containerStatus_header.Width = 90;
+            // 
+            // containerTitle_label
+            // 
+            this.containerTitle_label.AutoSize = true;
+            this.containerTitle_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.containerTitle_label.Location = new System.Drawing.Point(68, 15);
+            this.containerTitle_label.Name = "containerTitle_label";
+            this.containerTitle_label.Size = new System.Drawing.Size(92, 21);
+            this.containerTitle_label.TabIndex = 21;
+            this.containerTitle_label.Text = "Containers";
+            // 
+            // storageContainer_back
+            // 
+            this.storageContainer_back.BackColor = System.Drawing.Color.SeaGreen;
+            this.storageContainer_back.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.storageContainer_back.FlatAppearance.BorderSize = 0;
+            this.storageContainer_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.storageContainer_back.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storageContainer_back.ForeColor = System.Drawing.Color.White;
+            this.storageContainer_back.Location = new System.Drawing.Point(0, 8);
+            this.storageContainer_back.Name = "storageContainer_back";
+            this.storageContainer_back.Size = new System.Drawing.Size(61, 33);
+            this.storageContainer_back.TabIndex = 13;
+            this.storageContainer_back.Text = "Back";
+            this.storageContainer_back.UseVisualStyleBackColor = false;
+            this.storageContainer_back.Click += new System.EventHandler(this.storageContainer_back_Click);
             // 
             // stock_panel
             // 
@@ -2005,7 +2312,7 @@
             this.stock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stock_panel.Location = new System.Drawing.Point(0, 0);
             this.stock_panel.Name = "stock_panel";
-            this.stock_panel.Size = new System.Drawing.Size(506, 371);
+            this.stock_panel.Size = new System.Drawing.Size(506, 405);
             this.stock_panel.TabIndex = 4;
             this.stock_panel.Visible = false;
             // 
@@ -2093,8 +2400,18 @@
             this.storage_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.storage_panel.Location = new System.Drawing.Point(0, 0);
             this.storage_panel.Name = "storage_panel";
-            this.storage_panel.Size = new System.Drawing.Size(506, 371);
+            this.storage_panel.Size = new System.Drawing.Size(506, 405);
             this.storage_panel.TabIndex = 3;
+            // 
+            // storageContainer_btn
+            // 
+            this.storageContainer_btn.Location = new System.Drawing.Point(17, 296);
+            this.storageContainer_btn.Name = "storageContainer_btn";
+            this.storageContainer_btn.Size = new System.Drawing.Size(124, 23);
+            this.storageContainer_btn.TabIndex = 6;
+            this.storageContainer_btn.Text = "Manage Containers";
+            this.storageContainer_btn.UseVisualStyleBackColor = true;
+            this.storageContainer_btn.Click += new System.EventHandler(this.storageContainer_btn_Click);
             // 
             // storage_listView
             // 
@@ -2152,7 +2469,7 @@
             // timetable_panel
             // 
             this.timetable_panel.Controls.Add(this.timetable_listView);
-            this.timetable_panel.Controls.Add(this.label1);
+            this.timetable_panel.Controls.Add(this.timetableInst_label);
             this.timetable_panel.Controls.Add(this.timetableSearch_btn);
             this.timetable_panel.Controls.Add(this.requiredFertiliser_label);
             this.timetable_panel.Controls.Add(this.requiredFertiliserTitle_label);
@@ -2164,7 +2481,7 @@
             this.timetable_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.timetable_panel.Location = new System.Drawing.Point(0, 0);
             this.timetable_panel.Name = "timetable_panel";
-            this.timetable_panel.Size = new System.Drawing.Size(506, 371);
+            this.timetable_panel.Size = new System.Drawing.Size(506, 405);
             this.timetable_panel.TabIndex = 0;
             this.timetable_panel.Visible = false;
             // 
@@ -2219,15 +2536,15 @@
             this.timetableLabourer_header.Text = "Labourers";
             this.timetableLabourer_header.Width = 80;
             // 
-            // label1
+            // timetableInst_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(9, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(313, 19);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Choose and Submit below fields to view timetable";
+            this.timetableInst_label.AutoSize = true;
+            this.timetableInst_label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.timetableInst_label.Location = new System.Drawing.Point(9, 43);
+            this.timetableInst_label.Name = "timetableInst_label";
+            this.timetableInst_label.Size = new System.Drawing.Size(313, 19);
+            this.timetableInst_label.TabIndex = 7;
+            this.timetableInst_label.Text = "Choose and Submit below fields to view timetable";
             // 
             // timetableSearch_btn
             // 
@@ -2313,7 +2630,7 @@
             this.home_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.home_panel.Location = new System.Drawing.Point(0, 0);
             this.home_panel.Name = "home_panel";
-            this.home_panel.Size = new System.Drawing.Size(506, 371);
+            this.home_panel.Size = new System.Drawing.Size(506, 405);
             this.home_panel.TabIndex = 0;
             // 
             // sections_groupBox
@@ -2449,104 +2766,35 @@
             this.section_toolTip.InitialDelay = 100;
             this.section_toolTip.ReshowDelay = 100;
             // 
-            // storageContainer_btn
+            // profileTitle_label
             // 
-            this.storageContainer_btn.Location = new System.Drawing.Point(17, 296);
-            this.storageContainer_btn.Name = "storageContainer_btn";
-            this.storageContainer_btn.Size = new System.Drawing.Size(124, 23);
-            this.storageContainer_btn.TabIndex = 6;
-            this.storageContainer_btn.Text = "Manage Containers";
-            this.storageContainer_btn.UseVisualStyleBackColor = true;
-            this.storageContainer_btn.Click += new System.EventHandler(this.storageContainer_btn_Click);
+            this.profileTitle_label.AutoSize = true;
+            this.profileTitle_label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profileTitle_label.Location = new System.Drawing.Point(14, 14);
+            this.profileTitle_label.Name = "profileTitle_label";
+            this.profileTitle_label.Size = new System.Drawing.Size(224, 25);
+            this.profileTitle_label.TabIndex = 18;
+            this.profileTitle_label.Text = "PROFILE INFORMATION";
             // 
-            // container_panel
+            // profileInfoInst_label
             // 
-            this.container_panel.Controls.Add(this.container_listView);
-            this.container_panel.Controls.Add(this.containerTitle_label);
-            this.container_panel.Controls.Add(this.storageContainer_back);
-            this.container_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container_panel.Location = new System.Drawing.Point(0, 0);
-            this.container_panel.Name = "container_panel";
-            this.container_panel.Size = new System.Drawing.Size(506, 371);
-            this.container_panel.TabIndex = 13;
-            this.container_panel.Visible = false;
+            this.profileInfoInst_label.AutoSize = true;
+            this.profileInfoInst_label.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.profileInfoInst_label.Location = new System.Drawing.Point(15, 52);
+            this.profileInfoInst_label.Name = "profileInfoInst_label";
+            this.profileInfoInst_label.Size = new System.Drawing.Size(385, 19);
+            this.profileInfoInst_label.TabIndex = 19;
+            this.profileInfoInst_label.Text = "Edit / Modify below details to change your profile information";
             // 
-            // storageContainer_back
+            // profilePasswordInst_label
             // 
-            this.storageContainer_back.BackColor = System.Drawing.Color.SeaGreen;
-            this.storageContainer_back.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.storageContainer_back.FlatAppearance.BorderSize = 0;
-            this.storageContainer_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.storageContainer_back.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storageContainer_back.ForeColor = System.Drawing.Color.White;
-            this.storageContainer_back.Location = new System.Drawing.Point(0, 8);
-            this.storageContainer_back.Name = "storageContainer_back";
-            this.storageContainer_back.Size = new System.Drawing.Size(61, 33);
-            this.storageContainer_back.TabIndex = 13;
-            this.storageContainer_back.Text = "Back";
-            this.storageContainer_back.UseVisualStyleBackColor = false;
-            this.storageContainer_back.Click += new System.EventHandler(this.storageContainer_back_Click);
-            // 
-            // containerTitle_label
-            // 
-            this.containerTitle_label.AutoSize = true;
-            this.containerTitle_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.containerTitle_label.Location = new System.Drawing.Point(68, 15);
-            this.containerTitle_label.Name = "containerTitle_label";
-            this.containerTitle_label.Size = new System.Drawing.Size(92, 21);
-            this.containerTitle_label.TabIndex = 21;
-            this.containerTitle_label.Text = "Containers";
-            // 
-            // container_listView
-            // 
-            this.container_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.containerID_header,
-            this.containerType_header,
-            this.containerTemperature_header,
-            this.containerCrop_header,
-            this.containerCapacity_header,
-            this.containerStatus_header});
-            this.container_listView.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.container_listView.FullRowSelect = true;
-            this.container_listView.GridLines = true;
-            this.container_listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.container_listView.HideSelection = false;
-            this.container_listView.Location = new System.Drawing.Point(6, 73);
-            this.container_listView.MultiSelect = false;
-            this.container_listView.Name = "container_listView";
-            this.container_listView.Size = new System.Drawing.Size(494, 179);
-            this.container_listView.TabIndex = 28;
-            this.container_listView.UseCompatibleStateImageBehavior = false;
-            this.container_listView.View = System.Windows.Forms.View.Details;
-            // 
-            // containerID_header
-            // 
-            this.containerID_header.Text = "ID";
-            // 
-            // containerType_header
-            // 
-            this.containerType_header.Text = "Type";
-            this.containerType_header.Width = 90;
-            // 
-            // containerCapacity_header
-            // 
-            this.containerCapacity_header.Text = "Total Capacity";
-            this.containerCapacity_header.Width = 90;
-            // 
-            // containerStatus_header
-            // 
-            this.containerStatus_header.Text = "Status";
-            this.containerStatus_header.Width = 90;
-            // 
-            // containerTemperature_header
-            // 
-            this.containerTemperature_header.Text = "Temperature Set";
-            this.containerTemperature_header.Width = 95;
-            // 
-            // containerCrop_header
-            // 
-            this.containerCrop_header.Text = "Crop";
-            this.containerCrop_header.Width = 75;
+            this.profilePasswordInst_label.AutoSize = true;
+            this.profilePasswordInst_label.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.profilePasswordInst_label.Location = new System.Drawing.Point(15, 263);
+            this.profilePasswordInst_label.Name = "profilePasswordInst_label";
+            this.profilePasswordInst_label.Size = new System.Drawing.Size(325, 19);
+            this.profilePasswordInst_label.TabIndex = 19;
+            this.profilePasswordInst_label.Text = "Enter below details to change your profile password";
             // 
             // MGMainScreen
             // 
@@ -2555,7 +2803,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(604, 371);
+            this.ClientSize = new System.Drawing.Size(604, 405);
             this.Controls.Add(this.SplitContainer_Menu_Content);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -2566,6 +2814,8 @@
             this.SplitContainer_Menu_Content.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).EndInit();
             this.SplitContainer_Menu_Content.ResumeLayout(false);
+            this.profile_panel.ResumeLayout(false);
+            this.profile_panel.PerformLayout();
             this.shopWholesaleTop_panel.ResumeLayout(false);
             this.wholesale_panel.ResumeLayout(false);
             this.wholesale_panel.PerformLayout();
@@ -2597,6 +2847,8 @@
             this.labourer_panel.ResumeLayout(false);
             this.labourer_panel.PerformLayout();
             this.storageTop_panel.ResumeLayout(false);
+            this.container_panel.ResumeLayout(false);
+            this.container_panel.PerformLayout();
             this.stock_panel.ResumeLayout(false);
             this.stock_panel.PerformLayout();
             this.storage_panel.ResumeLayout(false);
@@ -2606,8 +2858,6 @@
             this.home_panel.ResumeLayout(false);
             this.home_panel.PerformLayout();
             this.sections_groupBox.ResumeLayout(false);
-            this.container_panel.ResumeLayout(false);
-            this.container_panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2779,7 +3029,7 @@
         private System.Windows.Forms.DateTimePicker timetableStartDate_datePicker;
         private System.Windows.Forms.Label timetableStartDate_label;
         private System.Windows.Forms.ListView timetable_listView;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label timetableInst_label;
         private System.Windows.Forms.ColumnHeader timetableDate_header;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -2834,5 +3084,26 @@
         private System.Windows.Forms.Label containerTitle_label;
         private System.Windows.Forms.Button storageContainer_back;
         private System.Windows.Forms.Button storageContainer_btn;
+        private System.Windows.Forms.Button edit_btn;
+        private System.Windows.Forms.Panel profile_panel;
+        private System.Windows.Forms.Button updatePassword_btn;
+        private System.Windows.Forms.TextBox profileConfirmPassword_txtBox;
+        private System.Windows.Forms.TextBox profileNewPassword_txtBox;
+        private System.Windows.Forms.TextBox profileOldPassword_txtBox;
+        private System.Windows.Forms.Label profileConfirmPassword_label;
+        private System.Windows.Forms.Label profileNewPassword_label;
+        private System.Windows.Forms.Label profileOldPassword_label;
+        private System.Windows.Forms.Button updateProfile_btn;
+        private System.Windows.Forms.TextBox profilePhone_txtBox;
+        private System.Windows.Forms.TextBox profileEmail_txtBox;
+        private System.Windows.Forms.TextBox profileLName_txtBox;
+        private System.Windows.Forms.TextBox profileFName_txtBox;
+        private System.Windows.Forms.Label profilePhone_label;
+        private System.Windows.Forms.Label profileEmail_label;
+        private System.Windows.Forms.Label profileLName_label;
+        private System.Windows.Forms.Label profileFName_label;
+        private System.Windows.Forms.Label profileInfoInst_label;
+        private System.Windows.Forms.Label profileTitle_label;
+        private System.Windows.Forms.Label profilePasswordInst_label;
     }
 }

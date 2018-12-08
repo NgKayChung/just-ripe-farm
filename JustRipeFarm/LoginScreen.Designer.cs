@@ -28,85 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LoginID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.LoginPassword = new System.Windows.Forms.TextBox();
-            this.LoginBtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.loginID_txtBox = new System.Windows.Forms.TextBox();
+            this.loginID_label = new System.Windows.Forms.Label();
+            this.loginPassword_label = new System.Windows.Forms.Label();
+            this.loginPassword_txtBox = new System.Windows.Forms.TextBox();
+            this.login_btn = new System.Windows.Forms.Button();
+            this.login_panel = new System.Windows.Forms.Panel();
+            this.logo_pictureBox = new System.Windows.Forms.PictureBox();
+            this.login_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // LoginID
+            // loginID_txtBox
             // 
-            this.LoginID.Location = new System.Drawing.Point(123, 154);
-            this.LoginID.Name = "LoginID";
-            this.LoginID.Size = new System.Drawing.Size(179, 20);
-            this.LoginID.TabIndex = 0;
+            this.loginID_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginID_txtBox.Location = new System.Drawing.Point(123, 160);
+            this.loginID_txtBox.Name = "loginID_txtBox";
+            this.loginID_txtBox.Size = new System.Drawing.Size(179, 23);
+            this.loginID_txtBox.TabIndex = 0;
             // 
-            // label1
+            // loginID_label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(120, 138);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Login ID";
+            this.loginID_label.AutoSize = true;
+            this.loginID_label.BackColor = System.Drawing.Color.Transparent;
+            this.loginID_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginID_label.Location = new System.Drawing.Point(120, 144);
+            this.loginID_label.Name = "loginID_label";
+            this.loginID_label.Size = new System.Drawing.Size(51, 15);
+            this.loginID_label.TabIndex = 1;
+            this.loginID_label.Text = "Login ID";
             // 
-            // label2
+            // loginPassword_label
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(120, 191);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Password";
+            this.loginPassword_label.AutoSize = true;
+            this.loginPassword_label.BackColor = System.Drawing.Color.Transparent;
+            this.loginPassword_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginPassword_label.Location = new System.Drawing.Point(120, 199);
+            this.loginPassword_label.Name = "loginPassword_label";
+            this.loginPassword_label.Size = new System.Drawing.Size(57, 15);
+            this.loginPassword_label.TabIndex = 2;
+            this.loginPassword_label.Text = "Password";
             // 
-            // LoginPassword
+            // loginPassword_txtBox
             // 
-            this.LoginPassword.Location = new System.Drawing.Point(123, 207);
-            this.LoginPassword.Name = "LoginPassword";
-            this.LoginPassword.PasswordChar = '*';
-            this.LoginPassword.Size = new System.Drawing.Size(179, 20);
-            this.LoginPassword.TabIndex = 3;
+            this.loginPassword_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginPassword_txtBox.Location = new System.Drawing.Point(123, 215);
+            this.loginPassword_txtBox.Name = "loginPassword_txtBox";
+            this.loginPassword_txtBox.PasswordChar = '*';
+            this.loginPassword_txtBox.Size = new System.Drawing.Size(179, 23);
+            this.loginPassword_txtBox.TabIndex = 3;
             // 
-            // LoginBtn
+            // login_btn
             // 
-            this.LoginBtn.Location = new System.Drawing.Point(172, 265);
-            this.LoginBtn.Name = "LoginBtn";
-            this.LoginBtn.Size = new System.Drawing.Size(75, 23);
-            this.LoginBtn.TabIndex = 4;
-            this.LoginBtn.Text = "Login";
-            this.LoginBtn.UseVisualStyleBackColor = true;
-            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
+            this.login_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_btn.Location = new System.Drawing.Point(172, 276);
+            this.login_btn.Name = "login_btn";
+            this.login_btn.Size = new System.Drawing.Size(75, 23);
+            this.login_btn.TabIndex = 4;
+            this.login_btn.Text = "Login";
+            this.login_btn.UseVisualStyleBackColor = true;
+            this.login_btn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
-            // panel1
+            // login_panel
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.LoginBtn);
-            this.panel1.Controls.Add(this.LoginID);
-            this.panel1.Controls.Add(this.LoginPassword);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(434, 321);
-            this.panel1.TabIndex = 5;
+            this.login_panel.BackColor = System.Drawing.Color.White;
+            this.login_panel.Controls.Add(this.logo_pictureBox);
+            this.login_panel.Controls.Add(this.login_btn);
+            this.login_panel.Controls.Add(this.loginID_txtBox);
+            this.login_panel.Controls.Add(this.loginPassword_txtBox);
+            this.login_panel.Controls.Add(this.loginID_label);
+            this.login_panel.Controls.Add(this.loginPassword_label);
+            this.login_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.login_panel.Location = new System.Drawing.Point(0, 0);
+            this.login_panel.Name = "login_panel";
+            this.login_panel.Size = new System.Drawing.Size(434, 321);
+            this.login_panel.TabIndex = 5;
             // 
-            // pictureBox1
+            // logo_pictureBox
             // 
-            this.pictureBox1.Image = global::JustRipeFarm.Properties.Resources.just_ripe_farm_icon;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(163, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 101);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.logo_pictureBox.Image = global::JustRipeFarm.Properties.Resources.just_ripe_farm_icon;
+            this.logo_pictureBox.InitialImage = null;
+            this.logo_pictureBox.Location = new System.Drawing.Point(163, 17);
+            this.logo_pictureBox.Name = "logo_pictureBox";
+            this.logo_pictureBox.Size = new System.Drawing.Size(100, 101);
+            this.logo_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo_pictureBox.TabIndex = 5;
+            this.logo_pictureBox.TabStop = false;
             // 
             // LoginScreen
             // 
@@ -115,24 +122,24 @@
             this.BackgroundImage = global::JustRipeFarm.Properties.Resources.h8ujpY;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(434, 321);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.login_panel);
             this.Name = "LoginScreen";
             this.Text = "JustRipe Farm - User Login";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.login_panel.ResumeLayout(false);
+            this.login_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo_pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox LoginID;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox LoginPassword;
-        private System.Windows.Forms.Button LoginBtn;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox loginID_txtBox;
+        private System.Windows.Forms.Label loginID_label;
+        private System.Windows.Forms.Label loginPassword_label;
+        private System.Windows.Forms.TextBox loginPassword_txtBox;
+        private System.Windows.Forms.Button login_btn;
+        private System.Windows.Forms.Panel login_panel;
+        private System.Windows.Forms.PictureBox logo_pictureBox;
     }
 }

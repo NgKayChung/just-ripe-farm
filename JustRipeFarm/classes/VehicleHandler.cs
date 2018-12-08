@@ -11,7 +11,7 @@ namespace JustRipeFarm
     {
         public List<Vehicle> getVehicle(MySqlConnection conn)
         {
-            string sql = "SELECT * FROM machinery";
+            string sql = "SELECT * FROM `machinery`";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             MySqlDataReader reader = sqlComm.ExecuteReader();
@@ -43,9 +43,9 @@ namespace JustRipeFarm
             }
         }
 
-        public List<Vehicle> getSelected(MySqlConnection conn, string t)
+        public List<Vehicle> getSelected(MySqlConnection conn, string type)
         {
-            string sql = "SELECT * FROM machinery where machine_type ='"+t+"'";
+            string sql = "SELECT * FROM `machinery` WHERE `machine_type` ='"+type+"'";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
             MySqlDataReader reader = sqlComm.ExecuteReader();

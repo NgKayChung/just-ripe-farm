@@ -16,13 +16,13 @@ namespace JustRipeFarm
         public LoginScreen()
         {
             InitializeComponent();
-            panel1.BackColor = Color.FromArgb(70, Color.White);
+            login_panel.BackColor = Color.FromArgb(80, Color.White);
         }
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            string user_id = LoginID.Text;
-            string password = LoginPassword.Text;
+            string user_id = loginID_txtBox.Text.Trim();
+            string password = loginPassword_txtBox.Text.Trim();
 
             if ((user_id == "") || (password == ""))
             {
@@ -30,7 +30,7 @@ namespace JustRipeFarm
             }
             else
             {
-                MySqlCommand cmd = new MySqlCommand("SELECT * from users where user_id = BINARY '" + user_id + "' and secret_password = BINARY '" + password + "'", DbConnector.Instance.getConn());
+                MySqlCommand cmd = new MySqlCommand("SELECT * from `users` where `user_id` = BINARY '" + user_id + "' and `secret_password` = BINARY '" + password + "'", DbConnector.Instance.getConn());
                 MySqlDataReader rd = cmd.ExecuteReader();
                 
                 if(rd.HasRows)
@@ -39,9 +39,6 @@ namespace JustRipeFarm
                     UserSession.Instance.LoggedIn = true;
                     UserSession.Instance.UserID = user_id;
                     UserSession.Instance.UserFirstName = rd.GetString("first_name");
-                    UserSession.Instance.UserLastName = rd.GetString("last_name");
-                    UserSession.Instance.Email = rd.GetString("email_address");
-                    UserSession.Instance.PhoneNumber = rd.GetString("phone_number");
                     UserSession.Instance.UserType = rd.GetString("user_type");
                     rd.Close();
 

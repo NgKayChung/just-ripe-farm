@@ -100,9 +100,9 @@
       <DependentUpon>Testing page.cs</DependentUpon>
     </Compile>
     <Compile Include="classes\UserSession.cs" />
-    <Compile Include="UserHandler.cs" />
-    <Compile Include="Vehicle.cs" />
-    <Compile Include="VehicleHandler.cs" />
+    <Compile Include="classes\UserHandler.cs" />
+    <Compile Include="classes\Vehicle.cs" />
+    <Compile Include="classes\VehicleHandler.cs" />
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +149,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\just-ripe-farm-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\buyers_icon.png" />
+    <Content Include="Resources\products_icon.png" />
+    <Content Include="Resources\reports_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
