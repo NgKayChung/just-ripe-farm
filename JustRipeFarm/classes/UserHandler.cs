@@ -9,12 +9,12 @@ namespace JustRipeFarm
 {
     class UserHandler
     {
-        public User GetUser(MySqlConnection conn, string ID)
+        public User GetUser(string ID)
         {
             User user = null;
             string sql = "SELECT `user_id`, `first_name`, `last_name`, `secret_password`, `email_address`, `phone_number`, `user_type` FROM `users` where `user_id`='" + ID+"'";
 
-            MySqlCommand sqlComm = new MySqlCommand(sql, conn);
+            MySqlCommand sqlComm = new MySqlCommand(sql, DbConnector.Instance.getConn());
             MySqlDataReader reader = sqlComm.ExecuteReader();
 
             if (reader.HasRows)
@@ -39,14 +39,14 @@ namespace JustRipeFarm
             return user;
         }
 
-        public int UpdateUserInfo(MySqlConnection conn, User user)
+        public int UpdateUserInfo(User user)
         {
             string sql = "UPDATE `users` SET `first_name`='" + user.Firstname + "', `last_name`='" + user.Lastname + "', `email_address`='" + user.EmailAddress + "', `phone_number`='" + user.PhoneNumber + "' WHERE `user_id`='" + user.UserID + "'";
             MySqlCommand sqlComm = new MySqlCommand(sql, DbConnector.Instance.getConn());
             return sqlComm.ExecuteNonQuery();
         }
 
-        public int ChangePass(MySqlConnection conn, User user, string newPassword)
+        public int ChangePass(User user, string newPassword)
         {
             string sql = "UPDATE `users` SET `secret_password`='" + newPassword + "' WHERE `user_id`='" + user.UserID + "' AND `secret_password` = BINARY '" + user.Password + "';";
             MySqlCommand sqlComm = new MySqlCommand(sql, DbConnector.Instance.getConn());

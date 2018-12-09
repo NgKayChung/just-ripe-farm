@@ -41,6 +41,9 @@
             this.home_btn = new System.Windows.Forms.Button();
             this.greeting_label = new System.Windows.Forms.Label();
             this.profile_panel = new System.Windows.Forms.Panel();
+            this.profilePasswordInst_label = new System.Windows.Forms.Label();
+            this.profileInfoInst_label = new System.Windows.Forms.Label();
+            this.profileTitle_label = new System.Windows.Forms.Label();
             this.updatePassword_btn = new System.Windows.Forms.Button();
             this.profileConfirmPassword_txtBox = new System.Windows.Forms.TextBox();
             this.profileNewPassword_txtBox = new System.Windows.Forms.TextBox();
@@ -130,7 +133,7 @@
             this.shopWholeTitle_label = new System.Windows.Forms.Label();
             this.machineTop_panel = new System.Windows.Forms.Panel();
             this.m_search = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.machinery_listView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -254,6 +257,46 @@
             this.timetableStartDate_label = new System.Windows.Forms.Label();
             this.timetableTitle_label = new System.Windows.Forms.Label();
             this.home_panel = new System.Windows.Forms.Panel();
+            this.lbHome_panel = new System.Windows.Forms.Panel();
+            this.labTaskComplete_btn = new System.Windows.Forms.Button();
+            this.labTaskDescription_label = new System.Windows.Forms.Label();
+            this.labTaskDescriptionTitle_label = new System.Windows.Forms.Label();
+            this.labTaskEndDate_label = new System.Windows.Forms.Label();
+            this.labTaskStartDate_label = new System.Windows.Forms.Label();
+            this.labTaskField_label = new System.Windows.Forms.Label();
+            this.labTaskManager_label = new System.Windows.Forms.Label();
+            this.labTaskAssignedDate_label = new System.Windows.Forms.Label();
+            this.labTaskPesticide_label = new System.Windows.Forms.Label();
+            this.labTaskSeed_label = new System.Windows.Forms.Label();
+            this.labTaskFertiliser_label = new System.Windows.Forms.Label();
+            this.labTaskMethod_label = new System.Windows.Forms.Label();
+            this.labTaskCrop_label = new System.Windows.Forms.Label();
+            this.labTaskStatus_label = new System.Windows.Forms.Label();
+            this.labTaskEndDateTitle_label = new System.Windows.Forms.Label();
+            this.labTaskManagerTitle_label = new System.Windows.Forms.Label();
+            this.labTaskAssignedDateTitle_label = new System.Windows.Forms.Label();
+            this.labTaskPesticideTitle_label = new System.Windows.Forms.Label();
+            this.labTaskSeedTitle_label = new System.Windows.Forms.Label();
+            this.labTaskFertiliserTitle_label = new System.Windows.Forms.Label();
+            this.labTaskStartDateTitle_label = new System.Windows.Forms.Label();
+            this.labTaskMethodTitle_label = new System.Windows.Forms.Label();
+            this.labTaskFieldTitle_label = new System.Windows.Forms.Label();
+            this.labTaskCropTitle_label = new System.Windows.Forms.Label();
+            this.labTaskType_label = new System.Windows.Forms.Label();
+            this.labTaskStatusTitle_label = new System.Windows.Forms.Label();
+            this.labTaskTypeTitle_label = new System.Windows.Forms.Label();
+            this.labTaskTitle_label = new System.Windows.Forms.Label();
+            this.labTitle_title_label = new System.Windows.Forms.Label();
+            this.labHomeTitle_label = new System.Windows.Forms.Label();
+            this.labTask_listView = new System.Windows.Forms.ListView();
+            this.labTask_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labType_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labDesc_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labStatus_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labField_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labStartTime_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labEndTime_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mgHome_panel = new System.Windows.Forms.Panel();
             this.sections_groupBox = new System.Windows.Forms.GroupBox();
             this.section8_panel = new System.Windows.Forms.Panel();
             this.section9_panel = new System.Windows.Forms.Panel();
@@ -267,9 +310,6 @@
             this.fieldTitle_label = new System.Windows.Forms.Label();
             this.homeTitle_label = new System.Windows.Forms.Label();
             this.section_toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.profileTitle_label = new System.Windows.Forms.Label();
-            this.profileInfoInst_label = new System.Windows.Forms.Label();
-            this.profilePasswordInst_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).BeginInit();
             this.SplitContainer_Menu_Content.Panel1.SuspendLayout();
             this.SplitContainer_Menu_Content.Panel2.SuspendLayout();
@@ -299,6 +339,8 @@
             this.storage_panel.SuspendLayout();
             this.timetable_panel.SuspendLayout();
             this.home_panel.SuspendLayout();
+            this.lbHome_panel.SuspendLayout();
+            this.mgHome_panel.SuspendLayout();
             this.sections_groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -519,12 +561,42 @@
             this.profile_panel.Controls.Add(this.profileEmail_label);
             this.profile_panel.Controls.Add(this.profileLName_label);
             this.profile_panel.Controls.Add(this.profileFName_label);
-            this.profile_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.profile_panel.Location = new System.Drawing.Point(0, 0);
+            this.profile_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.profile_panel.Location = new System.Drawing.Point(-60, 0);
             this.profile_panel.Name = "profile_panel";
-            this.profile_panel.Size = new System.Drawing.Size(506, 405);
+            this.profile_panel.Size = new System.Drawing.Size(10, 405);
             this.profile_panel.TabIndex = 5;
             this.profile_panel.Visible = false;
+            // 
+            // profilePasswordInst_label
+            // 
+            this.profilePasswordInst_label.AutoSize = true;
+            this.profilePasswordInst_label.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.profilePasswordInst_label.Location = new System.Drawing.Point(15, 263);
+            this.profilePasswordInst_label.Name = "profilePasswordInst_label";
+            this.profilePasswordInst_label.Size = new System.Drawing.Size(325, 19);
+            this.profilePasswordInst_label.TabIndex = 19;
+            this.profilePasswordInst_label.Text = "Enter below details to change your profile password";
+            // 
+            // profileInfoInst_label
+            // 
+            this.profileInfoInst_label.AutoSize = true;
+            this.profileInfoInst_label.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.profileInfoInst_label.Location = new System.Drawing.Point(15, 52);
+            this.profileInfoInst_label.Name = "profileInfoInst_label";
+            this.profileInfoInst_label.Size = new System.Drawing.Size(385, 19);
+            this.profileInfoInst_label.TabIndex = 19;
+            this.profileInfoInst_label.Text = "Edit / Modify below details to change your profile information";
+            // 
+            // profileTitle_label
+            // 
+            this.profileTitle_label.AutoSize = true;
+            this.profileTitle_label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.profileTitle_label.Location = new System.Drawing.Point(14, 14);
+            this.profileTitle_label.Name = "profileTitle_label";
+            this.profileTitle_label.Size = new System.Drawing.Size(224, 25);
+            this.profileTitle_label.TabIndex = 18;
+            this.profileTitle_label.Text = "PROFILE INFORMATION";
             // 
             // updatePassword_btn
             // 
@@ -685,10 +757,10 @@
             this.shopWholesaleTop_panel.Controls.Add(this.shopProducts_panel);
             this.shopWholesaleTop_panel.Controls.Add(this.shop_panel);
             this.shopWholesaleTop_panel.Controls.Add(this.shopWholesale_panel);
-            this.shopWholesaleTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shopWholesaleTop_panel.Location = new System.Drawing.Point(0, 0);
+            this.shopWholesaleTop_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.shopWholesaleTop_panel.Location = new System.Drawing.Point(-50, 0);
             this.shopWholesaleTop_panel.Name = "shopWholesaleTop_panel";
-            this.shopWholesaleTop_panel.Size = new System.Drawing.Size(506, 405);
+            this.shopWholesaleTop_panel.Size = new System.Drawing.Size(10, 405);
             this.shopWholesaleTop_panel.TabIndex = 0;
             this.shopWholesaleTop_panel.Visible = false;
             this.shopWholesaleTop_panel.VisibleChanged += new System.EventHandler(this.shopWholesaleTop_panel_VisibleChanged);
@@ -706,7 +778,7 @@
             this.wholesale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wholesale_panel.Location = new System.Drawing.Point(0, 0);
             this.wholesale_panel.Name = "wholesale_panel";
-            this.wholesale_panel.Size = new System.Drawing.Size(506, 405);
+            this.wholesale_panel.Size = new System.Drawing.Size(10, 405);
             this.wholesale_panel.TabIndex = 14;
             this.wholesale_panel.Visible = false;
             // 
@@ -837,7 +909,7 @@
             this.salesReport_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.salesReport_panel.Location = new System.Drawing.Point(0, 0);
             this.salesReport_panel.Name = "salesReport_panel";
-            this.salesReport_panel.Size = new System.Drawing.Size(506, 405);
+            this.salesReport_panel.Size = new System.Drawing.Size(10, 405);
             this.salesReport_panel.TabIndex = 13;
             this.salesReport_panel.Visible = false;
             // 
@@ -986,7 +1058,7 @@
             this.buyers_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buyers_panel.Location = new System.Drawing.Point(0, 0);
             this.buyers_panel.Name = "buyers_panel";
-            this.buyers_panel.Size = new System.Drawing.Size(506, 405);
+            this.buyers_panel.Size = new System.Drawing.Size(10, 405);
             this.buyers_panel.TabIndex = 12;
             this.buyers_panel.Visible = false;
             // 
@@ -1092,7 +1164,7 @@
             this.shopProducts_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shopProducts_panel.Location = new System.Drawing.Point(0, 0);
             this.shopProducts_panel.Name = "shopProducts_panel";
-            this.shopProducts_panel.Size = new System.Drawing.Size(506, 405);
+            this.shopProducts_panel.Size = new System.Drawing.Size(10, 405);
             this.shopProducts_panel.TabIndex = 11;
             this.shopProducts_panel.Visible = false;
             // 
@@ -1271,7 +1343,7 @@
             this.shop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shop_panel.Location = new System.Drawing.Point(0, 0);
             this.shop_panel.Name = "shop_panel";
-            this.shop_panel.Size = new System.Drawing.Size(506, 405);
+            this.shop_panel.Size = new System.Drawing.Size(10, 405);
             this.shop_panel.TabIndex = 10;
             this.shop_panel.Visible = false;
             // 
@@ -1366,7 +1438,7 @@
             this.shopWholesale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shopWholesale_panel.Location = new System.Drawing.Point(0, 0);
             this.shopWholesale_panel.Name = "shopWholesale_panel";
-            this.shopWholesale_panel.Size = new System.Drawing.Size(506, 405);
+            this.shopWholesale_panel.Size = new System.Drawing.Size(10, 405);
             this.shopWholesale_panel.TabIndex = 9;
             // 
             // wholesale_btn
@@ -1413,14 +1485,14 @@
             // machineTop_panel
             // 
             this.machineTop_panel.Controls.Add(this.m_search);
-            this.machineTop_panel.Controls.Add(this.listView1);
+            this.machineTop_panel.Controls.Add(this.machinery_listView);
             this.machineTop_panel.Controls.Add(this.comboBox1);
             this.machineTop_panel.Controls.Add(this.machineryTitle_label);
             this.machineTop_panel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.machineTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.machineTop_panel.Location = new System.Drawing.Point(0, 0);
+            this.machineTop_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.machineTop_panel.Location = new System.Drawing.Point(-40, 0);
             this.machineTop_panel.Name = "machineTop_panel";
-            this.machineTop_panel.Size = new System.Drawing.Size(506, 405);
+            this.machineTop_panel.Size = new System.Drawing.Size(10, 405);
             this.machineTop_panel.TabIndex = 3;
             this.machineTop_panel.Visible = false;
             // 
@@ -1434,9 +1506,9 @@
             this.m_search.UseVisualStyleBackColor = true;
             this.m_search.Click += new System.EventHandler(this.m_search_Click);
             // 
-            // listView1
+            // machinery_listView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.machinery_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
@@ -1444,12 +1516,12 @@
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7});
-            this.listView1.Location = new System.Drawing.Point(28, 107);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(441, 166);
-            this.listView1.TabIndex = 5;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.machinery_listView.Location = new System.Drawing.Point(28, 107);
+            this.machinery_listView.Name = "machinery_listView";
+            this.machinery_listView.Size = new System.Drawing.Size(441, 166);
+            this.machinery_listView.TabIndex = 5;
+            this.machinery_listView.UseCompatibleStateImageBehavior = false;
+            this.machinery_listView.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -1507,10 +1579,10 @@
             this.labourerTop_panel.Controls.Add(this.assignTask_panel);
             this.labourerTop_panel.Controls.Add(this.addLabourer_panel);
             this.labourerTop_panel.Controls.Add(this.labourer_panel);
-            this.labourerTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labourerTop_panel.Location = new System.Drawing.Point(0, 0);
+            this.labourerTop_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.labourerTop_panel.Location = new System.Drawing.Point(-30, 0);
             this.labourerTop_panel.Name = "labourerTop_panel";
-            this.labourerTop_panel.Size = new System.Drawing.Size(506, 405);
+            this.labourerTop_panel.Size = new System.Drawing.Size(10, 405);
             this.labourerTop_panel.TabIndex = 2;
             this.labourerTop_panel.Visible = false;
             this.labourerTop_panel.VisibleChanged += new System.EventHandler(this.labourerTop_panel_VisibleChanged);
@@ -1524,7 +1596,7 @@
             this.assignTask_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.assignTask_panel.Location = new System.Drawing.Point(0, 0);
             this.assignTask_panel.Name = "assignTask_panel";
-            this.assignTask_panel.Size = new System.Drawing.Size(506, 405);
+            this.assignTask_panel.Size = new System.Drawing.Size(10, 405);
             this.assignTask_panel.TabIndex = 7;
             this.assignTask_panel.Visible = false;
             // 
@@ -1968,7 +2040,7 @@
             this.addLabourer_panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.addLabourer_panel.Location = new System.Drawing.Point(0, 0);
             this.addLabourer_panel.Name = "addLabourer_panel";
-            this.addLabourer_panel.Size = new System.Drawing.Size(506, 405);
+            this.addLabourer_panel.Size = new System.Drawing.Size(10, 405);
             this.addLabourer_panel.TabIndex = 6;
             this.addLabourer_panel.Visible = false;
             // 
@@ -2117,7 +2189,7 @@
             this.labourer_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labourer_panel.Location = new System.Drawing.Point(0, 0);
             this.labourer_panel.Name = "labourer_panel";
-            this.labourer_panel.Size = new System.Drawing.Size(506, 405);
+            this.labourer_panel.Size = new System.Drawing.Size(10, 405);
             this.labourer_panel.TabIndex = 5;
             // 
             // labourerAssignTask_btn
@@ -2206,10 +2278,10 @@
             this.storageTop_panel.Controls.Add(this.container_panel);
             this.storageTop_panel.Controls.Add(this.stock_panel);
             this.storageTop_panel.Controls.Add(this.storage_panel);
-            this.storageTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.storageTop_panel.Location = new System.Drawing.Point(0, 0);
+            this.storageTop_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.storageTop_panel.Location = new System.Drawing.Point(-20, 0);
             this.storageTop_panel.Name = "storageTop_panel";
-            this.storageTop_panel.Size = new System.Drawing.Size(506, 405);
+            this.storageTop_panel.Size = new System.Drawing.Size(10, 405);
             this.storageTop_panel.TabIndex = 1;
             this.storageTop_panel.Visible = false;
             this.storageTop_panel.VisibleChanged += new System.EventHandler(this.storageTop_panel_VisibleChanged);
@@ -2222,7 +2294,7 @@
             this.container_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container_panel.Location = new System.Drawing.Point(0, 0);
             this.container_panel.Name = "container_panel";
-            this.container_panel.Size = new System.Drawing.Size(506, 405);
+            this.container_panel.Size = new System.Drawing.Size(10, 405);
             this.container_panel.TabIndex = 13;
             this.container_panel.Visible = false;
             // 
@@ -2312,7 +2384,7 @@
             this.stock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stock_panel.Location = new System.Drawing.Point(0, 0);
             this.stock_panel.Name = "stock_panel";
-            this.stock_panel.Size = new System.Drawing.Size(506, 405);
+            this.stock_panel.Size = new System.Drawing.Size(10, 405);
             this.stock_panel.TabIndex = 4;
             this.stock_panel.Visible = false;
             // 
@@ -2400,7 +2472,7 @@
             this.storage_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.storage_panel.Location = new System.Drawing.Point(0, 0);
             this.storage_panel.Name = "storage_panel";
-            this.storage_panel.Size = new System.Drawing.Size(506, 405);
+            this.storage_panel.Size = new System.Drawing.Size(10, 405);
             this.storage_panel.TabIndex = 3;
             // 
             // storageContainer_btn
@@ -2478,10 +2550,10 @@
             this.timetable_panel.Controls.Add(this.timetableStartDate_datePicker);
             this.timetable_panel.Controls.Add(this.timetableStartDate_label);
             this.timetable_panel.Controls.Add(this.timetableTitle_label);
-            this.timetable_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.timetable_panel.Location = new System.Drawing.Point(0, 0);
+            this.timetable_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.timetable_panel.Location = new System.Drawing.Point(-10, 0);
             this.timetable_panel.Name = "timetable_panel";
-            this.timetable_panel.Size = new System.Drawing.Size(506, 405);
+            this.timetable_panel.Size = new System.Drawing.Size(10, 405);
             this.timetable_panel.TabIndex = 0;
             this.timetable_panel.Visible = false;
             // 
@@ -2624,14 +2696,407 @@
             // home_panel
             // 
             this.home_panel.BackColor = System.Drawing.SystemColors.Control;
-            this.home_panel.Controls.Add(this.sections_groupBox);
-            this.home_panel.Controls.Add(this.fieldTitle_label);
+            this.home_panel.Controls.Add(this.lbHome_panel);
+            this.home_panel.Controls.Add(this.mgHome_panel);
             this.home_panel.Controls.Add(this.homeTitle_label);
-            this.home_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.home_panel.Dock = System.Windows.Forms.DockStyle.Right;
             this.home_panel.Location = new System.Drawing.Point(0, 0);
             this.home_panel.Name = "home_panel";
+            this.home_panel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.home_panel.Size = new System.Drawing.Size(506, 405);
             this.home_panel.TabIndex = 0;
+            // 
+            // lbHome_panel
+            // 
+            this.lbHome_panel.AutoScroll = true;
+            this.lbHome_panel.Controls.Add(this.labTaskComplete_btn);
+            this.lbHome_panel.Controls.Add(this.labTaskDescription_label);
+            this.lbHome_panel.Controls.Add(this.labTaskDescriptionTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTaskEndDate_label);
+            this.lbHome_panel.Controls.Add(this.labTaskStartDate_label);
+            this.lbHome_panel.Controls.Add(this.labTaskField_label);
+            this.lbHome_panel.Controls.Add(this.labTaskManager_label);
+            this.lbHome_panel.Controls.Add(this.labTaskAssignedDate_label);
+            this.lbHome_panel.Controls.Add(this.labTaskPesticide_label);
+            this.lbHome_panel.Controls.Add(this.labTaskSeed_label);
+            this.lbHome_panel.Controls.Add(this.labTaskFertiliser_label);
+            this.lbHome_panel.Controls.Add(this.labTaskMethod_label);
+            this.lbHome_panel.Controls.Add(this.labTaskCrop_label);
+            this.lbHome_panel.Controls.Add(this.labTaskStatus_label);
+            this.lbHome_panel.Controls.Add(this.labTaskEndDateTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTaskManagerTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTaskAssignedDateTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTaskPesticideTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTaskSeedTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTaskFertiliserTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTaskStartDateTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTaskMethodTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTaskFieldTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTaskCropTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTaskType_label);
+            this.lbHome_panel.Controls.Add(this.labTaskStatusTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTaskTypeTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTaskTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTitle_title_label);
+            this.lbHome_panel.Controls.Add(this.labHomeTitle_label);
+            this.lbHome_panel.Controls.Add(this.labTask_listView);
+            this.lbHome_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lbHome_panel.Location = new System.Drawing.Point(0, 37);
+            this.lbHome_panel.Name = "lbHome_panel";
+            this.lbHome_panel.Size = new System.Drawing.Size(506, 358);
+            this.lbHome_panel.TabIndex = 13;
+            this.lbHome_panel.Visible = false;
+            // 
+            // labTaskComplete_btn
+            // 
+            this.labTaskComplete_btn.BackColor = System.Drawing.Color.DarkCyan;
+            this.labTaskComplete_btn.Enabled = false;
+            this.labTaskComplete_btn.FlatAppearance.BorderColor = System.Drawing.Color.LawnGreen;
+            this.labTaskComplete_btn.FlatAppearance.BorderSize = 0;
+            this.labTaskComplete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labTaskComplete_btn.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskComplete_btn.ForeColor = System.Drawing.Color.White;
+            this.labTaskComplete_btn.Location = new System.Drawing.Point(169, 215);
+            this.labTaskComplete_btn.Name = "labTaskComplete_btn";
+            this.labTaskComplete_btn.Size = new System.Drawing.Size(102, 35);
+            this.labTaskComplete_btn.TabIndex = 16;
+            this.labTaskComplete_btn.Text = "Click to Complete Task";
+            this.labTaskComplete_btn.UseVisualStyleBackColor = false;
+            this.labTaskComplete_btn.Click += new System.EventHandler(this.labTaskComplete_btn_Click);
+            // 
+            // labTaskDescription_label
+            // 
+            this.labTaskDescription_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskDescription_label.Location = new System.Drawing.Point(12, 329);
+            this.labTaskDescription_label.Name = "labTaskDescription_label";
+            this.labTaskDescription_label.Size = new System.Drawing.Size(151, 104);
+            this.labTaskDescription_label.TabIndex = 15;
+            // 
+            // labTaskDescriptionTitle_label
+            // 
+            this.labTaskDescriptionTitle_label.AutoSize = true;
+            this.labTaskDescriptionTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskDescriptionTitle_label.Location = new System.Drawing.Point(12, 312);
+            this.labTaskDescriptionTitle_label.Name = "labTaskDescriptionTitle_label";
+            this.labTaskDescriptionTitle_label.Size = new System.Drawing.Size(67, 15);
+            this.labTaskDescriptionTitle_label.TabIndex = 14;
+            this.labTaskDescriptionTitle_label.Text = "Description";
+            // 
+            // labTaskEndDate_label
+            // 
+            this.labTaskEndDate_label.AutoSize = true;
+            this.labTaskEndDate_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskEndDate_label.Location = new System.Drawing.Point(167, 440);
+            this.labTaskEndDate_label.Name = "labTaskEndDate_label";
+            this.labTaskEndDate_label.Size = new System.Drawing.Size(0, 15);
+            this.labTaskEndDate_label.TabIndex = 15;
+            // 
+            // labTaskStartDate_label
+            // 
+            this.labTaskStartDate_label.AutoSize = true;
+            this.labTaskStartDate_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskStartDate_label.Location = new System.Drawing.Point(167, 398);
+            this.labTaskStartDate_label.Name = "labTaskStartDate_label";
+            this.labTaskStartDate_label.Size = new System.Drawing.Size(0, 15);
+            this.labTaskStartDate_label.TabIndex = 15;
+            // 
+            // labTaskField_label
+            // 
+            this.labTaskField_label.AutoSize = true;
+            this.labTaskField_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskField_label.Location = new System.Drawing.Point(167, 316);
+            this.labTaskField_label.Name = "labTaskField_label";
+            this.labTaskField_label.Size = new System.Drawing.Size(0, 15);
+            this.labTaskField_label.TabIndex = 15;
+            // 
+            // labTaskManager_label
+            // 
+            this.labTaskManager_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskManager_label.Location = new System.Drawing.Point(309, 441);
+            this.labTaskManager_label.Name = "labTaskManager_label";
+            this.labTaskManager_label.Size = new System.Drawing.Size(177, 31);
+            this.labTaskManager_label.TabIndex = 15;
+            // 
+            // labTaskAssignedDate_label
+            // 
+            this.labTaskAssignedDate_label.AutoSize = true;
+            this.labTaskAssignedDate_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskAssignedDate_label.Location = new System.Drawing.Point(166, 480);
+            this.labTaskAssignedDate_label.Name = "labTaskAssignedDate_label";
+            this.labTaskAssignedDate_label.Size = new System.Drawing.Size(0, 15);
+            this.labTaskAssignedDate_label.TabIndex = 15;
+            // 
+            // labTaskPesticide_label
+            // 
+            this.labTaskPesticide_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskPesticide_label.Location = new System.Drawing.Point(309, 386);
+            this.labTaskPesticide_label.Name = "labTaskPesticide_label";
+            this.labTaskPesticide_label.Size = new System.Drawing.Size(177, 31);
+            this.labTaskPesticide_label.TabIndex = 15;
+            // 
+            // labTaskSeed_label
+            // 
+            this.labTaskSeed_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskSeed_label.Location = new System.Drawing.Point(309, 334);
+            this.labTaskSeed_label.Name = "labTaskSeed_label";
+            this.labTaskSeed_label.Size = new System.Drawing.Size(177, 31);
+            this.labTaskSeed_label.TabIndex = 15;
+            // 
+            // labTaskFertiliser_label
+            // 
+            this.labTaskFertiliser_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskFertiliser_label.Location = new System.Drawing.Point(309, 282);
+            this.labTaskFertiliser_label.Name = "labTaskFertiliser_label";
+            this.labTaskFertiliser_label.Size = new System.Drawing.Size(177, 31);
+            this.labTaskFertiliser_label.TabIndex = 15;
+            // 
+            // labTaskMethod_label
+            // 
+            this.labTaskMethod_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskMethod_label.Location = new System.Drawing.Point(309, 230);
+            this.labTaskMethod_label.Name = "labTaskMethod_label";
+            this.labTaskMethod_label.Size = new System.Drawing.Size(177, 31);
+            this.labTaskMethod_label.TabIndex = 15;
+            // 
+            // labTaskCrop_label
+            // 
+            this.labTaskCrop_label.AutoSize = true;
+            this.labTaskCrop_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskCrop_label.Location = new System.Drawing.Point(167, 355);
+            this.labTaskCrop_label.Name = "labTaskCrop_label";
+            this.labTaskCrop_label.Size = new System.Drawing.Size(0, 15);
+            this.labTaskCrop_label.TabIndex = 15;
+            // 
+            // labTaskStatus_label
+            // 
+            this.labTaskStatus_label.AutoSize = true;
+            this.labTaskStatus_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskStatus_label.Location = new System.Drawing.Point(166, 275);
+            this.labTaskStatus_label.Name = "labTaskStatus_label";
+            this.labTaskStatus_label.Size = new System.Drawing.Size(0, 15);
+            this.labTaskStatus_label.TabIndex = 15;
+            // 
+            // labTaskEndDateTitle_label
+            // 
+            this.labTaskEndDateTitle_label.AutoSize = true;
+            this.labTaskEndDateTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskEndDateTitle_label.Location = new System.Drawing.Point(167, 423);
+            this.labTaskEndDateTitle_label.Name = "labTaskEndDateTitle_label";
+            this.labTaskEndDateTitle_label.Size = new System.Drawing.Size(55, 15);
+            this.labTaskEndDateTitle_label.TabIndex = 14;
+            this.labTaskEndDateTitle_label.Text = "Due Date";
+            // 
+            // labTaskManagerTitle_label
+            // 
+            this.labTaskManagerTitle_label.AutoSize = true;
+            this.labTaskManagerTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskManagerTitle_label.Location = new System.Drawing.Point(309, 424);
+            this.labTaskManagerTitle_label.Name = "labTaskManagerTitle_label";
+            this.labTaskManagerTitle_label.Size = new System.Drawing.Size(54, 15);
+            this.labTaskManagerTitle_label.TabIndex = 14;
+            this.labTaskManagerTitle_label.Text = "Manager";
+            // 
+            // labTaskAssignedDateTitle_label
+            // 
+            this.labTaskAssignedDateTitle_label.AutoSize = true;
+            this.labTaskAssignedDateTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskAssignedDateTitle_label.Location = new System.Drawing.Point(166, 460);
+            this.labTaskAssignedDateTitle_label.Name = "labTaskAssignedDateTitle_label";
+            this.labTaskAssignedDateTitle_label.Size = new System.Drawing.Size(82, 15);
+            this.labTaskAssignedDateTitle_label.TabIndex = 14;
+            this.labTaskAssignedDateTitle_label.Text = "Date Assigned";
+            // 
+            // labTaskPesticideTitle_label
+            // 
+            this.labTaskPesticideTitle_label.AutoSize = true;
+            this.labTaskPesticideTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskPesticideTitle_label.Location = new System.Drawing.Point(309, 369);
+            this.labTaskPesticideTitle_label.Name = "labTaskPesticideTitle_label";
+            this.labTaskPesticideTitle_label.Size = new System.Drawing.Size(54, 15);
+            this.labTaskPesticideTitle_label.TabIndex = 14;
+            this.labTaskPesticideTitle_label.Text = "Pesticide";
+            // 
+            // labTaskSeedTitle_label
+            // 
+            this.labTaskSeedTitle_label.AutoSize = true;
+            this.labTaskSeedTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskSeedTitle_label.Location = new System.Drawing.Point(309, 317);
+            this.labTaskSeedTitle_label.Name = "labTaskSeedTitle_label";
+            this.labTaskSeedTitle_label.Size = new System.Drawing.Size(32, 15);
+            this.labTaskSeedTitle_label.TabIndex = 14;
+            this.labTaskSeedTitle_label.Text = "Seed";
+            // 
+            // labTaskFertiliserTitle_label
+            // 
+            this.labTaskFertiliserTitle_label.AutoSize = true;
+            this.labTaskFertiliserTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskFertiliserTitle_label.Location = new System.Drawing.Point(309, 265);
+            this.labTaskFertiliserTitle_label.Name = "labTaskFertiliserTitle_label";
+            this.labTaskFertiliserTitle_label.Size = new System.Drawing.Size(51, 15);
+            this.labTaskFertiliserTitle_label.TabIndex = 14;
+            this.labTaskFertiliserTitle_label.Text = "Fertiliser";
+            // 
+            // labTaskStartDateTitle_label
+            // 
+            this.labTaskStartDateTitle_label.AutoSize = true;
+            this.labTaskStartDateTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskStartDateTitle_label.Location = new System.Drawing.Point(167, 381);
+            this.labTaskStartDateTitle_label.Name = "labTaskStartDateTitle_label";
+            this.labTaskStartDateTitle_label.Size = new System.Drawing.Size(58, 15);
+            this.labTaskStartDateTitle_label.TabIndex = 14;
+            this.labTaskStartDateTitle_label.Text = "Start Date";
+            // 
+            // labTaskMethodTitle_label
+            // 
+            this.labTaskMethodTitle_label.AutoSize = true;
+            this.labTaskMethodTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskMethodTitle_label.Location = new System.Drawing.Point(309, 213);
+            this.labTaskMethodTitle_label.Name = "labTaskMethodTitle_label";
+            this.labTaskMethodTitle_label.Size = new System.Drawing.Size(49, 15);
+            this.labTaskMethodTitle_label.TabIndex = 14;
+            this.labTaskMethodTitle_label.Text = "Method";
+            // 
+            // labTaskFieldTitle_label
+            // 
+            this.labTaskFieldTitle_label.AutoSize = true;
+            this.labTaskFieldTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskFieldTitle_label.Location = new System.Drawing.Point(167, 299);
+            this.labTaskFieldTitle_label.Name = "labTaskFieldTitle_label";
+            this.labTaskFieldTitle_label.Size = new System.Drawing.Size(32, 15);
+            this.labTaskFieldTitle_label.TabIndex = 14;
+            this.labTaskFieldTitle_label.Text = "Field";
+            // 
+            // labTaskCropTitle_label
+            // 
+            this.labTaskCropTitle_label.AutoSize = true;
+            this.labTaskCropTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskCropTitle_label.Location = new System.Drawing.Point(167, 338);
+            this.labTaskCropTitle_label.Name = "labTaskCropTitle_label";
+            this.labTaskCropTitle_label.Size = new System.Drawing.Size(33, 15);
+            this.labTaskCropTitle_label.TabIndex = 14;
+            this.labTaskCropTitle_label.Text = "Crop";
+            // 
+            // labTaskType_label
+            // 
+            this.labTaskType_label.AutoSize = true;
+            this.labTaskType_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskType_label.Location = new System.Drawing.Point(12, 289);
+            this.labTaskType_label.Name = "labTaskType_label";
+            this.labTaskType_label.Size = new System.Drawing.Size(0, 15);
+            this.labTaskType_label.TabIndex = 15;
+            // 
+            // labTaskStatusTitle_label
+            // 
+            this.labTaskStatusTitle_label.AutoSize = true;
+            this.labTaskStatusTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskStatusTitle_label.Location = new System.Drawing.Point(166, 258);
+            this.labTaskStatusTitle_label.Name = "labTaskStatusTitle_label";
+            this.labTaskStatusTitle_label.Size = new System.Drawing.Size(39, 15);
+            this.labTaskStatusTitle_label.TabIndex = 14;
+            this.labTaskStatusTitle_label.Text = "Status";
+            // 
+            // labTaskTypeTitle_label
+            // 
+            this.labTaskTypeTitle_label.AutoSize = true;
+            this.labTaskTypeTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskTypeTitle_label.Location = new System.Drawing.Point(12, 272);
+            this.labTaskTypeTitle_label.Name = "labTaskTypeTitle_label";
+            this.labTaskTypeTitle_label.Size = new System.Drawing.Size(32, 15);
+            this.labTaskTypeTitle_label.TabIndex = 14;
+            this.labTaskTypeTitle_label.Text = "Type";
+            // 
+            // labTaskTitle_label
+            // 
+            this.labTaskTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTaskTitle_label.Location = new System.Drawing.Point(11, 230);
+            this.labTaskTitle_label.Name = "labTaskTitle_label";
+            this.labTaskTitle_label.Size = new System.Drawing.Size(152, 34);
+            this.labTaskTitle_label.TabIndex = 15;
+            // 
+            // labTitle_title_label
+            // 
+            this.labTitle_title_label.AutoSize = true;
+            this.labTitle_title_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labTitle_title_label.Location = new System.Drawing.Point(11, 213);
+            this.labTitle_title_label.Name = "labTitle_title_label";
+            this.labTitle_title_label.Size = new System.Drawing.Size(30, 15);
+            this.labTitle_title_label.TabIndex = 14;
+            this.labTitle_title_label.Text = "Title";
+            // 
+            // labHomeTitle_label
+            // 
+            this.labHomeTitle_label.AutoSize = true;
+            this.labHomeTitle_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labHomeTitle_label.Location = new System.Drawing.Point(7, 10);
+            this.labHomeTitle_label.Name = "labHomeTitle_label";
+            this.labHomeTitle_label.Size = new System.Drawing.Size(82, 21);
+            this.labHomeTitle_label.TabIndex = 13;
+            this.labHomeTitle_label.Text = "Your Tasks";
+            // 
+            // labTask_listView
+            // 
+            this.labTask_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.labTask_header,
+            this.labType_header,
+            this.labDesc_header,
+            this.labStatus_header,
+            this.labField_header,
+            this.labStartTime_header,
+            this.labEndTime_header});
+            this.labTask_listView.FullRowSelect = true;
+            this.labTask_listView.GridLines = true;
+            this.labTask_listView.Location = new System.Drawing.Point(8, 39);
+            this.labTask_listView.Name = "labTask_listView";
+            this.labTask_listView.Size = new System.Drawing.Size(476, 164);
+            this.labTask_listView.TabIndex = 0;
+            this.labTask_listView.UseCompatibleStateImageBehavior = false;
+            this.labTask_listView.View = System.Windows.Forms.View.Details;
+            this.labTask_listView.SelectedIndexChanged += new System.EventHandler(this.labTask_listView_SelectedIndexChanged);
+            // 
+            // labTask_header
+            // 
+            this.labTask_header.Text = "Title";
+            this.labTask_header.Width = 80;
+            // 
+            // labType_header
+            // 
+            this.labType_header.Text = "Type";
+            this.labType_header.Width = 70;
+            // 
+            // labDesc_header
+            // 
+            this.labDesc_header.Text = "Description";
+            this.labDesc_header.Width = 100;
+            // 
+            // labStatus_header
+            // 
+            this.labStatus_header.Text = "Status";
+            this.labStatus_header.Width = 70;
+            // 
+            // labField_header
+            // 
+            this.labField_header.Text = "Farm Section";
+            this.labField_header.Width = 80;
+            // 
+            // labStartTime_header
+            // 
+            this.labStartTime_header.Text = "Start At";
+            this.labStartTime_header.Width = 90;
+            // 
+            // labEndTime_header
+            // 
+            this.labEndTime_header.Text = "Due At";
+            this.labEndTime_header.Width = 90;
+            // 
+            // mgHome_panel
+            // 
+            this.mgHome_panel.Controls.Add(this.sections_groupBox);
+            this.mgHome_panel.Controls.Add(this.fieldTitle_label);
+            this.mgHome_panel.Location = new System.Drawing.Point(0, 39);
+            this.mgHome_panel.Name = "mgHome_panel";
+            this.mgHome_panel.Size = new System.Drawing.Size(508, 366);
+            this.mgHome_panel.TabIndex = 12;
+            this.mgHome_panel.Visible = false;
             // 
             // sections_groupBox
             // 
@@ -2644,10 +3109,10 @@
             this.sections_groupBox.Controls.Add(this.section4_panel);
             this.sections_groupBox.Controls.Add(this.section3_panel);
             this.sections_groupBox.Controls.Add(this.section1_panel);
-            this.sections_groupBox.Location = new System.Drawing.Point(2, 66);
+            this.sections_groupBox.Location = new System.Drawing.Point(11, 29);
             this.sections_groupBox.Name = "sections_groupBox";
-            this.sections_groupBox.Size = new System.Drawing.Size(449, 296);
-            this.sections_groupBox.TabIndex = 11;
+            this.sections_groupBox.Size = new System.Drawing.Size(446, 296);
+            this.sections_groupBox.TabIndex = 13;
             this.sections_groupBox.TabStop = false;
             // 
             // section8_panel
@@ -2744,17 +3209,17 @@
             // 
             this.fieldTitle_label.AutoSize = true;
             this.fieldTitle_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.fieldTitle_label.Location = new System.Drawing.Point(9, 43);
+            this.fieldTitle_label.Location = new System.Drawing.Point(8, 6);
             this.fieldTitle_label.Name = "fieldTitle_label";
             this.fieldTitle_label.Size = new System.Drawing.Size(89, 21);
-            this.fieldTitle_label.TabIndex = 1;
+            this.fieldTitle_label.TabIndex = 12;
             this.fieldTitle_label.Text = "Farm Fields";
             // 
             // homeTitle_label
             // 
             this.homeTitle_label.AutoSize = true;
             this.homeTitle_label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.homeTitle_label.Location = new System.Drawing.Point(8, 8);
+            this.homeTitle_label.Location = new System.Drawing.Point(7, 8);
             this.homeTitle_label.Name = "homeTitle_label";
             this.homeTitle_label.Size = new System.Drawing.Size(69, 25);
             this.homeTitle_label.TabIndex = 0;
@@ -2765,36 +3230,6 @@
             this.section_toolTip.AutoPopDelay = 5000;
             this.section_toolTip.InitialDelay = 100;
             this.section_toolTip.ReshowDelay = 100;
-            // 
-            // profileTitle_label
-            // 
-            this.profileTitle_label.AutoSize = true;
-            this.profileTitle_label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.profileTitle_label.Location = new System.Drawing.Point(14, 14);
-            this.profileTitle_label.Name = "profileTitle_label";
-            this.profileTitle_label.Size = new System.Drawing.Size(224, 25);
-            this.profileTitle_label.TabIndex = 18;
-            this.profileTitle_label.Text = "PROFILE INFORMATION";
-            // 
-            // profileInfoInst_label
-            // 
-            this.profileInfoInst_label.AutoSize = true;
-            this.profileInfoInst_label.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.profileInfoInst_label.Location = new System.Drawing.Point(15, 52);
-            this.profileInfoInst_label.Name = "profileInfoInst_label";
-            this.profileInfoInst_label.Size = new System.Drawing.Size(385, 19);
-            this.profileInfoInst_label.TabIndex = 19;
-            this.profileInfoInst_label.Text = "Edit / Modify below details to change your profile information";
-            // 
-            // profilePasswordInst_label
-            // 
-            this.profilePasswordInst_label.AutoSize = true;
-            this.profilePasswordInst_label.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.profilePasswordInst_label.Location = new System.Drawing.Point(15, 263);
-            this.profilePasswordInst_label.Name = "profilePasswordInst_label";
-            this.profilePasswordInst_label.Size = new System.Drawing.Size(325, 19);
-            this.profilePasswordInst_label.TabIndex = 19;
-            this.profilePasswordInst_label.Text = "Enter below details to change your profile password";
             // 
             // MGMainScreen
             // 
@@ -2857,6 +3292,10 @@
             this.timetable_panel.PerformLayout();
             this.home_panel.ResumeLayout(false);
             this.home_panel.PerformLayout();
+            this.lbHome_panel.ResumeLayout(false);
+            this.lbHome_panel.PerformLayout();
+            this.mgHome_panel.ResumeLayout(false);
+            this.mgHome_panel.PerformLayout();
             this.sections_groupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -2875,17 +3314,6 @@
         private System.Windows.Forms.Button logout_btn;
         private System.Windows.Forms.Panel home_panel;
         private System.Windows.Forms.Label homeTitle_label;
-        private System.Windows.Forms.Label fieldTitle_label;
-        private System.Windows.Forms.GroupBox sections_groupBox;
-        private System.Windows.Forms.Panel section8_panel;
-        private System.Windows.Forms.Panel section9_panel;
-        private System.Windows.Forms.Panel section5_panel;
-        private System.Windows.Forms.Panel section7_panel;
-        private System.Windows.Forms.Panel section2_panel;
-        private System.Windows.Forms.Panel section6_panel;
-        private System.Windows.Forms.Panel section4_panel;
-        private System.Windows.Forms.Panel section3_panel;
-        private System.Windows.Forms.Panel section1_panel;
         private System.Windows.Forms.ToolTip section_toolTip;
         private System.Windows.Forms.Panel timetable_panel;
         private System.Windows.Forms.Label greeting_label;
@@ -3031,7 +3459,7 @@
         private System.Windows.Forms.ListView timetable_listView;
         private System.Windows.Forms.Label timetableInst_label;
         private System.Windows.Forms.ColumnHeader timetableDate_header;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView machinery_listView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -3105,5 +3533,56 @@
         private System.Windows.Forms.Label profileInfoInst_label;
         private System.Windows.Forms.Label profileTitle_label;
         private System.Windows.Forms.Label profilePasswordInst_label;
+        private System.Windows.Forms.Panel lbHome_panel;
+        private System.Windows.Forms.Label labHomeTitle_label;
+        private System.Windows.Forms.ListView labTask_listView;
+        private System.Windows.Forms.ColumnHeader labTask_header;
+        private System.Windows.Forms.ColumnHeader labType_header;
+        private System.Windows.Forms.ColumnHeader labDesc_header;
+        private System.Windows.Forms.ColumnHeader labStatus_header;
+        private System.Windows.Forms.ColumnHeader labStartTime_header;
+        private System.Windows.Forms.ColumnHeader labEndTime_header;
+        private System.Windows.Forms.ColumnHeader labField_header;
+        private System.Windows.Forms.Panel mgHome_panel;
+        private System.Windows.Forms.GroupBox sections_groupBox;
+        private System.Windows.Forms.Panel section8_panel;
+        private System.Windows.Forms.Panel section9_panel;
+        private System.Windows.Forms.Panel section5_panel;
+        private System.Windows.Forms.Panel section7_panel;
+        private System.Windows.Forms.Panel section2_panel;
+        private System.Windows.Forms.Panel section6_panel;
+        private System.Windows.Forms.Panel section4_panel;
+        private System.Windows.Forms.Panel section3_panel;
+        private System.Windows.Forms.Panel section1_panel;
+        private System.Windows.Forms.Label fieldTitle_label;
+        private System.Windows.Forms.Label labTaskTitle_label;
+        private System.Windows.Forms.Label labTitle_title_label;
+        private System.Windows.Forms.Button labTaskComplete_btn;
+        private System.Windows.Forms.Label labTaskDescription_label;
+        private System.Windows.Forms.Label labTaskDescriptionTitle_label;
+        private System.Windows.Forms.Label labTaskEndDate_label;
+        private System.Windows.Forms.Label labTaskStartDate_label;
+        private System.Windows.Forms.Label labTaskField_label;
+        private System.Windows.Forms.Label labTaskManager_label;
+        private System.Windows.Forms.Label labTaskAssignedDate_label;
+        private System.Windows.Forms.Label labTaskPesticide_label;
+        private System.Windows.Forms.Label labTaskSeed_label;
+        private System.Windows.Forms.Label labTaskFertiliser_label;
+        private System.Windows.Forms.Label labTaskMethod_label;
+        private System.Windows.Forms.Label labTaskCrop_label;
+        private System.Windows.Forms.Label labTaskStatus_label;
+        private System.Windows.Forms.Label labTaskEndDateTitle_label;
+        private System.Windows.Forms.Label labTaskManagerTitle_label;
+        private System.Windows.Forms.Label labTaskAssignedDateTitle_label;
+        private System.Windows.Forms.Label labTaskPesticideTitle_label;
+        private System.Windows.Forms.Label labTaskSeedTitle_label;
+        private System.Windows.Forms.Label labTaskFertiliserTitle_label;
+        private System.Windows.Forms.Label labTaskStartDateTitle_label;
+        private System.Windows.Forms.Label labTaskMethodTitle_label;
+        private System.Windows.Forms.Label labTaskFieldTitle_label;
+        private System.Windows.Forms.Label labTaskCropTitle_label;
+        private System.Windows.Forms.Label labTaskType_label;
+        private System.Windows.Forms.Label labTaskStatusTitle_label;
+        private System.Windows.Forms.Label labTaskTypeTitle_label;
     }
 }

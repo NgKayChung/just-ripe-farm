@@ -76,6 +76,7 @@
     <Compile Include="classes\Task.cs" />
     <Compile Include="classes\TaskHandler.cs" />
     <Compile Include="classes\TaskStock.cs" />
+    <Compile Include="classes\TaskStockHandler.cs" />
     <Compile Include="classes\Truck.cs" />
     <Compile Include="classes\TruckHandler.cs" />
     <Compile Include="classes\User.cs" />

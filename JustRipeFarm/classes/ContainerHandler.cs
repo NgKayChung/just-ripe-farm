@@ -13,7 +13,9 @@ namespace JustRipeFarm
         {
             List<Container> containers = null;
             string sqlString = "SELECT `containers`.`container_id`, `containers`.`container_type`, `containers`.`total_capacity`, `containers`.`status`, `containers`.`crop_id`, `crops`.`crop_name`, `crops`.`min_temperature`, `crops`.`max_temperature`, `crops`.`harvest_days`, `crops`.`capacity_use`, `crops`.`container_type` FROM `containers` " +
-                    "LEFT JOIN `crops` ON `containers`.`crop_id` = `crops`.`crop_id`;";
+                    "LEFT JOIN `crops` ON `containers`.`crop_id` = `crops`.`crop_id`";
+
+            if (UserSession.Instance.UserType == "LABOURER") sqlString += " WHERE `containers`.`status` = 'AVAILABLE'";
 
             MySqlCommand sqlCommand = new MySqlCommand(sqlString, DbConnector.Instance.getConn());
             MySqlDataReader reader = sqlCommand.ExecuteReader();

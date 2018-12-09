@@ -11,6 +11,7 @@ namespace JustRipeFarm
     {
         public List<Vehicle> getVehicle(MySqlConnection conn)
         {
+            List<Vehicle> vl = null;
             string sql = "SELECT * FROM `machinery`";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
@@ -18,7 +19,7 @@ namespace JustRipeFarm
 
             if (reader.HasRows)
             {
-                List<Vehicle> vl = new List<Vehicle>();
+                vl = new List<Vehicle>();
 
                 while (reader.Read())
                 {
@@ -34,17 +35,17 @@ namespace JustRipeFarm
 
                     vl.Add(v);
                 }
-                reader.Close();
-                return vl;
             }
-            else
-            {
-                return null;
-            }
+
+            sqlComm.Dispose();
+            reader.Close();
+
+            return vl;
         }
 
         public List<Vehicle> getSelected(MySqlConnection conn, string type)
         {
+            List<Vehicle> vl = null;
             string sql = "SELECT * FROM `machinery` WHERE `machine_type` ='"+type+"'";
 
             MySqlCommand sqlComm = new MySqlCommand(sql, conn);
@@ -52,7 +53,7 @@ namespace JustRipeFarm
 
             if (reader.HasRows)
             {
-                List<Vehicle> vl = new List<Vehicle>();
+                vl = new List<Vehicle>();
 
                 while (reader.Read())
                 {
@@ -68,13 +69,12 @@ namespace JustRipeFarm
 
                     vl.Add(v);
                 }
-                reader.Close();
-                return vl;
             }
-            else
-            {
-                return null;
-            }
+
+            sqlComm.Dispose();
+            reader.Close();
+
+            return vl;
         }
     }
 }

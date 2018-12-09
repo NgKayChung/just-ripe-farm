@@ -81,5 +81,12 @@ namespace JustRipeFarm
 
             return stocks;
         }
+
+        public int UpdateStockQuantity(Stock stock, int useQuantity)
+        {
+            string sql = "UPDATE `storage_stock` SET `quantity` = `quantity` - " + useQuantity.ToString() + " WHERE `stock_id` = '" + stock.ID + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, DbConnector.Instance.getConn());
+            return sqlComm.ExecuteNonQuery();
+        }
     }
 }

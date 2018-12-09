@@ -20,16 +20,27 @@ namespace JustRipeFarm
 
         public MGMainScreen()
         {
-            UserSession.Instance.UserID = "MG18290";
-            UserSession.Instance.UserFirstName = "John";
-            UserSession.Instance.UserType = "MANAGER";
+            UserSession.Instance.UserID = "LB18001";
+            UserSession.Instance.UserFirstName = "Jimmy";
+            UserSession.Instance.UserType = "LABOURER";
             InitializeComponent();
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
             greeting_label.Text = "Welcome, " + UserSession.Instance.UserFirstName + "!";
-            LoadHome();
+            if(UserSession.Instance.UserType == "MANAGER")
+            {
+                LoadMGHome();
+            }
+            else if(UserSession.Instance.UserType == "LABOURER")
+            {
+                timetable_btn.Visible = false;
+                labour_btn.Visible = false;
+                shopWholesale_btn.Visible = false;
+
+                LoadLBHome();
+            }
         }
 
         private void home_btn_Click(object sender, EventArgs e)
@@ -42,7 +53,14 @@ namespace JustRipeFarm
             shopWholesaleTop_panel.Visible = false;
             profile_panel.Visible = false;
 
-            LoadHome();
+            if (UserSession.Instance.UserType == "MANAGER")
+            {
+                LoadMGHome();
+            }
+            else if (UserSession.Instance.UserType == "LABOURER")
+            {
+                LoadLBHome();
+            }
         }
 
         private void timetable_btn_Click(object sender, EventArgs e)
@@ -65,6 +83,8 @@ namespace JustRipeFarm
             machineTop_panel.Visible = false;
             shopWholesaleTop_panel.Visible = false;
             profile_panel.Visible = false;
+
+            if (UserSession.Instance.UserType == "LABOURER") storageContainer_btn.Text = "View Containers";
 
             LoadStockStorage();
         }
@@ -484,7 +504,7 @@ namespace JustRipeFarm
 
         private void m_search_Click(object sender, EventArgs e)
         {
-            listView1.Items.Clear();
+            machinery_listView.Items.Clear();
             string Type;
             Type = (string)comboBox1.SelectedItem;
             VehicleHandler vh = new VehicleHandler();
@@ -501,7 +521,7 @@ namespace JustRipeFarm
                     lvi.SubItems.Add(v.mac_desc);
                     lvi.SubItems.Add(v.mac_type);
                     lvi.SubItems.Add(v.mac_status);
-                    listView1.Items.Add(lvi);
+                    machinery_listView.Items.Add(lvi);
                 }
             }
         }
@@ -532,8 +552,8 @@ namespace JustRipeFarm
                     }
                     else
                     {
-                        tasksStocks.Add(new TaskHandler().GetStocksForTask(task.TaskID));
-                        tasksLabourers.Add(new TaskHandler().GetLabourersForTask(task.TaskID));
+                        tasksStocks.Add(new TaskStockHandler().GetFertiliserForTask(task.TaskID));
+                        tasksLabourers.Add(new LabourerHandler().GetLabourersForTask(task.TaskID));
                     }
                     tasksSection.Add(new FarmSectionHandler().FindFarmSectionWithID(task.FieldID));
                     tasksCrop.Add(new CropHandler().GetCropWithID(task.CropID));
@@ -810,6 +830,7 @@ namespace JustRipeFarm
         private void StorageBackTopPanel()
         {
             stock_panel.Visible = false;
+            container_panel.Visible = false;
             storage_panel.Visible = true;
 
             storage_listView.Items.Clear();
@@ -976,8 +997,9 @@ namespace JustRipeFarm
             pesticideStockQty_label.Text = ((Stock)taskPesticide_comboBox.SelectedItem).Quantity.ToString() + " in stock";
         }
 
-        private void LoadHome()
+        private void LoadMGHome()
         {
+            mgHome_panel.Visible = true;
             List<Panel> section_panels = new List<Panel>
             {
                 section1_panel,
@@ -1019,6 +1041,26 @@ namespace JustRipeFarm
                 {
                     section_panel_click(sender1, e1, section.CropName, "Status: " + section.Status + "\nSowed date: " + sowDateString + "\nExpected harvest date: " + harvestDateString, currentPanel);
                 };
+            }
+        }
+
+        private void LoadLBHome()
+        {
+            lbHome_panel.Visible = true;
+            List<Task> tasksList = new TaskHandler().GetTasksForLabourer(UserSession.Instance.UserID);
+
+            labTask_listView.Items.Clear();
+
+            if (tasksList != null)
+            {
+                foreach(Task task in tasksList)
+                {
+                    string[] row = { task.TaskTitle, task.TaskType, task.TaskDescription, task.Status, task.FieldID, task.StartDateTime.ToString("dd/MM/yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")), task.EndDateTime.ToString("dd/MM/yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")) };
+                    ListViewItem taskItem = new ListViewItem(row);
+                    taskItem.Tag = task;
+
+                    labTask_listView.Items.Add(taskItem);
+                }
             }
         }
 
@@ -1315,7 +1357,7 @@ namespace JustRipeFarm
             profileConfirmPassword_txtBox.Clear();
 
             UserHandler userHandler = new UserHandler();
-            User user = userHandler.GetUser(DbConnector.Instance.getConn(), UserSession.Instance.UserID);
+            User user = userHandler.GetUser(UserSession.Instance.UserID);
 
             profileFName_txtBox.Text = user.Firstname;
             profileLName_txtBox.Text = user.Lastname;
@@ -1344,7 +1386,7 @@ namespace JustRipeFarm
                         u.PhoneNumber = phoneNumber;
 
                         UserHandler userHandler = new UserHandler();
-                        userHandler.UpdateUserInfo(DbConnector.Instance.getConn(), u);
+                        userHandler.UpdateUserInfo(u);
 
                         MessageBox.Show("Profile is successfully updated !");
                         LoadUserProfileInfo();
@@ -1370,13 +1412,13 @@ namespace JustRipeFarm
             string confirmPassword = profileConfirmPassword_txtBox.Text;
 
             UserHandler userHandler = new UserHandler();
-            User user = userHandler.GetUser(DbConnector.Instance.getConn(), UserSession.Instance.UserID);
+            User user = userHandler.GetUser(UserSession.Instance.UserID);
 
             if (oldPassword == user.Password)
             {
                 if (newPassword == confirmPassword)
                 {
-                    userHandler.ChangePass(DbConnector.Instance.getConn(), user, newPassword);
+                    userHandler.ChangePass(user, newPassword);
                     MessageBox.Show("Password is successfully updated !");
                     LoadUserProfileInfo();
                 }
@@ -1388,6 +1430,119 @@ namespace JustRipeFarm
             else
             {
                 MessageBox.Show("Invalid password");
+            }
+        }
+
+        private void labTask_listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClearLabTaskText();
+
+            if(labTask_listView.SelectedItems.Count > 0)
+            {
+                Task selectedTask = (Task)labTask_listView.SelectedItems[0].Tag;
+                List<TaskStock> taskStocks = new TaskStockHandler().GetStocksForTask(selectedTask.TaskID);
+                CropMethod method = new CropMethodHandler().GetCropMethod(selectedTask.MethodID);
+
+                labTaskTitle_label.Text = selectedTask.TaskTitle;
+                labTaskType_label.Text = selectedTask.TaskType;
+                labTaskDescription_label.Text = selectedTask.TaskDescription;
+                labTaskStatus_label.Text = selectedTask.Status;
+                labTaskComplete_btn.Enabled = (selectedTask.Status == "PENDING");
+                labTaskField_label.Text = selectedTask.FieldID;
+                labTaskCrop_label.Text = new CropHandler().GetCropWithID(selectedTask.CropID).CropName;
+                labTaskStartDate_label.Text = selectedTask.StartDateTime.ToString("dd/MM/yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB"));
+                labTaskEndDate_label.Text = selectedTask.EndDateTime.ToString("dd/MM/yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB"));
+                labTaskMethod_label.Text = method.MethodName + (method.MachineID != "" ? " - " + method.MachineName : "");
+                if(taskStocks != null)
+                {
+                    foreach(TaskStock task_stock in taskStocks)
+                    {
+                        if (task_stock.Stock.Type == "FERTILISER")
+                            labTaskFertiliser_label.Text = task_stock.Stock.Name + " - " + task_stock.QuantityUse.ToString();
+                        else if(task_stock.Stock.Type == "SEED")
+                            labTaskSeed_label.Text = task_stock.Stock.Name + " - " + task_stock.QuantityUse.ToString();
+                        else if (task_stock.Stock.Type == "PESTICIDE")
+                            labTaskPesticide_label.Text = task_stock.Stock.Name + " - " + task_stock.QuantityUse.ToString();
+                    }
+                }
+                labTaskAssignedDate_label.Text = selectedTask.AssignedDateTime.ToString("dd/MM/yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB"));
+                labTaskManager_label.Text = new UserHandler().GetUser(selectedTask.AssignedByID).Fullname;
+            }
+        }
+
+        private void ClearLabTaskText()
+        {
+            labTaskTitle_label.Text = "";
+            labTaskType_label.Text = "";
+            labTaskDescription_label.Text = "";
+            labTaskStatus_label.Text = "";
+            labTaskComplete_btn.Enabled = false;
+            labTaskField_label.Text = "";
+            labTaskCrop_label.Text = "";
+            labTaskStartDate_label.Text = "";
+            labTaskEndDate_label.Text = "";
+            labTaskMethod_label.Text = "";
+            labTaskFertiliser_label.Text = "-";
+            labTaskSeed_label.Text = "-";
+            labTaskPesticide_label.Text = "-";
+            labTaskAssignedDate_label.Text = "";
+            labTaskManager_label.Text = "";
+        }
+
+        private void labTaskComplete_btn_Click(object sender, EventArgs e)
+        {
+            if (labTask_listView.SelectedItems.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Are you sure to do this?", "Complete Task", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                if(result == DialogResult.Yes)
+                {
+                    Task selectedTask = (Task)labTask_listView.SelectedItems[0].Tag;
+                    List<TaskStock> taskStocks = new TaskStockHandler().GetStocksForTask(selectedTask.TaskID);
+                    if (selectedTask.TaskType == "HARVEST")
+                    {
+                        // update farm section
+                        FarmSectionHandler farmSectionHandler = new FarmSectionHandler();
+                        FarmSection farmSection = farmSectionHandler.FindFarmSectionWithID(selectedTask.FieldID);
+                        farmSection.CropID = "";
+                        farmSection.Status = "NOT USED";
+                        farmSection.SowDate = DateTime.MinValue;
+                        farmSection.ExpHarvestDate = DateTime.MinValue;
+                        farmSectionHandler.UpdateFarmSection(farmSection);
+
+                        // update container
+
+                    }
+                    else
+                    {
+                        // update stocks
+                        if (taskStocks != null)
+                        {
+                            StockHandler stockHandler = new StockHandler();
+
+                            foreach (TaskStock task_stock in taskStocks)
+                            {
+                                stockHandler.UpdateStockQuantity(task_stock.Stock, task_stock.QuantityUse);
+                            }
+                        }
+
+                        // if task is SOW
+                        if (selectedTask.TaskType == "SOW")
+                        {
+                            // update farm section
+                            FarmSectionHandler farmSectionHandler = new FarmSectionHandler();
+                            FarmSection farmSection = farmSectionHandler.FindFarmSectionWithID(selectedTask.FieldID);
+                            farmSection.CropID = selectedTask.CropID;
+                            farmSection.Status = "CULTIVATING";
+                            farmSection.SowDate = selectedTask.StartDateTime;
+                            Crop crop = new CropHandler().GetCropWithID(selectedTask.CropID);
+                            farmSection.ExpHarvestDate = selectedTask.StartDateTime.AddDays(crop.HarvestDays);
+                            farmSectionHandler.UpdateFarmSection(farmSection);
+                        }
+                    }
+                    TaskHandler taskHandler = new TaskHandler();
+                    taskHandler.UpdateTaskStatus(selectedTask, "COMPLETED");
+                }
             }
         }
     }

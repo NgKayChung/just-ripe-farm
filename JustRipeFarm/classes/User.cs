@@ -35,6 +35,13 @@ namespace JustRipeFarm
         public string UserID { get => user_id; set => user_id = value; }
         public string Firstname { get => firstname; set => firstname = value; }
         public string Lastname { get => lastname; set => lastname = value; }
+        public string Fullname
+        {
+            get
+            {
+                return Firstname + " " + Lastname;
+            }
+        }
         public string Password { get => password; set => password = value; }
         public string EmailAddress { get => email_address; set => email_address = value; }
         public string PhoneNumber { get => phone_number; set => phone_number = value; }

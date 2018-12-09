@@ -69,6 +69,39 @@ namespace JustRipeFarm
             return labourers;
         }
 
+        public List<Labourer> GetLabourersForTask(int task_id)
+        {
+            List<Labourer> labourers = null;
+            string sqlString = "SELECT `users`.`user_id`, `users`.`first_name`, `users`.`last_name`, `users`.`email_address`, `users`.`phone_number`, `labourers`.`date_joined` FROM `labourer_task` " +
+                    "INNER JOIN `labourers` ON `labourer_task`.`labourer_id` = `labourers`.`labourer_id` " +
+                    "INNER JOIN `users` ON `labourers`.`labourer_id` = `users`.`user_id` " +
+                    "WHERE `labourer_task`.`task_id` = " + task_id + ";";
+
+            MySqlCommand sqlCommand = new MySqlCommand(sqlString, DbConnector.Instance.getConn());
+            MySqlDataReader reader = sqlCommand.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                labourers = new List<Labourer>();
+                while (reader.Read())
+                {
+                    string labourer_id = reader.GetString(0);
+                    string labourer_firstname = reader.GetString(1);
+                    string labourer_lastname = reader.GetString(2);
+                    string labourer_emailAddress = reader.GetString(3);
+                    string labourer_phoneNumber = (reader.IsDBNull(4) ? "-" : reader.GetString(4));
+                    DateTime labourer_joinedDate = reader.GetDateTime(5);
+
+                    labourers.Add(new Labourer(labourer_id, labourer_firstname, labourer_lastname, labourer_emailAddress, labourer_phoneNumber, labourer_joinedDate));
+                }
+            }
+
+            if (!reader.IsClosed) reader.Close();
+            sqlCommand.Dispose();
+
+            return labourers;
+        }
+
         public string AddNewLabourer(Labourer labourer)
         {
             string sql = "INSERT INTO users " +
