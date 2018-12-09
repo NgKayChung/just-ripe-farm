@@ -121,15 +121,11 @@
             this.shopProductsTitle_label = new System.Windows.Forms.Label();
             this.shopProducts_back = new System.Windows.Forms.Button();
             this.shop_panel = new System.Windows.Forms.Panel();
-            this.shopSales_btn = new System.Windows.Forms.Button();
-            this.shopBuyers_btn = new System.Windows.Forms.Button();
-            this.shopProducts_btn = new System.Windows.Forms.Button();
             this.simulateSales_btn = new System.Windows.Forms.Button();
             this.shopTitle_label = new System.Windows.Forms.Label();
             this.shopBack_btn = new System.Windows.Forms.Button();
             this.shopWholesale_panel = new System.Windows.Forms.Panel();
             this.wholesale_btn = new System.Windows.Forms.Button();
-            this.shop_btn = new System.Windows.Forms.Button();
             this.shopWholeTitle_label = new System.Windows.Forms.Label();
             this.machineTop_panel = new System.Windows.Forms.Panel();
             this.m_search = new System.Windows.Forms.Button();
@@ -310,6 +306,10 @@
             this.fieldTitle_label = new System.Windows.Forms.Label();
             this.homeTitle_label = new System.Windows.Forms.Label();
             this.section_toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.shopSales_btn = new System.Windows.Forms.Button();
+            this.shopBuyers_btn = new System.Windows.Forms.Button();
+            this.shopProducts_btn = new System.Windows.Forms.Button();
+            this.shop_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).BeginInit();
             this.SplitContainer_Menu_Content.Panel1.SuspendLayout();
             this.SplitContainer_Menu_Content.Panel2.SuspendLayout();
@@ -382,6 +382,7 @@
             // exit_btn
             // 
             this.exit_btn.BackColor = System.Drawing.Color.Green;
+            this.exit_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exit_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.exit_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -398,6 +399,7 @@
             // logout_btn
             // 
             this.logout_btn.BackColor = System.Drawing.Color.Green;
+            this.logout_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logout_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.logout_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -414,6 +416,7 @@
             // edit_btn
             // 
             this.edit_btn.BackColor = System.Drawing.Color.Green;
+            this.edit_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.edit_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.edit_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.edit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -430,6 +433,7 @@
             // shopWholesale_btn
             // 
             this.shopWholesale_btn.BackColor = System.Drawing.Color.Green;
+            this.shopWholesale_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.shopWholesale_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.shopWholesale_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.shopWholesale_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -446,6 +450,7 @@
             // machine_btn
             // 
             this.machine_btn.BackColor = System.Drawing.Color.Green;
+            this.machine_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.machine_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.machine_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.machine_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -462,6 +467,7 @@
             // labour_btn
             // 
             this.labour_btn.BackColor = System.Drawing.Color.Green;
+            this.labour_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labour_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.labour_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.labour_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -478,6 +484,7 @@
             // storage_btn
             // 
             this.storage_btn.BackColor = System.Drawing.Color.Green;
+            this.storage_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.storage_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.storage_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.storage_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -494,6 +501,7 @@
             // timetable_btn
             // 
             this.timetable_btn.BackColor = System.Drawing.Color.Green;
+            this.timetable_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.timetable_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.timetable_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.timetable_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -510,6 +518,7 @@
             // home_btn
             // 
             this.home_btn.BackColor = System.Drawing.Color.Green;
+            this.home_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.home_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.home_btn.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.home_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -527,7 +536,7 @@
             // 
             this.greeting_label.AutoEllipsis = true;
             this.greeting_label.BackColor = System.Drawing.Color.DarkGreen;
-            this.greeting_label.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.greeting_label.Cursor = System.Windows.Forms.Cursors.Default;
             this.greeting_label.Dock = System.Windows.Forms.DockStyle.Top;
             this.greeting_label.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.greeting_label.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -561,10 +570,11 @@
             this.profile_panel.Controls.Add(this.profileEmail_label);
             this.profile_panel.Controls.Add(this.profileLName_label);
             this.profile_panel.Controls.Add(this.profileFName_label);
-            this.profile_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.profile_panel.Location = new System.Drawing.Point(-60, 0);
+            this.profile_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.profile_panel.Location = new System.Drawing.Point(0, 0);
             this.profile_panel.Name = "profile_panel";
-            this.profile_panel.Size = new System.Drawing.Size(10, 405);
+            this.profile_panel.Padding = new System.Windows.Forms.Padding(5);
+            this.profile_panel.Size = new System.Drawing.Size(506, 405);
             this.profile_panel.TabIndex = 5;
             this.profile_panel.Visible = false;
             // 
@@ -572,7 +582,7 @@
             // 
             this.profilePasswordInst_label.AutoSize = true;
             this.profilePasswordInst_label.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.profilePasswordInst_label.Location = new System.Drawing.Point(15, 263);
+            this.profilePasswordInst_label.Location = new System.Drawing.Point(20, 268);
             this.profilePasswordInst_label.Name = "profilePasswordInst_label";
             this.profilePasswordInst_label.Size = new System.Drawing.Size(325, 19);
             this.profilePasswordInst_label.TabIndex = 19;
@@ -582,7 +592,7 @@
             // 
             this.profileInfoInst_label.AutoSize = true;
             this.profileInfoInst_label.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.profileInfoInst_label.Location = new System.Drawing.Point(15, 52);
+            this.profileInfoInst_label.Location = new System.Drawing.Point(20, 57);
             this.profileInfoInst_label.Name = "profileInfoInst_label";
             this.profileInfoInst_label.Size = new System.Drawing.Size(385, 19);
             this.profileInfoInst_label.TabIndex = 19;
@@ -592,7 +602,7 @@
             // 
             this.profileTitle_label.AutoSize = true;
             this.profileTitle_label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.profileTitle_label.Location = new System.Drawing.Point(14, 14);
+            this.profileTitle_label.Location = new System.Drawing.Point(19, 19);
             this.profileTitle_label.Name = "profileTitle_label";
             this.profileTitle_label.Size = new System.Drawing.Size(224, 25);
             this.profileTitle_label.TabIndex = 18;
@@ -640,7 +650,7 @@
             // 
             this.profileConfirmPassword_label.AutoSize = true;
             this.profileConfirmPassword_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.profileConfirmPassword_label.Location = new System.Drawing.Point(6, 365);
+            this.profileConfirmPassword_label.Location = new System.Drawing.Point(11, 370);
             this.profileConfirmPassword_label.Name = "profileConfirmPassword_label";
             this.profileConfirmPassword_label.Size = new System.Drawing.Size(137, 15);
             this.profileConfirmPassword_label.TabIndex = 13;
@@ -650,7 +660,7 @@
             // 
             this.profileNewPassword_label.AutoSize = true;
             this.profileNewPassword_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.profileNewPassword_label.Location = new System.Drawing.Point(53, 330);
+            this.profileNewPassword_label.Location = new System.Drawing.Point(58, 335);
             this.profileNewPassword_label.Name = "profileNewPassword_label";
             this.profileNewPassword_label.Size = new System.Drawing.Size(90, 15);
             this.profileNewPassword_label.TabIndex = 12;
@@ -660,7 +670,7 @@
             // 
             this.profileOldPassword_label.AutoSize = true;
             this.profileOldPassword_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.profileOldPassword_label.Location = new System.Drawing.Point(58, 297);
+            this.profileOldPassword_label.Location = new System.Drawing.Point(63, 302);
             this.profileOldPassword_label.Name = "profileOldPassword_label";
             this.profileOldPassword_label.Size = new System.Drawing.Size(85, 15);
             this.profileOldPassword_label.TabIndex = 11;
@@ -713,7 +723,7 @@
             // 
             this.profilePhone_label.AutoSize = true;
             this.profilePhone_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.profilePhone_label.Location = new System.Drawing.Point(47, 184);
+            this.profilePhone_label.Location = new System.Drawing.Point(52, 189);
             this.profilePhone_label.Name = "profilePhone_label";
             this.profilePhone_label.Size = new System.Drawing.Size(94, 15);
             this.profilePhone_label.TabIndex = 4;
@@ -723,7 +733,7 @@
             // 
             this.profileEmail_label.AutoSize = true;
             this.profileEmail_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.profileEmail_label.Location = new System.Drawing.Point(54, 151);
+            this.profileEmail_label.Location = new System.Drawing.Point(59, 156);
             this.profileEmail_label.Name = "profileEmail_label";
             this.profileEmail_label.Size = new System.Drawing.Size(87, 15);
             this.profileEmail_label.TabIndex = 3;
@@ -733,7 +743,7 @@
             // 
             this.profileLName_label.AutoSize = true;
             this.profileLName_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.profileLName_label.Location = new System.Drawing.Point(72, 119);
+            this.profileLName_label.Location = new System.Drawing.Point(77, 124);
             this.profileLName_label.Name = "profileLName_label";
             this.profileLName_label.Size = new System.Drawing.Size(69, 15);
             this.profileLName_label.TabIndex = 2;
@@ -743,7 +753,7 @@
             // 
             this.profileFName_label.AutoSize = true;
             this.profileFName_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.profileFName_label.Location = new System.Drawing.Point(71, 88);
+            this.profileFName_label.Location = new System.Drawing.Point(76, 93);
             this.profileFName_label.Name = "profileFName_label";
             this.profileFName_label.Size = new System.Drawing.Size(70, 15);
             this.profileFName_label.TabIndex = 1;
@@ -757,10 +767,10 @@
             this.shopWholesaleTop_panel.Controls.Add(this.shopProducts_panel);
             this.shopWholesaleTop_panel.Controls.Add(this.shop_panel);
             this.shopWholesaleTop_panel.Controls.Add(this.shopWholesale_panel);
-            this.shopWholesaleTop_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.shopWholesaleTop_panel.Location = new System.Drawing.Point(-50, 0);
+            this.shopWholesaleTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shopWholesaleTop_panel.Location = new System.Drawing.Point(0, 0);
             this.shopWholesaleTop_panel.Name = "shopWholesaleTop_panel";
-            this.shopWholesaleTop_panel.Size = new System.Drawing.Size(10, 405);
+            this.shopWholesaleTop_panel.Size = new System.Drawing.Size(506, 405);
             this.shopWholesaleTop_panel.TabIndex = 0;
             this.shopWholesaleTop_panel.Visible = false;
             this.shopWholesaleTop_panel.VisibleChanged += new System.EventHandler(this.shopWholesaleTop_panel_VisibleChanged);
@@ -778,7 +788,7 @@
             this.wholesale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wholesale_panel.Location = new System.Drawing.Point(0, 0);
             this.wholesale_panel.Name = "wholesale_panel";
-            this.wholesale_panel.Size = new System.Drawing.Size(10, 405);
+            this.wholesale_panel.Size = new System.Drawing.Size(496, 405);
             this.wholesale_panel.TabIndex = 14;
             this.wholesale_panel.Visible = false;
             // 
@@ -909,7 +919,7 @@
             this.salesReport_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.salesReport_panel.Location = new System.Drawing.Point(0, 0);
             this.salesReport_panel.Name = "salesReport_panel";
-            this.salesReport_panel.Size = new System.Drawing.Size(10, 405);
+            this.salesReport_panel.Size = new System.Drawing.Size(496, 405);
             this.salesReport_panel.TabIndex = 13;
             this.salesReport_panel.Visible = false;
             // 
@@ -1058,7 +1068,7 @@
             this.buyers_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buyers_panel.Location = new System.Drawing.Point(0, 0);
             this.buyers_panel.Name = "buyers_panel";
-            this.buyers_panel.Size = new System.Drawing.Size(10, 405);
+            this.buyers_panel.Size = new System.Drawing.Size(496, 405);
             this.buyers_panel.TabIndex = 12;
             this.buyers_panel.Visible = false;
             // 
@@ -1161,8 +1171,8 @@
             this.shopProducts_panel.Controls.Add(this.products_listView);
             this.shopProducts_panel.Controls.Add(this.shopProductsTitle_label);
             this.shopProducts_panel.Controls.Add(this.shopProducts_back);
-            this.shopProducts_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shopProducts_panel.Location = new System.Drawing.Point(0, 0);
+            this.shopProducts_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.shopProducts_panel.Location = new System.Drawing.Point(496, 0);
             this.shopProducts_panel.Name = "shopProducts_panel";
             this.shopProducts_panel.Size = new System.Drawing.Size(10, 405);
             this.shopProducts_panel.TabIndex = 11;
@@ -1343,57 +1353,9 @@
             this.shop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shop_panel.Location = new System.Drawing.Point(0, 0);
             this.shop_panel.Name = "shop_panel";
-            this.shop_panel.Size = new System.Drawing.Size(10, 405);
+            this.shop_panel.Size = new System.Drawing.Size(506, 405);
             this.shop_panel.TabIndex = 10;
             this.shop_panel.Visible = false;
-            // 
-            // shopSales_btn
-            // 
-            this.shopSales_btn.FlatAppearance.BorderSize = 0;
-            this.shopSales_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.shopSales_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shopSales_btn.Image = global::JustRipeFarm.Properties.Resources.reports_icon;
-            this.shopSales_btn.Location = new System.Drawing.Point(336, 123);
-            this.shopSales_btn.Name = "shopSales_btn";
-            this.shopSales_btn.Size = new System.Drawing.Size(117, 93);
-            this.shopSales_btn.TabIndex = 21;
-            this.shopSales_btn.Text = "Sales Report";
-            this.shopSales_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.shopSales_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.shopSales_btn.UseVisualStyleBackColor = true;
-            this.shopSales_btn.Click += new System.EventHandler(this.shopSales_btn_Click);
-            // 
-            // shopBuyers_btn
-            // 
-            this.shopBuyers_btn.FlatAppearance.BorderSize = 0;
-            this.shopBuyers_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.shopBuyers_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shopBuyers_btn.Image = global::JustRipeFarm.Properties.Resources.buyers_icon;
-            this.shopBuyers_btn.Location = new System.Drawing.Point(170, 123);
-            this.shopBuyers_btn.Name = "shopBuyers_btn";
-            this.shopBuyers_btn.Size = new System.Drawing.Size(125, 93);
-            this.shopBuyers_btn.TabIndex = 20;
-            this.shopBuyers_btn.Text = "Buyers Report";
-            this.shopBuyers_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.shopBuyers_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.shopBuyers_btn.UseVisualStyleBackColor = true;
-            this.shopBuyers_btn.Click += new System.EventHandler(this.shopBuyers_btn_Click);
-            // 
-            // shopProducts_btn
-            // 
-            this.shopProducts_btn.FlatAppearance.BorderSize = 0;
-            this.shopProducts_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.shopProducts_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shopProducts_btn.Image = global::JustRipeFarm.Properties.Resources.products_icon;
-            this.shopProducts_btn.Location = new System.Drawing.Point(38, 123);
-            this.shopProducts_btn.Name = "shopProducts_btn";
-            this.shopProducts_btn.Size = new System.Drawing.Size(87, 93);
-            this.shopProducts_btn.TabIndex = 19;
-            this.shopProducts_btn.Text = "Products";
-            this.shopProducts_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.shopProducts_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.shopProducts_btn.UseVisualStyleBackColor = true;
-            this.shopProducts_btn.Click += new System.EventHandler(this.shopProducts_btn_Click);
             // 
             // simulateSales_btn
             // 
@@ -1438,7 +1400,7 @@
             this.shopWholesale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shopWholesale_panel.Location = new System.Drawing.Point(0, 0);
             this.shopWholesale_panel.Name = "shopWholesale_panel";
-            this.shopWholesale_panel.Size = new System.Drawing.Size(10, 405);
+            this.shopWholesale_panel.Size = new System.Drawing.Size(506, 405);
             this.shopWholesale_panel.TabIndex = 9;
             // 
             // wholesale_btn
@@ -1446,7 +1408,8 @@
             this.wholesale_btn.FlatAppearance.BorderSize = 0;
             this.wholesale_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.wholesale_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wholesale_btn.Location = new System.Drawing.Point(277, 120);
+            this.wholesale_btn.Image = global::JustRipeFarm.Properties.Resources.wholesale_icon;
+            this.wholesale_btn.Location = new System.Drawing.Point(271, 143);
             this.wholesale_btn.Name = "wholesale_btn";
             this.wholesale_btn.Size = new System.Drawing.Size(99, 93);
             this.wholesale_btn.TabIndex = 11;
@@ -1455,22 +1418,6 @@
             this.wholesale_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.wholesale_btn.UseVisualStyleBackColor = true;
             this.wholesale_btn.Click += new System.EventHandler(this.wholesale_btn_Click);
-            // 
-            // shop_btn
-            // 
-            this.shop_btn.FlatAppearance.BorderSize = 0;
-            this.shop_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.shop_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shop_btn.Image = global::JustRipeFarm.Properties.Resources.shop_icon;
-            this.shop_btn.Location = new System.Drawing.Point(117, 120);
-            this.shop_btn.Name = "shop_btn";
-            this.shop_btn.Size = new System.Drawing.Size(87, 93);
-            this.shop_btn.TabIndex = 10;
-            this.shop_btn.Text = "Shop";
-            this.shop_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.shop_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.shop_btn.UseVisualStyleBackColor = true;
-            this.shop_btn.Click += new System.EventHandler(this.shop_btn_Click);
             // 
             // shopWholeTitle_label
             // 
@@ -1489,10 +1436,10 @@
             this.machineTop_panel.Controls.Add(this.comboBox1);
             this.machineTop_panel.Controls.Add(this.machineryTitle_label);
             this.machineTop_panel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.machineTop_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.machineTop_panel.Location = new System.Drawing.Point(-40, 0);
+            this.machineTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.machineTop_panel.Location = new System.Drawing.Point(0, 0);
             this.machineTop_panel.Name = "machineTop_panel";
-            this.machineTop_panel.Size = new System.Drawing.Size(10, 405);
+            this.machineTop_panel.Size = new System.Drawing.Size(506, 405);
             this.machineTop_panel.TabIndex = 3;
             this.machineTop_panel.Visible = false;
             // 
@@ -1579,10 +1526,10 @@
             this.labourerTop_panel.Controls.Add(this.assignTask_panel);
             this.labourerTop_panel.Controls.Add(this.addLabourer_panel);
             this.labourerTop_panel.Controls.Add(this.labourer_panel);
-            this.labourerTop_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labourerTop_panel.Location = new System.Drawing.Point(-30, 0);
+            this.labourerTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labourerTop_panel.Location = new System.Drawing.Point(0, 0);
             this.labourerTop_panel.Name = "labourerTop_panel";
-            this.labourerTop_panel.Size = new System.Drawing.Size(10, 405);
+            this.labourerTop_panel.Size = new System.Drawing.Size(506, 405);
             this.labourerTop_panel.TabIndex = 2;
             this.labourerTop_panel.Visible = false;
             this.labourerTop_panel.VisibleChanged += new System.EventHandler(this.labourerTop_panel_VisibleChanged);
@@ -1596,7 +1543,8 @@
             this.assignTask_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.assignTask_panel.Location = new System.Drawing.Point(0, 0);
             this.assignTask_panel.Name = "assignTask_panel";
-            this.assignTask_panel.Size = new System.Drawing.Size(10, 405);
+            this.assignTask_panel.Padding = new System.Windows.Forms.Padding(5);
+            this.assignTask_panel.Size = new System.Drawing.Size(506, 405);
             this.assignTask_panel.TabIndex = 7;
             this.assignTask_panel.Visible = false;
             // 
@@ -1604,7 +1552,7 @@
             // 
             this.assignTaskInst_label.AutoSize = true;
             this.assignTaskInst_label.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.assignTaskInst_label.Location = new System.Drawing.Point(9, 49);
+            this.assignTaskInst_label.Location = new System.Drawing.Point(14, 54);
             this.assignTaskInst_label.Name = "assignTaskInst_label";
             this.assignTaskInst_label.Size = new System.Drawing.Size(166, 19);
             this.assignTaskInst_label.TabIndex = 19;
@@ -1651,6 +1599,7 @@
             this.assignTaskForm_panel.Controls.Add(this.taskTitle_txtBox);
             this.assignTaskForm_panel.Location = new System.Drawing.Point(12, 70);
             this.assignTaskForm_panel.Name = "assignTaskForm_panel";
+            this.assignTaskForm_panel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.assignTaskForm_panel.Size = new System.Drawing.Size(482, 290);
             this.assignTaskForm_panel.TabIndex = 18;
             // 
@@ -2024,7 +1973,7 @@
             // 
             this.assignTaskTitle_titleLabel.AutoSize = true;
             this.assignTaskTitle_titleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.assignTaskTitle_titleLabel.Location = new System.Drawing.Point(68, 15);
+            this.assignTaskTitle_titleLabel.Location = new System.Drawing.Point(73, 20);
             this.assignTaskTitle_titleLabel.Name = "assignTaskTitle_titleLabel";
             this.assignTaskTitle_titleLabel.Size = new System.Drawing.Size(122, 21);
             this.assignTaskTitle_titleLabel.TabIndex = 16;
@@ -2040,7 +1989,7 @@
             this.addLabourer_panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.addLabourer_panel.Location = new System.Drawing.Point(0, 0);
             this.addLabourer_panel.Name = "addLabourer_panel";
-            this.addLabourer_panel.Size = new System.Drawing.Size(10, 405);
+            this.addLabourer_panel.Size = new System.Drawing.Size(506, 405);
             this.addLabourer_panel.TabIndex = 6;
             this.addLabourer_panel.Visible = false;
             // 
@@ -2189,7 +2138,7 @@
             this.labourer_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labourer_panel.Location = new System.Drawing.Point(0, 0);
             this.labourer_panel.Name = "labourer_panel";
-            this.labourer_panel.Size = new System.Drawing.Size(10, 405);
+            this.labourer_panel.Size = new System.Drawing.Size(506, 405);
             this.labourer_panel.TabIndex = 5;
             // 
             // labourerAssignTask_btn
@@ -2278,10 +2227,10 @@
             this.storageTop_panel.Controls.Add(this.container_panel);
             this.storageTop_panel.Controls.Add(this.stock_panel);
             this.storageTop_panel.Controls.Add(this.storage_panel);
-            this.storageTop_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.storageTop_panel.Location = new System.Drawing.Point(-20, 0);
+            this.storageTop_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.storageTop_panel.Location = new System.Drawing.Point(0, 0);
             this.storageTop_panel.Name = "storageTop_panel";
-            this.storageTop_panel.Size = new System.Drawing.Size(10, 405);
+            this.storageTop_panel.Size = new System.Drawing.Size(506, 405);
             this.storageTop_panel.TabIndex = 1;
             this.storageTop_panel.Visible = false;
             this.storageTop_panel.VisibleChanged += new System.EventHandler(this.storageTop_panel_VisibleChanged);
@@ -2294,7 +2243,7 @@
             this.container_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container_panel.Location = new System.Drawing.Point(0, 0);
             this.container_panel.Name = "container_panel";
-            this.container_panel.Size = new System.Drawing.Size(10, 405);
+            this.container_panel.Size = new System.Drawing.Size(506, 405);
             this.container_panel.TabIndex = 13;
             this.container_panel.Visible = false;
             // 
@@ -2384,7 +2333,7 @@
             this.stock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stock_panel.Location = new System.Drawing.Point(0, 0);
             this.stock_panel.Name = "stock_panel";
-            this.stock_panel.Size = new System.Drawing.Size(10, 405);
+            this.stock_panel.Size = new System.Drawing.Size(506, 405);
             this.stock_panel.TabIndex = 4;
             this.stock_panel.Visible = false;
             // 
@@ -2472,7 +2421,7 @@
             this.storage_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.storage_panel.Location = new System.Drawing.Point(0, 0);
             this.storage_panel.Name = "storage_panel";
-            this.storage_panel.Size = new System.Drawing.Size(10, 405);
+            this.storage_panel.Size = new System.Drawing.Size(506, 405);
             this.storage_panel.TabIndex = 3;
             // 
             // storageContainer_btn
@@ -2550,10 +2499,10 @@
             this.timetable_panel.Controls.Add(this.timetableStartDate_datePicker);
             this.timetable_panel.Controls.Add(this.timetableStartDate_label);
             this.timetable_panel.Controls.Add(this.timetableTitle_label);
-            this.timetable_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.timetable_panel.Location = new System.Drawing.Point(-10, 0);
+            this.timetable_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.timetable_panel.Location = new System.Drawing.Point(0, 0);
             this.timetable_panel.Name = "timetable_panel";
-            this.timetable_panel.Size = new System.Drawing.Size(10, 405);
+            this.timetable_panel.Size = new System.Drawing.Size(506, 405);
             this.timetable_panel.TabIndex = 0;
             this.timetable_panel.Visible = false;
             // 
@@ -2699,7 +2648,7 @@
             this.home_panel.Controls.Add(this.lbHome_panel);
             this.home_panel.Controls.Add(this.mgHome_panel);
             this.home_panel.Controls.Add(this.homeTitle_label);
-            this.home_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.home_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.home_panel.Location = new System.Drawing.Point(0, 0);
             this.home_panel.Name = "home_panel";
             this.home_panel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
@@ -2756,7 +2705,7 @@
             this.labTaskComplete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labTaskComplete_btn.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labTaskComplete_btn.ForeColor = System.Drawing.Color.White;
-            this.labTaskComplete_btn.Location = new System.Drawing.Point(169, 215);
+            this.labTaskComplete_btn.Location = new System.Drawing.Point(169, 216);
             this.labTaskComplete_btn.Name = "labTaskComplete_btn";
             this.labTaskComplete_btn.Size = new System.Drawing.Size(102, 35);
             this.labTaskComplete_btn.TabIndex = 16;
@@ -2767,7 +2716,7 @@
             // labTaskDescription_label
             // 
             this.labTaskDescription_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labTaskDescription_label.Location = new System.Drawing.Point(12, 329);
+            this.labTaskDescription_label.Location = new System.Drawing.Point(12, 337);
             this.labTaskDescription_label.Name = "labTaskDescription_label";
             this.labTaskDescription_label.Size = new System.Drawing.Size(151, 104);
             this.labTaskDescription_label.TabIndex = 15;
@@ -2776,7 +2725,7 @@
             // 
             this.labTaskDescriptionTitle_label.AutoSize = true;
             this.labTaskDescriptionTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labTaskDescriptionTitle_label.Location = new System.Drawing.Point(12, 312);
+            this.labTaskDescriptionTitle_label.Location = new System.Drawing.Point(12, 320);
             this.labTaskDescriptionTitle_label.Name = "labTaskDescriptionTitle_label";
             this.labTaskDescriptionTitle_label.Size = new System.Drawing.Size(67, 15);
             this.labTaskDescriptionTitle_label.TabIndex = 14;
@@ -2821,7 +2770,7 @@
             // 
             this.labTaskAssignedDate_label.AutoSize = true;
             this.labTaskAssignedDate_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labTaskAssignedDate_label.Location = new System.Drawing.Point(166, 480);
+            this.labTaskAssignedDate_label.Location = new System.Drawing.Point(167, 481);
             this.labTaskAssignedDate_label.Name = "labTaskAssignedDate_label";
             this.labTaskAssignedDate_label.Size = new System.Drawing.Size(0, 15);
             this.labTaskAssignedDate_label.TabIndex = 15;
@@ -2900,7 +2849,7 @@
             // 
             this.labTaskAssignedDateTitle_label.AutoSize = true;
             this.labTaskAssignedDateTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.labTaskAssignedDateTitle_label.Location = new System.Drawing.Point(166, 460);
+            this.labTaskAssignedDateTitle_label.Location = new System.Drawing.Point(167, 464);
             this.labTaskAssignedDateTitle_label.Name = "labTaskAssignedDateTitle_label";
             this.labTaskAssignedDateTitle_label.Size = new System.Drawing.Size(82, 15);
             this.labTaskAssignedDateTitle_label.TabIndex = 14;
@@ -3230,6 +3179,70 @@
             this.section_toolTip.AutoPopDelay = 5000;
             this.section_toolTip.InitialDelay = 100;
             this.section_toolTip.ReshowDelay = 100;
+            // 
+            // shopSales_btn
+            // 
+            this.shopSales_btn.FlatAppearance.BorderSize = 0;
+            this.shopSales_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shopSales_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shopSales_btn.Image = global::JustRipeFarm.Properties.Resources.reports_icon;
+            this.shopSales_btn.Location = new System.Drawing.Point(336, 123);
+            this.shopSales_btn.Name = "shopSales_btn";
+            this.shopSales_btn.Size = new System.Drawing.Size(117, 93);
+            this.shopSales_btn.TabIndex = 21;
+            this.shopSales_btn.Text = "Sales Report";
+            this.shopSales_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.shopSales_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.shopSales_btn.UseVisualStyleBackColor = true;
+            this.shopSales_btn.Click += new System.EventHandler(this.shopSales_btn_Click);
+            // 
+            // shopBuyers_btn
+            // 
+            this.shopBuyers_btn.FlatAppearance.BorderSize = 0;
+            this.shopBuyers_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shopBuyers_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shopBuyers_btn.Image = global::JustRipeFarm.Properties.Resources.buyers_icon;
+            this.shopBuyers_btn.Location = new System.Drawing.Point(170, 123);
+            this.shopBuyers_btn.Name = "shopBuyers_btn";
+            this.shopBuyers_btn.Size = new System.Drawing.Size(125, 93);
+            this.shopBuyers_btn.TabIndex = 20;
+            this.shopBuyers_btn.Text = "Buyers Report";
+            this.shopBuyers_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.shopBuyers_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.shopBuyers_btn.UseVisualStyleBackColor = true;
+            this.shopBuyers_btn.Click += new System.EventHandler(this.shopBuyers_btn_Click);
+            // 
+            // shopProducts_btn
+            // 
+            this.shopProducts_btn.FlatAppearance.BorderSize = 0;
+            this.shopProducts_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shopProducts_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shopProducts_btn.Image = global::JustRipeFarm.Properties.Resources.products_icon;
+            this.shopProducts_btn.Location = new System.Drawing.Point(38, 123);
+            this.shopProducts_btn.Name = "shopProducts_btn";
+            this.shopProducts_btn.Size = new System.Drawing.Size(87, 93);
+            this.shopProducts_btn.TabIndex = 19;
+            this.shopProducts_btn.Text = "Products";
+            this.shopProducts_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.shopProducts_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.shopProducts_btn.UseVisualStyleBackColor = true;
+            this.shopProducts_btn.Click += new System.EventHandler(this.shopProducts_btn_Click);
+            // 
+            // shop_btn
+            // 
+            this.shop_btn.FlatAppearance.BorderSize = 0;
+            this.shop_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shop_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shop_btn.Image = global::JustRipeFarm.Properties.Resources.shop_icon;
+            this.shop_btn.Location = new System.Drawing.Point(111, 143);
+            this.shop_btn.Name = "shop_btn";
+            this.shop_btn.Size = new System.Drawing.Size(87, 93);
+            this.shop_btn.TabIndex = 10;
+            this.shop_btn.Text = "Shop";
+            this.shop_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.shop_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.shop_btn.UseVisualStyleBackColor = true;
+            this.shop_btn.Click += new System.EventHandler(this.shop_btn_Click);
             // 
             // MGMainScreen
             // 

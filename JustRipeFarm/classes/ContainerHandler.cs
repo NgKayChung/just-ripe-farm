@@ -9,14 +9,19 @@ namespace JustRipeFarm
 {
     class ContainerHandler
     {
-        public List<Container> GetAllContainers()
+        public List<Container> GetAllContainers(string cont_type = "")
         {
             List<Container> containers = null;
             string sqlString = "SELECT `containers`.`container_id`, `containers`.`container_type`, `containers`.`total_capacity`, `containers`.`status`, `containers`.`crop_id`, `crops`.`crop_name`, `crops`.`min_temperature`, `crops`.`max_temperature`, `crops`.`harvest_days`, `crops`.`capacity_use`, `crops`.`container_type` FROM `containers` " +
                     "LEFT JOIN `crops` ON `containers`.`crop_id` = `crops`.`crop_id`";
-
+            int sqlLength = sqlString.Length;
             if (UserSession.Instance.UserType == "LABOURER") sqlString += " WHERE `containers`.`status` = 'AVAILABLE'";
 
+            if(cont_type != "")
+            {
+                if (sqlString.Length != sqlLength) sqlString += " AND `containers`.`container_type` = '" + cont_type + "'";
+                else sqlString += " WHERE `containers`.`container_type` = '" + cont_type + "'";
+            }
             MySqlCommand sqlCommand = new MySqlCommand(sqlString, DbConnector.Instance.getConn());
             MySqlDataReader reader = sqlCommand.ExecuteReader();
 
@@ -93,6 +98,14 @@ namespace JustRipeFarm
             sqlCommand.Dispose();
 
             return containers;
+        }
+
+        public int UseContainer(Container container, string crop_id)
+        {
+            string sql = "UPDATE `containers` SET `containers`.`status` = 'FULL', `containers`.`crop_id` = '" + crop_id + "' WHERE `containers`.`container_id` = '" + container.ContainerID + "';";
+
+            MySqlCommand sqlComm = new MySqlCommand(sql, DbConnector.Instance.getConn());
+            return sqlComm.ExecuteNonQuery();
         }
 
         public int ClearContainer(Container container)

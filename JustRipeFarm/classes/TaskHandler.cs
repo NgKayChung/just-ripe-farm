@@ -151,6 +151,42 @@ namespace JustRipeFarm
             return tasks;
         }
 
+        public Task GetTaskWithID(int task_id)
+        {
+            Task task = null;
+
+            string sqlString = "SELECT `tasks`.`task_id`, `tasks`.`title`, `tasks`.`task_type`, `tasks`.`description`, `tasks`.`status`, `tasks`.`start_datetime`, `tasks`.`end_datetime`, `tasks`.`field_id`, `tasks`.`crop_id`, `tasks`.`method_use_id`, `tasks`.`assigned_datetime`, `tasks`.`assigned_by` FROM `tasks` " +
+                "WHERE `tasks`.`task_id` = " + task_id.ToString() + ";";
+
+            MySqlCommand sqlCommand = new MySqlCommand(sqlString, DbConnector.Instance.getConn());
+            MySqlDataReader reader = sqlCommand.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                if (reader.Read())
+                {
+                    string task_title = reader.GetString(1);
+                    string task_type = reader.GetString(2);
+                    string task_description = reader.GetString(3);
+                    string status = reader.GetString(4);
+                    DateTime startDateTime = reader.GetDateTime(5);
+                    DateTime endDateTime = reader.GetDateTime(6);
+                    string field_id = reader.GetString(7);
+                    string crop_id = reader.GetString(8);
+                    int method_id = reader.GetInt32(9);
+                    DateTime assignDateTime = reader.GetDateTime(10);
+                    string manager_id = reader.GetString(11);
+
+                    task = new Task(task_id, task_title, task_type, task_description, status, startDateTime, endDateTime, field_id, crop_id, method_id, assignDateTime, manager_id);
+                }
+            }
+
+            if (!reader.IsClosed) reader.Close();
+            sqlCommand.Dispose();
+
+            return task;
+        }
+
         public int UpdateTaskStatus(Task task, string status)
         {
             string updateQuery = "UPDATE `tasks` SET `status` = '" + status + "' WHERE `task_id` = " + task.TaskID.ToString() + " AND `status` = '" + task.Status + "';";

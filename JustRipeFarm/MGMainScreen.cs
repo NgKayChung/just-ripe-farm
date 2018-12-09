@@ -1049,6 +1049,7 @@ namespace JustRipeFarm
             lbHome_panel.Visible = true;
             List<Task> tasksList = new TaskHandler().GetTasksForLabourer(UserSession.Instance.UserID);
 
+            ClearLabTaskText();
             labTask_listView.Items.Clear();
 
             if (tasksList != null)
@@ -1495,23 +1496,40 @@ namespace JustRipeFarm
             {
                 DialogResult result = MessageBox.Show("Are you sure to do this?", "Complete Task", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-                if(result == DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     Task selectedTask = (Task)labTask_listView.SelectedItems[0].Tag;
                     List<TaskStock> taskStocks = new TaskStockHandler().GetStocksForTask(selectedTask.TaskID);
+
                     if (selectedTask.TaskType == "HARVEST")
                     {
-                        // update farm section
-                        FarmSectionHandler farmSectionHandler = new FarmSectionHandler();
-                        FarmSection farmSection = farmSectionHandler.FindFarmSectionWithID(selectedTask.FieldID);
-                        farmSection.CropID = "";
-                        farmSection.Status = "NOT USED";
-                        farmSection.SowDate = DateTime.MinValue;
-                        farmSection.ExpHarvestDate = DateTime.MinValue;
-                        farmSectionHandler.UpdateFarmSection(farmSection);
-
                         // update container
+                        // using a pop up form to let labourer to select containers used
+                        using (Form popupForm = new LabHarvestPopup(selectedTask.TaskID))
+                        {
+                            // show the pop up dialog
+                            var popupResult = popupForm.ShowDialog();
 
+                            // if pop up form return OK as result
+                            if (popupResult == DialogResult.OK)
+                            {
+                                // update farm section
+                                FarmSectionHandler farmSectionHandler = new FarmSectionHandler();
+                                FarmSection farmSection = farmSectionHandler.FindFarmSectionWithID(selectedTask.FieldID);
+                                farmSection.CropID = "";
+                                farmSection.Status = "NOT USED";
+                                farmSection.SowDate = DateTime.MinValue;
+                                farmSection.ExpHarvestDate = DateTime.MinValue;
+                                farmSectionHandler.UpdateFarmSection(farmSection);
+                            }
+                            else
+                            {
+                                // if failed updating containers
+                                MessageBox.Show("Session aborted");
+                                return;
+                            }
+                        }
+                        
                     }
                     else
                     {
@@ -1519,7 +1537,7 @@ namespace JustRipeFarm
                         if (taskStocks != null)
                         {
                             StockHandler stockHandler = new StockHandler();
-
+                            // iterate stocks for updating
                             foreach (TaskStock task_stock in taskStocks)
                             {
                                 stockHandler.UpdateStockQuantity(task_stock.Stock, task_stock.QuantityUse);
@@ -1540,8 +1558,13 @@ namespace JustRipeFarm
                             farmSectionHandler.UpdateFarmSection(farmSection);
                         }
                     }
+
                     TaskHandler taskHandler = new TaskHandler();
                     taskHandler.UpdateTaskStatus(selectedTask, "COMPLETED");
+
+                    MessageBox.Show("Well Done!!\nYou have completed a task!");
+
+                    LoadLBHome();
                 }
             }
         }

@@ -80,6 +80,12 @@
     <Compile Include="classes\Truck.cs" />
     <Compile Include="classes\TruckHandler.cs" />
     <Compile Include="classes\User.cs" />
+    <Compile Include="LabHarvestPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabHarvestPopup.Designer.cs">
+      <DependentUpon>LabHarvestPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     <Compile Include="classes\UserHandler.cs" />
     <Compile Include="classes\Vehicle.cs" />
     <Compile Include="classes\VehicleHandler.cs" />
+    <EmbeddedResource Include="LabHarvestPopup.resx">
+      <DependentUpon>LabHarvestPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +164,7 @@
     <Content Include="Resources\buyers_icon.png" />
     <Content Include="Resources\products_icon.png" />
     <Content Include="Resources\reports_icon.png" />
+    <Content Include="Resources\wholesale_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
