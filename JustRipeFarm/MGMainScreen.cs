@@ -20,9 +20,9 @@ namespace JustRipeFarm
 
         public MGMainScreen()
         {
-            UserSession.Instance.UserID = "MG18290";
-            UserSession.Instance.UserFirstName = "John";
-            UserSession.Instance.UserType = "MANAGER";
+            //UserSession.Instance.UserID = "MG18290";
+            //UserSession.Instance.UserFirstName = "John";
+            //UserSession.Instance.UserType = "MANAGER";
             InitializeComponent();
         }
 
