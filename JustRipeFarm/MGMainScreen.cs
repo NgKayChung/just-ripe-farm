@@ -20,9 +20,9 @@ namespace JustRipeFarm
 
         public MGMainScreen()
         {
-            UserSession.Instance.UserID = "LB18001";
-            UserSession.Instance.UserFirstName = "Jimmy";
-            UserSession.Instance.UserType = "LABOURER";
+            UserSession.Instance.UserID = "MG18290";
+            UserSession.Instance.UserFirstName = "John";
+            UserSession.Instance.UserType = "MANAGER";
             InitializeComponent();
         }
 
@@ -844,6 +844,7 @@ namespace JustRipeFarm
             shopProducts_panel.Visible = false;
             buyers_panel.Visible = false;
             salesReport_panel.Visible = false;
+            simulateSale_panel.Visible = false;
             wholesale_panel.Visible = false;
         }
 
@@ -942,8 +943,14 @@ namespace JustRipeFarm
                 stock_panel.Visible = true;
 
                 storageIDTitle_label.Text = "Storage " + selectedItem.StorageID;
+                storageIDTitle_label.Tag = selectedItem.StorageID;
 
-                LoadStocks(selectedItem);
+                if(UserSession.Instance.UserType == "LABOURER")
+                    updateStock_panel.Visible = false;
+                else if(UserSession.Instance.UserType == "MANAGER")
+                    updateStock_panel.Visible = true;
+
+                LoadStocks();
             }
         }
 
@@ -1089,12 +1096,22 @@ namespace JustRipeFarm
             }
         }
 
-        private void LoadStocks(StockStorage storage)
+        private void LoadStocks()
         {
+            ClearStockUpdateFields();
             StockHandler stockHandler = new StockHandler();
-            List<Stock> stocks = stockHandler.FindStocksForStorage(storage.StorageID);
+            List<Stock> stocks = stockHandler.FindStocksForStorage((string)storageIDTitle_label.Tag);
 
             PopulateStocksList(stocks);
+        }
+
+        private void ClearStockUpdateFields()
+        {
+            storageStockID_txtBox.ResetText();
+            storageStockName_txtBox.ResetText();
+            storageStockBrand_txtBox.ResetText();
+            storageStockCapacity_numeric.Value = 0;
+            storageStockQuantity_numeric.Value = 0;
         }
 
         private void PopulateStocksList(List<Stock> stocksList)
@@ -1111,6 +1128,8 @@ namespace JustRipeFarm
 
                     stock_listView.Items.Add(listViewItem);
                 }
+
+                storageStockType_txtBox.Text = stocksList[0].Type;
             }
         }
 
@@ -1408,29 +1427,36 @@ namespace JustRipeFarm
 
         private void updatePassword_btn_Click(object sender, EventArgs e)
         {
-            string oldPassword = profileOldPassword_txtBox.Text;
-            string newPassword = profileNewPassword_txtBox.Text;
-            string confirmPassword = profileConfirmPassword_txtBox.Text;
+            string oldPassword = profileOldPassword_txtBox.Text.Trim();
+            string newPassword = profileNewPassword_txtBox.Text.Trim();
+            string confirmPassword = profileConfirmPassword_txtBox.Text.Trim();
 
             UserHandler userHandler = new UserHandler();
             User user = userHandler.GetUser(UserSession.Instance.UserID);
 
             if (oldPassword == user.Password)
             {
-                if (newPassword == confirmPassword)
+                if(newPassword != "")
                 {
-                    userHandler.ChangePass(user, newPassword);
-                    MessageBox.Show("Password is successfully updated !");
-                    LoadUserProfileInfo();
+                    if (newPassword == confirmPassword)
+                    {
+                        userHandler.ChangePass(user, newPassword);
+                        MessageBox.Show("Password is successfully updated !");
+                        LoadUserProfileInfo();
+                    }
+                    else
+                    {
+                        MessageBox.Show("New password and confirm password are not match");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("New password and confirm password are not match");
+                    MessageBox.Show("Invalid new password");
                 }
             }
             else
             {
-                MessageBox.Show("Invalid password");
+                MessageBox.Show("Incorrect password");
             }
         }
 
@@ -1566,6 +1592,215 @@ namespace JustRipeFarm
 
                     LoadLBHome();
                 }
+            }
+        }
+
+        private void simulateSales_btn_Click(object sender, EventArgs e)
+        {
+            shop_panel.Visible = false;
+            simulateSale_panel.Visible = true;
+
+            LoadSimulateSale();
+        }
+
+        private void simulateSale_back_Click(object sender, EventArgs e)
+        {
+            shop_panel.Visible = true;
+            simulateSale_panel.Visible = false;
+        }
+
+        private void LoadSimulateSale()
+        {
+            ClearSimulateSaleFields();
+
+            ProductHandler productHandler = new ProductHandler();
+            List<Product> products = productHandler.FindAllProducts("SALE");
+
+            simulateSaleProducts_comboBox.Items.Clear();
+
+            if(products != null)
+            {
+                foreach(Product product in products)
+                {
+                    simulateSaleProducts_comboBox.Items.Add(product);
+                }
+            }
+        }
+
+        private void ClearSimulateSaleFields()
+        {
+            simulateSaleProducts_comboBox.SelectedItem = null;
+            simulateSaleQuantity_numeric.Value = 0;
+            simulateSaleProducts_listView.Items.Clear();
+            simulateSaleTotalAmount_label.Tag = "0";
+            simulateSaleTotalAmount_label.Text = "RM 0.00";
+            simulateSaleBuyerFName_txtBox.ResetText();
+            simulateSaleBuyerLName_txtBox.ResetText();
+            simulateSaleBuyerEmail_txtBox.ResetText();
+            simulateSaleBuyerPhone_txtBox.ResetText();
+            simulateSaleBuyerCompanyName_txtBox.ResetText();
+        }
+
+        private void simulateSaleAddProduct_btn_Click(object sender, EventArgs e)
+        {
+            Product selectedProduct = (Product)simulateSaleProducts_comboBox.SelectedItem;
+
+            if(selectedProduct != null)
+            {
+                int productQuantity = (int)simulateSaleQuantity_numeric.Value;
+
+                if (productQuantity > 0)
+                {
+                    decimal subTotal = selectedProduct.Price * productQuantity;
+
+                    if (simulateSaleProducts_listView.Items.Count > 0)
+                    {
+                        foreach (ListViewItem productItem in simulateSaleProducts_listView.Items)
+                        {
+                            Product product = (Product)productItem.Tag;
+
+                            if (product.Equals(selectedProduct))
+                            {
+                                decimal total = decimal.Parse((string)simulateSaleTotalAmount_label.Tag);
+                                decimal prevSubTotal = decimal.Parse((string)productItem.SubItems[3].Text);
+                                total -= prevSubTotal;
+                                simulateSaleProducts_listView.Items.Remove(productItem);
+                                simulateSaleTotalAmount_label.Tag = total.ToString("N2");
+                                break;
+                            }
+                        }
+                    }
+
+                    string[] row = { selectedProduct.ProductCode, selectedProduct.ProductName, productQuantity.ToString(), subTotal.ToString("N2") };
+                    ListViewItem listViewItem = new ListViewItem(row);
+                    listViewItem.Tag = selectedProduct;
+
+                    simulateSaleProducts_listView.Items.Add(listViewItem);
+
+                    decimal prevTotal = decimal.Parse((string)simulateSaleTotalAmount_label.Tag);
+                    simulateSaleTotalAmount_label.Text = "RM " + (prevTotal + subTotal).ToString("N2");
+                    simulateSaleTotalAmount_label.Tag = (prevTotal + subTotal).ToString("N2");
+                }
+                else
+                {
+                    MessageBox.Show("Product quantity should not be less than 1");
+                }
+            }
+        }
+
+        private void simulateSaleSubmit_btn_Click(object sender, EventArgs e)
+        {
+            if(simulateSaleProducts_listView.Items.Count > 0)
+            {
+                // generate sale id
+                Random random = new Random();
+                string saleID = "JRSP" + DateTime.Now.ToString("yyyyMMdd") + "-" + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
+
+                // get current date time for sale
+                DateTime saleTime = DateTime.Now;
+
+                // get total sale amount
+                decimal totalAmount = decimal.Parse((string)simulateSaleTotalAmount_label.Tag);
+
+                // list of products
+                List<Product> purchasedProducts = new List<Product>();
+
+                // iterate through products list view
+                foreach (ListViewItem productListItem in simulateSaleProducts_listView.Items)
+                {
+                    // add each product items to list
+                    Product product = (Product)productListItem.Tag;
+                    product.Quantity = int.Parse(productListItem.SubItems[2].Text);
+                    purchasedProducts.Add(product);
+                }
+
+                // get buyer details
+                string buyerFirstName = simulateSaleBuyerFName_txtBox.Text.Trim();
+                string buyerLastName = simulateSaleBuyerLName_txtBox.Text.Trim();
+                string buyerEmail = simulateSaleBuyerEmail_txtBox.Text.Trim();
+                string buyerPhone = simulateSaleBuyerPhone_txtBox.Text.Trim();
+                string buyerCompany = simulateSaleBuyerCompanyName_txtBox.Text.Trim();
+
+                if (buyerFirstName == "")
+                {
+                    MessageBox.Show("First name is required");
+                    return;
+                }
+
+                if(buyerLastName == "")
+                {
+                    MessageBox.Show("Last name is required");
+                    return;
+                }
+
+                if(!Regex.IsMatch(buyerEmail, EVAL_EMAIL))
+                {
+                    MessageBox.Show("Invalid email address");
+                    return;
+                }
+
+                Buyer buyer = new Buyer(buyerFirstName, buyerLastName, buyerEmail, buyerPhone, company_name: buyerCompany);
+
+                // insert sale record
+                Sale currentSale = new Sale(saleID, saleTime, buyer, totalAmount, purchasedProducts);
+
+                string insertRes = new SaleHandler().InsertNewSale(currentSale);
+
+                if(insertRes == "SUCCESS")
+                {
+                    MessageBox.Show("Purchase successful\nThank you for purchasing with us!");
+                    LoadSimulateSale();
+                }
+                else
+                {
+                    MessageBox.Show(insertRes + "\nError occured, cannot proceed sale");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please add product to purchase");
+            }
+        }
+
+        private void stock_listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(stock_listView.SelectedItems.Count > 0)
+            {
+                Stock stock = (Stock)stock_listView.SelectedItems[0].Tag;
+
+                storageStockID_txtBox.Text = stock.ID;
+                storageStockName_txtBox.Text = stock.Name;
+                storageStockBrand_txtBox.Text = stock.Brand;
+                storageStockCapacity_numeric.Value = stock.CapacityUse;
+                storageStockQuantity_numeric.Value = stock.Quantity;
+            }
+        }
+
+        private void storageStockUpdate_btn_Click(object sender, EventArgs e)
+        {
+            Stock stock = (Stock)stock_listView.SelectedItems[0].Tag;
+
+            string newStockName = storageStockName_txtBox.Text.Trim();
+            string newStockBrand = storageStockBrand_txtBox.Text.Trim();
+            int newStockCapacity = (int)storageStockCapacity_numeric.Value;
+            int newStockQuantity = (int)storageStockQuantity_numeric.Value;
+
+            stock.Name = newStockName;
+            stock.Brand = newStockBrand;
+            stock.CapacityUse = newStockCapacity;
+            stock.Quantity = newStockQuantity;
+
+            StockHandler stockHandler = new StockHandler();
+            string updateResult = stockHandler.UpdateStockData(stock);
+
+            if(updateResult == "SUCCESS")
+            {
+                MessageBox.Show("Stock successfully updated");
+                LoadStocks();
+            }
+            else
+            {
+                MessageBox.Show(updateResult + "\nError occured when updating stock details");
             }
         }
     }

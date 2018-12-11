@@ -9,10 +9,13 @@ namespace JustRipeFarm
 {
     class ProductHandler
     {
-        public List<Product> FindAllProducts()
+        public List<Product> FindAllProducts(string status = "ALL")
         {
             List<Product> products = null;
-            string sqlString = "SELECT `products`.`product_code`, `products`.`product_name`, `products`.`qty_in_stock`, `products`.`price`, `products`.`on_sale_status` FROM `products`;";
+            string sqlString = "SELECT `products`.`product_code`, `products`.`product_name`, `products`.`qty_in_stock`, `products`.`price`, `products`.`on_sale_status` FROM `products`";
+
+            if (status == "SALE") sqlString += " WHERE `products`.`on_sale_status` = 1";
+            else if(status == "NOT SALE") sqlString += " WHERE `products`.`on_sale_status` = 0";
 
             MySqlCommand sqlCommand = new MySqlCommand(sqlString, DbConnector.Instance.getConn());
             MySqlDataReader reader = sqlCommand.ExecuteReader();

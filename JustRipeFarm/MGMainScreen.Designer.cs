@@ -61,6 +61,33 @@
             this.profileLName_label = new System.Windows.Forms.Label();
             this.profileFName_label = new System.Windows.Forms.Label();
             this.shopWholesaleTop_panel = new System.Windows.Forms.Panel();
+            this.simulateSale_panel = new System.Windows.Forms.Panel();
+            this.simulateSaleTotalAmount_label = new System.Windows.Forms.Label();
+            this.simulateSaleProducts_listView = new System.Windows.Forms.ListView();
+            this.simulateSaleProductCode_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.simulateSaleProductName_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.simulateSaleProductQuantity_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.simulateSaleProductSubTotal_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.simulateSaleSubmit_btn = new System.Windows.Forms.Button();
+            this.simulateSaleAddProduct_btn = new System.Windows.Forms.Button();
+            this.simulateSaleInst_label = new System.Windows.Forms.Label();
+            this.simulateSaleProducts_comboBox = new System.Windows.Forms.ComboBox();
+            this.simulateSaleQuantity_numeric = new System.Windows.Forms.NumericUpDown();
+            this.simulateSaleTotalAmountTitle_label = new System.Windows.Forms.Label();
+            this.simulateSaleBuyerCompanyName_label = new System.Windows.Forms.Label();
+            this.simulateSaleBuyerPhone_label = new System.Windows.Forms.Label();
+            this.simulateSaleBuyerLName_label = new System.Windows.Forms.Label();
+            this.simulateSaleBuyerCompanyName_txtBox = new System.Windows.Forms.TextBox();
+            this.simulateSaleBuyerPhone_txtBox = new System.Windows.Forms.TextBox();
+            this.simulateSaleBuyerEmail_label = new System.Windows.Forms.Label();
+            this.simulateSaleBuyerLName_txtBox = new System.Windows.Forms.TextBox();
+            this.simulateSaleBuyerFName_label = new System.Windows.Forms.Label();
+            this.simulateSaleBuyerEmail_txtBox = new System.Windows.Forms.TextBox();
+            this.simulateSaleBuyerFName_txtBox = new System.Windows.Forms.TextBox();
+            this.simulateSaleQuantity_label = new System.Windows.Forms.Label();
+            this.simulateSaleProduct_label = new System.Windows.Forms.Label();
+            this.simulateSaleTitle_label = new System.Windows.Forms.Label();
+            this.simulateSale_back = new System.Windows.Forms.Button();
             this.wholesale_panel = new System.Windows.Forms.Panel();
             this.transportTime_datePicker = new System.Windows.Forms.DateTimePicker();
             this.transportDate_datePicker = new System.Windows.Forms.DateTimePicker();
@@ -121,11 +148,15 @@
             this.shopProductsTitle_label = new System.Windows.Forms.Label();
             this.shopProducts_back = new System.Windows.Forms.Button();
             this.shop_panel = new System.Windows.Forms.Panel();
+            this.shopSales_btn = new System.Windows.Forms.Button();
+            this.shopBuyers_btn = new System.Windows.Forms.Button();
+            this.shopProducts_btn = new System.Windows.Forms.Button();
             this.simulateSales_btn = new System.Windows.Forms.Button();
             this.shopTitle_label = new System.Windows.Forms.Label();
             this.shopBack_btn = new System.Windows.Forms.Button();
             this.shopWholesale_panel = new System.Windows.Forms.Panel();
             this.wholesale_btn = new System.Windows.Forms.Button();
+            this.shop_btn = new System.Windows.Forms.Button();
             this.shopWholeTitle_label = new System.Windows.Forms.Label();
             this.machineTop_panel = new System.Windows.Forms.Panel();
             this.m_search = new System.Windows.Forms.Button();
@@ -217,7 +248,12 @@
             this.containerTitle_label = new System.Windows.Forms.Label();
             this.storageContainer_back = new System.Windows.Forms.Button();
             this.stock_panel = new System.Windows.Forms.Panel();
-            this.stock_back = new System.Windows.Forms.Button();
+            this.storageStockType_txtBox = new System.Windows.Forms.TextBox();
+            this.storageStockBrand_txtBox = new System.Windows.Forms.TextBox();
+            this.storageStockQuantity_numeric = new System.Windows.Forms.NumericUpDown();
+            this.storageStockCapacity_numeric = new System.Windows.Forms.NumericUpDown();
+            this.storageStockUpdate_btn = new System.Windows.Forms.Button();
+            this.storageStockQuantity_label = new System.Windows.Forms.Label();
             this.stock_listView = new System.Windows.Forms.ListView();
             this.stockID_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stockName_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -225,6 +261,14 @@
             this.stockCapacity_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stockType_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stockQty_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.storageStockCapacity_label = new System.Windows.Forms.Label();
+            this.storageStockName_label = new System.Windows.Forms.Label();
+            this.storageStockType_label = new System.Windows.Forms.Label();
+            this.storageStockName_txtBox = new System.Windows.Forms.TextBox();
+            this.storageStockBrand_label = new System.Windows.Forms.Label();
+            this.storageStockID_label = new System.Windows.Forms.Label();
+            this.storageStockID_txtBox = new System.Windows.Forms.TextBox();
+            this.stock_back = new System.Windows.Forms.Button();
             this.storageIDTitle_label = new System.Windows.Forms.Label();
             this.storage_panel = new System.Windows.Forms.Panel();
             this.storageContainer_btn = new System.Windows.Forms.Button();
@@ -306,16 +350,15 @@
             this.fieldTitle_label = new System.Windows.Forms.Label();
             this.homeTitle_label = new System.Windows.Forms.Label();
             this.section_toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.shopSales_btn = new System.Windows.Forms.Button();
-            this.shopBuyers_btn = new System.Windows.Forms.Button();
-            this.shopProducts_btn = new System.Windows.Forms.Button();
-            this.shop_btn = new System.Windows.Forms.Button();
+            this.updateStock_panel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).BeginInit();
             this.SplitContainer_Menu_Content.Panel1.SuspendLayout();
             this.SplitContainer_Menu_Content.Panel2.SuspendLayout();
             this.SplitContainer_Menu_Content.SuspendLayout();
             this.profile_panel.SuspendLayout();
             this.shopWholesaleTop_panel.SuspendLayout();
+            this.simulateSale_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.simulateSaleQuantity_numeric)).BeginInit();
             this.wholesale_panel.SuspendLayout();
             this.salesReport_panel.SuspendLayout();
             this.buyers_panel.SuspendLayout();
@@ -336,12 +379,15 @@
             this.storageTop_panel.SuspendLayout();
             this.container_panel.SuspendLayout();
             this.stock_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.storageStockQuantity_numeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storageStockCapacity_numeric)).BeginInit();
             this.storage_panel.SuspendLayout();
             this.timetable_panel.SuspendLayout();
             this.home_panel.SuspendLayout();
             this.lbHome_panel.SuspendLayout();
             this.mgHome_panel.SuspendLayout();
             this.sections_groupBox.SuspendLayout();
+            this.updateStock_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // SplitContainer_Menu_Content
@@ -761,6 +807,7 @@
             // 
             // shopWholesaleTop_panel
             // 
+            this.shopWholesaleTop_panel.Controls.Add(this.simulateSale_panel);
             this.shopWholesaleTop_panel.Controls.Add(this.wholesale_panel);
             this.shopWholesaleTop_panel.Controls.Add(this.salesReport_panel);
             this.shopWholesaleTop_panel.Controls.Add(this.buyers_panel);
@@ -775,6 +822,279 @@
             this.shopWholesaleTop_panel.Visible = false;
             this.shopWholesaleTop_panel.VisibleChanged += new System.EventHandler(this.shopWholesaleTop_panel_VisibleChanged);
             // 
+            // simulateSale_panel
+            // 
+            this.simulateSale_panel.AutoScroll = true;
+            this.simulateSale_panel.Controls.Add(this.simulateSaleTotalAmount_label);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleProducts_listView);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleSubmit_btn);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleAddProduct_btn);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleInst_label);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleProducts_comboBox);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleQuantity_numeric);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleTotalAmountTitle_label);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleBuyerCompanyName_label);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleBuyerPhone_label);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleBuyerLName_label);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleBuyerCompanyName_txtBox);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleBuyerPhone_txtBox);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleBuyerEmail_label);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleBuyerLName_txtBox);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleBuyerFName_label);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleBuyerEmail_txtBox);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleBuyerFName_txtBox);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleQuantity_label);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleProduct_label);
+            this.simulateSale_panel.Controls.Add(this.simulateSaleTitle_label);
+            this.simulateSale_panel.Controls.Add(this.simulateSale_back);
+            this.simulateSale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simulateSale_panel.Location = new System.Drawing.Point(0, 0);
+            this.simulateSale_panel.Name = "simulateSale_panel";
+            this.simulateSale_panel.Size = new System.Drawing.Size(506, 405);
+            this.simulateSale_panel.TabIndex = 15;
+            this.simulateSale_panel.Visible = false;
+            // 
+            // simulateSaleTotalAmount_label
+            // 
+            this.simulateSaleTotalAmount_label.AutoSize = true;
+            this.simulateSaleTotalAmount_label.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.simulateSaleTotalAmount_label.Location = new System.Drawing.Point(331, 254);
+            this.simulateSaleTotalAmount_label.Name = "simulateSaleTotalAmount_label";
+            this.simulateSaleTotalAmount_label.Size = new System.Drawing.Size(61, 19);
+            this.simulateSaleTotalAmount_label.TabIndex = 42;
+            this.simulateSaleTotalAmount_label.Tag = "0";
+            this.simulateSaleTotalAmount_label.Text = "RM 0.00";
+            // 
+            // simulateSaleProducts_listView
+            // 
+            this.simulateSaleProducts_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.simulateSaleProductCode_header,
+            this.simulateSaleProductName_header,
+            this.simulateSaleProductQuantity_header,
+            this.simulateSaleProductSubTotal_header});
+            this.simulateSaleProducts_listView.GridLines = true;
+            this.simulateSaleProducts_listView.Location = new System.Drawing.Point(17, 151);
+            this.simulateSaleProducts_listView.Name = "simulateSaleProducts_listView";
+            this.simulateSaleProducts_listView.Size = new System.Drawing.Size(308, 122);
+            this.simulateSaleProducts_listView.TabIndex = 41;
+            this.simulateSaleProducts_listView.UseCompatibleStateImageBehavior = false;
+            this.simulateSaleProducts_listView.View = System.Windows.Forms.View.Details;
+            // 
+            // simulateSaleProductCode_header
+            // 
+            this.simulateSaleProductCode_header.Text = "Product Code";
+            this.simulateSaleProductCode_header.Width = 78;
+            // 
+            // simulateSaleProductName_header
+            // 
+            this.simulateSaleProductName_header.Text = "Product Name";
+            this.simulateSaleProductName_header.Width = 115;
+            // 
+            // simulateSaleProductQuantity_header
+            // 
+            this.simulateSaleProductQuantity_header.Text = "Quantity";
+            this.simulateSaleProductQuantity_header.Width = 51;
+            // 
+            // simulateSaleProductSubTotal_header
+            // 
+            this.simulateSaleProductSubTotal_header.Text = "Sub Total";
+            this.simulateSaleProductSubTotal_header.Width = 59;
+            // 
+            // simulateSaleSubmit_btn
+            // 
+            this.simulateSaleSubmit_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.simulateSaleSubmit_btn.Location = new System.Drawing.Point(387, 409);
+            this.simulateSaleSubmit_btn.Name = "simulateSaleSubmit_btn";
+            this.simulateSaleSubmit_btn.Size = new System.Drawing.Size(56, 23);
+            this.simulateSaleSubmit_btn.TabIndex = 40;
+            this.simulateSaleSubmit_btn.Text = "Submit";
+            this.simulateSaleSubmit_btn.UseVisualStyleBackColor = true;
+            this.simulateSaleSubmit_btn.Click += new System.EventHandler(this.simulateSaleSubmit_btn_Click);
+            // 
+            // simulateSaleAddProduct_btn
+            // 
+            this.simulateSaleAddProduct_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.simulateSaleAddProduct_btn.Location = new System.Drawing.Point(395, 102);
+            this.simulateSaleAddProduct_btn.Name = "simulateSaleAddProduct_btn";
+            this.simulateSaleAddProduct_btn.Size = new System.Drawing.Size(48, 23);
+            this.simulateSaleAddProduct_btn.TabIndex = 40;
+            this.simulateSaleAddProduct_btn.Text = "Add";
+            this.simulateSaleAddProduct_btn.UseVisualStyleBackColor = true;
+            this.simulateSaleAddProduct_btn.Click += new System.EventHandler(this.simulateSaleAddProduct_btn_Click);
+            // 
+            // simulateSaleInst_label
+            // 
+            this.simulateSaleInst_label.AutoSize = true;
+            this.simulateSaleInst_label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.simulateSaleInst_label.Location = new System.Drawing.Point(16, 53);
+            this.simulateSaleInst_label.Name = "simulateSaleInst_label";
+            this.simulateSaleInst_label.Size = new System.Drawing.Size(371, 19);
+            this.simulateSaleInst_label.TabIndex = 39;
+            this.simulateSaleInst_label.Text = "Choose product to add to sale. * indicates mandatory fields";
+            // 
+            // simulateSaleProducts_comboBox
+            // 
+            this.simulateSaleProducts_comboBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleProducts_comboBox.FormattingEnabled = true;
+            this.simulateSaleProducts_comboBox.Location = new System.Drawing.Point(17, 102);
+            this.simulateSaleProducts_comboBox.Name = "simulateSaleProducts_comboBox";
+            this.simulateSaleProducts_comboBox.Size = new System.Drawing.Size(266, 23);
+            this.simulateSaleProducts_comboBox.TabIndex = 38;
+            // 
+            // simulateSaleQuantity_numeric
+            // 
+            this.simulateSaleQuantity_numeric.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleQuantity_numeric.Location = new System.Drawing.Point(302, 102);
+            this.simulateSaleQuantity_numeric.Name = "simulateSaleQuantity_numeric";
+            this.simulateSaleQuantity_numeric.Size = new System.Drawing.Size(53, 23);
+            this.simulateSaleQuantity_numeric.TabIndex = 36;
+            // 
+            // simulateSaleTotalAmountTitle_label
+            // 
+            this.simulateSaleTotalAmountTitle_label.AutoSize = true;
+            this.simulateSaleTotalAmountTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleTotalAmountTitle_label.Location = new System.Drawing.Point(332, 238);
+            this.simulateSaleTotalAmountTitle_label.Name = "simulateSaleTotalAmountTitle_label";
+            this.simulateSaleTotalAmountTitle_label.Size = new System.Drawing.Size(80, 15);
+            this.simulateSaleTotalAmountTitle_label.TabIndex = 34;
+            this.simulateSaleTotalAmountTitle_label.Text = "Total Amount";
+            // 
+            // simulateSaleBuyerCompanyName_label
+            // 
+            this.simulateSaleBuyerCompanyName_label.AutoSize = true;
+            this.simulateSaleBuyerCompanyName_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleBuyerCompanyName_label.Location = new System.Drawing.Point(15, 393);
+            this.simulateSaleBuyerCompanyName_label.Name = "simulateSaleBuyerCompanyName_label";
+            this.simulateSaleBuyerCompanyName_label.Size = new System.Drawing.Size(94, 15);
+            this.simulateSaleBuyerCompanyName_label.TabIndex = 35;
+            this.simulateSaleBuyerCompanyName_label.Text = "Company Name";
+            // 
+            // simulateSaleBuyerPhone_label
+            // 
+            this.simulateSaleBuyerPhone_label.AutoSize = true;
+            this.simulateSaleBuyerPhone_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleBuyerPhone_label.Location = new System.Drawing.Point(230, 343);
+            this.simulateSaleBuyerPhone_label.Name = "simulateSaleBuyerPhone_label";
+            this.simulateSaleBuyerPhone_label.Size = new System.Drawing.Size(121, 15);
+            this.simulateSaleBuyerPhone_label.TabIndex = 35;
+            this.simulateSaleBuyerPhone_label.Text = "Buyer Phone Number";
+            // 
+            // simulateSaleBuyerLName_label
+            // 
+            this.simulateSaleBuyerLName_label.AutoSize = true;
+            this.simulateSaleBuyerLName_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleBuyerLName_label.Location = new System.Drawing.Point(230, 295);
+            this.simulateSaleBuyerLName_label.Name = "simulateSaleBuyerLName_label";
+            this.simulateSaleBuyerLName_label.Size = new System.Drawing.Size(104, 15);
+            this.simulateSaleBuyerLName_label.TabIndex = 35;
+            this.simulateSaleBuyerLName_label.Text = "Buyer Last Name *";
+            // 
+            // simulateSaleBuyerCompanyName_txtBox
+            // 
+            this.simulateSaleBuyerCompanyName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleBuyerCompanyName_txtBox.Location = new System.Drawing.Point(18, 410);
+            this.simulateSaleBuyerCompanyName_txtBox.Name = "simulateSaleBuyerCompanyName_txtBox";
+            this.simulateSaleBuyerCompanyName_txtBox.Size = new System.Drawing.Size(191, 23);
+            this.simulateSaleBuyerCompanyName_txtBox.TabIndex = 33;
+            // 
+            // simulateSaleBuyerPhone_txtBox
+            // 
+            this.simulateSaleBuyerPhone_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleBuyerPhone_txtBox.Location = new System.Drawing.Point(233, 360);
+            this.simulateSaleBuyerPhone_txtBox.Name = "simulateSaleBuyerPhone_txtBox";
+            this.simulateSaleBuyerPhone_txtBox.Size = new System.Drawing.Size(191, 23);
+            this.simulateSaleBuyerPhone_txtBox.TabIndex = 33;
+            // 
+            // simulateSaleBuyerEmail_label
+            // 
+            this.simulateSaleBuyerEmail_label.AutoSize = true;
+            this.simulateSaleBuyerEmail_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleBuyerEmail_label.Location = new System.Drawing.Point(14, 343);
+            this.simulateSaleBuyerEmail_label.Name = "simulateSaleBuyerEmail_label";
+            this.simulateSaleBuyerEmail_label.Size = new System.Drawing.Size(122, 15);
+            this.simulateSaleBuyerEmail_label.TabIndex = 35;
+            this.simulateSaleBuyerEmail_label.Text = "Buyer Email Address *";
+            // 
+            // simulateSaleBuyerLName_txtBox
+            // 
+            this.simulateSaleBuyerLName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleBuyerLName_txtBox.Location = new System.Drawing.Point(233, 312);
+            this.simulateSaleBuyerLName_txtBox.Name = "simulateSaleBuyerLName_txtBox";
+            this.simulateSaleBuyerLName_txtBox.Size = new System.Drawing.Size(191, 23);
+            this.simulateSaleBuyerLName_txtBox.TabIndex = 33;
+            // 
+            // simulateSaleBuyerFName_label
+            // 
+            this.simulateSaleBuyerFName_label.AutoSize = true;
+            this.simulateSaleBuyerFName_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleBuyerFName_label.Location = new System.Drawing.Point(14, 295);
+            this.simulateSaleBuyerFName_label.Name = "simulateSaleBuyerFName_label";
+            this.simulateSaleBuyerFName_label.Size = new System.Drawing.Size(105, 15);
+            this.simulateSaleBuyerFName_label.TabIndex = 35;
+            this.simulateSaleBuyerFName_label.Text = "Buyer First Name *";
+            // 
+            // simulateSaleBuyerEmail_txtBox
+            // 
+            this.simulateSaleBuyerEmail_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleBuyerEmail_txtBox.Location = new System.Drawing.Point(17, 360);
+            this.simulateSaleBuyerEmail_txtBox.Name = "simulateSaleBuyerEmail_txtBox";
+            this.simulateSaleBuyerEmail_txtBox.Size = new System.Drawing.Size(191, 23);
+            this.simulateSaleBuyerEmail_txtBox.TabIndex = 33;
+            // 
+            // simulateSaleBuyerFName_txtBox
+            // 
+            this.simulateSaleBuyerFName_txtBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleBuyerFName_txtBox.Location = new System.Drawing.Point(17, 312);
+            this.simulateSaleBuyerFName_txtBox.Name = "simulateSaleBuyerFName_txtBox";
+            this.simulateSaleBuyerFName_txtBox.Size = new System.Drawing.Size(191, 23);
+            this.simulateSaleBuyerFName_txtBox.TabIndex = 33;
+            // 
+            // simulateSaleQuantity_label
+            // 
+            this.simulateSaleQuantity_label.AutoSize = true;
+            this.simulateSaleQuantity_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleQuantity_label.Location = new System.Drawing.Point(299, 84);
+            this.simulateSaleQuantity_label.Name = "simulateSaleQuantity_label";
+            this.simulateSaleQuantity_label.Size = new System.Drawing.Size(53, 15);
+            this.simulateSaleQuantity_label.TabIndex = 31;
+            this.simulateSaleQuantity_label.Text = "Quantity";
+            // 
+            // simulateSaleProduct_label
+            // 
+            this.simulateSaleProduct_label.AutoSize = true;
+            this.simulateSaleProduct_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSaleProduct_label.Location = new System.Drawing.Point(17, 86);
+            this.simulateSaleProduct_label.Name = "simulateSaleProduct_label";
+            this.simulateSaleProduct_label.Size = new System.Drawing.Size(49, 15);
+            this.simulateSaleProduct_label.TabIndex = 32;
+            this.simulateSaleProduct_label.Text = "Product";
+            // 
+            // simulateSaleTitle_label
+            // 
+            this.simulateSaleTitle_label.AutoSize = true;
+            this.simulateSaleTitle_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.simulateSaleTitle_label.Location = new System.Drawing.Point(68, 15);
+            this.simulateSaleTitle_label.Name = "simulateSaleTitle_label";
+            this.simulateSaleTitle_label.Size = new System.Drawing.Size(114, 21);
+            this.simulateSaleTitle_label.TabIndex = 21;
+            this.simulateSaleTitle_label.Text = "Simulate Sale";
+            // 
+            // simulateSale_back
+            // 
+            this.simulateSale_back.BackColor = System.Drawing.Color.SeaGreen;
+            this.simulateSale_back.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.simulateSale_back.FlatAppearance.BorderSize = 0;
+            this.simulateSale_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.simulateSale_back.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simulateSale_back.ForeColor = System.Drawing.Color.White;
+            this.simulateSale_back.Location = new System.Drawing.Point(0, 8);
+            this.simulateSale_back.Name = "simulateSale_back";
+            this.simulateSale_back.Size = new System.Drawing.Size(61, 33);
+            this.simulateSale_back.TabIndex = 19;
+            this.simulateSale_back.Text = "Back";
+            this.simulateSale_back.UseVisualStyleBackColor = false;
+            this.simulateSale_back.Click += new System.EventHandler(this.simulateSale_back_Click);
+            // 
             // wholesale_panel
             // 
             this.wholesale_panel.Controls.Add(this.transportTime_datePicker);
@@ -788,7 +1108,7 @@
             this.wholesale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wholesale_panel.Location = new System.Drawing.Point(0, 0);
             this.wholesale_panel.Name = "wholesale_panel";
-            this.wholesale_panel.Size = new System.Drawing.Size(496, 405);
+            this.wholesale_panel.Size = new System.Drawing.Size(506, 405);
             this.wholesale_panel.TabIndex = 14;
             this.wholesale_panel.Visible = false;
             // 
@@ -919,7 +1239,7 @@
             this.salesReport_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.salesReport_panel.Location = new System.Drawing.Point(0, 0);
             this.salesReport_panel.Name = "salesReport_panel";
-            this.salesReport_panel.Size = new System.Drawing.Size(496, 405);
+            this.salesReport_panel.Size = new System.Drawing.Size(506, 405);
             this.salesReport_panel.TabIndex = 13;
             this.salesReport_panel.Visible = false;
             // 
@@ -1068,7 +1388,7 @@
             this.buyers_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buyers_panel.Location = new System.Drawing.Point(0, 0);
             this.buyers_panel.Name = "buyers_panel";
-            this.buyers_panel.Size = new System.Drawing.Size(496, 405);
+            this.buyers_panel.Size = new System.Drawing.Size(506, 405);
             this.buyers_panel.TabIndex = 12;
             this.buyers_panel.Visible = false;
             // 
@@ -1171,10 +1491,10 @@
             this.shopProducts_panel.Controls.Add(this.products_listView);
             this.shopProducts_panel.Controls.Add(this.shopProductsTitle_label);
             this.shopProducts_panel.Controls.Add(this.shopProducts_back);
-            this.shopProducts_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.shopProducts_panel.Location = new System.Drawing.Point(496, 0);
+            this.shopProducts_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shopProducts_panel.Location = new System.Drawing.Point(0, 0);
             this.shopProducts_panel.Name = "shopProducts_panel";
-            this.shopProducts_panel.Size = new System.Drawing.Size(10, 405);
+            this.shopProducts_panel.Size = new System.Drawing.Size(506, 405);
             this.shopProducts_panel.TabIndex = 11;
             this.shopProducts_panel.Visible = false;
             // 
@@ -1357,6 +1677,54 @@
             this.shop_panel.TabIndex = 10;
             this.shop_panel.Visible = false;
             // 
+            // shopSales_btn
+            // 
+            this.shopSales_btn.FlatAppearance.BorderSize = 0;
+            this.shopSales_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shopSales_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shopSales_btn.Image = global::JustRipeFarm.Properties.Resources.reports_icon;
+            this.shopSales_btn.Location = new System.Drawing.Point(336, 138);
+            this.shopSales_btn.Name = "shopSales_btn";
+            this.shopSales_btn.Size = new System.Drawing.Size(117, 93);
+            this.shopSales_btn.TabIndex = 21;
+            this.shopSales_btn.Text = "Sales Report";
+            this.shopSales_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.shopSales_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.shopSales_btn.UseVisualStyleBackColor = true;
+            this.shopSales_btn.Click += new System.EventHandler(this.shopSales_btn_Click);
+            // 
+            // shopBuyers_btn
+            // 
+            this.shopBuyers_btn.FlatAppearance.BorderSize = 0;
+            this.shopBuyers_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shopBuyers_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shopBuyers_btn.Image = global::JustRipeFarm.Properties.Resources.buyers_icon;
+            this.shopBuyers_btn.Location = new System.Drawing.Point(170, 138);
+            this.shopBuyers_btn.Name = "shopBuyers_btn";
+            this.shopBuyers_btn.Size = new System.Drawing.Size(125, 93);
+            this.shopBuyers_btn.TabIndex = 20;
+            this.shopBuyers_btn.Text = "Buyers Report";
+            this.shopBuyers_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.shopBuyers_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.shopBuyers_btn.UseVisualStyleBackColor = true;
+            this.shopBuyers_btn.Click += new System.EventHandler(this.shopBuyers_btn_Click);
+            // 
+            // shopProducts_btn
+            // 
+            this.shopProducts_btn.FlatAppearance.BorderSize = 0;
+            this.shopProducts_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shopProducts_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shopProducts_btn.Image = global::JustRipeFarm.Properties.Resources.products_icon;
+            this.shopProducts_btn.Location = new System.Drawing.Point(38, 138);
+            this.shopProducts_btn.Name = "shopProducts_btn";
+            this.shopProducts_btn.Size = new System.Drawing.Size(87, 93);
+            this.shopProducts_btn.TabIndex = 19;
+            this.shopProducts_btn.Text = "Products";
+            this.shopProducts_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.shopProducts_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.shopProducts_btn.UseVisualStyleBackColor = true;
+            this.shopProducts_btn.Click += new System.EventHandler(this.shopProducts_btn_Click);
+            // 
             // simulateSales_btn
             // 
             this.simulateSales_btn.Location = new System.Drawing.Point(387, 338);
@@ -1365,6 +1733,7 @@
             this.simulateSales_btn.TabIndex = 18;
             this.simulateSales_btn.Text = "Simulate Sales";
             this.simulateSales_btn.UseVisualStyleBackColor = true;
+            this.simulateSales_btn.Click += new System.EventHandler(this.simulateSales_btn_Click);
             // 
             // shopTitle_label
             // 
@@ -1418,6 +1787,22 @@
             this.wholesale_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.wholesale_btn.UseVisualStyleBackColor = true;
             this.wholesale_btn.Click += new System.EventHandler(this.wholesale_btn_Click);
+            // 
+            // shop_btn
+            // 
+            this.shop_btn.FlatAppearance.BorderSize = 0;
+            this.shop_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shop_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shop_btn.Image = global::JustRipeFarm.Properties.Resources.shop_icon;
+            this.shop_btn.Location = new System.Drawing.Point(111, 143);
+            this.shop_btn.Name = "shop_btn";
+            this.shop_btn.Size = new System.Drawing.Size(87, 93);
+            this.shop_btn.TabIndex = 10;
+            this.shop_btn.Text = "Shop";
+            this.shop_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.shop_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.shop_btn.UseVisualStyleBackColor = true;
+            this.shop_btn.Click += new System.EventHandler(this.shop_btn_Click);
             // 
             // shopWholeTitle_label
             // 
@@ -1597,10 +1982,10 @@
             this.assignTaskForm_panel.Controls.Add(this.assignTaskSubmit_btn);
             this.assignTaskForm_panel.Controls.Add(this.taskDesc_txtBox);
             this.assignTaskForm_panel.Controls.Add(this.taskTitle_txtBox);
-            this.assignTaskForm_panel.Location = new System.Drawing.Point(12, 70);
+            this.assignTaskForm_panel.Location = new System.Drawing.Point(12, 74);
             this.assignTaskForm_panel.Name = "assignTaskForm_panel";
             this.assignTaskForm_panel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.assignTaskForm_panel.Size = new System.Drawing.Size(482, 290);
+            this.assignTaskForm_panel.Size = new System.Drawing.Size(482, 321);
             this.assignTaskForm_panel.TabIndex = 18;
             // 
             // taskPesticide_numeric
@@ -2327,8 +2712,9 @@
             // stock_panel
             // 
             this.stock_panel.BackColor = System.Drawing.SystemColors.Control;
-            this.stock_panel.Controls.Add(this.stock_back);
+            this.stock_panel.Controls.Add(this.updateStock_panel);
             this.stock_panel.Controls.Add(this.stock_listView);
+            this.stock_panel.Controls.Add(this.stock_back);
             this.stock_panel.Controls.Add(this.storageIDTitle_label);
             this.stock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stock_panel.Location = new System.Drawing.Point(0, 0);
@@ -2337,21 +2723,56 @@
             this.stock_panel.TabIndex = 4;
             this.stock_panel.Visible = false;
             // 
-            // stock_back
+            // storageStockType_txtBox
             // 
-            this.stock_back.BackColor = System.Drawing.Color.SeaGreen;
-            this.stock_back.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.stock_back.FlatAppearance.BorderSize = 0;
-            this.stock_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stock_back.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stock_back.ForeColor = System.Drawing.Color.White;
-            this.stock_back.Location = new System.Drawing.Point(0, 8);
-            this.stock_back.Name = "stock_back";
-            this.stock_back.Size = new System.Drawing.Size(61, 33);
-            this.stock_back.TabIndex = 12;
-            this.stock_back.Text = "Back";
-            this.stock_back.UseVisualStyleBackColor = false;
-            this.stock_back.Click += new System.EventHandler(this.stock_back_Click);
+            this.storageStockType_txtBox.Enabled = false;
+            this.storageStockType_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockType_txtBox.Location = new System.Drawing.Point(303, 23);
+            this.storageStockType_txtBox.Name = "storageStockType_txtBox";
+            this.storageStockType_txtBox.Size = new System.Drawing.Size(120, 22);
+            this.storageStockType_txtBox.TabIndex = 39;
+            // 
+            // storageStockBrand_txtBox
+            // 
+            this.storageStockBrand_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockBrand_txtBox.Location = new System.Drawing.Point(154, 23);
+            this.storageStockBrand_txtBox.Name = "storageStockBrand_txtBox";
+            this.storageStockBrand_txtBox.Size = new System.Drawing.Size(127, 22);
+            this.storageStockBrand_txtBox.TabIndex = 39;
+            // 
+            // storageStockQuantity_numeric
+            // 
+            this.storageStockQuantity_numeric.Location = new System.Drawing.Point(303, 70);
+            this.storageStockQuantity_numeric.Name = "storageStockQuantity_numeric";
+            this.storageStockQuantity_numeric.Size = new System.Drawing.Size(80, 20);
+            this.storageStockQuantity_numeric.TabIndex = 38;
+            // 
+            // storageStockCapacity_numeric
+            // 
+            this.storageStockCapacity_numeric.Location = new System.Drawing.Point(155, 71);
+            this.storageStockCapacity_numeric.Name = "storageStockCapacity_numeric";
+            this.storageStockCapacity_numeric.Size = new System.Drawing.Size(80, 20);
+            this.storageStockCapacity_numeric.TabIndex = 38;
+            // 
+            // storageStockUpdate_btn
+            // 
+            this.storageStockUpdate_btn.Location = new System.Drawing.Point(408, 69);
+            this.storageStockUpdate_btn.Name = "storageStockUpdate_btn";
+            this.storageStockUpdate_btn.Size = new System.Drawing.Size(86, 23);
+            this.storageStockUpdate_btn.TabIndex = 37;
+            this.storageStockUpdate_btn.Text = "Update";
+            this.storageStockUpdate_btn.UseVisualStyleBackColor = true;
+            this.storageStockUpdate_btn.Click += new System.EventHandler(this.storageStockUpdate_btn_Click);
+            // 
+            // storageStockQuantity_label
+            // 
+            this.storageStockQuantity_label.AutoSize = true;
+            this.storageStockQuantity_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockQuantity_label.Location = new System.Drawing.Point(300, 56);
+            this.storageStockQuantity_label.Name = "storageStockQuantity_label";
+            this.storageStockQuantity_label.Size = new System.Drawing.Size(95, 13);
+            this.storageStockQuantity_label.TabIndex = 34;
+            this.storageStockQuantity_label.Text = "Quantity in Stock";
             // 
             // stock_listView
             // 
@@ -2362,16 +2783,18 @@
             this.stockCapacity_header,
             this.stockType_header,
             this.stockQty_header});
+            this.stock_listView.FullRowSelect = true;
             this.stock_listView.GridLines = true;
             this.stock_listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.stock_listView.HideSelection = false;
-            this.stock_listView.LabelEdit = true;
-            this.stock_listView.Location = new System.Drawing.Point(8, 88);
+            this.stock_listView.Location = new System.Drawing.Point(9, 70);
+            this.stock_listView.MultiSelect = false;
             this.stock_listView.Name = "stock_listView";
-            this.stock_listView.Size = new System.Drawing.Size(488, 223);
+            this.stock_listView.Size = new System.Drawing.Size(488, 220);
             this.stock_listView.TabIndex = 11;
             this.stock_listView.UseCompatibleStateImageBehavior = false;
             this.stock_listView.View = System.Windows.Forms.View.Details;
+            this.stock_listView.SelectedIndexChanged += new System.EventHandler(this.stock_listView_SelectedIndexChanged);
             // 
             // stockID_header
             // 
@@ -2402,11 +2825,94 @@
             // 
             this.stockQty_header.Text = "Quantity";
             // 
+            // storageStockCapacity_label
+            // 
+            this.storageStockCapacity_label.AutoSize = true;
+            this.storageStockCapacity_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockCapacity_label.Location = new System.Drawing.Point(152, 57);
+            this.storageStockCapacity_label.Name = "storageStockCapacity_label";
+            this.storageStockCapacity_label.Size = new System.Drawing.Size(72, 13);
+            this.storageStockCapacity_label.TabIndex = 34;
+            this.storageStockCapacity_label.Text = "Use Capacity";
+            // 
+            // storageStockName_label
+            // 
+            this.storageStockName_label.AutoSize = true;
+            this.storageStockName_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockName_label.Location = new System.Drawing.Point(6, 57);
+            this.storageStockName_label.Name = "storageStockName_label";
+            this.storageStockName_label.Size = new System.Drawing.Size(67, 13);
+            this.storageStockName_label.TabIndex = 35;
+            this.storageStockName_label.Text = "Stock Name";
+            // 
+            // storageStockType_label
+            // 
+            this.storageStockType_label.AutoSize = true;
+            this.storageStockType_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockType_label.Location = new System.Drawing.Point(301, 10);
+            this.storageStockType_label.Name = "storageStockType_label";
+            this.storageStockType_label.Size = new System.Drawing.Size(60, 13);
+            this.storageStockType_label.TabIndex = 31;
+            this.storageStockType_label.Text = "Stock Type";
+            // 
+            // storageStockName_txtBox
+            // 
+            this.storageStockName_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockName_txtBox.Location = new System.Drawing.Point(9, 70);
+            this.storageStockName_txtBox.Name = "storageStockName_txtBox";
+            this.storageStockName_txtBox.Size = new System.Drawing.Size(117, 22);
+            this.storageStockName_txtBox.TabIndex = 33;
+            // 
+            // storageStockBrand_label
+            // 
+            this.storageStockBrand_label.AutoSize = true;
+            this.storageStockBrand_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockBrand_label.Location = new System.Drawing.Point(152, 10);
+            this.storageStockBrand_label.Name = "storageStockBrand_label";
+            this.storageStockBrand_label.Size = new System.Drawing.Size(38, 13);
+            this.storageStockBrand_label.TabIndex = 31;
+            this.storageStockBrand_label.Text = "Brand";
+            // 
+            // storageStockID_label
+            // 
+            this.storageStockID_label.AutoSize = true;
+            this.storageStockID_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockID_label.Location = new System.Drawing.Point(6, 10);
+            this.storageStockID_label.Name = "storageStockID_label";
+            this.storageStockID_label.Size = new System.Drawing.Size(49, 13);
+            this.storageStockID_label.TabIndex = 32;
+            this.storageStockID_label.Text = "Stock ID";
+            // 
+            // storageStockID_txtBox
+            // 
+            this.storageStockID_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockID_txtBox.Location = new System.Drawing.Point(9, 23);
+            this.storageStockID_txtBox.Name = "storageStockID_txtBox";
+            this.storageStockID_txtBox.ReadOnly = true;
+            this.storageStockID_txtBox.Size = new System.Drawing.Size(117, 22);
+            this.storageStockID_txtBox.TabIndex = 30;
+            // 
+            // stock_back
+            // 
+            this.stock_back.BackColor = System.Drawing.Color.SeaGreen;
+            this.stock_back.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.stock_back.FlatAppearance.BorderSize = 0;
+            this.stock_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stock_back.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stock_back.ForeColor = System.Drawing.Color.White;
+            this.stock_back.Location = new System.Drawing.Point(0, 8);
+            this.stock_back.Name = "stock_back";
+            this.stock_back.Size = new System.Drawing.Size(61, 33);
+            this.stock_back.TabIndex = 12;
+            this.stock_back.Text = "Back";
+            this.stock_back.UseVisualStyleBackColor = false;
+            this.stock_back.Click += new System.EventHandler(this.stock_back_Click);
+            // 
             // storageIDTitle_label
             // 
             this.storageIDTitle_label.AutoSize = true;
             this.storageIDTitle_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.storageIDTitle_label.Location = new System.Drawing.Point(179, 32);
+            this.storageIDTitle_label.Location = new System.Drawing.Point(179, 14);
             this.storageIDTitle_label.Name = "storageIDTitle_label";
             this.storageIDTitle_label.Size = new System.Drawing.Size(111, 21);
             this.storageIDTitle_label.TabIndex = 9;
@@ -3180,69 +3686,26 @@
             this.section_toolTip.InitialDelay = 100;
             this.section_toolTip.ReshowDelay = 100;
             // 
-            // shopSales_btn
+            // updateStock_panel
             // 
-            this.shopSales_btn.FlatAppearance.BorderSize = 0;
-            this.shopSales_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.shopSales_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shopSales_btn.Image = global::JustRipeFarm.Properties.Resources.reports_icon;
-            this.shopSales_btn.Location = new System.Drawing.Point(336, 123);
-            this.shopSales_btn.Name = "shopSales_btn";
-            this.shopSales_btn.Size = new System.Drawing.Size(117, 93);
-            this.shopSales_btn.TabIndex = 21;
-            this.shopSales_btn.Text = "Sales Report";
-            this.shopSales_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.shopSales_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.shopSales_btn.UseVisualStyleBackColor = true;
-            this.shopSales_btn.Click += new System.EventHandler(this.shopSales_btn_Click);
-            // 
-            // shopBuyers_btn
-            // 
-            this.shopBuyers_btn.FlatAppearance.BorderSize = 0;
-            this.shopBuyers_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.shopBuyers_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shopBuyers_btn.Image = global::JustRipeFarm.Properties.Resources.buyers_icon;
-            this.shopBuyers_btn.Location = new System.Drawing.Point(170, 123);
-            this.shopBuyers_btn.Name = "shopBuyers_btn";
-            this.shopBuyers_btn.Size = new System.Drawing.Size(125, 93);
-            this.shopBuyers_btn.TabIndex = 20;
-            this.shopBuyers_btn.Text = "Buyers Report";
-            this.shopBuyers_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.shopBuyers_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.shopBuyers_btn.UseVisualStyleBackColor = true;
-            this.shopBuyers_btn.Click += new System.EventHandler(this.shopBuyers_btn_Click);
-            // 
-            // shopProducts_btn
-            // 
-            this.shopProducts_btn.FlatAppearance.BorderSize = 0;
-            this.shopProducts_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.shopProducts_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shopProducts_btn.Image = global::JustRipeFarm.Properties.Resources.products_icon;
-            this.shopProducts_btn.Location = new System.Drawing.Point(38, 123);
-            this.shopProducts_btn.Name = "shopProducts_btn";
-            this.shopProducts_btn.Size = new System.Drawing.Size(87, 93);
-            this.shopProducts_btn.TabIndex = 19;
-            this.shopProducts_btn.Text = "Products";
-            this.shopProducts_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.shopProducts_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.shopProducts_btn.UseVisualStyleBackColor = true;
-            this.shopProducts_btn.Click += new System.EventHandler(this.shopProducts_btn_Click);
-            // 
-            // shop_btn
-            // 
-            this.shop_btn.FlatAppearance.BorderSize = 0;
-            this.shop_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.shop_btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shop_btn.Image = global::JustRipeFarm.Properties.Resources.shop_icon;
-            this.shop_btn.Location = new System.Drawing.Point(111, 143);
-            this.shop_btn.Name = "shop_btn";
-            this.shop_btn.Size = new System.Drawing.Size(87, 93);
-            this.shop_btn.TabIndex = 10;
-            this.shop_btn.Text = "Shop";
-            this.shop_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.shop_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.shop_btn.UseVisualStyleBackColor = true;
-            this.shop_btn.Click += new System.EventHandler(this.shop_btn_Click);
+            this.updateStock_panel.Controls.Add(this.storageStockID_label);
+            this.updateStock_panel.Controls.Add(this.storageStockType_txtBox);
+            this.updateStock_panel.Controls.Add(this.storageStockID_txtBox);
+            this.updateStock_panel.Controls.Add(this.storageStockBrand_txtBox);
+            this.updateStock_panel.Controls.Add(this.storageStockBrand_label);
+            this.updateStock_panel.Controls.Add(this.storageStockQuantity_numeric);
+            this.updateStock_panel.Controls.Add(this.storageStockName_txtBox);
+            this.updateStock_panel.Controls.Add(this.storageStockCapacity_numeric);
+            this.updateStock_panel.Controls.Add(this.storageStockType_label);
+            this.updateStock_panel.Controls.Add(this.storageStockUpdate_btn);
+            this.updateStock_panel.Controls.Add(this.storageStockName_label);
+            this.updateStock_panel.Controls.Add(this.storageStockQuantity_label);
+            this.updateStock_panel.Controls.Add(this.storageStockCapacity_label);
+            this.updateStock_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.updateStock_panel.Location = new System.Drawing.Point(0, 298);
+            this.updateStock_panel.Name = "updateStock_panel";
+            this.updateStock_panel.Size = new System.Drawing.Size(506, 107);
+            this.updateStock_panel.TabIndex = 40;
             // 
             // MGMainScreen
             // 
@@ -3265,6 +3728,9 @@
             this.profile_panel.ResumeLayout(false);
             this.profile_panel.PerformLayout();
             this.shopWholesaleTop_panel.ResumeLayout(false);
+            this.simulateSale_panel.ResumeLayout(false);
+            this.simulateSale_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.simulateSaleQuantity_numeric)).EndInit();
             this.wholesale_panel.ResumeLayout(false);
             this.wholesale_panel.PerformLayout();
             this.salesReport_panel.ResumeLayout(false);
@@ -3299,6 +3765,8 @@
             this.container_panel.PerformLayout();
             this.stock_panel.ResumeLayout(false);
             this.stock_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.storageStockQuantity_numeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.storageStockCapacity_numeric)).EndInit();
             this.storage_panel.ResumeLayout(false);
             this.storage_panel.PerformLayout();
             this.timetable_panel.ResumeLayout(false);
@@ -3310,6 +3778,8 @@
             this.mgHome_panel.ResumeLayout(false);
             this.mgHome_panel.PerformLayout();
             this.sections_groupBox.ResumeLayout(false);
+            this.updateStock_panel.ResumeLayout(false);
+            this.updateStock_panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3597,5 +4067,46 @@
         private System.Windows.Forms.Label labTaskType_label;
         private System.Windows.Forms.Label labTaskStatusTitle_label;
         private System.Windows.Forms.Label labTaskTypeTitle_label;
+        private System.Windows.Forms.Panel simulateSale_panel;
+        private System.Windows.Forms.Button simulateSale_back;
+        private System.Windows.Forms.Label simulateSaleTitle_label;
+        private System.Windows.Forms.Label simulateSaleTotalAmount_label;
+        private System.Windows.Forms.ListView simulateSaleProducts_listView;
+        private System.Windows.Forms.ColumnHeader simulateSaleProductName_header;
+        private System.Windows.Forms.ColumnHeader simulateSaleProductQuantity_header;
+        private System.Windows.Forms.ColumnHeader simulateSaleProductSubTotal_header;
+        private System.Windows.Forms.Button simulateSaleSubmit_btn;
+        private System.Windows.Forms.Button simulateSaleAddProduct_btn;
+        private System.Windows.Forms.Label simulateSaleInst_label;
+        private System.Windows.Forms.ComboBox simulateSaleProducts_comboBox;
+        private System.Windows.Forms.NumericUpDown simulateSaleQuantity_numeric;
+        private System.Windows.Forms.Label simulateSaleTotalAmountTitle_label;
+        private System.Windows.Forms.Label simulateSaleBuyerPhone_label;
+        private System.Windows.Forms.Label simulateSaleBuyerLName_label;
+        private System.Windows.Forms.TextBox simulateSaleBuyerPhone_txtBox;
+        private System.Windows.Forms.Label simulateSaleBuyerEmail_label;
+        private System.Windows.Forms.TextBox simulateSaleBuyerLName_txtBox;
+        private System.Windows.Forms.Label simulateSaleBuyerFName_label;
+        private System.Windows.Forms.TextBox simulateSaleBuyerEmail_txtBox;
+        private System.Windows.Forms.TextBox simulateSaleBuyerFName_txtBox;
+        private System.Windows.Forms.Label simulateSaleQuantity_label;
+        private System.Windows.Forms.Label simulateSaleProduct_label;
+        private System.Windows.Forms.ColumnHeader simulateSaleProductCode_header;
+        private System.Windows.Forms.Label simulateSaleBuyerCompanyName_label;
+        private System.Windows.Forms.TextBox simulateSaleBuyerCompanyName_txtBox;
+        private System.Windows.Forms.TextBox storageStockType_txtBox;
+        private System.Windows.Forms.TextBox storageStockBrand_txtBox;
+        private System.Windows.Forms.NumericUpDown storageStockQuantity_numeric;
+        private System.Windows.Forms.NumericUpDown storageStockCapacity_numeric;
+        private System.Windows.Forms.Button storageStockUpdate_btn;
+        private System.Windows.Forms.Label storageStockQuantity_label;
+        private System.Windows.Forms.Label storageStockCapacity_label;
+        private System.Windows.Forms.Label storageStockName_label;
+        private System.Windows.Forms.Label storageStockType_label;
+        private System.Windows.Forms.TextBox storageStockName_txtBox;
+        private System.Windows.Forms.Label storageStockBrand_label;
+        private System.Windows.Forms.Label storageStockID_label;
+        private System.Windows.Forms.TextBox storageStockID_txtBox;
+        private System.Windows.Forms.Panel updateStock_panel;
     }
 }

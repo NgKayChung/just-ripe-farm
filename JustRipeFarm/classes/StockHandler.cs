@@ -82,6 +82,49 @@ namespace JustRipeFarm
             return stocks;
         }
 
+        public string UpdateStockData(Stock stock)
+        {
+            MySqlTransaction tr = null;
+
+            try
+            {
+                tr = DbConnector.Instance.getConn().BeginTransaction();
+
+                string sqlUpdateStockQuery = "UPDATE `stocks` SET `name` = '" + stock.Name + "', `brand` = '" + stock.Brand + "', `capacity_use` = " + stock.CapacityUse + " WHERE `stock_id` = '" + stock.ID + "'";
+                string sqlUpdateStorageStockQuery = "UPDATE `storage_stock` SET `quantity` = " + stock.Quantity + " WHERE `stock_id` = '" + stock.ID + "'";
+
+                MySqlCommand sqlComm = DbConnector.Instance.getConn().CreateCommand();
+                sqlComm.Connection = DbConnector.Instance.getConn();
+                sqlComm.Transaction = tr;
+
+
+                sqlComm.CommandText = sqlUpdateStockQuery;
+                sqlComm.ExecuteNonQuery();
+                sqlComm.CommandText = sqlUpdateStorageStockQuery;
+                sqlComm.ExecuteNonQuery();
+
+                tr.Commit();
+
+                tr.Dispose();
+                sqlComm.Dispose();
+
+                return "SUCCESS";
+            }
+            catch (MySqlException ex)
+            {
+                try
+                {
+                    tr.Rollback();
+                }
+                catch (MySqlException ex1)
+                {
+                    return ex1.ToString();
+                }
+
+                return ex.ToString();
+            }
+        }
+
         public int UpdateStockQuantity(Stock stock, int useQuantity)
         {
             string sql = "UPDATE `storage_stock` SET `quantity` = `quantity` - " + useQuantity.ToString() + " WHERE `stock_id` = '" + stock.ID + "'";

@@ -28,6 +28,11 @@ namespace JustRipeFarm
             isOnSale = is_on_sale;
         }
 
+        public override string ToString()
+        {
+            return ProductName + " - RM " + Price.ToString("N2");
+        }
+
         public string ProductCode { get => productCode; set => productCode = value; }
         public string ProductName { get => productName; set => productName = value; }
         public int Quantity { get => quantity; set => quantity = value; }
