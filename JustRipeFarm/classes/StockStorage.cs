@@ -18,6 +18,7 @@ namespace JustRipeFarm
         {
 
         }
+
         public StockStorage(string storage_id, int total_capacity, int used_capacity, string status)
         {
             storageID = storage_id;
