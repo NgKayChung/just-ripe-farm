@@ -85,7 +85,6 @@ namespace JustRipeFarm
         public string UpdateStockData(Stock stock)
         {
             MySqlTransaction tr = null;
-
             try
             {
                 tr = DbConnector.Instance.getConn().BeginTransaction();

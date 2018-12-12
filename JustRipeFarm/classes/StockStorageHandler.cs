@@ -15,9 +15,9 @@ namespace JustRipeFarm
             string sqlString = "SELECT `storages`.`storage_id`, `storages`.`total_capacity`, SUM(`stocks`.`capacity_use` * `storage_stock`.`quantity`) AS 'used_capacity', `storages`.`status` " +
                 "FROM `storages` " +
                 "INNER JOIN `storage_stock` " +
-	                "ON `storages`.`storage_id` = `storage_stock`.`storage_id` " +
+                    "ON `storages`.`storage_id` = `storage_stock`.`storage_id` " +
                 "INNER JOIN `stocks` " +
-	                "ON `storage_stock`.`stock_id` = `stocks`.`stock_id` " +
+                    "ON `storage_stock`.`stock_id` = `stocks`.`stock_id` " +
                 "GROUP BY `storages`.`storage_id`";
 
             MySqlCommand sqlCommand = new MySqlCommand(sqlString, DbConnector.Instance.getConn());

@@ -16,6 +16,7 @@ namespace JustRipeFarm
         private string type;
         private int quantity;
 
+        
         public Stock()
         {
 
