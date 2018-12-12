@@ -1778,29 +1778,32 @@ namespace JustRipeFarm
 
         private void storageStockUpdate_btn_Click(object sender, EventArgs e)
         {
-            Stock stock = (Stock)stock_listView.SelectedItems[0].Tag;
-
-            string newStockName = storageStockName_txtBox.Text.Trim();
-            string newStockBrand = storageStockBrand_txtBox.Text.Trim();
-            int newStockCapacity = (int)storageStockCapacity_numeric.Value;
-            int newStockQuantity = (int)storageStockQuantity_numeric.Value;
-
-            stock.Name = newStockName;
-            stock.Brand = newStockBrand;
-            stock.CapacityUse = newStockCapacity;
-            stock.Quantity = newStockQuantity;
-
-            StockHandler stockHandler = new StockHandler();
-            string updateResult = stockHandler.UpdateStockData(stock);
-
-            if(updateResult == "SUCCESS")
+            if(stock_listView.SelectedItems.Count > 0)
             {
-                MessageBox.Show("Stock successfully updated");
-                LoadStocks();
-            }
-            else
-            {
-                MessageBox.Show(updateResult + "\nError occured when updating stock details");
+                Stock stock = (Stock)stock_listView.SelectedItems[0].Tag;
+
+                string newStockName = storageStockName_txtBox.Text.Trim();
+                string newStockBrand = storageStockBrand_txtBox.Text.Trim();
+                int newStockCapacity = (int)storageStockCapacity_numeric.Value;
+                int newStockQuantity = (int)storageStockQuantity_numeric.Value;
+
+                stock.Name = newStockName;
+                stock.Brand = newStockBrand;
+                stock.CapacityUse = newStockCapacity;
+                stock.Quantity = newStockQuantity;
+
+                StockHandler stockHandler = new StockHandler();
+                string updateResult = stockHandler.UpdateStockData(stock);
+
+                if(updateResult == "SUCCESS")
+                {
+                    MessageBox.Show("Stock successfully updated");
+                    LoadStocks();
+                }
+                else
+                {
+                    MessageBox.Show(updateResult + "\nError occured when updating stock details");
+                }
             }
         }
     }
