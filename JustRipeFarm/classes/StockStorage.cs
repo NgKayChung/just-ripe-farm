@@ -32,5 +32,6 @@ namespace JustRipeFarm
         public int UsedCapacity { get => usedCapacity; set => usedCapacity = value; }
         public string Status { get => status; set => status = value; }
         public List<Stock> Stocks { get => stocks; set => stocks = value; }
+
     }
 }

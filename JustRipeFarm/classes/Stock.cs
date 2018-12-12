@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace JustRipeFarm
 {
+    //Stock class
     class Stock
     {
         private string id;
@@ -15,6 +16,7 @@ namespace JustRipeFarm
         private string type;
         private int quantity;
 
+        
         public Stock()
         {
 
