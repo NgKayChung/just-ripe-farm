@@ -248,12 +248,20 @@
             this.containerTitle_label = new System.Windows.Forms.Label();
             this.storageContainer_back = new System.Windows.Forms.Button();
             this.stock_panel = new System.Windows.Forms.Panel();
+            this.updateStock_panel = new System.Windows.Forms.Panel();
+            this.storageStockID_label = new System.Windows.Forms.Label();
             this.storageStockType_txtBox = new System.Windows.Forms.TextBox();
+            this.storageStockID_txtBox = new System.Windows.Forms.TextBox();
             this.storageStockBrand_txtBox = new System.Windows.Forms.TextBox();
+            this.storageStockBrand_label = new System.Windows.Forms.Label();
             this.storageStockQuantity_numeric = new System.Windows.Forms.NumericUpDown();
+            this.storageStockName_txtBox = new System.Windows.Forms.TextBox();
             this.storageStockCapacity_numeric = new System.Windows.Forms.NumericUpDown();
+            this.storageStockType_label = new System.Windows.Forms.Label();
             this.storageStockUpdate_btn = new System.Windows.Forms.Button();
+            this.storageStockName_label = new System.Windows.Forms.Label();
             this.storageStockQuantity_label = new System.Windows.Forms.Label();
+            this.storageStockCapacity_label = new System.Windows.Forms.Label();
             this.stock_listView = new System.Windows.Forms.ListView();
             this.stockID_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stockName_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -261,13 +269,6 @@
             this.stockCapacity_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stockType_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.stockQty_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.storageStockCapacity_label = new System.Windows.Forms.Label();
-            this.storageStockName_label = new System.Windows.Forms.Label();
-            this.storageStockType_label = new System.Windows.Forms.Label();
-            this.storageStockName_txtBox = new System.Windows.Forms.TextBox();
-            this.storageStockBrand_label = new System.Windows.Forms.Label();
-            this.storageStockID_label = new System.Windows.Forms.Label();
-            this.storageStockID_txtBox = new System.Windows.Forms.TextBox();
             this.stock_back = new System.Windows.Forms.Button();
             this.storageIDTitle_label = new System.Windows.Forms.Label();
             this.storage_panel = new System.Windows.Forms.Panel();
@@ -350,7 +351,7 @@
             this.fieldTitle_label = new System.Windows.Forms.Label();
             this.homeTitle_label = new System.Windows.Forms.Label();
             this.section_toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.updateStock_panel = new System.Windows.Forms.Panel();
+            this.create_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).BeginInit();
             this.SplitContainer_Menu_Content.Panel1.SuspendLayout();
             this.SplitContainer_Menu_Content.Panel2.SuspendLayout();
@@ -379,6 +380,7 @@
             this.storageTop_panel.SuspendLayout();
             this.container_panel.SuspendLayout();
             this.stock_panel.SuspendLayout();
+            this.updateStock_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.storageStockQuantity_numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageStockCapacity_numeric)).BeginInit();
             this.storage_panel.SuspendLayout();
@@ -387,7 +389,6 @@
             this.lbHome_panel.SuspendLayout();
             this.mgHome_panel.SuspendLayout();
             this.sections_groupBox.SuspendLayout();
-            this.updateStock_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // SplitContainer_Menu_Content
@@ -616,11 +617,11 @@
             this.profile_panel.Controls.Add(this.profileEmail_label);
             this.profile_panel.Controls.Add(this.profileLName_label);
             this.profile_panel.Controls.Add(this.profileFName_label);
-            this.profile_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.profile_panel.Location = new System.Drawing.Point(0, 0);
+            this.profile_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.profile_panel.Location = new System.Drawing.Point(496, 0);
             this.profile_panel.Name = "profile_panel";
             this.profile_panel.Padding = new System.Windows.Forms.Padding(5);
-            this.profile_panel.Size = new System.Drawing.Size(506, 405);
+            this.profile_panel.Size = new System.Drawing.Size(10, 405);
             this.profile_panel.TabIndex = 5;
             this.profile_panel.Visible = false;
             // 
@@ -847,12 +848,13 @@
             this.simulateSale_panel.Controls.Add(this.simulateSaleProduct_label);
             this.simulateSale_panel.Controls.Add(this.simulateSaleTitle_label);
             this.simulateSale_panel.Controls.Add(this.simulateSale_back);
-            this.simulateSale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simulateSale_panel.Location = new System.Drawing.Point(0, 0);
+            this.simulateSale_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.simulateSale_panel.Location = new System.Drawing.Point(415, 0);
             this.simulateSale_panel.Name = "simulateSale_panel";
-            this.simulateSale_panel.Size = new System.Drawing.Size(506, 405);
+            this.simulateSale_panel.Size = new System.Drawing.Size(10, 405);
             this.simulateSale_panel.TabIndex = 15;
             this.simulateSale_panel.Visible = false;
+
             // 
             // simulateSaleTotalAmount_label
             // 
@@ -1105,10 +1107,10 @@
             this.wholesale_panel.Controls.Add(this.wholesaleInst_label);
             this.wholesale_panel.Controls.Add(this.wholesaleTitle_label);
             this.wholesale_panel.Controls.Add(this.wholesale_back);
-            this.wholesale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wholesale_panel.Location = new System.Drawing.Point(0, 0);
+            this.wholesale_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.wholesale_panel.Location = new System.Drawing.Point(425, 0);
             this.wholesale_panel.Name = "wholesale_panel";
-            this.wholesale_panel.Size = new System.Drawing.Size(506, 405);
+            this.wholesale_panel.Size = new System.Drawing.Size(10, 405);
             this.wholesale_panel.TabIndex = 14;
             this.wholesale_panel.Visible = false;
             // 
@@ -1236,10 +1238,10 @@
             this.salesReport_panel.Controls.Add(this.salesFrom_datePicker);
             this.salesReport_panel.Controls.Add(this.shopSalesTitle_label);
             this.salesReport_panel.Controls.Add(this.salesReport_back);
-            this.salesReport_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.salesReport_panel.Location = new System.Drawing.Point(0, 0);
+            this.salesReport_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.salesReport_panel.Location = new System.Drawing.Point(435, 0);
             this.salesReport_panel.Name = "salesReport_panel";
-            this.salesReport_panel.Size = new System.Drawing.Size(506, 405);
+            this.salesReport_panel.Size = new System.Drawing.Size(47, 405);
             this.salesReport_panel.TabIndex = 13;
             this.salesReport_panel.Visible = false;
             // 
@@ -1385,10 +1387,10 @@
             this.buyers_panel.Controls.Add(this.buyers_listView);
             this.buyers_panel.Controls.Add(this.shopBuyersTitle_label);
             this.buyers_panel.Controls.Add(this.buyers_back);
-            this.buyers_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buyers_panel.Location = new System.Drawing.Point(0, 0);
+            this.buyers_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buyers_panel.Location = new System.Drawing.Point(482, 0);
             this.buyers_panel.Name = "buyers_panel";
-            this.buyers_panel.Size = new System.Drawing.Size(506, 405);
+            this.buyers_panel.Size = new System.Drawing.Size(24, 405);
             this.buyers_panel.TabIndex = 12;
             this.buyers_panel.Visible = false;
             // 
@@ -1478,6 +1480,7 @@
             // 
             // shopProducts_panel
             // 
+            this.shopProducts_panel.Controls.Add(this.create_btn);
             this.shopProducts_panel.Controls.Add(this.productPrice_txtBox);
             this.shopProducts_panel.Controls.Add(this.productQty_numUpDown);
             this.shopProducts_panel.Controls.Add(this.addUpdateProduct_btn);
@@ -1521,6 +1524,7 @@
             this.addUpdateProduct_btn.TabIndex = 25;
             this.addUpdateProduct_btn.Text = "Add / Update";
             this.addUpdateProduct_btn.UseVisualStyleBackColor = true;
+           
             // 
             // onSale_chkBox
             // 
@@ -2723,6 +2727,37 @@
             this.stock_panel.TabIndex = 4;
             this.stock_panel.Visible = false;
             // 
+            // updateStock_panel
+            // 
+            this.updateStock_panel.Controls.Add(this.storageStockID_label);
+            this.updateStock_panel.Controls.Add(this.storageStockType_txtBox);
+            this.updateStock_panel.Controls.Add(this.storageStockID_txtBox);
+            this.updateStock_panel.Controls.Add(this.storageStockBrand_txtBox);
+            this.updateStock_panel.Controls.Add(this.storageStockBrand_label);
+            this.updateStock_panel.Controls.Add(this.storageStockQuantity_numeric);
+            this.updateStock_panel.Controls.Add(this.storageStockName_txtBox);
+            this.updateStock_panel.Controls.Add(this.storageStockCapacity_numeric);
+            this.updateStock_panel.Controls.Add(this.storageStockType_label);
+            this.updateStock_panel.Controls.Add(this.storageStockUpdate_btn);
+            this.updateStock_panel.Controls.Add(this.storageStockName_label);
+            this.updateStock_panel.Controls.Add(this.storageStockQuantity_label);
+            this.updateStock_panel.Controls.Add(this.storageStockCapacity_label);
+            this.updateStock_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.updateStock_panel.Location = new System.Drawing.Point(0, 298);
+            this.updateStock_panel.Name = "updateStock_panel";
+            this.updateStock_panel.Size = new System.Drawing.Size(506, 107);
+            this.updateStock_panel.TabIndex = 40;
+            // 
+            // storageStockID_label
+            // 
+            this.storageStockID_label.AutoSize = true;
+            this.storageStockID_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockID_label.Location = new System.Drawing.Point(6, 10);
+            this.storageStockID_label.Name = "storageStockID_label";
+            this.storageStockID_label.Size = new System.Drawing.Size(49, 13);
+            this.storageStockID_label.TabIndex = 32;
+            this.storageStockID_label.Text = "Stock ID";
+            // 
             // storageStockType_txtBox
             // 
             this.storageStockType_txtBox.Enabled = false;
@@ -2732,6 +2767,15 @@
             this.storageStockType_txtBox.Size = new System.Drawing.Size(120, 22);
             this.storageStockType_txtBox.TabIndex = 39;
             // 
+            // storageStockID_txtBox
+            // 
+            this.storageStockID_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockID_txtBox.Location = new System.Drawing.Point(9, 23);
+            this.storageStockID_txtBox.Name = "storageStockID_txtBox";
+            this.storageStockID_txtBox.ReadOnly = true;
+            this.storageStockID_txtBox.Size = new System.Drawing.Size(117, 22);
+            this.storageStockID_txtBox.TabIndex = 30;
+            // 
             // storageStockBrand_txtBox
             // 
             this.storageStockBrand_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -2740,6 +2784,16 @@
             this.storageStockBrand_txtBox.Size = new System.Drawing.Size(127, 22);
             this.storageStockBrand_txtBox.TabIndex = 39;
             // 
+            // storageStockBrand_label
+            // 
+            this.storageStockBrand_label.AutoSize = true;
+            this.storageStockBrand_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockBrand_label.Location = new System.Drawing.Point(152, 10);
+            this.storageStockBrand_label.Name = "storageStockBrand_label";
+            this.storageStockBrand_label.Size = new System.Drawing.Size(38, 13);
+            this.storageStockBrand_label.TabIndex = 31;
+            this.storageStockBrand_label.Text = "Brand";
+            // 
             // storageStockQuantity_numeric
             // 
             this.storageStockQuantity_numeric.Location = new System.Drawing.Point(303, 70);
@@ -2747,12 +2801,30 @@
             this.storageStockQuantity_numeric.Size = new System.Drawing.Size(80, 20);
             this.storageStockQuantity_numeric.TabIndex = 38;
             // 
+            // storageStockName_txtBox
+            // 
+            this.storageStockName_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockName_txtBox.Location = new System.Drawing.Point(9, 70);
+            this.storageStockName_txtBox.Name = "storageStockName_txtBox";
+            this.storageStockName_txtBox.Size = new System.Drawing.Size(117, 22);
+            this.storageStockName_txtBox.TabIndex = 33;
+            // 
             // storageStockCapacity_numeric
             // 
             this.storageStockCapacity_numeric.Location = new System.Drawing.Point(155, 71);
             this.storageStockCapacity_numeric.Name = "storageStockCapacity_numeric";
             this.storageStockCapacity_numeric.Size = new System.Drawing.Size(80, 20);
             this.storageStockCapacity_numeric.TabIndex = 38;
+            // 
+            // storageStockType_label
+            // 
+            this.storageStockType_label.AutoSize = true;
+            this.storageStockType_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockType_label.Location = new System.Drawing.Point(301, 10);
+            this.storageStockType_label.Name = "storageStockType_label";
+            this.storageStockType_label.Size = new System.Drawing.Size(60, 13);
+            this.storageStockType_label.TabIndex = 31;
+            this.storageStockType_label.Text = "Stock Type";
             // 
             // storageStockUpdate_btn
             // 
@@ -2764,6 +2836,16 @@
             this.storageStockUpdate_btn.UseVisualStyleBackColor = true;
             this.storageStockUpdate_btn.Click += new System.EventHandler(this.storageStockUpdate_btn_Click);
             // 
+            // storageStockName_label
+            // 
+            this.storageStockName_label.AutoSize = true;
+            this.storageStockName_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockName_label.Location = new System.Drawing.Point(6, 57);
+            this.storageStockName_label.Name = "storageStockName_label";
+            this.storageStockName_label.Size = new System.Drawing.Size(67, 13);
+            this.storageStockName_label.TabIndex = 35;
+            this.storageStockName_label.Text = "Stock Name";
+            // 
             // storageStockQuantity_label
             // 
             this.storageStockQuantity_label.AutoSize = true;
@@ -2773,6 +2855,16 @@
             this.storageStockQuantity_label.Size = new System.Drawing.Size(95, 13);
             this.storageStockQuantity_label.TabIndex = 34;
             this.storageStockQuantity_label.Text = "Quantity in Stock";
+            // 
+            // storageStockCapacity_label
+            // 
+            this.storageStockCapacity_label.AutoSize = true;
+            this.storageStockCapacity_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.storageStockCapacity_label.Location = new System.Drawing.Point(152, 57);
+            this.storageStockCapacity_label.Name = "storageStockCapacity_label";
+            this.storageStockCapacity_label.Size = new System.Drawing.Size(72, 13);
+            this.storageStockCapacity_label.TabIndex = 34;
+            this.storageStockCapacity_label.Text = "Use Capacity";
             // 
             // stock_listView
             // 
@@ -2824,73 +2916,6 @@
             // stockQty_header
             // 
             this.stockQty_header.Text = "Quantity";
-            // 
-            // storageStockCapacity_label
-            // 
-            this.storageStockCapacity_label.AutoSize = true;
-            this.storageStockCapacity_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.storageStockCapacity_label.Location = new System.Drawing.Point(152, 57);
-            this.storageStockCapacity_label.Name = "storageStockCapacity_label";
-            this.storageStockCapacity_label.Size = new System.Drawing.Size(72, 13);
-            this.storageStockCapacity_label.TabIndex = 34;
-            this.storageStockCapacity_label.Text = "Use Capacity";
-            // 
-            // storageStockName_label
-            // 
-            this.storageStockName_label.AutoSize = true;
-            this.storageStockName_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.storageStockName_label.Location = new System.Drawing.Point(6, 57);
-            this.storageStockName_label.Name = "storageStockName_label";
-            this.storageStockName_label.Size = new System.Drawing.Size(67, 13);
-            this.storageStockName_label.TabIndex = 35;
-            this.storageStockName_label.Text = "Stock Name";
-            // 
-            // storageStockType_label
-            // 
-            this.storageStockType_label.AutoSize = true;
-            this.storageStockType_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.storageStockType_label.Location = new System.Drawing.Point(301, 10);
-            this.storageStockType_label.Name = "storageStockType_label";
-            this.storageStockType_label.Size = new System.Drawing.Size(60, 13);
-            this.storageStockType_label.TabIndex = 31;
-            this.storageStockType_label.Text = "Stock Type";
-            // 
-            // storageStockName_txtBox
-            // 
-            this.storageStockName_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.storageStockName_txtBox.Location = new System.Drawing.Point(9, 70);
-            this.storageStockName_txtBox.Name = "storageStockName_txtBox";
-            this.storageStockName_txtBox.Size = new System.Drawing.Size(117, 22);
-            this.storageStockName_txtBox.TabIndex = 33;
-            // 
-            // storageStockBrand_label
-            // 
-            this.storageStockBrand_label.AutoSize = true;
-            this.storageStockBrand_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.storageStockBrand_label.Location = new System.Drawing.Point(152, 10);
-            this.storageStockBrand_label.Name = "storageStockBrand_label";
-            this.storageStockBrand_label.Size = new System.Drawing.Size(38, 13);
-            this.storageStockBrand_label.TabIndex = 31;
-            this.storageStockBrand_label.Text = "Brand";
-            // 
-            // storageStockID_label
-            // 
-            this.storageStockID_label.AutoSize = true;
-            this.storageStockID_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.storageStockID_label.Location = new System.Drawing.Point(6, 10);
-            this.storageStockID_label.Name = "storageStockID_label";
-            this.storageStockID_label.Size = new System.Drawing.Size(49, 13);
-            this.storageStockID_label.TabIndex = 32;
-            this.storageStockID_label.Text = "Stock ID";
-            // 
-            // storageStockID_txtBox
-            // 
-            this.storageStockID_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.storageStockID_txtBox.Location = new System.Drawing.Point(9, 23);
-            this.storageStockID_txtBox.Name = "storageStockID_txtBox";
-            this.storageStockID_txtBox.ReadOnly = true;
-            this.storageStockID_txtBox.Size = new System.Drawing.Size(117, 22);
-            this.storageStockID_txtBox.TabIndex = 30;
             // 
             // stock_back
             // 
@@ -3686,26 +3711,15 @@
             this.section_toolTip.InitialDelay = 100;
             this.section_toolTip.ReshowDelay = 100;
             // 
-            // updateStock_panel
+            // create_btn
             // 
-            this.updateStock_panel.Controls.Add(this.storageStockID_label);
-            this.updateStock_panel.Controls.Add(this.storageStockType_txtBox);
-            this.updateStock_panel.Controls.Add(this.storageStockID_txtBox);
-            this.updateStock_panel.Controls.Add(this.storageStockBrand_txtBox);
-            this.updateStock_panel.Controls.Add(this.storageStockBrand_label);
-            this.updateStock_panel.Controls.Add(this.storageStockQuantity_numeric);
-            this.updateStock_panel.Controls.Add(this.storageStockName_txtBox);
-            this.updateStock_panel.Controls.Add(this.storageStockCapacity_numeric);
-            this.updateStock_panel.Controls.Add(this.storageStockType_label);
-            this.updateStock_panel.Controls.Add(this.storageStockUpdate_btn);
-            this.updateStock_panel.Controls.Add(this.storageStockName_label);
-            this.updateStock_panel.Controls.Add(this.storageStockQuantity_label);
-            this.updateStock_panel.Controls.Add(this.storageStockCapacity_label);
-            this.updateStock_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.updateStock_panel.Location = new System.Drawing.Point(0, 298);
-            this.updateStock_panel.Name = "updateStock_panel";
-            this.updateStock_panel.Size = new System.Drawing.Size(506, 107);
-            this.updateStock_panel.TabIndex = 40;
+            this.create_btn.Location = new System.Drawing.Point(309, 338);
+            this.create_btn.Name = "create_btn";
+            this.create_btn.Size = new System.Drawing.Size(75, 23);
+            this.create_btn.TabIndex = 30;
+            this.create_btn.Text = "Create";
+            this.create_btn.UseVisualStyleBackColor = true;
+            this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
             // MGMainScreen
             // 
@@ -3765,6 +3779,8 @@
             this.container_panel.PerformLayout();
             this.stock_panel.ResumeLayout(false);
             this.stock_panel.PerformLayout();
+            this.updateStock_panel.ResumeLayout(false);
+            this.updateStock_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.storageStockQuantity_numeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageStockCapacity_numeric)).EndInit();
             this.storage_panel.ResumeLayout(false);
@@ -3778,8 +3794,6 @@
             this.mgHome_panel.ResumeLayout(false);
             this.mgHome_panel.PerformLayout();
             this.sections_groupBox.ResumeLayout(false);
-            this.updateStock_panel.ResumeLayout(false);
-            this.updateStock_panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -4108,5 +4122,6 @@
         private System.Windows.Forms.Label storageStockID_label;
         private System.Windows.Forms.TextBox storageStockID_txtBox;
         private System.Windows.Forms.Panel updateStock_panel;
+        private System.Windows.Forms.Button create_btn;
     }
 }

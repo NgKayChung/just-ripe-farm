@@ -1806,5 +1806,19 @@ namespace JustRipeFarm
                 }
             }
         }
+
+        private void create_btn_Click(object sender, EventArgs e)
+        {
+            string newStockCode= productCode_txtBox.Text.Trim();
+            string newStockName = productName_txtBox.Text.Trim();
+            int Quantity = (int )productQty_numUpDown.Value;
+            decimal p = decimal.Parse( productPrice_txtBox.Text.Trim());
+            bool oss = onSale_chkBox.Checked;
+
+            ProductHandler ph = new ProductHandler();
+            ph.createProduct(newStockCode, newStockName, Quantity, p, oss);
+        }
+
+        
     }
 }
