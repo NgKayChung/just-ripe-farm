@@ -46,5 +46,12 @@ namespace JustRipeFarm
 
             return products;
         }
+
+        public int UpdateProductData(Product product)
+        {
+            string sql = "UPDATE `products` SET `product_name` = '" + product.ProductName + "', `qty_in_stock` = " + product.Quantity.ToString() + ", `price` = " + product.Price.ToString("N2") + ", `on_sale_status` = " + (product.IsOnSale ? "1" : "0") + " WHERE `product_code` = '" + product.ProductCode + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sql, DbConnector.Instance.getConn());
+            return sqlComm.ExecuteNonQuery();
+        }
     }
 }

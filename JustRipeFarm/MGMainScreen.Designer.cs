@@ -131,7 +131,7 @@
             this.shopProducts_panel = new System.Windows.Forms.Panel();
             this.productPrice_txtBox = new System.Windows.Forms.TextBox();
             this.productQty_numUpDown = new System.Windows.Forms.NumericUpDown();
-            this.addUpdateProduct_btn = new System.Windows.Forms.Button();
+            this.updateProduct_btn = new System.Windows.Forms.Button();
             this.onSale_chkBox = new System.Windows.Forms.CheckBox();
             this.price_label = new System.Windows.Forms.Label();
             this.productName_label = new System.Windows.Forms.Label();
@@ -351,7 +351,6 @@
             this.fieldTitle_label = new System.Windows.Forms.Label();
             this.homeTitle_label = new System.Windows.Forms.Label();
             this.section_toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.create_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Menu_Content)).BeginInit();
             this.SplitContainer_Menu_Content.Panel1.SuspendLayout();
             this.SplitContainer_Menu_Content.Panel2.SuspendLayout();
@@ -617,11 +616,11 @@
             this.profile_panel.Controls.Add(this.profileEmail_label);
             this.profile_panel.Controls.Add(this.profileLName_label);
             this.profile_panel.Controls.Add(this.profileFName_label);
-            this.profile_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.profile_panel.Location = new System.Drawing.Point(496, 0);
+            this.profile_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.profile_panel.Location = new System.Drawing.Point(0, 0);
             this.profile_panel.Name = "profile_panel";
             this.profile_panel.Padding = new System.Windows.Forms.Padding(5);
-            this.profile_panel.Size = new System.Drawing.Size(10, 405);
+            this.profile_panel.Size = new System.Drawing.Size(506, 405);
             this.profile_panel.TabIndex = 5;
             this.profile_panel.Visible = false;
             // 
@@ -848,13 +847,12 @@
             this.simulateSale_panel.Controls.Add(this.simulateSaleProduct_label);
             this.simulateSale_panel.Controls.Add(this.simulateSaleTitle_label);
             this.simulateSale_panel.Controls.Add(this.simulateSale_back);
-            this.simulateSale_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.simulateSale_panel.Location = new System.Drawing.Point(415, 0);
+            this.simulateSale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.simulateSale_panel.Location = new System.Drawing.Point(0, 0);
             this.simulateSale_panel.Name = "simulateSale_panel";
-            this.simulateSale_panel.Size = new System.Drawing.Size(10, 405);
+            this.simulateSale_panel.Size = new System.Drawing.Size(506, 405);
             this.simulateSale_panel.TabIndex = 15;
             this.simulateSale_panel.Visible = false;
-
             // 
             // simulateSaleTotalAmount_label
             // 
@@ -1107,10 +1105,10 @@
             this.wholesale_panel.Controls.Add(this.wholesaleInst_label);
             this.wholesale_panel.Controls.Add(this.wholesaleTitle_label);
             this.wholesale_panel.Controls.Add(this.wholesale_back);
-            this.wholesale_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.wholesale_panel.Location = new System.Drawing.Point(425, 0);
+            this.wholesale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wholesale_panel.Location = new System.Drawing.Point(0, 0);
             this.wholesale_panel.Name = "wholesale_panel";
-            this.wholesale_panel.Size = new System.Drawing.Size(10, 405);
+            this.wholesale_panel.Size = new System.Drawing.Size(506, 405);
             this.wholesale_panel.TabIndex = 14;
             this.wholesale_panel.Visible = false;
             // 
@@ -1238,10 +1236,10 @@
             this.salesReport_panel.Controls.Add(this.salesFrom_datePicker);
             this.salesReport_panel.Controls.Add(this.shopSalesTitle_label);
             this.salesReport_panel.Controls.Add(this.salesReport_back);
-            this.salesReport_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.salesReport_panel.Location = new System.Drawing.Point(435, 0);
+            this.salesReport_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.salesReport_panel.Location = new System.Drawing.Point(0, 0);
             this.salesReport_panel.Name = "salesReport_panel";
-            this.salesReport_panel.Size = new System.Drawing.Size(47, 405);
+            this.salesReport_panel.Size = new System.Drawing.Size(506, 405);
             this.salesReport_panel.TabIndex = 13;
             this.salesReport_panel.Visible = false;
             // 
@@ -1387,10 +1385,10 @@
             this.buyers_panel.Controls.Add(this.buyers_listView);
             this.buyers_panel.Controls.Add(this.shopBuyersTitle_label);
             this.buyers_panel.Controls.Add(this.buyers_back);
-            this.buyers_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buyers_panel.Location = new System.Drawing.Point(482, 0);
+            this.buyers_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buyers_panel.Location = new System.Drawing.Point(0, 0);
             this.buyers_panel.Name = "buyers_panel";
-            this.buyers_panel.Size = new System.Drawing.Size(24, 405);
+            this.buyers_panel.Size = new System.Drawing.Size(506, 405);
             this.buyers_panel.TabIndex = 12;
             this.buyers_panel.Visible = false;
             // 
@@ -1480,10 +1478,9 @@
             // 
             // shopProducts_panel
             // 
-            this.shopProducts_panel.Controls.Add(this.create_btn);
             this.shopProducts_panel.Controls.Add(this.productPrice_txtBox);
             this.shopProducts_panel.Controls.Add(this.productQty_numUpDown);
-            this.shopProducts_panel.Controls.Add(this.addUpdateProduct_btn);
+            this.shopProducts_panel.Controls.Add(this.updateProduct_btn);
             this.shopProducts_panel.Controls.Add(this.onSale_chkBox);
             this.shopProducts_panel.Controls.Add(this.price_label);
             this.shopProducts_panel.Controls.Add(this.productName_label);
@@ -1504,33 +1501,33 @@
             // productPrice_txtBox
             // 
             this.productPrice_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.productPrice_txtBox.Location = new System.Drawing.Point(198, 341);
+            this.productPrice_txtBox.Location = new System.Drawing.Point(183, 349);
             this.productPrice_txtBox.Name = "productPrice_txtBox";
-            this.productPrice_txtBox.Size = new System.Drawing.Size(70, 22);
+            this.productPrice_txtBox.Size = new System.Drawing.Size(69, 22);
             this.productPrice_txtBox.TabIndex = 29;
             // 
             // productQty_numUpDown
             // 
-            this.productQty_numUpDown.Location = new System.Drawing.Point(198, 298);
+            this.productQty_numUpDown.Location = new System.Drawing.Point(183, 302);
             this.productQty_numUpDown.Name = "productQty_numUpDown";
-            this.productQty_numUpDown.Size = new System.Drawing.Size(53, 20);
+            this.productQty_numUpDown.Size = new System.Drawing.Size(52, 20);
             this.productQty_numUpDown.TabIndex = 28;
             // 
-            // addUpdateProduct_btn
+            // updateProduct_btn
             // 
-            this.addUpdateProduct_btn.Location = new System.Drawing.Point(397, 337);
-            this.addUpdateProduct_btn.Name = "addUpdateProduct_btn";
-            this.addUpdateProduct_btn.Size = new System.Drawing.Size(86, 23);
-            this.addUpdateProduct_btn.TabIndex = 25;
-            this.addUpdateProduct_btn.Text = "Add / Update";
-            this.addUpdateProduct_btn.UseVisualStyleBackColor = true;
-           
+            this.updateProduct_btn.Location = new System.Drawing.Point(397, 348);
+            this.updateProduct_btn.Name = "updateProduct_btn";
+            this.updateProduct_btn.Size = new System.Drawing.Size(86, 23);
+            this.updateProduct_btn.TabIndex = 25;
+            this.updateProduct_btn.Text = "Update";
+            this.updateProduct_btn.UseVisualStyleBackColor = true;
+            this.updateProduct_btn.Click += new System.EventHandler(this.updateProduct_btn_Click);
             // 
             // onSale_chkBox
             // 
             this.onSale_chkBox.AutoSize = true;
             this.onSale_chkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.onSale_chkBox.Location = new System.Drawing.Point(315, 298);
+            this.onSale_chkBox.Location = new System.Drawing.Point(300, 302);
             this.onSale_chkBox.Name = "onSale_chkBox";
             this.onSale_chkBox.Size = new System.Drawing.Size(64, 17);
             this.onSale_chkBox.TabIndex = 24;
@@ -1541,7 +1538,7 @@
             // 
             this.price_label.AutoSize = true;
             this.price_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.price_label.Location = new System.Drawing.Point(195, 328);
+            this.price_label.Location = new System.Drawing.Point(180, 336);
             this.price_label.Name = "price_label";
             this.price_label.Size = new System.Drawing.Size(31, 13);
             this.price_label.TabIndex = 23;
@@ -1551,7 +1548,7 @@
             // 
             this.productName_label.AutoSize = true;
             this.productName_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.productName_label.Location = new System.Drawing.Point(30, 328);
+            this.productName_label.Location = new System.Drawing.Point(15, 336);
             this.productName_label.Name = "productName_label";
             this.productName_label.Size = new System.Drawing.Size(79, 13);
             this.productName_label.TabIndex = 23;
@@ -1560,16 +1557,16 @@
             // productName_txtBox
             // 
             this.productName_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.productName_txtBox.Location = new System.Drawing.Point(33, 341);
+            this.productName_txtBox.Location = new System.Drawing.Point(18, 349);
             this.productName_txtBox.Name = "productName_txtBox";
-            this.productName_txtBox.Size = new System.Drawing.Size(117, 22);
+            this.productName_txtBox.Size = new System.Drawing.Size(116, 22);
             this.productName_txtBox.TabIndex = 22;
             // 
             // quantity_label
             // 
             this.quantity_label.AutoSize = true;
             this.quantity_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.quantity_label.Location = new System.Drawing.Point(195, 285);
+            this.quantity_label.Location = new System.Drawing.Point(180, 289);
             this.quantity_label.Name = "quantity_label";
             this.quantity_label.Size = new System.Drawing.Size(51, 13);
             this.quantity_label.TabIndex = 21;
@@ -1579,7 +1576,7 @@
             // 
             this.productCode_label.AutoSize = true;
             this.productCode_label.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.productCode_label.Location = new System.Drawing.Point(30, 285);
+            this.productCode_label.Location = new System.Drawing.Point(15, 289);
             this.productCode_label.Name = "productCode_label";
             this.productCode_label.Size = new System.Drawing.Size(77, 13);
             this.productCode_label.TabIndex = 21;
@@ -1588,9 +1585,10 @@
             // productCode_txtBox
             // 
             this.productCode_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.productCode_txtBox.Location = new System.Drawing.Point(33, 298);
+            this.productCode_txtBox.Location = new System.Drawing.Point(18, 302);
             this.productCode_txtBox.Name = "productCode_txtBox";
-            this.productCode_txtBox.Size = new System.Drawing.Size(117, 22);
+            this.productCode_txtBox.ReadOnly = true;
+            this.productCode_txtBox.Size = new System.Drawing.Size(116, 22);
             this.productCode_txtBox.TabIndex = 20;
             // 
             // products_listView
@@ -2102,7 +2100,7 @@
             this.taskPesticide_comboBox.Name = "taskPesticide_comboBox";
             this.taskPesticide_comboBox.Size = new System.Drawing.Size(226, 21);
             this.taskPesticide_comboBox.TabIndex = 23;
-            this.taskPesticide_comboBox.SelectedIndexChanged += new System.EventHandler(this.taskCrop_comboBox_SelectedIndexChanged);
+            this.taskPesticide_comboBox.SelectedIndexChanged += new System.EventHandler(this.taskPesticide_comboBox_SelectedIndexChanged);
             // 
             // assignTaskMethod_label
             // 
@@ -3711,16 +3709,6 @@
             this.section_toolTip.InitialDelay = 100;
             this.section_toolTip.ReshowDelay = 100;
             // 
-            // create_btn
-            // 
-            this.create_btn.Location = new System.Drawing.Point(309, 338);
-            this.create_btn.Name = "create_btn";
-            this.create_btn.Size = new System.Drawing.Size(75, 23);
-            this.create_btn.TabIndex = 30;
-            this.create_btn.Text = "Create";
-            this.create_btn.UseVisualStyleBackColor = true;
-            this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
-            // 
             // MGMainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3874,7 +3862,7 @@
         private System.Windows.Forms.ColumnHeader productQuantity_header;
         private System.Windows.Forms.ColumnHeader productPrice_header;
         private System.Windows.Forms.NumericUpDown productQty_numUpDown;
-        private System.Windows.Forms.Button addUpdateProduct_btn;
+        private System.Windows.Forms.Button updateProduct_btn;
         private System.Windows.Forms.CheckBox onSale_chkBox;
         private System.Windows.Forms.Label price_label;
         private System.Windows.Forms.Label productName_label;
@@ -4122,6 +4110,5 @@
         private System.Windows.Forms.Label storageStockID_label;
         private System.Windows.Forms.TextBox storageStockID_txtBox;
         private System.Windows.Forms.Panel updateStock_panel;
-        private System.Windows.Forms.Button create_btn;
     }
 }

@@ -309,7 +309,7 @@ namespace JustRipeFarm
                                                 }
                                             }
 
-                                            if (taskEndDateTime.TimeOfDay.Subtract(taskStartDateTime.TimeOfDay).Days >= 7)
+                                            if (taskEndDateTime.Subtract(taskStartDateTime).Days >= 7)
                                             {
                                                 taskSelectedStocks.Add(new TaskStock(treatment_fertiliser, (int)taskFertiliser_numeric.Value));
                                                 
@@ -343,7 +343,7 @@ namespace JustRipeFarm
                             Task newTask = new Task(taskTitle, taskType, taskDescription, "PENDING", taskStartDateTime, taskEndDateTime, taskSelectedField.SectionID, taskSelectedCrop.CropID, taskSelectdCropMethod.MethodID, DateTime.Now, UserSession.Instance.UserID);
 
                             string insertResult = new TaskHandler().AddNewTask(newTask, taskSelectedLabourers, taskSelectedStocks);
-                            Console.WriteLine(insertResult);
+
                             if (insertResult.Equals("SUCCESS"))
                             {
                                 MessageBox.Show("New task is successfully assigned");
@@ -384,23 +384,35 @@ namespace JustRipeFarm
             taskTitle_txtBox.Clear();
             taskDesc_txtBox.Clear();
             taskField_comboBox.Items.Clear();
+            taskField_comboBox.SelectedValue = null;
+            taskField_comboBox.SelectedText = "";
             taskType_txtBox.Clear();
             taskCrop_comboBox.Items.Clear();
             taskCrop_comboBox.Enabled = false;
+            taskCrop_comboBox.SelectedValue = null;
+            taskCrop_comboBox.SelectedText = "";
             taskMethod_comboBox.Items.Clear();
             taskMethod_comboBox.Enabled = false;
+            taskMethod_comboBox.SelectedValue = null;
+            taskMethod_comboBox.SelectedText = "";
             taskSeed_comboBox.Items.Clear();
             taskSeed_comboBox.Enabled = false;
+            taskSeed_comboBox.SelectedValue = null;
+            taskSeed_comboBox.SelectedText = "";
             taskSeed_numeric.ResetText();
             taskSeed_numeric.Enabled = false;
             seedStockQty_label.ResetText();
             taskFertiliser_comboBox.Items.Clear();
             taskFertiliser_comboBox.Enabled = false;
+            taskFertiliser_comboBox.SelectedValue = null;
+            taskFertiliser_comboBox.SelectedText = "";
             taskFertiliser_numeric.ResetText();
             taskFertiliser_numeric.Enabled = false;
             fertiliserStockQty_label.ResetText();
             taskPesticide_comboBox.Items.Clear();
             taskPesticide_comboBox.Enabled = false;
+            taskPesticide_comboBox.SelectedValue = null;
+            taskPesticide_comboBox.SelectedText = "";
             taskPesticide_numeric.ResetText();
             taskPesticide_numeric.Enabled = false;
             pesticideStockQty_label.ResetText();
@@ -413,6 +425,7 @@ namespace JustRipeFarm
             labourer_panel.Visible = false;
             assignTask_panel.Visible = true;
 
+            ResetAssignTaskPage();
             PopulateAssignTaskInputOptions();
         }
 
@@ -1807,18 +1820,35 @@ namespace JustRipeFarm
             }
         }
 
-        private void create_btn_Click(object sender, EventArgs e)
+        private void updateProduct_btn_Click(object sender, EventArgs e)
         {
-            string newStockCode= productCode_txtBox.Text.Trim();
-            string newStockName = productName_txtBox.Text.Trim();
-            int Quantity = (int )productQty_numUpDown.Value;
-            decimal p = decimal.Parse( productPrice_txtBox.Text.Trim());
-            bool oss = onSale_chkBox.Checked;
+            if(products_listView.SelectedItems.Count > 0)
+            {
+                Product product = (Product)products_listView.SelectedItems[0].Tag;
 
-            ProductHandler ph = new ProductHandler();
-            ph.createProduct(newStockCode, newStockName, Quantity, p, oss);
+                string newProductName = productName_txtBox.Text.Trim();
+                int newQuantity = (int)productQty_numUpDown.Value;
+                decimal newPrice = decimal.Parse(productPrice_txtBox.Text);
+                bool newIsSale = onSale_chkBox.Checked;
+
+                product.ProductName = newProductName;
+                product.Quantity = newQuantity;
+                product.Price = newPrice;
+                product.IsOnSale = newIsSale;
+
+                ProductHandler productHandler = new ProductHandler();
+                int updateResult = productHandler.UpdateProductData(product);
+
+                if (updateResult == 1)
+                {
+                    MessageBox.Show("Product successfully updated");
+                    LoadProducts();
+                }
+                else
+                {
+                    MessageBox.Show(updateResult + "\nError occured when updating product details");
+                }
+            }
         }
-
-        
     }
 }
