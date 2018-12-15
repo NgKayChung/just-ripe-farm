@@ -9,6 +9,7 @@ namespace JustRipeFarm
 {
     class CropHandler
     {
+        // get all crops as list
         public List<Crop> GetAllCropsForSow()
         {
             List<Crop> crops = null;
@@ -40,6 +41,7 @@ namespace JustRipeFarm
             return crops;
         }
 
+        // to determine crop is able to sow at a given date
         public bool IsSuitableSow(Crop crop, DateTime sowDate)
         {
             string sqlString = "SELECT SUM(IF(`month` = UPPER(DATE_FORMAT('" + sowDate.ToString("yyyy-MM-dd") + "', '%M')), 1, 0)) FROM `crop_sow_time` WHERE `crop_id` = '" + crop.CropID + "'";
@@ -61,6 +63,7 @@ namespace JustRipeFarm
             return false;
         }
 
+        // get crop with ID specified
         public Crop GetCropWithID(string cropID)
         {
             Crop crop = null;

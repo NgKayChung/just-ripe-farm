@@ -170,12 +170,13 @@ namespace JustRipeFarm
             addLabourer_panel.Visible = true;
         }
 
+        // submit registering new labourer
         private void submitAddLab_btn_Click(object sender, EventArgs e)
         {
             string first_name, last_name, email_address, phone_number;
             string u_type = "LABOURER";
 
-            Random random = new Random();
+            // get labourer details
             first_name = addLabfName_txtBox.Text;
             last_name = addLablName_txtBox.Text;
             email_address = addLabEmail_txtBox.Text;
@@ -190,10 +191,12 @@ namespace JustRipeFarm
 
                     if (Regex.IsMatch(email_address, EVAL_EMAIL))
                     {
+                        // get new labourer ID
                         currID = findNewLabIDNum(labourerHandler);
                         string uID = "LB" + currID;
                         string password = "JRF@" + currID;
 
+                        // create new labourer object and add to database
                         Labourer labourer = new Labourer(uID, first_name, last_name, password, email_address, phone_number, u_type, DateTime.Today);
                         string result = labourerHandler.AddNewLabourer(labourer);
 
@@ -222,6 +225,7 @@ namespace JustRipeFarm
             }
         }
 
+        // submit assigning task to labourer
         private void assignTaskSubmit_btn_Click(object sender, EventArgs e)
         {
             DateTime taskStartDateTime = taskStartDate_datePicker.Value.Date + taskStartTime_datePicker.Value.TimeOfDay;
@@ -268,6 +272,7 @@ namespace JustRipeFarm
                                 return;
                             }
 
+                            // get selected data from the form
                             FarmSection taskSelectedField = (FarmSection)taskField_comboBox.SelectedItem;
                             string taskType = (string)taskType_comboBox.SelectedItem;
                             Crop taskSelectedCrop = (Crop)taskCrop_comboBox.SelectedItem;
@@ -301,12 +306,14 @@ namespace JustRipeFarm
 
                                     if (taskSeed_comboBox.SelectedItem != null)
                                     {
+                                        // get selected seed
                                         seed = ((Stock)taskSeed_comboBox.SelectedItem);
 
                                         if (taskSeed_numeric.Value > 0 || taskSeed_numeric.Value <= seed.Quantity)
                                         {
                                             if(taskSeed_numeric.Value <= (int)seedStockQty_label.Tag)
                                             {
+                                                // add seed in task selected resources
                                                 taskSelectedStocks.Add(new TaskStock(seed, (int)taskSeed_numeric.Value));
                                             }
                                             else
@@ -333,12 +340,14 @@ namespace JustRipeFarm
 
                                     if (taskFertiliser_comboBox.SelectedItem != null)
                                     {
+                                        // get selected fertiliser
                                         fertiliser = ((Stock)taskFertiliser_comboBox.SelectedItem);
 
                                         if (taskFertiliser_numeric.Value > 0 || taskFertiliser_numeric.Value <= fertiliser.Quantity)
                                         {
                                             if (taskFertiliser_numeric.Value <= (int)fertiliserStockQty_label.Tag)
                                             {
+                                                // add fertiliser in task selected resources
                                                 taskSelectedStocks.Add(new TaskStock(fertiliser, (int)taskFertiliser_numeric.Value));
                                             }
                                             else
@@ -361,12 +370,14 @@ namespace JustRipeFarm
 
                                     if (taskPesticide_comboBox.SelectedItem != null)
                                     {
+                                        // get selected pesticide
                                         pesticide = ((Stock)taskPesticide_comboBox.SelectedItem);
 
                                         if (taskPesticide_numeric.Value > 0 || taskPesticide_numeric.Value <= pesticide.Quantity)
                                         {
                                             if(taskPesticide_numeric.Value <= (int)pesticideStockQty_label.Tag)
                                             {
+                                                // add pesticide in task selected resources
                                                 taskSelectedStocks.Add(new TaskStock(pesticide, (int)taskPesticide_numeric.Value));
                                             }
                                             else
@@ -382,6 +393,7 @@ namespace JustRipeFarm
                                         }
                                     }
 
+                                    // if selected date is not more than 7 days
                                     if (taskEndDateTime.Subtract(taskStartDateTime).Days < 7)
                                     {
                                         MessageBox.Show("Please select task time at least 7 days");
@@ -393,8 +405,9 @@ namespace JustRipeFarm
                                     break;
                             }
 
+                            // create new task object
+                            // insert task details
                             Task newTask = new Task(taskTitle, taskType, taskDescription, "PENDING", taskStartDateTime, taskEndDateTime, taskSelectedField.SectionID, taskSelectedCrop.CropID, taskSelectdCropMethod.MethodID, DateTime.Now, UserSession.Instance.UserID);
-
                             string insertResult = new TaskHandler().AddNewTask(newTask, taskSelectedLabourers, taskSelectedStocks);
 
                             if (insertResult.Equals("SUCCESS"))
@@ -505,11 +518,14 @@ namespace JustRipeFarm
             salesReport_panel.Visible = true;
         }
 
+        // search sales transaction for the selected dates
         private void searchSalesTrx_btn_Click(object sender, EventArgs e)
         {
+            // get chosen dates
             DateTime fromDate = salesFrom_datePicker.Value;
             DateTime toDate = salesTo_datePicker.Value;
 
+            // find list of sales within dates
             SaleHandler saleHandler = new SaleHandler();
             List<Sale> sales = saleHandler.GetSalesForDates(fromDate, toDate);
 
@@ -517,6 +533,8 @@ namespace JustRipeFarm
 
             if (sales != null)
             {
+                // iterate sale records
+                // fill sale transaction details in list view
                 foreach (Sale sale in sales)
                 {
                     List<Product> sale_products = sale.SaleProducts;
@@ -547,16 +565,23 @@ namespace JustRipeFarm
             }
         }
 
+        // search machines for the category chose
         private void m_search_Click(object sender, EventArgs e)
         {
             machinery_listView.Items.Clear();
             string Type;
+
+            // get the type of machine
             Type = (string)comboBox1.SelectedItem;
             VehicleHandler vh = new VehicleHandler();
 
+            // find list of machines with of that type
             List<Vehicle> lv = vh.getSelected(DbConnector.Instance.getConn(), Type);
+
             if(lv != null)
             {
+                // iterate machines list
+                // fill machine details in list view
                 foreach (Vehicle v in lv)
                 {
                     ListViewItem lvi = new ListViewItem(v.mac_id);
@@ -571,13 +596,16 @@ namespace JustRipeFarm
             }
         }
 
+        // function to search for timetable
         private void timetableSearch_btn_Click(object sender, EventArgs e)
         {
             timetable_listView.Items.Clear();
 
+            // get chosen dates
             DateTime startDate = timetableStartDate_datePicker.Value.Date;
             DateTime endDate = timetableEndDate_datePicker.Value.Date;
 
+            // get list of tasks
             List<Task> tasks_list = new TaskHandler().GetAllPendingTasks(startDate, endDate);
             List<TaskStock> tasksStocks = new List<TaskStock>();
             List<List<Labourer>> tasksLabourers = new List<List<Labourer>>();
@@ -612,14 +640,18 @@ namespace JustRipeFarm
 
                 while (itDate <= endDate)
                 {
-                    // to indicate data added to the list
+                    // to indicate task data added to the list
                     bool addedTask = false;
 
                     for (int i = 0; i < tasks_list.Count; i++)
                     {
+                        // if current iterate date equals the start date of the task
+                        // indicates task assigned on that date
                         if (itDate == tasks_list[i].StartDateTime.Date)
                         {
                             string labourers = "";
+
+                            // get labourers
                             foreach (Labourer lab in tasksLabourers[i])
                             {
                                 labourers += lab.Firstname + " " + lab.Lastname;
@@ -629,10 +661,12 @@ namespace JustRipeFarm
                             decimal containerRequired = 0;
                             if (tasks_list[i].TaskType == "HARVEST")
                             {
+                                // calculate containers required for the harvest
                                 containerRequired = ((tasksSection[i].Dimension_x * tasksSection[i].Dimension_y) * tasksCrop[i].CapacityUse) / containerSize;
                                 if (containerRequired < 1) containerRequired = 1;
                             }
 
+                            // fill in the list by creating a list item
                             ListViewItem item = new ListViewItem(new string[] { itDate.ToString("dd/MM/yyyy"), tasks_list[i].FieldID, tasksCrop[i].CropName, tasks_list[i].TaskType, (tasksStocks[i] != null ? tasksStocks[i].QuantityUse.ToString() : "-"), (containerRequired == 0 ? "-" : ((int)containerRequired).ToString() + " - " + tasksCrop[i].ContainerType), labourers });
                             timetable_listView.Items.Add(item);
                             totalFertilisersRequired += (tasksStocks[i] != null ? tasksStocks[i].QuantityUse : 0);
@@ -706,12 +740,15 @@ namespace JustRipeFarm
             }
         }
 
+        // function to send wholesale to transport
         private void wholesaleTransport_btn_Click(object sender, EventArgs e)
         {
             if (wholesaleContainer_listView.CheckedItems.Count > 0)
             {
+                // get chosen transport date
                 DateTime transportDateTime = transportDate_datePicker.Value.Date + transportTime_datePicker.Value.TimeOfDay;
 
+                // get selected containers
                 List<Container> selectedContainers = new List<Container>();
                 foreach(ListViewItem listItem in wholesaleContainer_listView.CheckedItems)
                 {
@@ -730,20 +767,28 @@ namespace JustRipeFarm
 
                 foreach(Truck truck in allTrucks)
                 {
+                    // if the truck quantity is available to transport
                     if(numberOfContainers / truck.ContainerQuantity > 0)
                     {
+                        // number of truck required
                         int reqNumTruck = numberOfContainers / truck.ContainerQuantity;
 
+                        // if available
                         if (truck.QuantityAvailable > 0)
                         {
+                            // if enough number of truck for the required number
                             if (truck.QuantityAvailable >= reqNumTruck)
                             {
+                                // add the truck and the quantity for transport
+                                // calculate remaining containers
                                 requiredTrucks.Add(truck);
                                 numOfRequiredTruck.Add(reqNumTruck);
                                 numberOfContainers %= truck.ContainerQuantity;
                             }
                             else
                             {
+                                // add the truck and quantity for transport
+                                // used up all the truck 
                                 requiredTrucks.Add(truck);
                                 numOfRequiredTruck.Add(truck.QuantityAvailable);
                                 numberOfContainers -= truck.QuantityAvailable * truck.ContainerQuantity;
@@ -768,13 +813,16 @@ namespace JustRipeFarm
                         case DialogResult.Yes:
                             Random random = new Random();
 
+                            // get chosen time
                             DateTime arrivalDateTime = transportDateTime.Add(requiredTrucks[0].TimeRequired.TimeOfDay);
                             DateTime currentDateTime = DateTime.Now;
 
+                            // random generate wholesale ID
                             string wholesaleID = currentDateTime.ToString("yyMMdd") + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString() + random.Next(0, 9).ToString();
 
                             Wholesale wholesale = new Wholesale(wholesaleID, transportDateTime, arrivalDateTime, currentDateTime, new UserHandler().GetUser(UserSession.Instance.UserID), requiredTrucks, numOfRequiredTruck, selectedContainers);
 
+                            // send wholesale and update resources
                             WholesaleHandler wholesaleHandler = new WholesaleHandler();
                             wholesaleHandler.SendWholesale(wholesale);
 
@@ -941,6 +989,7 @@ namespace JustRipeFarm
 
         private void storage_listView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // get selected storage
             var selectedItem = (StockStorage)storage_listView.SelectedItems[0].Tag;
             if (selectedItem != null)
             {
@@ -963,6 +1012,8 @@ namespace JustRipeFarm
         {
             if (products_listView.SelectedItems.Count > 0)
             {
+                // get selected product
+                // populate product details in fields for display and update
                 var selectedProduct = (Product)products_listView.SelectedItems[0].Tag;
                 if (selectedProduct != null)
                 {
@@ -993,6 +1044,7 @@ namespace JustRipeFarm
             pesticideStockQty_label.Tag = ((Stock)taskPesticide_comboBox.SelectedItem).Quantity;
         }
 
+        // load homepage for manager
         private void LoadMGHome()
         {
             mgHome_panel.Visible = true;
@@ -1049,9 +1101,12 @@ namespace JustRipeFarm
             }
         }
 
+        // load homepage for labourer
         private void LoadLBHome()
         {
             lbHome_panel.Visible = true;
+
+            // get list of tasks for the labourer
             List<Task> tasksList = new TaskHandler().GetTasksForLabourer(UserSession.Instance.UserID);
 
             ClearLabTaskText();
@@ -1059,6 +1114,8 @@ namespace JustRipeFarm
 
             if (tasksList != null)
             {
+                // iterate tasks list
+                // fill in the tasks list view
                 foreach(Task task in tasksList)
                 {
                     string[] row = { task.TaskTitle, task.TaskType, task.TaskDescription, task.Status, task.FieldID, task.StartDateTime.ToString("dd/MM/yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")), task.EndDateTime.ToString("dd/MM/yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")) };
@@ -1070,6 +1127,7 @@ namespace JustRipeFarm
             }
         }
 
+        // function to fill in wholesale containers to display
         private void LoadWholesale()
         {
             ContainerHandler containerHandler = new ContainerHandler();
@@ -1077,6 +1135,7 @@ namespace JustRipeFarm
             PopulateWholesaleContainers(containers);
         }
 
+        // function to populate containers in list view
         private void PopulateWholesaleContainers(List<Container> wholesaleContainers)
         {
             wholesaleContainer_listView.Items.Clear();
@@ -1094,9 +1153,12 @@ namespace JustRipeFarm
             }
         }
 
+        // function to find stocks for display
         private void LoadStocks()
         {
             ClearStockUpdateFields();
+
+            // get list of stocks for the storage
             StockHandler stockHandler = new StockHandler();
             List<Stock> stocks = stockHandler.FindStocksForStorage((string)storageIDTitle_label.Tag);
 
@@ -1112,6 +1174,7 @@ namespace JustRipeFarm
             storageStockQuantity_numeric.Value = 0;
         }
 
+        // function to populate stocks in list view
         private void PopulateStocksList(List<Stock> stocksList)
         {
             stock_listView.Items.Clear();
@@ -1131,58 +1194,79 @@ namespace JustRipeFarm
             }
         }
 
+        // function to fill in stock storages to display
         private void LoadStockStorage()
         {
+            // get list of storages
             StockStorageHandler storageHandler = new StockStorageHandler();
             List<StockStorage> stockStorages = storageHandler.FindStockStorages();
 
             storage_listView.Items.Clear();
 
-            foreach (StockStorage storage in stockStorages)
+            if(stockStorages != null)
             {
-                string[] row = new string[] { storage.StorageID, storage.UsedCapacity.ToString() + " / " + storage.TotalCapacity.ToString(), storage.Status };
-                ListViewItem listViewItem = new ListViewItem(row);
-                listViewItem.Tag = storage;
+                // iterate storages list
+                // fill in storage details list view
+                foreach (StockStorage storage in stockStorages)
+                {
+                    string[] row = new string[] { storage.StorageID, storage.UsedCapacity.ToString() + " / " + storage.TotalCapacity.ToString(), storage.Status };
+                    ListViewItem listViewItem = new ListViewItem(row);
+                    listViewItem.Tag = storage;
 
-                storage_listView.Items.Add(listViewItem);
+                    storage_listView.Items.Add(listViewItem);
+                }
             }
         }
 
+        // function to fill in containers to display
         private void LoadContainers()
         {
+            // get list of containers
             ContainerHandler containerHandler = new ContainerHandler();
             List<Container> containers = containerHandler.GetAllContainers();
 
             container_listView.Items.Clear();
 
-            foreach (Container container in containers)
+            if(containers != null)
             {
-                string[] row = new string[] { container.ContainerID, container.ContainerType, (container.ContainerType == "REFRIGERATED" ? container.TemperatureSet.ToString() : "-"), (container.Crop.CropName != "" ? container.Crop.CropName : "-"), container.TotalCapacity.ToString(), container.ContainerStatus };
-                ListViewItem listViewItem = new ListViewItem(row);
-                listViewItem.Tag = container;
+                // iterate containers list
+                // fill in containers details list view
+                foreach (Container container in containers)
+                {
+                    string[] row = new string[] { container.ContainerID, container.ContainerType, (container.ContainerType == "REFRIGERATED" ? container.TemperatureSet.ToString() : "-"), (container.Crop.CropName != "" ? container.Crop.CropName : "-"), container.TotalCapacity.ToString(), container.ContainerStatus };
+                    ListViewItem listViewItem = new ListViewItem(row);
+                    listViewItem.Tag = container;
 
-                container_listView.Items.Add(listViewItem);
+                    container_listView.Items.Add(listViewItem);
+                }
             }
         }
 
+        // function to determine the next labourer ID to be used
         private string findNewLabIDNum(LabourerHandler labHandlr)
         {
+            // get the latest labourer ID
             string newestID = labHandlr.GetNewestID();
             newestID = newestID.Substring(2, newestID.Length - 2);
             int newestYear = 2000 + int.Parse(newestID.Substring(0, 2));
 
+            // if the previous ID is made in previous year
             if (newestYear < DateTime.Today.Year)
             {
+                // use current as first prefix and starts at 1
                 return (DateTime.Today.Year - 2000).ToString() + "001";
             }
             else
             {
+                // use current latest ID + 1
                 return (int.Parse(newestID) + 1).ToString();
             }
         }
 
+        // function to fill in labourers details to display
         private void LoadLabourers()
         {
+            // get list of labourers
             LabourerHandler labourerHandler = new LabourerHandler();
             List<Labourer> labourers = labourerHandler.FindAllLabourers();
 
@@ -1190,6 +1274,8 @@ namespace JustRipeFarm
 
             if (labourers != null)
             {
+                // iterate labourers list
+                // fill in labourer details list view
                 foreach (Labourer labourer in labourers)
                 {
                     string[] row = new string[] { labourer.UserID, (labourer.Firstname + " " + labourer.Lastname), labourer.EmailAddress, labourer.PhoneNumber, labourer.DateJoined.ToString("yyyy-MM-dd"), labourer.Status };
@@ -1201,8 +1287,10 @@ namespace JustRipeFarm
             }
         }
 
+        // function to fill in products to display
         private void LoadProducts()
         {
+            // get list of products
             ProductHandler productHandler = new ProductHandler();
             List<Product> products = productHandler.FindAllProducts();
 
@@ -1210,6 +1298,8 @@ namespace JustRipeFarm
 
             if (products != null)
             {
+                // iterate products list
+                // fill in product details list view
                 foreach (Product product in products)
                 {
                     string[] row = new string[] { product.ProductCode, product.ProductName, product.Quantity.ToString(), product.Price.ToString(), (product.IsOnSale ? "Yes" : "No") };
@@ -1221,8 +1311,10 @@ namespace JustRipeFarm
             }
         }
 
+        // function to fill in buyers to display
         private void LoadBuyers()
         {
+            // get list of buyers
             BuyerHandler buyerHandler = new BuyerHandler();
             List<Buyer> buyers = buyerHandler.GetBuyers();
 
@@ -1230,6 +1322,8 @@ namespace JustRipeFarm
 
             if (buyers != null)
             {
+                // iterate buyers list
+                // fill in buyer details list view
                 foreach (Buyer buyer in buyers)
                 {
                     string[] row = new string[] { (buyer.FirstName + " " + buyer.LastName), buyer.EmailAddress, buyer.PhoneNumber, buyer.VisitedTimes.ToString(), buyer.AvgVisitedTime, buyer.TotalSpent.ToString("f2"), buyer.CompanyName };
@@ -1241,8 +1335,10 @@ namespace JustRipeFarm
             }
         }
 
+        // function to fill in machines to display
         private void LoadVehicles()
         {
+            // get machines from database
             VehicleHandler vehicleHandler = new VehicleHandler();
             List<Vehicle> vehicles = vehicleHandler.getVehicle(DbConnector.Instance.getConn());
 
@@ -1250,6 +1346,7 @@ namespace JustRipeFarm
 
             if (vehicles != null)
             {
+                // iterate machines list and add machine details to list view
                 foreach (Vehicle vehicle in vehicles)
                 {
                     ListViewItem lvi = new ListViewItem(vehicle.mac_id);
@@ -1264,6 +1361,7 @@ namespace JustRipeFarm
             }
         }
 
+        // function to fill in select options into fields
         private void PopulateAssignTaskInputOptions()
         {
             FarmSectionHandler farmSectionHandler = new FarmSectionHandler();
@@ -1294,6 +1392,7 @@ namespace JustRipeFarm
             PopulateAssignTaskPesticides();
         }
 
+        // function to fill in crops
         private void PopulateAssignTaskCrops()
         {
             CropHandler cropHandler = new CropHandler();
@@ -1310,6 +1409,7 @@ namespace JustRipeFarm
             }
         }
 
+        // function to fill in crop methods
         private void PopulateAssignTaskCropMethods()
         {
             Crop selectedCrop = (Crop)taskCrop_comboBox.SelectedItem;
@@ -1330,6 +1430,7 @@ namespace JustRipeFarm
             }
         }
 
+        // function to fill in seed combo box items
         private void PopulateAssignTaskSeeds()
         {
             SeedHandler seedHandler = new SeedHandler();
@@ -1346,6 +1447,7 @@ namespace JustRipeFarm
             }
         }
 
+        // function to fill in fertiliser combo box items
         private void PopulateAssignTaskFertilisers()
         {
             FertiliserHandler fertiliserHandler = new FertiliserHandler();
@@ -1362,6 +1464,7 @@ namespace JustRipeFarm
             }
         }
 
+        // function to fill in pesticide combo box items
         private void PopulateAssignTaskPesticides()
         {
             PesticideHandler pesticideHandler = new PesticideHandler();
@@ -1395,6 +1498,7 @@ namespace JustRipeFarm
 
         private void LoadUserProfileInfo()
         {
+            // clear the fields
             profileFName_txtBox.Clear();
             profileLName_txtBox.Clear();
             profileEmail_txtBox.Clear();
@@ -1403,9 +1507,11 @@ namespace JustRipeFarm
             profileNewPassword_txtBox.Clear();
             profileConfirmPassword_txtBox.Clear();
 
+            // get user profile details
             UserHandler userHandler = new UserHandler();
             User user = userHandler.GetUser(UserSession.Instance.UserID);
 
+            // fill in the fields with current profile details
             profileFName_txtBox.Text = user.Firstname;
             profileLName_txtBox.Text = user.Lastname;
             profileEmail_txtBox.Text = user.EmailAddress;
@@ -1414,6 +1520,7 @@ namespace JustRipeFarm
 
         private void updateProfile_btn_Click(object sender, EventArgs e)
         {
+            // get new user profile details
             string firstName = profileFName_txtBox.Text.Trim();
             string lastName = profileLName_txtBox.Text.Trim();
             string emailAddress = profileEmail_txtBox.Text.Trim();
@@ -1425,6 +1532,8 @@ namespace JustRipeFarm
                 {
                     if (Regex.IsMatch(emailAddress, EVAL_EMAIL))
                     {
+                        // create user object
+                        // fill in new profile details
                         User u = new User();
                         u.UserID = UserSession.Instance.UserID;
                         u.Firstname = firstName;
@@ -1432,6 +1541,7 @@ namespace JustRipeFarm
                         u.EmailAddress = emailAddress;
                         u.PhoneNumber = phoneNumber;
 
+                        // update profile details
                         UserHandler userHandler = new UserHandler();
                         userHandler.UpdateUserInfo(u);
 
@@ -1452,8 +1562,10 @@ namespace JustRipeFarm
             }
         }
 
+        // update user's login password
         private void updatePassword_btn_Click(object sender, EventArgs e)
         {
+            // get passsword fields data
             string oldPassword = profileOldPassword_txtBox.Text.Trim();
             string newPassword = profileNewPassword_txtBox.Text.Trim();
             string confirmPassword = profileConfirmPassword_txtBox.Text.Trim();
@@ -1467,6 +1579,7 @@ namespace JustRipeFarm
                 {
                     if (newPassword == confirmPassword)
                     {
+                        // change password
                         userHandler.ChangePass(user, newPassword);
                         MessageBox.Show("Password is successfully updated !");
                         LoadUserProfileInfo();
@@ -1493,10 +1606,12 @@ namespace JustRipeFarm
 
             if(labTask_listView.SelectedItems.Count > 0)
             {
+                // get selected task
                 Task selectedTask = (Task)labTask_listView.SelectedItems[0].Tag;
                 List<TaskStock> taskStocks = new TaskStockHandler().GetStocksForTask(selectedTask.TaskID);
                 CropMethod method = new CropMethodHandler().GetCropMethod(selectedTask.MethodID);
 
+                // fill in task details into fields
                 labTaskTitle_label.Text = selectedTask.TaskTitle;
                 labTaskType_label.Text = selectedTask.TaskType;
                 labTaskDescription_label.Text = selectedTask.TaskDescription;
@@ -1543,6 +1658,7 @@ namespace JustRipeFarm
             labTaskManager_label.Text = "";
         }
 
+        // submit task completed
         private void labTaskComplete_btn_Click(object sender, EventArgs e)
         {
             if (labTask_listView.SelectedItems.Count > 0)
@@ -1554,6 +1670,7 @@ namespace JustRipeFarm
                     Task selectedTask = (Task)labTask_listView.SelectedItems[0].Tag;
                     List<TaskStock> taskStocks = new TaskStockHandler().GetStocksForTask(selectedTask.TaskID);
 
+                    // if the current time has not passed selected task start time
                     if(selectedTask.StartDateTime.CompareTo(DateTime.Now) >= 0)
                     {
                         MessageBox.Show("You are not able to complete the task as the task is not even started yet");
@@ -1618,6 +1735,7 @@ namespace JustRipeFarm
                         }
                     }
 
+                    // update task with status 'COMPLETED'
                     TaskHandler taskHandler = new TaskHandler();
                     taskHandler.UpdateTaskStatus(selectedTask, "COMPLETED");
 
@@ -1674,16 +1792,20 @@ namespace JustRipeFarm
             simulateSaleBuyerCompanyName_txtBox.ResetText();
         }
 
+        // add product to purchase list
         private void simulateSaleAddProduct_btn_Click(object sender, EventArgs e)
         {
+            // get selected product
             Product selectedProduct = (Product)simulateSaleProducts_comboBox.SelectedItem;
 
             if(selectedProduct != null)
             {
+                // get product quantity
                 int productQuantity = (int)simulateSaleQuantity_numeric.Value;
 
                 if (productQuantity > 0)
                 {
+                    // calculate sub total
                     decimal subTotal = selectedProduct.Price * productQuantity;
 
                     if (simulateSaleProducts_listView.Items.Count > 0)
@@ -1692,8 +1814,11 @@ namespace JustRipeFarm
                         {
                             Product product = (Product)productItem.Tag;
 
+                            // if product in list is same as selected product
                             if (product.Equals(selectedProduct))
                             {
+                                // remove the product from list
+                                // deduct total amount
                                 decimal total = decimal.Parse((string)simulateSaleTotalAmount_label.Tag);
                                 decimal prevSubTotal = decimal.Parse((string)productItem.SubItems[3].Text);
                                 total -= prevSubTotal;
@@ -1704,12 +1829,13 @@ namespace JustRipeFarm
                         }
                     }
 
+                    // add product into list
                     string[] row = { selectedProduct.ProductCode, selectedProduct.ProductName, productQuantity.ToString(), subTotal.ToString("N2") };
                     ListViewItem listViewItem = new ListViewItem(row);
                     listViewItem.Tag = selectedProduct;
-
                     simulateSaleProducts_listView.Items.Add(listViewItem);
 
+                    // add amount to total amount counter
                     decimal prevTotal = decimal.Parse((string)simulateSaleTotalAmount_label.Tag);
                     simulateSaleTotalAmount_label.Text = "RM " + (prevTotal + subTotal).ToString("N2");
                     simulateSaleTotalAmount_label.Tag = (prevTotal + subTotal).ToString("N2");
@@ -1721,6 +1847,7 @@ namespace JustRipeFarm
             }
         }
 
+        // simulating sales
         private void simulateSaleSubmit_btn_Click(object sender, EventArgs e)
         {
             if(simulateSaleProducts_listView.Items.Count > 0)
@@ -1772,11 +1899,11 @@ namespace JustRipeFarm
                     return;
                 }
 
+                // create a buyer object 
                 Buyer buyer = new Buyer(buyerFirstName, buyerLastName, buyerEmail, buyerPhone, company_name: buyerCompany);
 
                 // insert sale record
                 Sale currentSale = new Sale(saleID, saleTime, buyer, totalAmount, purchasedProducts);
-
                 string insertRes = new SaleHandler().InsertNewSale(currentSale);
 
                 if(insertRes == "SUCCESS")
@@ -1799,8 +1926,10 @@ namespace JustRipeFarm
         {
             if(stock_listView.SelectedItems.Count > 0)
             {
+                // get selected stock
                 Stock stock = (Stock)stock_listView.SelectedItems[0].Tag;
 
+                // fill in stock details for display and edit
                 storageStockID_txtBox.Text = stock.ID;
                 storageStockName_txtBox.Text = stock.Name;
                 storageStockBrand_txtBox.Text = stock.Brand;
@@ -1809,22 +1938,27 @@ namespace JustRipeFarm
             }
         }
 
+        // update stock details
         private void storageStockUpdate_btn_Click(object sender, EventArgs e)
         {
             if(stock_listView.SelectedItems.Count > 0)
             {
+                // get stock
                 Stock stock = (Stock)stock_listView.SelectedItems[0].Tag;
 
+                // get new stock details
                 string newStockName = storageStockName_txtBox.Text.Trim();
                 string newStockBrand = storageStockBrand_txtBox.Text.Trim();
                 int newStockCapacity = (int)storageStockCapacity_numeric.Value;
                 int newStockQuantity = (int)storageStockQuantity_numeric.Value;
 
+                // set details to new one
                 stock.Name = newStockName;
                 stock.Brand = newStockBrand;
                 stock.CapacityUse = newStockCapacity;
                 stock.Quantity = newStockQuantity;
 
+                // update the stock details with the new details
                 StockHandler stockHandler = new StockHandler();
                 string updateResult = stockHandler.UpdateStockData(stock);
 
@@ -1840,22 +1974,27 @@ namespace JustRipeFarm
             }
         }
 
+        // update product details
         private void updateProduct_btn_Click(object sender, EventArgs e)
         {
             if(products_listView.SelectedItems.Count > 0)
             {
+                // get product
                 Product product = (Product)products_listView.SelectedItems[0].Tag;
 
+                // get new product details
                 string newProductName = productName_txtBox.Text.Trim();
                 int newQuantity = (int)productQty_numUpDown.Value;
                 decimal newPrice = decimal.Parse(productPrice_txtBox.Text);
                 bool newIsSale = onSale_chkBox.Checked;
 
+                // set details to new one
                 product.ProductName = newProductName;
                 product.Quantity = newQuantity;
                 product.Price = newPrice;
                 product.IsOnSale = newIsSale;
 
+                // update the product details with the new details
                 ProductHandler productHandler = new ProductHandler();
                 int updateResult = productHandler.UpdateProductData(product);
 
@@ -1886,10 +2025,12 @@ namespace JustRipeFarm
         {
             if(labourerTask_listView.SelectedItems.Count > 0)
             {
+                // get selected task
                 Task selectedTask = (Task)labourerTask_listView.SelectedItems[0].Tag;
                 List<TaskStock> taskStocks = new TaskStockHandler().GetStocksForTask(selectedTask.TaskID);
                 CropMethod method = new CropMethodHandler().GetCropMethod(selectedTask.MethodID);
 
+                // populate all the fields for display
                 labourerTaskTitle_label.Text = selectedTask.TaskTitle;
                 labourerTaskType_label.Text = selectedTask.TaskType;
                 labourerTaskDescription_label.Text = selectedTask.TaskDescription;
@@ -1921,9 +2062,9 @@ namespace JustRipeFarm
         private void LoadLabourersTasks(Labourer labourer)
         {
             labourerTask_panel.Visible = true;
-            List<Task> tasksList = new TaskHandler().GetTasksForLabourer(labourer.UserID);
 
-            // ClearLabTaskText();
+            // get all tasks for labourer
+            List<Task> tasksList = new TaskHandler().GetTasksForLabourer(labourer.UserID);
 
             labourerTaskPageTitle_label.Text = labourer.Firstname + " " + labourer.Lastname + "'s Tasks";
             labourerTaskPageTitle_label.Tag = labourer;
@@ -1932,8 +2073,10 @@ namespace JustRipeFarm
 
             if (tasksList != null)
             {
+                // iterate task records
                 foreach (Task task in tasksList)
                 {
+                    // fill in to list view
                     string[] row = { task.TaskTitle, task.TaskType, task.TaskDescription, task.Status, task.FieldID, task.StartDateTime.ToString("dd/MM/yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")), task.EndDateTime.ToString("dd/MM/yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")) };
                     ListViewItem taskItem = new ListViewItem(row);
                     taskItem.Tag = task;
@@ -1943,6 +2086,7 @@ namespace JustRipeFarm
             }
         }
 
+        // manager submit task completed for labourer
         private void labourerTaskCompleted_btn_Click(object sender, EventArgs e)
         {
             if (labourerTask_listView.SelectedItems.Count > 0)
@@ -1951,6 +2095,7 @@ namespace JustRipeFarm
 
                 if (result == DialogResult.Yes)
                 {
+                    // get selected task
                     Task selectedTask = (Task)labourerTask_listView.SelectedItems[0].Tag;
                     List<TaskStock> taskStocks = new TaskStockHandler().GetStocksForTask(selectedTask.TaskID);
 
@@ -2018,6 +2163,7 @@ namespace JustRipeFarm
                         }
                     }
 
+                    // update task status to 'COMPLETED'
                     TaskHandler taskHandler = new TaskHandler();
                     taskHandler.UpdateTaskStatus(selectedTask, "COMPLETED");
 
@@ -2028,10 +2174,13 @@ namespace JustRipeFarm
             }
         }
 
+        // manager removes task assigned for labourer
         private void labourerTaskRemove_btn_Click(object sender, EventArgs e)
         {
+            // get task to remove
             Task taskToRemove = (Task)labourerTask_listView.SelectedItems[0].Tag;
 
+            // remove the task - setting status to 'FAILED'
             TaskHandler taskHandler = new TaskHandler();
             taskHandler.UpdateTaskStatus(taskToRemove, "FAILED");
 
@@ -2046,35 +2195,48 @@ namespace JustRipeFarm
             LoadLabourers();
         }
 
+        // export wholesale historical records
         private void wholesaleExportReport_btn_Click(object sender, EventArgs e)
         {
+            // get report exporting date
             DateTime from_date = wholesaleReportStartDate_datePicker.Value;
             DateTime to_date = wholesaleReportEndDate_datePicker.Value;
 
+            // get all wholesale records for the selected dates
             List<Wholesale> wholesaleRecords = new WholesaleHandler().GetAllWholesales(from_date, to_date);
 
+            // open a folder browser to let user to choose location to export the report
             FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
             folderBrowser.ShowNewFolderButton = true;
             folderBrowser.Description = "Locate folder to export report";
+
+            // receive browse result
             DialogResult browseResult = folderBrowser.ShowDialog();
 
+            // if accepted a path - indicates OK
             if (browseResult == DialogResult.OK)
             {
+                // get the path name as string
                 string filepath = folderBrowser.SelectedPath;
 
+                // if export report only one day
                 if (from_date.Date.Equals(to_date.Date))
                 {
+                    // name report with one date
                     filepath += "\\JRFWholesaleExport_" + from_date.ToString("yyyyMMMdd") + ".pdf";
                 }
                 else
                 {
+                    // name report with both dates - to show date range
                     filepath += "\\JRFWholesaleExport_" + from_date.ToString("yyyyMMMdd") + "-" + to_date.ToString("yyyyMMMdd") + ".pdf";
                 }
 
+                // create a document, create a PDF writer
                 Document doc = new Document(PageSize.A4, 36f, 36f, 20f, 20f);
                 PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(filepath, FileMode.Create));
                 doc.Open();
 
+                // put date of export to the header part of the document
                 iTextSharp.text.Font headerDateFont = FontFactory.GetFont("Segoe UI", 11, iTextSharp.text.Font.ITALIC, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000")));
                 Paragraph exportDatePara = new Paragraph();
                 Chunk exportDateChunk = new Chunk(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")), headerDateFont);
@@ -2083,10 +2245,12 @@ namespace JustRipeFarm
                 exportDatePara.SpacingAfter = 10f;
                 doc.Add(exportDatePara);
 
+                // put report date - user chosen dates
                 Paragraph reportDatePara = new Paragraph();
                 reportDatePara.Add("Report Date : " + (from_date.Date.Equals(to_date.Date) ? from_date.ToString("yyyy/MM/dd") : from_date.ToString("yyyy/MM/dd") + " - " + to_date.ToString("yyyy/MM/dd")));
                 doc.Add(reportDatePara);
 
+                // title of the report
                 iTextSharp.text.Font mainFont = FontFactory.GetFont("Segoe UI", 22, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000")));
                 Paragraph titlePara = new Paragraph();
                 Chunk mainChunk = new Chunk("Wholesale Report", mainFont);
@@ -2097,27 +2261,33 @@ namespace JustRipeFarm
                 titlePara.Alignment = Element.ALIGN_CENTER;
                 doc.Add(titlePara);
 
+                // if exists records between dates
                 if (wholesaleRecords != null)
                 {
                     // iterate wholesale records for printing to PDF
                     foreach (Wholesale wholesale in wholesaleRecords)
                     {
+                        // put wholesale ID
                         Paragraph wholesaleIDPara = new Paragraph();
                         wholesaleIDPara.Add("Wholesale ID : ");
                         Chunk idChunk = new Chunk(wholesale.WholesaleID, FontFactory.GetFont("Segoe UI", 14, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000"))));
                         wholesaleIDPara.Add(idChunk);
 
+                        // put transport start date
                         Paragraph wholesaleStartDatePara = new Paragraph();
                         wholesaleStartDatePara.Add("Transport Start Date : " + wholesale.StartDateTime.ToString("dd-MM-yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")));
 
+                        // put date arrived
                         Paragraph wholesaleEndDatePara = new Paragraph();
                         wholesaleEndDatePara.Add("Arrival Date : " + wholesale.EndDateTime.ToString("dd-MM-yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")));
 
+                        // create a table for wholesale resources record
                         PdfPTable wholesaleResourcesTable = new PdfPTable(2);
                         wholesaleResourcesTable.HorizontalAlignment = 0;
                         wholesaleResourcesTable.SpacingBefore = 5f;
                         wholesaleResourcesTable.SpacingAfter = 5f;
 
+                        // create and put a containers cell
                         Phrase wholesaleContainerPhr = new Phrase();
                         wholesaleContainerPhr.Add("Containers");
                         PdfPCell containersCell = new PdfPCell();
@@ -2131,6 +2301,7 @@ namespace JustRipeFarm
                         containersCell.AddElement(containerList);
                         wholesaleResourcesTable.AddCell(containersCell);
 
+                        // create and put a trucks cell
                         Phrase wholesaleTruckPhr = new Phrase();
                         wholesaleTruckPhr.Add("Trucks");
                         PdfPCell trucksCell = new PdfPCell();
@@ -2144,13 +2315,16 @@ namespace JustRipeFarm
                         trucksCell.AddElement(truckList);
                         wholesaleResourcesTable.AddCell(trucksCell);
 
+                        // put wholesale assigned date
                         Paragraph wholesaleAssignedPara = new Paragraph();
                         wholesaleAssignedPara.Add("Assigned Date : " + wholesale.AssignedDateTime.ToString("dd-MM-yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")));
 
+                        // put manager name
                         Paragraph wholesaleManagerPara = new Paragraph();
                         wholesaleManagerPara.Add("Manager : " + wholesale.Manager.Fullname);
                         wholesaleManagerPara.SpacingAfter = 20f;
 
+                        // write all paragraph and components to the PDF document
                         doc.Add(wholesaleIDPara);
                         doc.Add(wholesaleStartDatePara);
                         doc.Add(wholesaleEndDatePara);
@@ -2161,50 +2335,66 @@ namespace JustRipeFarm
                 }
                 else
                 {
+                    // write not found message to the PDF document
                     Paragraph noRecordPara = new Paragraph();
                     Chunk noRecordChunk = new Chunk("No Record Found", FontFactory.GetFont("Segoe UI", 18, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000"))));
                     noRecordPara.Add(noRecordChunk);
                     doc.Add(noRecordPara);
                 }
-                doc.Close();
 
+                // close the document
+                doc.Close();
                 MessageBox.Show("Report PDF is exported successfully\nYou may view the report in " + folderBrowser.SelectedPath);
             }
             else
             {
+                // cancelled browsing folder
                 MessageBox.Show("Action cancelled");
             }
         }
 
+        // export sales transaction
         private void exportSalesTrx_btn_Click(object sender, EventArgs e)
         {
+            // get report exporting date
             DateTime from_date = salesFrom_datePicker.Value;
             DateTime to_date = salesTo_datePicker.Value;
 
+            // get all sales transaction records for the selected dates
             List<Sale> salesRecords = new SaleHandler().GetSalesForDates(from_date, to_date);
 
+            // open a folder browser to let user to choose location to export the report
             FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
             folderBrowser.ShowNewFolderButton = true;
             folderBrowser.Description = "Locate folder to export report";
+
+            // receive browse result
             DialogResult browseResult = folderBrowser.ShowDialog();
 
+            // if accepted a path - indicates OK
             if (browseResult == DialogResult.OK)
             {
+                // get the path name as string
                 string filepath = folderBrowser.SelectedPath;
 
+                // if export report only one day
                 if (from_date.Date.Equals(to_date.Date))
                 {
+                    // name report with one date
                     filepath += "\\JRFSalesExport_" + from_date.ToString("yyyyMMMdd") + ".pdf";
                 }
                 else
                 {
+                    // name report with both dates - to show date range
                     filepath += "\\JRFSalesExport_" + from_date.ToString("yyyyMMMdd") + "-" + to_date.ToString("yyyyMMMdd") + ".pdf";
                 }
 
+                // create a document, create a PDF writer
                 Document doc = new Document(PageSize.A4, 36f, 36f, 20f, 20f);
                 PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(filepath, FileMode.Create));
                 doc.Open();
 
+                // put date of export to the header part of the document
                 iTextSharp.text.Font headerDateFont = FontFactory.GetFont("Segoe UI", 11, iTextSharp.text.Font.ITALIC, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000")));
                 Paragraph exportDatePara = new Paragraph();
                 Chunk exportDateChunk = new Chunk(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")), headerDateFont);
@@ -2213,10 +2403,12 @@ namespace JustRipeFarm
                 exportDatePara.SpacingAfter = 10f;
                 doc.Add(exportDatePara);
 
+                // put report date - user chosen dates
                 Paragraph reportDatePara = new Paragraph();
                 reportDatePara.Add("Report Date : " + (from_date.Date.Equals(to_date.Date) ? from_date.ToString("yyyy/MM/dd") : from_date.ToString("yyyy/MM/dd") + " - " + to_date.ToString("yyyy/MM/dd")));
                 doc.Add(reportDatePara);
 
+                // title of the report
                 iTextSharp.text.Font mainFont = FontFactory.GetFont("Segoe UI", 22, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000")));
                 Paragraph titlePara = new Paragraph();
                 Chunk mainChunk = new Chunk("Sales Report", mainFont);
@@ -2227,23 +2419,29 @@ namespace JustRipeFarm
                 titlePara.Alignment = Element.ALIGN_CENTER;
                 doc.Add(titlePara);
 
+                // if exists records between dates
                 if (salesRecords != null)
                 {
                     int currentAdded = 0;
+
                     // iterate wholesale records for printing to PDF
                     foreach (Sale sale in salesRecords)
                     {
+                        // put transaction ID
                         Paragraph saleIDPara = new Paragraph();
                         saleIDPara.Add("Transaction ID : ");
                         Chunk idChunk = new Chunk(sale.SaleID, FontFactory.GetFont("Segoe UI", 14, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000"))));
                         saleIDPara.Add(idChunk);
 
+                        // put transaction date
                         Paragraph saleStartDatePara = new Paragraph();
                         saleStartDatePara.Add("Transaction Date : " + sale.SaleDateTime.ToString("dd-MM-yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")));
 
+                        // put product items title
                         Paragraph saleProductPara = new Paragraph();
                         saleProductPara.Add("Product Items");
 
+                        // put all product items as list
                         Paragraph productsPara = new Paragraph();
                         productsPara.SpacingAfter = 5f;
                         List productList = new List(true, 20f);
@@ -2253,16 +2451,19 @@ namespace JustRipeFarm
                         }
                         productsPara.Add(productList);
 
+                        // put sale total price
                         Paragraph totalPricePara = new Paragraph();
                         totalPricePara.SpacingAfter = 5f;
                         totalPricePara.Add("Total Price : RM" + sale.TotalPrice);
 
+                        // put buyer details
                         Paragraph saleBuyerPara = new Paragraph();
                         Chunk buyerTitleChunk = new Chunk("Buyer", FontFactory.GetFont("Segoe UI", 12, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000"))));
                         saleBuyerPara.Add(buyerTitleChunk);
                         saleBuyerPara.Add("\nName : " + sale.Buyer.Fullname + "\nEmail address : " + sale.Buyer.EmailAddress + "\nPhone number : " + sale.Buyer.PhoneNumber + "\nCompany Name : " + sale.Buyer.CompanyName);
                         saleBuyerPara.SpacingAfter = 20f;
 
+                        // write all paragraph and components to the PDF document
                         doc.Add(saleIDPara);
                         doc.Add(saleStartDatePara);
                         doc.Add(saleProductPara);
@@ -2270,9 +2471,13 @@ namespace JustRipeFarm
                         doc.Add(totalPricePara);
                         doc.Add(saleBuyerPara);
 
+                        // current added record number
                         currentAdded++;
+
+                        // if added 3 records
                         if (currentAdded >= 3)
                         {
+                            // open a new page
                             doc.NewPage();
                             currentAdded = 0;
                         }
@@ -2280,50 +2485,66 @@ namespace JustRipeFarm
                 }
                 else
                 {
+                    // write not found message to the PDF document
                     Paragraph noRecordPara = new Paragraph();
                     Chunk noRecordChunk = new Chunk("No Record Found", FontFactory.GetFont("Segoe UI", 18, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000"))));
                     noRecordPara.Add(noRecordChunk);
                     doc.Add(noRecordPara);
                 }
-                doc.Close();
 
+                // close the document
+                doc.Close();
                 MessageBox.Show("Report PDF is exported successfully\nYou may view the report in " + folderBrowser.SelectedPath);
             }
             else
             {
+                // cancelled browsing folder
                 MessageBox.Show("Action cancelled");
             }
         }
 
+        // export farm report
         private void farmReportExport_btn_Click(object sender, EventArgs e)
         {
+            // get report exporting date
             DateTime reportStartDate = farmReportStartDate_datePicker.Value;
             DateTime reportEndDate = farmReportEndDate_datePicker.Value;
 
+            // get all tasks records which are not with status 'FAILED'
             List<Task> taskRecords = new TaskHandler().GetAllValidTasks(reportStartDate, reportEndDate);
 
+            // open a folder browser to let user to choose location to export the report
             FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
             folderBrowser.ShowNewFolderButton = true;
             folderBrowser.Description = "Locate folder to export report";
+
+            // receive browse result
             DialogResult browseResult = folderBrowser.ShowDialog();
 
+            // if accepted a path - indicates OK
             if (browseResult == DialogResult.OK)
             {
+                // get the path name as string
                 string filepath = folderBrowser.SelectedPath;
 
+                // if export report only one day
                 if (reportStartDate.Date.Equals(reportEndDate.Date))
                 {
+                    // name report with one date
                     filepath += "\\JRFFarmExport_" + reportStartDate.ToString("yyyyMMMdd") + ".pdf";
                 }
                 else
                 {
+                    // name report with both dates - to show date range
                     filepath += "\\JRFFarmExport_" + reportStartDate.ToString("yyyyMMMdd") + "-" + reportEndDate.ToString("yyyyMMMdd") + ".pdf";
                 }
 
+                // create a document, create a PDF writer
                 Document doc = new Document(PageSize.A4, 36f, 36f, 20f, 20f);
                 PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(filepath, FileMode.Create));
                 doc.Open();
 
+                // put date of export to the header part of the document
                 iTextSharp.text.Font headerDateFont = FontFactory.GetFont("Segoe UI", 11, iTextSharp.text.Font.ITALIC, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000")));
                 Paragraph exportDatePara = new Paragraph();
                 Chunk exportDateChunk = new Chunk(DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt", CultureInfo.CreateSpecificCulture("en-GB")), headerDateFont);
@@ -2332,10 +2553,12 @@ namespace JustRipeFarm
                 exportDatePara.SpacingAfter = 10f;
                 doc.Add(exportDatePara);
 
+                // put report date - user chosen dates
                 Paragraph reportDatePara = new Paragraph();
                 reportDatePara.Add("Report Date : " + (reportStartDate.Date.Equals(reportEndDate.Date) ? reportStartDate.ToString("yyyy/MM/dd") : reportStartDate.ToString("yyyy/MM/dd") + " - " + reportEndDate.ToString("yyyy/MM/dd")));
                 doc.Add(reportDatePara);
 
+                // title of the report
                 iTextSharp.text.Font mainFont = FontFactory.GetFont("Segoe UI", 22, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000")));
                 Paragraph titlePara = new Paragraph();
                 Chunk mainChunk = new Chunk("Farm Report", mainFont);
@@ -2346,13 +2569,18 @@ namespace JustRipeFarm
                 titlePara.Alignment = Element.ALIGN_CENTER;
                 doc.Add(titlePara);
 
+                // if exists records between dates
                 if (taskRecords != null)
                 {
                     string sectionID = "";
+
+                    // iterate the task records
                     for(int i = 0;i < taskRecords.Count;i++)
                     {
+                        // if current record's field id is not the previous one
                         if(taskRecords[i].FieldID != sectionID)
                         {
+                            // put the current section id as title label
                             Paragraph farmSectionPara = new Paragraph();
                             Chunk farmSectionChunk = new Chunk("Section " + taskRecords[i].FieldID, FontFactory.GetFont("Segoe UI", 14, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000"))));
                             farmSectionPara.Add(farmSectionChunk);
@@ -2361,27 +2589,33 @@ namespace JustRipeFarm
                             sectionID = taskRecords[i].FieldID;
                         }
 
+                        // write date of task
                         Paragraph taskDatePara = new Paragraph();
                         Chunk dateChunk = new Chunk(taskRecords[i].StartDateTime.ToString("dd-MM-yyyy"), FontFactory.GetFont("Segoe UI", 14, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000"))));
                         taskDatePara.Add("Date : ");
                         taskDatePara.Add(dateChunk);
                         doc.Add(taskDatePara);
 
+                        // write type of task
                         Paragraph taskActionPara = new Paragraph();
                         taskActionPara.Add("Action : " + taskRecords[i].TaskType);
                         doc.Add(taskActionPara);
 
+                        // write crop for task
                         Paragraph cropPara = new Paragraph();
                         cropPara.Add("Crop : " + new CropHandler().GetCropWithID(taskRecords[i].CropID).CropName);
                         doc.Add(cropPara);
 
+                        // get labourers list for the task
                         List<Labourer> taskLabourers = new LabourerHandler().GetLabourersForTask(taskRecords[i].TaskID);
                         if (taskLabourers != null)
                         {
+                            // write title for labourer section
                             Paragraph taskLabourersPara = new Paragraph();
                             taskLabourersPara.Add("Labourers");
                             doc.Add(taskLabourersPara);
 
+                            // write each labourer in a list format
                             Paragraph labourersPara = new Paragraph();
                             labourersPara.SpacingAfter = 5f;
                             List labourerList = new List(true, 20f);
@@ -2393,33 +2627,47 @@ namespace JustRipeFarm
                             doc.Add(labourersPara);
                         }
                         
+                        // if the type of task is either 'SOW' or 'TREATMENT'
+                        // indicates stock resources are used
                         if (taskRecords[i].TaskType == "SOW" || taskRecords[i].TaskType == "TREATMENT")
                         {
+                            // get list of stocks for the task
                             List<TaskStock> resourcesUsed = new TaskStockHandler().GetStocksForTask(taskRecords[i].TaskID);
 
+                            // if exists stocks for task
                             if(resourcesUsed != null)
                             {
+                                // flags to indicate stock is exist
                                 bool hasSeed = false, hasFertiliser = false, hasPesticide = false;
+
+                                // write resources use title for section
                                 Paragraph taskResourcesPara = new Paragraph();
                                 taskResourcesPara.Add(new Chunk("Resources use ", FontFactory.GetFont("Segoe UI", 12, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000")))));
                                 doc.Add(taskResourcesPara);
 
+                                // paragraph for including the stocks list
                                 Paragraph resourcesPara = new Paragraph();
                                 resourcesPara.SpacingAfter = 15f;
 
+                                // resource list for the stocks
                                 List resourceList = new List(true, 20f);
 
+                                // create a list for fertiliser
                                 List fertiliserList = new List(false, 10f);
                                 fertiliserList.SetListSymbol("\u2022");
 
+                                // create a list for pesticide
                                 List pesticideList = new List(false, 10f);
                                 pesticideList.SetListSymbol("\u2022");
 
+                                // create a list for seed
                                 List seedList = new List(false, 10f);
                                 seedList.SetListSymbol("\u2022");
 
+                                // iterate the stocks list
                                 foreach (TaskStock stock in resourcesUsed)
                                 {
+                                    // check stock type
                                     if(stock.Stock.Type == "FERTILISER")
                                     {
                                         fertiliserList.Add(stock.Stock.Name + " x " + stock.QuantityUse.ToString());
@@ -2437,30 +2685,35 @@ namespace JustRipeFarm
                                     }
                                 }
 
+                                // fertiliser flag if exist
                                 if(hasFertiliser)
                                 {
                                     resourceList.Add("Fertilisers");
                                     resourceList.Add(fertiliserList);
                                 }
-                                
-                                if(hasPesticide)
+
+                                // pesticide flag if exist
+                                if (hasPesticide)
                                 {
                                     resourceList.Add("Pesticides");
                                     resourceList.Add(pesticideList);
                                 }
-                                
-                                if(hasSeed)
+
+                                // seed flag if exist
+                                if (hasSeed)
                                 {
                                     resourceList.Add("Seeds");
                                     resourceList.Add(seedList);
                                 }
 
+                                // write resources to the document
                                 resourcesPara.Add(resourceList);
                                 doc.Add(resourcesPara);
                             }
                         }
                         else if (taskRecords[i].TaskType == "HARVEST")
                         {
+                            // title resources use
                             Paragraph taskResourcesPara = new Paragraph();
                             taskResourcesPara.Add(new Chunk("Resources use ", FontFactory.GetFont("Segoe UI", 12, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000")))));
                             doc.Add(taskResourcesPara);
@@ -2471,8 +2724,11 @@ namespace JustRipeFarm
 
                             List resourceList = new List(true, 20f);
 
+                            // if the status of the task is 'COMPLETED'
+                            // indicates used containers
                             if (taskRecords[i].Status == "COMPLETED")
                             {
+                                // get list of containers for the harvest task
                                 List<Container> containers = new ContainerHandler().GetContainersForTask(taskRecords[i].TaskID);
 
                                 if(containers != null)
@@ -2498,29 +2754,35 @@ namespace JustRipeFarm
                 }
                 else
                 {
+                    // write not found message to the PDF document
                     Paragraph noRecordPara = new Paragraph();
                     Chunk noRecordChunk = new Chunk("No Record Found", FontFactory.GetFont("Segoe UI", 18, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(System.Drawing.ColorTranslator.FromHtml("#000"))));
                     noRecordPara.Add(noRecordChunk);
                     doc.Add(noRecordPara);
                 }
 
+                // close the document
                 doc.Close();
                 MessageBox.Show("Report PDF is exported successfully\nYou may view the report in " + folderBrowser.SelectedPath);
             }
             else
             {
+                // cancelled browsing folder
                 MessageBox.Show("Action cancelled");
             }
         }
 
+        // add new product for on-site shop
         private void addProduct_btn_Click(object sender, EventArgs e)
         {
+            // get all new product details
             string newStockCode = productCode_txtBox.Text.Trim();
             string newStockName = productName_txtBox.Text.Trim();
             int Quantity = (int)productQty_numUpDown.Value;
             decimal p = decimal.Parse(productPrice_txtBox.Text.Trim());
             bool oss = onSale_chkBox.Checked;
 
+            // create new product
             ProductHandler ph = new ProductHandler();
             ph.CreateNewProduct(newStockCode, newStockName, Quantity, p, oss);
 

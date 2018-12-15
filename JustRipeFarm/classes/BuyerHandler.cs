@@ -9,6 +9,7 @@ namespace JustRipeFarm
 {
     class BuyerHandler
     {
+        // function to get all buyers as a list
         public List<Buyer> GetBuyers()
         {
             List<Buyer> buyers = null;

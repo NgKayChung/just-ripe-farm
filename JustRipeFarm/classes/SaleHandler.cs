@@ -9,6 +9,7 @@ namespace JustRipeFarm
 {
     class SaleHandler
     {
+        // function to get all sales within the specified dates
         public List<Sale> GetSalesForDates(DateTime startDate, DateTime endDate)
         {
             List<Sale> sales = null;
@@ -66,6 +67,7 @@ namespace JustRipeFarm
             return sales;
         }
 
+        // function to insert new sale for simulating sale transaction
         public string InsertNewSale(Sale sale)
         {
             MySqlTransaction tr = null;

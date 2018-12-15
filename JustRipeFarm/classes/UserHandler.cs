@@ -9,6 +9,7 @@ namespace JustRipeFarm
 {
     class UserHandler
     {
+        // function to get user by specifying user ID
         public User GetUser(string ID)
         {
             User user = null;
@@ -39,6 +40,7 @@ namespace JustRipeFarm
             return user;
         }
 
+        // function to update user information
         public int UpdateUserInfo(User user)
         {
             string sql = "UPDATE `users` SET `first_name`='" + user.Firstname + "', `last_name`='" + user.Lastname + "', `email_address`='" + user.EmailAddress + "', `phone_number`='" + user.PhoneNumber + "' WHERE `user_id`='" + user.UserID + "'";
@@ -46,6 +48,7 @@ namespace JustRipeFarm
             return sqlComm.ExecuteNonQuery();
         }
 
+        // function to update user login password
         public int ChangePass(User user, string newPassword)
         {
             string sql = "UPDATE `users` SET `secret_password`='" + newPassword + "' WHERE `user_id`='" + user.UserID + "' AND `secret_password` = BINARY '" + user.Password + "';";

@@ -9,6 +9,7 @@ namespace JustRipeFarm
 {
    public class VehicleHandler
     {
+        // function to get machines as a list
         public List<Vehicle> getVehicle(MySqlConnection conn)
         {
             List<Vehicle> vl = null;
@@ -43,6 +44,7 @@ namespace JustRipeFarm
             return vl;
         }
 
+        // function to get all machines for selected type
         public List<Vehicle> getSelected(MySqlConnection conn, string type)
         {
             List<Vehicle> vl = null;

@@ -9,6 +9,7 @@ namespace JustRipeFarm
 {
     class TaskStockHandler
     {
+        // function to get fertiliser for task with task ID specified
         public TaskStock GetFertiliserForTask(int task_id)
         {
             TaskStock task_stock = null;
@@ -42,6 +43,7 @@ namespace JustRipeFarm
             return task_stock;
         }
 
+        // function to get list of stocks use for the task
         public List<TaskStock> GetStocksForTask(int task_id)
         {
             List<TaskStock> taskStocks = null;

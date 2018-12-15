@@ -21,6 +21,7 @@ namespace JustRipeFarm
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
+            // get user login ID and password
             string user_id = loginID_txtBox.Text.Trim();
             string password = loginPassword_txtBox.Text.Trim();
 
@@ -30,11 +31,13 @@ namespace JustRipeFarm
             }
             else
             {
+                // check user login credentials
                 MySqlCommand cmd = new MySqlCommand("SELECT * from `users` where `user_id` = BINARY '" + user_id + "' and `secret_password` = BINARY '" + password + "'", DbConnector.Instance.getConn());
                 MySqlDataReader rd = cmd.ExecuteReader();
                 
                 if(rd.HasRows)
                 {
+                    // if user is valid
                     rd.Read();
                     UserSession.Instance.LoggedIn = true;
                     UserSession.Instance.UserID = user_id;
@@ -42,22 +45,10 @@ namespace JustRipeFarm
                     UserSession.Instance.UserType = rd.GetString("user_type");
                     rd.Close();
 
-                    if(UserSession.Instance.UserType.Equals("MANAGER"))
-                    {
-                        MGMainScreen mainScreen = new MGMainScreen();
-                        mainScreen.Show();
-                        this.Close();
-                    }
-                    else if(UserSession.Instance.UserType.Equals("LABOURER"))
-                    {
-                        MGMainScreen mainScreen = new MGMainScreen();
-                        mainScreen.Show();
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Incorrect login");
-                    }
+                    // load main screen
+                    MGMainScreen mainScreen = new MGMainScreen();
+                    mainScreen.Show();
+                    this.Close();
                 }
                 else
                 {

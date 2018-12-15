@@ -9,6 +9,8 @@ namespace JustRipeFarm
 {
     class ContainerHandler
     {
+        // function to get all containers for with type
+        // specifying type is optional
         public List<Container> GetAllContainers(string cont_type = "")
         {
             List<Container> containers = null;
@@ -63,6 +65,7 @@ namespace JustRipeFarm
             return containers;
         }
 
+        // function to get all containers used for harvesting task
         public List<Container> GetContainersForTask(int task_id)
         {
             List<Container> containers = null;
@@ -91,6 +94,8 @@ namespace JustRipeFarm
             return containers;
         }
 
+        // function to get all containers for wholesale
+        // containers which status is 'FULL'
         public List<Container> GetWholesaleContainers()
         {
             List<Container> containers = null;
@@ -128,6 +133,7 @@ namespace JustRipeFarm
             return containers;
         }
 
+        // function to update containers for use in storing harvest
         public int UseContainer(int task_id, Container container, string crop_id)
         {
             string sql = "UPDATE `containers` SET `containers`.`status` = 'FULL', `containers`.`crop_id` = '" + crop_id + "' WHERE `containers`.`container_id` = '" + container.ContainerID + "';";

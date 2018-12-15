@@ -9,9 +9,9 @@ namespace JustRipeFarm
 {
     class StockStorageHandler
     {
+        // function to get all stock storages
         public List<StockStorage> FindStockStorages()
         {
-
             List<StockStorage> storages = null;
             string sqlString = "SELECT `storages`.`storage_id`, `storages`.`total_capacity`, SUM(`stocks`.`capacity_use` * `storage_stock`.`quantity`) AS 'used_capacity', `storages`.`status` " +
                 "FROM `storages` " +

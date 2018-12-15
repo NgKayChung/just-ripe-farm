@@ -9,6 +9,7 @@ namespace JustRipeFarm
 {
     class LabourerHandler
     {
+        // function to get the latest labourer ID
         public string GetNewestID()
         {
             string sqlString = "SELECT MAX(labourer_id) FROM `labourers`;";
@@ -29,6 +30,7 @@ namespace JustRipeFarm
             }
         }
 
+        // function to get all labourers as a list
         public List<Labourer> FindAllLabourers()
         {
             List<Labourer> labourers = null;
@@ -69,6 +71,7 @@ namespace JustRipeFarm
             return labourers;
         }
 
+        // function to get labourers for the specified task with task ID
         public List<Labourer> GetLabourersForTask(int task_id)
         {
             List<Labourer> labourers = null;
@@ -102,6 +105,7 @@ namespace JustRipeFarm
             return labourers;
         }
 
+        // function to check whether the labourer is having task assigned within the dates
         public bool IsOccupied(Labourer labourer, DateTime startDate, DateTime endDate)
         {
             string sqlQuery = "SELECT SUM(IF((`tasks`.`start_datetime` < '" + startDate.ToString("yyyy-MM-dd HH:mm:ss") + "' && `tasks`.`end_datetime` <= '" + startDate.ToString("yyyy-MM-dd HH:mm:ss") + "') || (`tasks`.`start_datetime` >= '" + endDate.ToString("yyyy-MM-dd HH:mm:ss") + "' && `tasks`.`end_datetime` > '" + endDate.ToString("yyyy-MM-dd HH:mm:ss") + "'), 0, 1)) FROM `labourer_task` " +
@@ -126,6 +130,7 @@ namespace JustRipeFarm
             return false;
         }
 
+        // function to insert new labourer
         public string AddNewLabourer(Labourer labourer)
         {
             string sql = "INSERT INTO users " +

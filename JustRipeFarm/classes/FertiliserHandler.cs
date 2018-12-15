@@ -9,6 +9,7 @@ namespace JustRipeFarm
 {
     class FertiliserHandler
     {
+        // function to get all fertilisers as a list
         public List<Fertiliser> GetAllFertilisers()
         {
             List<Fertiliser> fertilisers = null;

@@ -9,6 +9,7 @@ namespace JustRipeFarm
 {
     class WholesaleHandler
     {
+        // function to get all wholesale records
         public List<Wholesale> GetAllWholesales(DateTime fromDate, DateTime toDate)
         {
             List<Wholesale> wholesales = null;
@@ -101,6 +102,7 @@ namespace JustRipeFarm
             return wholesales;
         }
 
+        // function to insert wholesale record
         public string SendWholesale(Wholesale wholesale)
         {
             MySqlTransaction tr = null;

@@ -8,6 +8,9 @@ using MySql.Data.MySqlClient;
 
 namespace JustRipeFarm
 {
+    // This is a class which is used to retrieve MySQL connection
+    // where the connection is made only once throughout the system runtime
+    // This class implemented Singleton Design Pattern
     public class DbConnector
     {
         MySqlConnection conn = null;

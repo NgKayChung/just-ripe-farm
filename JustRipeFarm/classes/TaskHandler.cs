@@ -9,6 +9,8 @@ namespace JustRipeFarm
 {
     class TaskHandler
     {
+        // function to insert new task
+        // use of MySqlTransaction to update other tables such as resources for the task
         public string AddNewTask(Task task, List<Labourer> labourers, List<TaskStock> stocks)
         {
             MySqlTransaction tr = null;
@@ -76,6 +78,7 @@ namespace JustRipeFarm
             }
         }
 
+        // function to get all tasks which status is 'PENDING' within dates
         public List<Task> GetAllPendingTasks(DateTime startDate, DateTime endDate)
         {
             List<Task> tasks = null;
@@ -112,6 +115,7 @@ namespace JustRipeFarm
             return tasks;
         }
 
+        // function to get all valid/not 'FAILED' tasks within dates
         public List<Task> GetAllValidTasks(DateTime startDate, DateTime endDate)
         {
             List<Task> tasks = null;
@@ -150,6 +154,7 @@ namespace JustRipeFarm
             return tasks;
         }
 
+        // function to get all tasks for labourer which specifying labourer ID
         public List<Task> GetTasksForLabourer(string labourer_id)
         {
             List<Task> tasks = null;
@@ -189,6 +194,7 @@ namespace JustRipeFarm
             return tasks;
         }
 
+        // function to get task with task ID
         public Task GetTaskWithID(int task_id)
         {
             Task task = null;
@@ -225,6 +231,7 @@ namespace JustRipeFarm
             return task;
         }
 
+        // function to update task status
         public int UpdateTaskStatus(Task task, string status)
         {
             string updateQuery = "UPDATE `tasks` SET `status` = '" + status + "' WHERE `task_id` = " + task.TaskID.ToString() + " AND `status` = '" + task.Status + "';";

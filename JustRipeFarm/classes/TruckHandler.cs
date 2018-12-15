@@ -9,6 +9,7 @@ namespace JustRipeFarm
 {
     class TruckHandler
     {
+        // function to get all trucks
         public List<Truck> GetTrucks()
         {
             List<Truck> trucks = null;

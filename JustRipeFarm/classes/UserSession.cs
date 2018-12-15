@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace JustRipeFarm
 {
+    // This is a class which is used to keep user login session details
+    // This class implemented Singleton Design Pattern where it can be accessed
+    // during the system runtime
     class UserSession
     {
         private bool loggedIn = false;

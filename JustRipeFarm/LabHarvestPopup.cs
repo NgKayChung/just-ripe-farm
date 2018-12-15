@@ -22,16 +22,19 @@ namespace JustRipeFarm
 
         private void LabHarvestPopup_Load(object sender, EventArgs e)
         {
+            // get current task with task ID passed from main screen
             Task currentTask = new TaskHandler().GetTaskWithID(this.taskID);
             FarmSection section = new FarmSectionHandler().FindFarmSectionWithID(currentTask.FieldID);
             Crop harvestedCrop = new CropHandler().GetCropWithID(section.CropID);
 
+            // get list of containers
             List<Container> containers = new ContainerHandler().GetAllContainers(harvestedCrop.ContainerType);
 
             harvestContainer_listView.Items.Clear();
 
             if (containers != null)
             {
+                // calculate expected required container for the harvest task
                 decimal containerRequired = ((section.Dimension_x * section.Dimension_y) * harvestedCrop.CapacityUse) / containers[0].TotalCapacity;
                 if (containerRequired < 1) containerRequired = 1;
 
@@ -40,6 +43,8 @@ namespace JustRipeFarm
                     containerInst_label.Text = "Expected container(s) used ( 0 / " + ((int)containerRequired).ToString() + " )";
                     containerInst_label.Tag = (int)containerRequired;
 
+                    // iterate containers list
+                    // fill in container details in list view
                     foreach (Container container in containers)
                     {
                         string[] row = new string[] { container.ContainerID, container.ContainerType, container.TotalCapacity.ToString() };
@@ -69,15 +74,18 @@ namespace JustRipeFarm
             int checkedCount = harvestContainer_listView.CheckedItems.Count;
             int containersCount = (int)containerInst_label.Tag;
 
+            // if checked containers count does not exceed expected containers count
             if (checkedCount <= containersCount)
             {
                 containerInst_label.Text = "Expected container(s) used ( " + checkedCount.ToString() + " / " + containersCount.ToString() + " )";
             }
             else
             {
+                // display message for only accepting one extra to the expected containers count to be used
                 DialogResult res = MessageBox.Show("Number of container used is exceeded number of expected containers used\nMaximum only 1 additional container is allowed to be used\nAre you sure to do this?", "Exceeded expected containers used", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if(res == DialogResult.Yes)
                 {
+                    // disable editing container
                     harvestContainer_listView.Enabled = false;
                     containerInst_label.Text = "Expected container(s) used ( " + checkedCount.ToString() + " / " + containersCount.ToString() + " )";
                 }
@@ -94,6 +102,7 @@ namespace JustRipeFarm
             {
                 DialogResult res = DialogResult.Yes;
 
+                // if checked containers are less than expected number of containers used
                 if(harvestContainer_listView.CheckedItems.Count < (int)containerInst_label.Tag)
                 {
                     res = MessageBox.Show("Number of container used less than number of expected containers used\nAre you sure to do this ? ", "Less than expected containers used", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -101,10 +110,13 @@ namespace JustRipeFarm
 
                 if(res == DialogResult.Yes)
                 {
+                    // get current task
                     Task currentTask = new TaskHandler().GetTaskWithID(this.taskID);
 
                     ContainerHandler containerHandler = new ContainerHandler();
 
+                    // iterate checked containers
+                    // update containers status for the task
                     foreach(ListViewItem checkedItem in harvestContainer_listView.CheckedItems)
                     {
                         Container checkedContainer = (Container)checkedItem.Tag;

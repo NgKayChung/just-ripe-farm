@@ -9,6 +9,7 @@ namespace JustRipeFarm
 {
     class FarmSectionHandler
     {
+        // find all farm sections as a list
         public List<FarmSection> FindFarmSections()
         {
             List<FarmSection> farmSections = null;
@@ -50,6 +51,7 @@ namespace JustRipeFarm
             return farmSections;
         }
 
+        // get farm section with section ID specified
         public FarmSection FindFarmSectionWithID(string field_id)
         {
             FarmSection farmSection = null;
@@ -100,6 +102,7 @@ namespace JustRipeFarm
             return sqlCommand.ExecuteNonQuery();
         }
 
+        // function for updating farm section by with values from new section
         public int UpdateFarmSection(FarmSection section)
         {
             string updateQuery = "UPDATE `farm_fields` SET `crop_id` = " + (section.CropID == "" ? "NULL" : "'" + section.CropID + "'") + ", `status` = '" + section.Status + "', `date_sowed` = " + (section.SowDate == DateTime.MinValue ? "NULL" : "'" + section.SowDate.ToString("yyyy-MM-dd") + "'") + ", `expected_harvest_date` = " + (section.ExpHarvestDate == DateTime.MinValue ? "NULL" : "'" + section.ExpHarvestDate.ToString("yyyy-MM-dd") + "'") + " WHERE `field_id` = '" + section.SectionID + "';";

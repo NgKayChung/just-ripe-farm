@@ -9,6 +9,7 @@ namespace JustRipeFarm
 {
     class PesticideHandler
     {
+        // function to get all pesticides as a list
         public List<Pesticide> GetAllPesticides()
         {
             List<Pesticide> pesticides = null;

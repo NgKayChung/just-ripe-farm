@@ -9,12 +9,8 @@ namespace JustRipeFarm
 {
     class ProductHandler
     {
-        public int createProduct(string pC, string pN,int QTY, decimal p,bool oSS)
-        {
-            string sql = "INSERT INTO products (product_code,product_name,qty_in_stock,price,on_sale_status) VALUES('" + pC + "','" + pN + "','" + QTY + "','" + p + "'," + (oSS ? "1":"0") + ")";
-            MySqlCommand sqlCommand = new MySqlCommand(sql, DbConnector.Instance.getConn());
-            return sqlCommand.ExecuteNonQuery();
-        }
+        // function to get all products with specifying status
+        // where specifying status is optional
         public List<Product> FindAllProducts(string status = "ALL")
         {
             List<Product> products = null;
@@ -47,6 +43,7 @@ namespace JustRipeFarm
             return products;
         }
 
+        // function to update product details
         public int UpdateProductData(Product product)
         {
             string sql = "UPDATE `products` SET `product_name` = '" + product.ProductName + "', `qty_in_stock` = " + product.Quantity.ToString() + ", `price` = " + product.Price.ToString("N2") + ", `on_sale_status` = " + (product.IsOnSale ? "1" : "0") + " WHERE `product_code` = '" + product.ProductCode + "'";
@@ -54,6 +51,7 @@ namespace JustRipeFarm
             return sqlComm.ExecuteNonQuery();
         }
 
+        // function to insert new product
         public int CreateNewProduct(string pC, string pN, int QTY, decimal p, bool oSS)
         {
             string sql = "INSERT INTO products (product_code,product_name,qty_in_stock,price,on_sale_status) VALUES('" + pC + "','" + pN + "','" + QTY + "','" + p + "'," + (oSS ? "1" : "0") + ")";

@@ -9,6 +9,7 @@ namespace JustRipeFarm
 {
     class SeedHandler
     {
+        // function to get all seeds as a list
         public List<Seed> GetSeedsForCrop(string crop_id)
         {
             List<Seed> seeds = null;

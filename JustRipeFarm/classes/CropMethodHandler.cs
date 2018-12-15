@@ -9,6 +9,7 @@ namespace JustRipeFarm
 {
     class CropMethodHandler
     {
+        // get crop methods available to use for task on crop
         public List<CropMethod> GetAllCropMethodsOnCropAndTaskType(string cropID, string taskType)
         {
             List<CropMethod> cropMethods = null;
@@ -43,6 +44,7 @@ namespace JustRipeFarm
             return cropMethods;
         }
 
+        // get crop method with method ID specified
         public CropMethod GetCropMethod(int method_id)
         {
             CropMethod cropMethod = null;
