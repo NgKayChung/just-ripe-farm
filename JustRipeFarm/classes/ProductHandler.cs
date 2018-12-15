@@ -9,6 +9,12 @@ namespace JustRipeFarm
 {
     class ProductHandler
     {
+        public int createProduct(string pC, string pN,int QTY, decimal p,bool oSS)
+        {
+            string sql = "INSERT INTO products (product_code,product_name,qty_in_stock,price,on_sale_status) VALUES('" + pC + "','" + pN + "','" + QTY + "','" + p + "'," + (oSS ? "1":"0") + ")";
+            MySqlCommand sqlCommand = new MySqlCommand(sql, DbConnector.Instance.getConn());
+            return sqlCommand.ExecuteNonQuery();
+        }
         public List<Product> FindAllProducts(string status = "ALL")
         {
             List<Product> products = null;
