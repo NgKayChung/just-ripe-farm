@@ -108,7 +108,7 @@ namespace JustRipeFarm
                     foreach(ListViewItem checkedItem in harvestContainer_listView.CheckedItems)
                     {
                         Container checkedContainer = (Container)checkedItem.Tag;
-                        containerHandler.UseContainer(checkedContainer, currentTask.CropID);
+                        containerHandler.UseContainer(currentTask.TaskID, checkedContainer, currentTask.CropID);
                     }
 
                     this.DialogResult = DialogResult.OK;

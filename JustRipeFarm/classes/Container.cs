@@ -19,7 +19,7 @@ namespace JustRipeFarm
 
         }
 
-        public Container(string cont_id, string cont_type, int total_capacity, string status, Crop crop)
+        public Container(string cont_id = "", string cont_type = "", int total_capacity = 0, string status = "", Crop crop = null)
         {
             ContainerID = cont_id;
             ContainerType = cont_type;

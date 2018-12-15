@@ -21,7 +21,7 @@ namespace JustRipeFarm
 
         }
 
-        public Crop(string crop_id, string crop_name, decimal min_temp, decimal max_temp, int harvest_days, int capacity_use, string container_type)
+        public Crop(string crop_id = "", string crop_name = "", decimal min_temp = 0, decimal max_temp = 0, int harvest_days = 0, int capacity_use = 0, string container_type = "")
         {
             CropID = crop_id;
             CropName = crop_name;

@@ -12,7 +12,7 @@ namespace JustRipeFarm
         public List<Crop> GetAllCropsForSow()
         {
             List<Crop> crops = null;
-            string sqlString = "SELECT `crops`.`crop_id`, `crops`.`crop_name`, `crops`.`min_temperature`, `crops`.`max_temperature`, `crops`.`harvest_days`, `crops`.`capacity_use`, `crops`.`container_type` FROM `crops` INNER JOIN `crop_sow_time` ON `crop_sow_time`.`crop_id` = `crops`.`crop_id` WHERE `crop_sow_time`.`month` = UPPER(DATE_FORMAT(CURDATE(), '%M'));";
+            string sqlString = "SELECT `crops`.`crop_id`, `crops`.`crop_name`, `crops`.`min_temperature`, `crops`.`max_temperature`, `crops`.`harvest_days`, `crops`.`capacity_use`, `crops`.`container_type` FROM `crops` ";
 
             MySqlCommand sqlCommand = new MySqlCommand(sqlString, DbConnector.Instance.getConn());
             MySqlDataReader reader = sqlCommand.ExecuteReader();
@@ -38,6 +38,27 @@ namespace JustRipeFarm
             sqlCommand.Dispose();
 
             return crops;
+        }
+
+        public bool IsSuitableSow(Crop crop, DateTime sowDate)
+        {
+            string sqlString = "SELECT SUM(IF(`month` = UPPER(DATE_FORMAT('" + sowDate.ToString("yyyy-MM-dd") + "', '%M')), 1, 0)) FROM `crop_sow_time` WHERE `crop_id` = '" + crop.CropID + "'";
+            MySqlCommand sqlComm = new MySqlCommand(sqlString, DbConnector.Instance.getConn());
+            MySqlDataReader reader = sqlComm.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                reader.Read();
+                int isSuitable = reader.GetInt32(0);
+
+                if (!reader.IsClosed) reader.Close();
+
+                return isSuitable > 0;
+            }
+
+            if (!reader.IsClosed) reader.Close();
+
+            return false;
         }
 
         public Crop GetCropWithID(string cropID)

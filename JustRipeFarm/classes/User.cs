@@ -21,7 +21,7 @@ namespace JustRipeFarm
 
         }
 
-        public User(string uID, string fName, string lName, string passwd, string emailAdd, string phoneNum, string uType)
+        public User(string uID = "", string fName = "", string lName = "", string passwd = "", string emailAdd = "", string phoneNum = "", string uType = "")
         {
             user_id = uID;
             firstname = fName;

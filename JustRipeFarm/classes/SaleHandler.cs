@@ -12,7 +12,7 @@ namespace JustRipeFarm
         public List<Sale> GetSalesForDates(DateTime startDate, DateTime endDate)
         {
             List<Sale> sales = null;
-            string sqlString = "SELECT sales.sale_id, sales.sale_datetime, buyers.first_name, buyers.last_name, products.product_name, sale_product.quantity, products.price,  sales.total_price " +
+            string sqlString = "SELECT sales.sale_id, sales.sale_datetime, buyers.first_name, buyers.last_name, buyers.email_address, buyers.phone_number, buyers.company_name, products.product_code, products.product_name, sale_product.quantity, products.price,  sales.total_price " +
                     "FROM `sales` " +
                     "INNER JOIN buyers ON sales.buyer_id = buyers.buyer_id " +
                     "INNER JOIN sale_product ON sales.sale_id = sale_product.sale_id " +
@@ -33,25 +33,29 @@ namespace JustRipeFarm
                     DateTime saleDateTime = reader.GetDateTime(1);
                     string buyerFirstName = reader.GetString(2);
                     string buyerLastName = reader.GetString(3);
-                    string productName = reader.GetString(4);
-                    int quantity = reader.GetInt32(5);
-                    decimal productPrice = reader.GetDecimal(6);
-                    decimal totalPrice = reader.GetDecimal(7);
+                    string buyerEmail = reader.GetString(4);
+                    string buyerPhone = (reader.IsDBNull(5) ? "-" : reader.GetString(5));
+                    string buyerCompanyName = (reader.IsDBNull(6) ? "-" : reader.GetString(6));
+                    string productCode = reader.GetString(7);
+                    string productName = reader.GetString(8);
+                    int quantity = reader.GetInt32(9);
+                    decimal productPrice = reader.GetDecimal(10);
+                    decimal totalPrice = reader.GetDecimal(11);
 
                     if(sales.Count > 0)
                     {
                         if(sales.Last().SaleID.Equals(saleID))
                         {
-                            sales.Last().SaleProducts.Add(new Product(product_name: productName, quantity: quantity, price: productPrice));
+                            sales.Last().SaleProducts.Add(new Product(product_code: productCode, product_name: productName, quantity: quantity, price: productPrice));
                         }
                         else
                         {
-                            sales.Add(new Sale(saleID, saleDateTime, new Buyer(first_name: buyerFirstName, last_name: buyerLastName), totalPrice, new List<Product>() { new Product(product_name: productName, quantity: quantity, price: productPrice) } ));
+                            sales.Add(new Sale(saleID, saleDateTime, new Buyer(first_name: buyerFirstName, last_name: buyerLastName, email_address: buyerEmail, phone_number: buyerPhone, company_name: buyerCompanyName), totalPrice, new List<Product>() { new Product(product_code: productCode, product_name: productName, quantity: quantity, price: productPrice) } ));
                         }
                     }
                     else
                     {
-                        sales.Add(new Sale(saleID, saleDateTime, new Buyer(first_name: buyerFirstName, last_name: buyerLastName), totalPrice, new List<Product>() { new Product(product_name: productName, quantity: quantity, price: productPrice) } ));
+                        sales.Add(new Sale(saleID, saleDateTime, new Buyer(first_name: buyerFirstName, last_name: buyerLastName, email_address: buyerEmail, phone_number: buyerPhone, company_name: buyerCompanyName), totalPrice, new List<Product>() { new Product(product_code: productCode, product_name: productName, quantity: quantity, price: productPrice) } ));
                     }
                 }
             }

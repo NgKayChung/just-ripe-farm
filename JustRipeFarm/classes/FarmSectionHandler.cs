@@ -91,6 +91,15 @@ namespace JustRipeFarm
             return farmSection;
         }
 
+        // function for updating farm section when crops are ready to harvest
+        // by checking expected harvest date
+        public int UpdateFarmSection()
+        {
+            string updateQuery = "UPDATE `farm_fields` SET `status` = 'HARVEST' WHERE CURDATE() >= `expected_harvest_date` AND `status` = 'CULTIVATING'";
+            MySqlCommand sqlCommand = new MySqlCommand(updateQuery, DbConnector.Instance.getConn());
+            return sqlCommand.ExecuteNonQuery();
+        }
+
         public int UpdateFarmSection(FarmSection section)
         {
             string updateQuery = "UPDATE `farm_fields` SET `crop_id` = " + (section.CropID == "" ? "NULL" : "'" + section.CropID + "'") + ", `status` = '" + section.Status + "', `date_sowed` = " + (section.SowDate == DateTime.MinValue ? "NULL" : "'" + section.SowDate.ToString("yyyy-MM-dd") + "'") + ", `expected_harvest_date` = " + (section.ExpHarvestDate == DateTime.MinValue ? "NULL" : "'" + section.ExpHarvestDate.ToString("yyyy-MM-dd") + "'") + " WHERE `field_id` = '" + section.SectionID + "';";

@@ -102,6 +102,30 @@ namespace JustRipeFarm
             return labourers;
         }
 
+        public bool IsOccupied(Labourer labourer, DateTime startDate, DateTime endDate)
+        {
+            string sqlQuery = "SELECT SUM(IF((`tasks`.`start_datetime` < '" + startDate.ToString("yyyy-MM-dd HH:mm:ss") + "' && `tasks`.`end_datetime` <= '" + startDate.ToString("yyyy-MM-dd HH:mm:ss") + "') || (`tasks`.`start_datetime` >= '" + endDate.ToString("yyyy-MM-dd HH:mm:ss") + "' && `tasks`.`end_datetime` > '" + endDate.ToString("yyyy-MM-dd HH:mm:ss") + "'), 0, 1)) FROM `labourer_task` " +
+                    "INNER JOIN `tasks` ON `tasks`.`task_id` = `labourer_task`.`task_id` " +
+                    "WHERE `labourer_task`.`labourer_id` = '" + labourer.UserID + "'";
+
+            MySqlCommand sqlComm = new MySqlCommand(sqlQuery, DbConnector.Instance.getConn());
+            MySqlDataReader reader = sqlComm.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                reader.Read();
+                int occupiedRes = reader.GetInt32(0);
+
+                if (!reader.IsClosed) reader.Close();
+
+                return occupiedRes > 0;
+            }
+
+            if (!reader.IsClosed) reader.Close();
+
+            return false;
+        }
+
         public string AddNewLabourer(Labourer labourer)
         {
             string sql = "INSERT INTO users " +

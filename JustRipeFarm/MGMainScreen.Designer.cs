@@ -89,6 +89,13 @@
             this.simulateSaleTitle_label = new System.Windows.Forms.Label();
             this.simulateSale_back = new System.Windows.Forms.Button();
             this.wholesale_panel = new System.Windows.Forms.Panel();
+            this.wholesaleReport_groupBox = new System.Windows.Forms.GroupBox();
+            this.wholesaleExportReport_btn = new System.Windows.Forms.Button();
+            this.wholesaleReportTo_label = new System.Windows.Forms.Label();
+            this.wholesaleReportFrom_label = new System.Windows.Forms.Label();
+            this.wholesaleReportEndDate_datePicker = new System.Windows.Forms.DateTimePicker();
+            this.wholesaleReportStartDate_datePicker = new System.Windows.Forms.DateTimePicker();
+            this.wholesaleReportInst_label = new System.Windows.Forms.Label();
             this.transportTime_datePicker = new System.Windows.Forms.DateTimePicker();
             this.transportDate_datePicker = new System.Windows.Forms.DateTimePicker();
             this.wholesaleTransport_btn = new System.Windows.Forms.Button();
@@ -109,6 +116,7 @@
             this.saleProducts_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.saleProductQty_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.saleTotalPrice_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.exportSalesTrx_btn = new System.Windows.Forms.Button();
             this.searchSalesTrx_btn = new System.Windows.Forms.Button();
             this.salesReportInst_label = new System.Windows.Forms.Label();
             this.salesTo_label = new System.Windows.Forms.Label();
@@ -131,6 +139,7 @@
             this.shopProducts_panel = new System.Windows.Forms.Panel();
             this.productPrice_txtBox = new System.Windows.Forms.TextBox();
             this.productQty_numUpDown = new System.Windows.Forms.NumericUpDown();
+            this.addProduct_btn = new System.Windows.Forms.Button();
             this.updateProduct_btn = new System.Windows.Forms.Button();
             this.onSale_chkBox = new System.Windows.Forms.CheckBox();
             this.price_label = new System.Windows.Forms.Label();
@@ -171,6 +180,47 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.machineryTitle_label = new System.Windows.Forms.Label();
             this.labourerTop_panel = new System.Windows.Forms.Panel();
+            this.labourerTask_panel = new System.Windows.Forms.Panel();
+            this.labourerTask_back = new System.Windows.Forms.Button();
+            this.labourerTaskRemove_btn = new System.Windows.Forms.Button();
+            this.labourerTaskCompleted_btn = new System.Windows.Forms.Button();
+            this.labourerTaskDescription_label = new System.Windows.Forms.Label();
+            this.labourerTaskDescriptionTitle_label = new System.Windows.Forms.Label();
+            this.labourerTaskEndDate_label = new System.Windows.Forms.Label();
+            this.labourerTaskStartDate_label = new System.Windows.Forms.Label();
+            this.labourerTaskField_label = new System.Windows.Forms.Label();
+            this.labourerTaskManager_label = new System.Windows.Forms.Label();
+            this.labourerTaskAssignedDate_label = new System.Windows.Forms.Label();
+            this.labourerTaskPesticide_label = new System.Windows.Forms.Label();
+            this.labourerTaskSeed_label = new System.Windows.Forms.Label();
+            this.labourerTaskFertiliser_label = new System.Windows.Forms.Label();
+            this.labourerTaskMethod_label = new System.Windows.Forms.Label();
+            this.labourerTaskCrop_label = new System.Windows.Forms.Label();
+            this.labourerTaskStatus_label = new System.Windows.Forms.Label();
+            this.labourerTaskEndDateTitle_label = new System.Windows.Forms.Label();
+            this.labourerTaskManagerTitle_label = new System.Windows.Forms.Label();
+            this.labourerTaskAssignedDateTitle_label = new System.Windows.Forms.Label();
+            this.labourerTaskPesticideTitle_label = new System.Windows.Forms.Label();
+            this.labourerTaskSeedTitle_label = new System.Windows.Forms.Label();
+            this.labourerTaskFertiliserTitle_label = new System.Windows.Forms.Label();
+            this.labourerTaskStartDateTitle_label = new System.Windows.Forms.Label();
+            this.labourerTaskMethodTitle_label = new System.Windows.Forms.Label();
+            this.labourerTaskFieldTitle_label = new System.Windows.Forms.Label();
+            this.labourerTaskCropTitle_label = new System.Windows.Forms.Label();
+            this.labourerTaskType_label = new System.Windows.Forms.Label();
+            this.labourerTaskStatusTitle_label = new System.Windows.Forms.Label();
+            this.labourerTaskTypeTitle_label = new System.Windows.Forms.Label();
+            this.labourerTaskTitle_label = new System.Windows.Forms.Label();
+            this.labourerTaskTitle_title_label = new System.Windows.Forms.Label();
+            this.labourerTaskPageTitle_label = new System.Windows.Forms.Label();
+            this.labourerTask_listView = new System.Windows.Forms.ListView();
+            this.labourerTask_title_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labourerTask_type_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labourerTask_description_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labourerTask_status_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labourerTask_field_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labourerTask_startDate_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labourerTask_endDate_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.assignTask_panel = new System.Windows.Forms.Panel();
             this.assignTaskInst_label = new System.Windows.Forms.Label();
             this.assignTaskForm_panel = new System.Windows.Forms.Panel();
@@ -194,9 +244,9 @@
             this.assignTaskSeed_label = new System.Windows.Forms.Label();
             this.taskFertiliser_comboBox = new System.Windows.Forms.ComboBox();
             this.assignTaskFertiliser_label = new System.Windows.Forms.Label();
+            this.taskType_comboBox = new System.Windows.Forms.ComboBox();
             this.taskCrop_comboBox = new System.Windows.Forms.ComboBox();
             this.assignTaskCrop_label = new System.Windows.Forms.Label();
-            this.taskType_txtBox = new System.Windows.Forms.TextBox();
             this.assignTaskType_label = new System.Windows.Forms.Label();
             this.taskField_comboBox = new System.Windows.Forms.ComboBox();
             this.assignTaskField_label = new System.Windows.Forms.Label();
@@ -338,6 +388,13 @@
             this.labStartTime_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.labEndTime_header = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mgHome_panel = new System.Windows.Forms.Panel();
+            this.farmReport_groupBox = new System.Windows.Forms.GroupBox();
+            this.farmReportExport_btn = new System.Windows.Forms.Button();
+            this.farmReportEndDateTitle_label = new System.Windows.Forms.Label();
+            this.farmReportStartDateTitle_label = new System.Windows.Forms.Label();
+            this.farmReportEndDate_datePicker = new System.Windows.Forms.DateTimePicker();
+            this.farmReportStartDate_datePicker = new System.Windows.Forms.DateTimePicker();
+            this.farmReportInst_label = new System.Windows.Forms.Label();
             this.sections_groupBox = new System.Windows.Forms.GroupBox();
             this.section8_panel = new System.Windows.Forms.Panel();
             this.section9_panel = new System.Windows.Forms.Panel();
@@ -360,6 +417,7 @@
             this.simulateSale_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.simulateSaleQuantity_numeric)).BeginInit();
             this.wholesale_panel.SuspendLayout();
+            this.wholesaleReport_groupBox.SuspendLayout();
             this.salesReport_panel.SuspendLayout();
             this.buyers_panel.SuspendLayout();
             this.shopProducts_panel.SuspendLayout();
@@ -368,6 +426,7 @@
             this.shopWholesale_panel.SuspendLayout();
             this.machineTop_panel.SuspendLayout();
             this.labourerTop_panel.SuspendLayout();
+            this.labourerTask_panel.SuspendLayout();
             this.assignTask_panel.SuspendLayout();
             this.assignTaskForm_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.taskPesticide_numeric)).BeginInit();
@@ -387,6 +446,7 @@
             this.home_panel.SuspendLayout();
             this.lbHome_panel.SuspendLayout();
             this.mgHome_panel.SuspendLayout();
+            this.farmReport_groupBox.SuspendLayout();
             this.sections_groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -850,7 +910,7 @@
             this.simulateSale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.simulateSale_panel.Location = new System.Drawing.Point(0, 0);
             this.simulateSale_panel.Name = "simulateSale_panel";
-            this.simulateSale_panel.Size = new System.Drawing.Size(506, 405);
+            this.simulateSale_panel.Size = new System.Drawing.Size(496, 405);
             this.simulateSale_panel.TabIndex = 15;
             this.simulateSale_panel.Visible = false;
             // 
@@ -1097,6 +1157,7 @@
             // 
             // wholesale_panel
             // 
+            this.wholesale_panel.Controls.Add(this.wholesaleReport_groupBox);
             this.wholesale_panel.Controls.Add(this.transportTime_datePicker);
             this.wholesale_panel.Controls.Add(this.transportDate_datePicker);
             this.wholesale_panel.Controls.Add(this.wholesaleTransport_btn);
@@ -1108,14 +1169,84 @@
             this.wholesale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wholesale_panel.Location = new System.Drawing.Point(0, 0);
             this.wholesale_panel.Name = "wholesale_panel";
-            this.wholesale_panel.Size = new System.Drawing.Size(506, 405);
+            this.wholesale_panel.Size = new System.Drawing.Size(496, 405);
             this.wholesale_panel.TabIndex = 14;
             this.wholesale_panel.Visible = false;
+            // 
+            // wholesaleReport_groupBox
+            // 
+            this.wholesaleReport_groupBox.Controls.Add(this.wholesaleExportReport_btn);
+            this.wholesaleReport_groupBox.Controls.Add(this.wholesaleReportTo_label);
+            this.wholesaleReport_groupBox.Controls.Add(this.wholesaleReportFrom_label);
+            this.wholesaleReport_groupBox.Controls.Add(this.wholesaleReportEndDate_datePicker);
+            this.wholesaleReport_groupBox.Controls.Add(this.wholesaleReportStartDate_datePicker);
+            this.wholesaleReport_groupBox.Controls.Add(this.wholesaleReportInst_label);
+            this.wholesaleReport_groupBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.wholesaleReport_groupBox.Location = new System.Drawing.Point(0, 305);
+            this.wholesaleReport_groupBox.Name = "wholesaleReport_groupBox";
+            this.wholesaleReport_groupBox.Size = new System.Drawing.Size(496, 100);
+            this.wholesaleReport_groupBox.TabIndex = 32;
+            this.wholesaleReport_groupBox.TabStop = false;
+            this.wholesaleReport_groupBox.Text = "Export Wholesale Report";
+            // 
+            // wholesaleExportReport_btn
+            // 
+            this.wholesaleExportReport_btn.Location = new System.Drawing.Point(379, 55);
+            this.wholesaleExportReport_btn.Name = "wholesaleExportReport_btn";
+            this.wholesaleExportReport_btn.Size = new System.Drawing.Size(75, 23);
+            this.wholesaleExportReport_btn.TabIndex = 34;
+            this.wholesaleExportReport_btn.Text = "Export";
+            this.wholesaleExportReport_btn.UseVisualStyleBackColor = true;
+            this.wholesaleExportReport_btn.Click += new System.EventHandler(this.wholesaleExportReport_btn_Click);
+            // 
+            // wholesaleReportTo_label
+            // 
+            this.wholesaleReportTo_label.AutoSize = true;
+            this.wholesaleReportTo_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.wholesaleReportTo_label.Location = new System.Drawing.Point(196, 59);
+            this.wholesaleReportTo_label.Name = "wholesaleReportTo_label";
+            this.wholesaleReportTo_label.Size = new System.Drawing.Size(26, 15);
+            this.wholesaleReportTo_label.TabIndex = 33;
+            this.wholesaleReportTo_label.Text = "To :";
+            // 
+            // wholesaleReportFrom_label
+            // 
+            this.wholesaleReportFrom_label.AutoSize = true;
+            this.wholesaleReportFrom_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.wholesaleReportFrom_label.Location = new System.Drawing.Point(6, 59);
+            this.wholesaleReportFrom_label.Name = "wholesaleReportFrom_label";
+            this.wholesaleReportFrom_label.Size = new System.Drawing.Size(41, 15);
+            this.wholesaleReportFrom_label.TabIndex = 33;
+            this.wholesaleReportFrom_label.Text = "From :";
+            // 
+            // wholesaleReportEndDate_datePicker
+            // 
+            this.wholesaleReportEndDate_datePicker.Location = new System.Drawing.Point(225, 57);
+            this.wholesaleReportEndDate_datePicker.Name = "wholesaleReportEndDate_datePicker";
+            this.wholesaleReportEndDate_datePicker.Size = new System.Drawing.Size(125, 20);
+            this.wholesaleReportEndDate_datePicker.TabIndex = 31;
+            // 
+            // wholesaleReportStartDate_datePicker
+            // 
+            this.wholesaleReportStartDate_datePicker.Location = new System.Drawing.Point(50, 57);
+            this.wholesaleReportStartDate_datePicker.Name = "wholesaleReportStartDate_datePicker";
+            this.wholesaleReportStartDate_datePicker.Size = new System.Drawing.Size(125, 20);
+            this.wholesaleReportStartDate_datePicker.TabIndex = 32;
+            // 
+            // wholesaleReportInst_label
+            // 
+            this.wholesaleReportInst_label.AutoSize = true;
+            this.wholesaleReportInst_label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.wholesaleReportInst_label.Location = new System.Drawing.Point(5, 27);
+            this.wholesaleReportInst_label.Name = "wholesaleReportInst_label";
+            this.wholesaleReportInst_label.Size = new System.Drawing.Size(269, 19);
+            this.wholesaleReportInst_label.TabIndex = 25;
+            this.wholesaleReportInst_label.Text = "Select dates for exporting wholesale report";
             // 
             // transportTime_datePicker
             // 
             this.transportTime_datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.transportTime_datePicker.Location = new System.Drawing.Point(259, 284);
+            this.transportTime_datePicker.Location = new System.Drawing.Point(259, 278);
             this.transportTime_datePicker.Name = "transportTime_datePicker";
             this.transportTime_datePicker.ShowUpDown = true;
             this.transportTime_datePicker.Size = new System.Drawing.Size(76, 20);
@@ -1123,14 +1254,14 @@
             // 
             // transportDate_datePicker
             // 
-            this.transportDate_datePicker.Location = new System.Drawing.Point(113, 284);
+            this.transportDate_datePicker.Location = new System.Drawing.Point(113, 278);
             this.transportDate_datePicker.Name = "transportDate_datePicker";
             this.transportDate_datePicker.Size = new System.Drawing.Size(125, 20);
             this.transportDate_datePicker.TabIndex = 30;
             // 
             // wholesaleTransport_btn
             // 
-            this.wholesaleTransport_btn.Location = new System.Drawing.Point(357, 322);
+            this.wholesaleTransport_btn.Location = new System.Drawing.Point(357, 276);
             this.wholesaleTransport_btn.Name = "wholesaleTransport_btn";
             this.wholesaleTransport_btn.Size = new System.Drawing.Size(129, 23);
             this.wholesaleTransport_btn.TabIndex = 29;
@@ -1183,7 +1314,7 @@
             // 
             this.transportDate_label.AutoSize = true;
             this.transportDate_label.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.transportDate_label.Location = new System.Drawing.Point(9, 287);
+            this.transportDate_label.Location = new System.Drawing.Point(9, 281);
             this.transportDate_label.Name = "transportDate_label";
             this.transportDate_label.Size = new System.Drawing.Size(88, 13);
             this.transportDate_label.TabIndex = 25;
@@ -1228,6 +1359,7 @@
             // salesReport_panel
             // 
             this.salesReport_panel.Controls.Add(this.sales_listView);
+            this.salesReport_panel.Controls.Add(this.exportSalesTrx_btn);
             this.salesReport_panel.Controls.Add(this.searchSalesTrx_btn);
             this.salesReport_panel.Controls.Add(this.salesReportInst_label);
             this.salesReport_panel.Controls.Add(this.salesTo_label);
@@ -1239,7 +1371,7 @@
             this.salesReport_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.salesReport_panel.Location = new System.Drawing.Point(0, 0);
             this.salesReport_panel.Name = "salesReport_panel";
-            this.salesReport_panel.Size = new System.Drawing.Size(506, 405);
+            this.salesReport_panel.Size = new System.Drawing.Size(496, 405);
             this.salesReport_panel.TabIndex = 13;
             this.salesReport_panel.Visible = false;
             // 
@@ -1293,6 +1425,16 @@
             // 
             this.saleTotalPrice_header.Text = "Total Amount";
             this.saleTotalPrice_header.Width = 80;
+            // 
+            // exportSalesTrx_btn
+            // 
+            this.exportSalesTrx_btn.Location = new System.Drawing.Point(390, 98);
+            this.exportSalesTrx_btn.Name = "exportSalesTrx_btn";
+            this.exportSalesTrx_btn.Size = new System.Drawing.Size(75, 23);
+            this.exportSalesTrx_btn.TabIndex = 25;
+            this.exportSalesTrx_btn.Text = "Export";
+            this.exportSalesTrx_btn.UseVisualStyleBackColor = true;
+            this.exportSalesTrx_btn.Click += new System.EventHandler(this.exportSalesTrx_btn_Click);
             // 
             // searchSalesTrx_btn
             // 
@@ -1385,10 +1527,10 @@
             this.buyers_panel.Controls.Add(this.buyers_listView);
             this.buyers_panel.Controls.Add(this.shopBuyersTitle_label);
             this.buyers_panel.Controls.Add(this.buyers_back);
-            this.buyers_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buyers_panel.Location = new System.Drawing.Point(0, 0);
+            this.buyers_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buyers_panel.Location = new System.Drawing.Point(496, 0);
             this.buyers_panel.Name = "buyers_panel";
-            this.buyers_panel.Size = new System.Drawing.Size(506, 405);
+            this.buyers_panel.Size = new System.Drawing.Size(10, 405);
             this.buyers_panel.TabIndex = 12;
             this.buyers_panel.Visible = false;
             // 
@@ -1480,6 +1622,7 @@
             // 
             this.shopProducts_panel.Controls.Add(this.productPrice_txtBox);
             this.shopProducts_panel.Controls.Add(this.productQty_numUpDown);
+            this.shopProducts_panel.Controls.Add(this.addProduct_btn);
             this.shopProducts_panel.Controls.Add(this.updateProduct_btn);
             this.shopProducts_panel.Controls.Add(this.onSale_chkBox);
             this.shopProducts_panel.Controls.Add(this.price_label);
@@ -1512,6 +1655,16 @@
             this.productQty_numUpDown.Name = "productQty_numUpDown";
             this.productQty_numUpDown.Size = new System.Drawing.Size(52, 20);
             this.productQty_numUpDown.TabIndex = 28;
+            // 
+            // addProduct_btn
+            // 
+            this.addProduct_btn.Location = new System.Drawing.Point(397, 307);
+            this.addProduct_btn.Name = "addProduct_btn";
+            this.addProduct_btn.Size = new System.Drawing.Size(86, 23);
+            this.addProduct_btn.TabIndex = 25;
+            this.addProduct_btn.Text = "Add Product";
+            this.addProduct_btn.UseVisualStyleBackColor = true;
+            this.addProduct_btn.Click += new System.EventHandler(this.addProduct_btn_Click);
             // 
             // updateProduct_btn
             // 
@@ -1587,7 +1740,6 @@
             this.productCode_txtBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.productCode_txtBox.Location = new System.Drawing.Point(18, 302);
             this.productCode_txtBox.Name = "productCode_txtBox";
-            this.productCode_txtBox.ReadOnly = true;
             this.productCode_txtBox.Size = new System.Drawing.Size(116, 22);
             this.productCode_txtBox.TabIndex = 20;
             // 
@@ -1910,6 +2062,7 @@
             // 
             // labourerTop_panel
             // 
+            this.labourerTop_panel.Controls.Add(this.labourerTask_panel);
             this.labourerTop_panel.Controls.Add(this.assignTask_panel);
             this.labourerTop_panel.Controls.Add(this.addLabourer_panel);
             this.labourerTop_panel.Controls.Add(this.labourer_panel);
@@ -1920,6 +2073,423 @@
             this.labourerTop_panel.TabIndex = 2;
             this.labourerTop_panel.Visible = false;
             this.labourerTop_panel.VisibleChanged += new System.EventHandler(this.labourerTop_panel_VisibleChanged);
+            // 
+            // labourerTask_panel
+            // 
+            this.labourerTask_panel.AutoScroll = true;
+            this.labourerTask_panel.Controls.Add(this.labourerTask_back);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskRemove_btn);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskCompleted_btn);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskDescription_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskDescriptionTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskEndDate_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskStartDate_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskField_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskManager_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskAssignedDate_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskPesticide_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskSeed_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskFertiliser_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskMethod_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskCrop_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskStatus_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskEndDateTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskManagerTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskAssignedDateTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskPesticideTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskSeedTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskFertiliserTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskStartDateTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskMethodTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskFieldTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskCropTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskType_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskStatusTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskTypeTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskTitle_title_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTaskPageTitle_label);
+            this.labourerTask_panel.Controls.Add(this.labourerTask_listView);
+            this.labourerTask_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labourerTask_panel.Location = new System.Drawing.Point(0, 0);
+            this.labourerTask_panel.Name = "labourerTask_panel";
+            this.labourerTask_panel.Size = new System.Drawing.Size(506, 405);
+            this.labourerTask_panel.TabIndex = 14;
+            this.labourerTask_panel.Visible = false;
+            // 
+            // labourerTask_back
+            // 
+            this.labourerTask_back.BackColor = System.Drawing.Color.SeaGreen;
+            this.labourerTask_back.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.labourerTask_back.FlatAppearance.BorderSize = 0;
+            this.labourerTask_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labourerTask_back.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labourerTask_back.ForeColor = System.Drawing.Color.White;
+            this.labourerTask_back.Location = new System.Drawing.Point(0, 2);
+            this.labourerTask_back.Name = "labourerTask_back";
+            this.labourerTask_back.Size = new System.Drawing.Size(61, 33);
+            this.labourerTask_back.TabIndex = 18;
+            this.labourerTask_back.Text = "Back";
+            this.labourerTask_back.UseVisualStyleBackColor = false;
+            this.labourerTask_back.Click += new System.EventHandler(this.labourerTask_back_Click);
+            // 
+            // labourerTaskRemove_btn
+            // 
+            this.labourerTaskRemove_btn.BackColor = System.Drawing.Color.Red;
+            this.labourerTaskRemove_btn.Enabled = false;
+            this.labourerTaskRemove_btn.FlatAppearance.BorderColor = System.Drawing.Color.LawnGreen;
+            this.labourerTaskRemove_btn.FlatAppearance.BorderSize = 0;
+            this.labourerTaskRemove_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labourerTaskRemove_btn.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskRemove_btn.ForeColor = System.Drawing.Color.White;
+            this.labourerTaskRemove_btn.Location = new System.Drawing.Point(13, 449);
+            this.labourerTaskRemove_btn.Name = "labourerTaskRemove_btn";
+            this.labourerTaskRemove_btn.Size = new System.Drawing.Size(92, 35);
+            this.labourerTaskRemove_btn.TabIndex = 16;
+            this.labourerTaskRemove_btn.Text = "Remove Task";
+            this.labourerTaskRemove_btn.UseVisualStyleBackColor = false;
+            this.labourerTaskRemove_btn.Click += new System.EventHandler(this.labourerTaskRemove_btn_Click);
+            // 
+            // labourerTaskCompleted_btn
+            // 
+            this.labourerTaskCompleted_btn.BackColor = System.Drawing.Color.DarkCyan;
+            this.labourerTaskCompleted_btn.Enabled = false;
+            this.labourerTaskCompleted_btn.FlatAppearance.BorderColor = System.Drawing.Color.LawnGreen;
+            this.labourerTaskCompleted_btn.FlatAppearance.BorderSize = 0;
+            this.labourerTaskCompleted_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labourerTaskCompleted_btn.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskCompleted_btn.ForeColor = System.Drawing.Color.White;
+            this.labourerTaskCompleted_btn.Location = new System.Drawing.Point(170, 214);
+            this.labourerTaskCompleted_btn.Name = "labourerTaskCompleted_btn";
+            this.labourerTaskCompleted_btn.Size = new System.Drawing.Size(95, 35);
+            this.labourerTaskCompleted_btn.TabIndex = 16;
+            this.labourerTaskCompleted_btn.Text = "Task Completed";
+            this.labourerTaskCompleted_btn.UseVisualStyleBackColor = false;
+            this.labourerTaskCompleted_btn.Click += new System.EventHandler(this.labourerTaskCompleted_btn_Click);
+            // 
+            // labourerTaskDescription_label
+            // 
+            this.labourerTaskDescription_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskDescription_label.Location = new System.Drawing.Point(12, 337);
+            this.labourerTaskDescription_label.Name = "labourerTaskDescription_label";
+            this.labourerTaskDescription_label.Size = new System.Drawing.Size(151, 104);
+            this.labourerTaskDescription_label.TabIndex = 15;
+            // 
+            // labourerTaskDescriptionTitle_label
+            // 
+            this.labourerTaskDescriptionTitle_label.AutoSize = true;
+            this.labourerTaskDescriptionTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskDescriptionTitle_label.Location = new System.Drawing.Point(12, 320);
+            this.labourerTaskDescriptionTitle_label.Name = "labourerTaskDescriptionTitle_label";
+            this.labourerTaskDescriptionTitle_label.Size = new System.Drawing.Size(67, 15);
+            this.labourerTaskDescriptionTitle_label.TabIndex = 14;
+            this.labourerTaskDescriptionTitle_label.Text = "Description";
+            // 
+            // labourerTaskEndDate_label
+            // 
+            this.labourerTaskEndDate_label.AutoSize = true;
+            this.labourerTaskEndDate_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskEndDate_label.Location = new System.Drawing.Point(167, 440);
+            this.labourerTaskEndDate_label.Name = "labourerTaskEndDate_label";
+            this.labourerTaskEndDate_label.Size = new System.Drawing.Size(0, 15);
+            this.labourerTaskEndDate_label.TabIndex = 15;
+            // 
+            // labourerTaskStartDate_label
+            // 
+            this.labourerTaskStartDate_label.AutoSize = true;
+            this.labourerTaskStartDate_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskStartDate_label.Location = new System.Drawing.Point(167, 398);
+            this.labourerTaskStartDate_label.Name = "labourerTaskStartDate_label";
+            this.labourerTaskStartDate_label.Size = new System.Drawing.Size(0, 15);
+            this.labourerTaskStartDate_label.TabIndex = 15;
+            // 
+            // labourerTaskField_label
+            // 
+            this.labourerTaskField_label.AutoSize = true;
+            this.labourerTaskField_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskField_label.Location = new System.Drawing.Point(167, 316);
+            this.labourerTaskField_label.Name = "labourerTaskField_label";
+            this.labourerTaskField_label.Size = new System.Drawing.Size(0, 15);
+            this.labourerTaskField_label.TabIndex = 15;
+            // 
+            // labourerTaskManager_label
+            // 
+            this.labourerTaskManager_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskManager_label.Location = new System.Drawing.Point(309, 441);
+            this.labourerTaskManager_label.Name = "labourerTaskManager_label";
+            this.labourerTaskManager_label.Size = new System.Drawing.Size(177, 31);
+            this.labourerTaskManager_label.TabIndex = 15;
+            // 
+            // labourerTaskAssignedDate_label
+            // 
+            this.labourerTaskAssignedDate_label.AutoSize = true;
+            this.labourerTaskAssignedDate_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskAssignedDate_label.Location = new System.Drawing.Point(167, 481);
+            this.labourerTaskAssignedDate_label.Name = "labourerTaskAssignedDate_label";
+            this.labourerTaskAssignedDate_label.Size = new System.Drawing.Size(0, 15);
+            this.labourerTaskAssignedDate_label.TabIndex = 15;
+            // 
+            // labourerTaskPesticide_label
+            // 
+            this.labourerTaskPesticide_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskPesticide_label.Location = new System.Drawing.Point(309, 386);
+            this.labourerTaskPesticide_label.Name = "labourerTaskPesticide_label";
+            this.labourerTaskPesticide_label.Size = new System.Drawing.Size(177, 31);
+            this.labourerTaskPesticide_label.TabIndex = 15;
+            // 
+            // labourerTaskSeed_label
+            // 
+            this.labourerTaskSeed_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskSeed_label.Location = new System.Drawing.Point(309, 334);
+            this.labourerTaskSeed_label.Name = "labourerTaskSeed_label";
+            this.labourerTaskSeed_label.Size = new System.Drawing.Size(177, 31);
+            this.labourerTaskSeed_label.TabIndex = 15;
+            // 
+            // labourerTaskFertiliser_label
+            // 
+            this.labourerTaskFertiliser_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskFertiliser_label.Location = new System.Drawing.Point(309, 282);
+            this.labourerTaskFertiliser_label.Name = "labourerTaskFertiliser_label";
+            this.labourerTaskFertiliser_label.Size = new System.Drawing.Size(177, 31);
+            this.labourerTaskFertiliser_label.TabIndex = 15;
+            // 
+            // labourerTaskMethod_label
+            // 
+            this.labourerTaskMethod_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskMethod_label.Location = new System.Drawing.Point(309, 230);
+            this.labourerTaskMethod_label.Name = "labourerTaskMethod_label";
+            this.labourerTaskMethod_label.Size = new System.Drawing.Size(177, 31);
+            this.labourerTaskMethod_label.TabIndex = 15;
+            // 
+            // labourerTaskCrop_label
+            // 
+            this.labourerTaskCrop_label.AutoSize = true;
+            this.labourerTaskCrop_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskCrop_label.Location = new System.Drawing.Point(167, 355);
+            this.labourerTaskCrop_label.Name = "labourerTaskCrop_label";
+            this.labourerTaskCrop_label.Size = new System.Drawing.Size(0, 15);
+            this.labourerTaskCrop_label.TabIndex = 15;
+            // 
+            // labourerTaskStatus_label
+            // 
+            this.labourerTaskStatus_label.AutoSize = true;
+            this.labourerTaskStatus_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskStatus_label.Location = new System.Drawing.Point(166, 275);
+            this.labourerTaskStatus_label.Name = "labourerTaskStatus_label";
+            this.labourerTaskStatus_label.Size = new System.Drawing.Size(0, 15);
+            this.labourerTaskStatus_label.TabIndex = 15;
+            // 
+            // labourerTaskEndDateTitle_label
+            // 
+            this.labourerTaskEndDateTitle_label.AutoSize = true;
+            this.labourerTaskEndDateTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskEndDateTitle_label.Location = new System.Drawing.Point(167, 423);
+            this.labourerTaskEndDateTitle_label.Name = "labourerTaskEndDateTitle_label";
+            this.labourerTaskEndDateTitle_label.Size = new System.Drawing.Size(55, 15);
+            this.labourerTaskEndDateTitle_label.TabIndex = 14;
+            this.labourerTaskEndDateTitle_label.Text = "Due Date";
+            // 
+            // labourerTaskManagerTitle_label
+            // 
+            this.labourerTaskManagerTitle_label.AutoSize = true;
+            this.labourerTaskManagerTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskManagerTitle_label.Location = new System.Drawing.Point(309, 424);
+            this.labourerTaskManagerTitle_label.Name = "labourerTaskManagerTitle_label";
+            this.labourerTaskManagerTitle_label.Size = new System.Drawing.Size(54, 15);
+            this.labourerTaskManagerTitle_label.TabIndex = 14;
+            this.labourerTaskManagerTitle_label.Text = "Manager";
+            // 
+            // labourerTaskAssignedDateTitle_label
+            // 
+            this.labourerTaskAssignedDateTitle_label.AutoSize = true;
+            this.labourerTaskAssignedDateTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskAssignedDateTitle_label.Location = new System.Drawing.Point(167, 464);
+            this.labourerTaskAssignedDateTitle_label.Name = "labourerTaskAssignedDateTitle_label";
+            this.labourerTaskAssignedDateTitle_label.Size = new System.Drawing.Size(82, 15);
+            this.labourerTaskAssignedDateTitle_label.TabIndex = 14;
+            this.labourerTaskAssignedDateTitle_label.Text = "Date Assigned";
+            // 
+            // labourerTaskPesticideTitle_label
+            // 
+            this.labourerTaskPesticideTitle_label.AutoSize = true;
+            this.labourerTaskPesticideTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskPesticideTitle_label.Location = new System.Drawing.Point(309, 369);
+            this.labourerTaskPesticideTitle_label.Name = "labourerTaskPesticideTitle_label";
+            this.labourerTaskPesticideTitle_label.Size = new System.Drawing.Size(54, 15);
+            this.labourerTaskPesticideTitle_label.TabIndex = 14;
+            this.labourerTaskPesticideTitle_label.Text = "Pesticide";
+            // 
+            // labourerTaskSeedTitle_label
+            // 
+            this.labourerTaskSeedTitle_label.AutoSize = true;
+            this.labourerTaskSeedTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskSeedTitle_label.Location = new System.Drawing.Point(309, 317);
+            this.labourerTaskSeedTitle_label.Name = "labourerTaskSeedTitle_label";
+            this.labourerTaskSeedTitle_label.Size = new System.Drawing.Size(32, 15);
+            this.labourerTaskSeedTitle_label.TabIndex = 14;
+            this.labourerTaskSeedTitle_label.Text = "Seed";
+            // 
+            // labourerTaskFertiliserTitle_label
+            // 
+            this.labourerTaskFertiliserTitle_label.AutoSize = true;
+            this.labourerTaskFertiliserTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskFertiliserTitle_label.Location = new System.Drawing.Point(309, 265);
+            this.labourerTaskFertiliserTitle_label.Name = "labourerTaskFertiliserTitle_label";
+            this.labourerTaskFertiliserTitle_label.Size = new System.Drawing.Size(51, 15);
+            this.labourerTaskFertiliserTitle_label.TabIndex = 14;
+            this.labourerTaskFertiliserTitle_label.Text = "Fertiliser";
+            // 
+            // labourerTaskStartDateTitle_label
+            // 
+            this.labourerTaskStartDateTitle_label.AutoSize = true;
+            this.labourerTaskStartDateTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskStartDateTitle_label.Location = new System.Drawing.Point(167, 381);
+            this.labourerTaskStartDateTitle_label.Name = "labourerTaskStartDateTitle_label";
+            this.labourerTaskStartDateTitle_label.Size = new System.Drawing.Size(58, 15);
+            this.labourerTaskStartDateTitle_label.TabIndex = 14;
+            this.labourerTaskStartDateTitle_label.Text = "Start Date";
+            // 
+            // labourerTaskMethodTitle_label
+            // 
+            this.labourerTaskMethodTitle_label.AutoSize = true;
+            this.labourerTaskMethodTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskMethodTitle_label.Location = new System.Drawing.Point(309, 213);
+            this.labourerTaskMethodTitle_label.Name = "labourerTaskMethodTitle_label";
+            this.labourerTaskMethodTitle_label.Size = new System.Drawing.Size(49, 15);
+            this.labourerTaskMethodTitle_label.TabIndex = 14;
+            this.labourerTaskMethodTitle_label.Text = "Method";
+            // 
+            // labourerTaskFieldTitle_label
+            // 
+            this.labourerTaskFieldTitle_label.AutoSize = true;
+            this.labourerTaskFieldTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskFieldTitle_label.Location = new System.Drawing.Point(167, 299);
+            this.labourerTaskFieldTitle_label.Name = "labourerTaskFieldTitle_label";
+            this.labourerTaskFieldTitle_label.Size = new System.Drawing.Size(32, 15);
+            this.labourerTaskFieldTitle_label.TabIndex = 14;
+            this.labourerTaskFieldTitle_label.Text = "Field";
+            // 
+            // labourerTaskCropTitle_label
+            // 
+            this.labourerTaskCropTitle_label.AutoSize = true;
+            this.labourerTaskCropTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskCropTitle_label.Location = new System.Drawing.Point(167, 338);
+            this.labourerTaskCropTitle_label.Name = "labourerTaskCropTitle_label";
+            this.labourerTaskCropTitle_label.Size = new System.Drawing.Size(33, 15);
+            this.labourerTaskCropTitle_label.TabIndex = 14;
+            this.labourerTaskCropTitle_label.Text = "Crop";
+            // 
+            // labourerTaskType_label
+            // 
+            this.labourerTaskType_label.AutoSize = true;
+            this.labourerTaskType_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskType_label.Location = new System.Drawing.Point(12, 289);
+            this.labourerTaskType_label.Name = "labourerTaskType_label";
+            this.labourerTaskType_label.Size = new System.Drawing.Size(0, 15);
+            this.labourerTaskType_label.TabIndex = 15;
+            // 
+            // labourerTaskStatusTitle_label
+            // 
+            this.labourerTaskStatusTitle_label.AutoSize = true;
+            this.labourerTaskStatusTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskStatusTitle_label.Location = new System.Drawing.Point(166, 258);
+            this.labourerTaskStatusTitle_label.Name = "labourerTaskStatusTitle_label";
+            this.labourerTaskStatusTitle_label.Size = new System.Drawing.Size(39, 15);
+            this.labourerTaskStatusTitle_label.TabIndex = 14;
+            this.labourerTaskStatusTitle_label.Text = "Status";
+            // 
+            // labourerTaskTypeTitle_label
+            // 
+            this.labourerTaskTypeTitle_label.AutoSize = true;
+            this.labourerTaskTypeTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskTypeTitle_label.Location = new System.Drawing.Point(12, 272);
+            this.labourerTaskTypeTitle_label.Name = "labourerTaskTypeTitle_label";
+            this.labourerTaskTypeTitle_label.Size = new System.Drawing.Size(32, 15);
+            this.labourerTaskTypeTitle_label.TabIndex = 14;
+            this.labourerTaskTypeTitle_label.Text = "Type";
+            // 
+            // labourerTaskTitle_label
+            // 
+            this.labourerTaskTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskTitle_label.Location = new System.Drawing.Point(11, 230);
+            this.labourerTaskTitle_label.Name = "labourerTaskTitle_label";
+            this.labourerTaskTitle_label.Size = new System.Drawing.Size(152, 34);
+            this.labourerTaskTitle_label.TabIndex = 15;
+            // 
+            // labourerTaskTitle_title_label
+            // 
+            this.labourerTaskTitle_title_label.AutoSize = true;
+            this.labourerTaskTitle_title_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskTitle_title_label.Location = new System.Drawing.Point(11, 213);
+            this.labourerTaskTitle_title_label.Name = "labourerTaskTitle_title_label";
+            this.labourerTaskTitle_title_label.Size = new System.Drawing.Size(30, 15);
+            this.labourerTaskTitle_title_label.TabIndex = 14;
+            this.labourerTaskTitle_title_label.Text = "Title";
+            // 
+            // labourerTaskPageTitle_label
+            // 
+            this.labourerTaskPageTitle_label.AutoSize = true;
+            this.labourerTaskPageTitle_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labourerTaskPageTitle_label.Location = new System.Drawing.Point(66, 8);
+            this.labourerTaskPageTitle_label.Name = "labourerTaskPageTitle_label";
+            this.labourerTaskPageTitle_label.Size = new System.Drawing.Size(124, 21);
+            this.labourerTaskPageTitle_label.TabIndex = 13;
+            this.labourerTaskPageTitle_label.Text = "Labourer\'s Tasks";
+            // 
+            // labourerTask_listView
+            // 
+            this.labourerTask_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.labourerTask_title_header,
+            this.labourerTask_type_header,
+            this.labourerTask_description_header,
+            this.labourerTask_status_header,
+            this.labourerTask_field_header,
+            this.labourerTask_startDate_header,
+            this.labourerTask_endDate_header});
+            this.labourerTask_listView.FullRowSelect = true;
+            this.labourerTask_listView.GridLines = true;
+            this.labourerTask_listView.Location = new System.Drawing.Point(8, 39);
+            this.labourerTask_listView.Name = "labourerTask_listView";
+            this.labourerTask_listView.Size = new System.Drawing.Size(476, 164);
+            this.labourerTask_listView.TabIndex = 0;
+            this.labourerTask_listView.UseCompatibleStateImageBehavior = false;
+            this.labourerTask_listView.View = System.Windows.Forms.View.Details;
+            this.labourerTask_listView.SelectedIndexChanged += new System.EventHandler(this.labourerTask_listView_SelectedIndexChanged);
+            // 
+            // labourerTask_title_header
+            // 
+            this.labourerTask_title_header.Text = "Title";
+            this.labourerTask_title_header.Width = 80;
+            // 
+            // labourerTask_type_header
+            // 
+            this.labourerTask_type_header.Text = "Type";
+            this.labourerTask_type_header.Width = 70;
+            // 
+            // labourerTask_description_header
+            // 
+            this.labourerTask_description_header.Text = "Description";
+            this.labourerTask_description_header.Width = 100;
+            // 
+            // labourerTask_status_header
+            // 
+            this.labourerTask_status_header.Text = "Status";
+            this.labourerTask_status_header.Width = 70;
+            // 
+            // labourerTask_field_header
+            // 
+            this.labourerTask_field_header.Text = "Farm Section";
+            this.labourerTask_field_header.Width = 80;
+            // 
+            // labourerTask_startDate_header
+            // 
+            this.labourerTask_startDate_header.Text = "Start At";
+            this.labourerTask_startDate_header.Width = 90;
+            // 
+            // labourerTask_endDate_header
+            // 
+            this.labourerTask_endDate_header.Text = "Due At";
+            this.labourerTask_endDate_header.Width = 90;
             // 
             // assignTask_panel
             // 
@@ -1969,9 +2539,9 @@
             this.assignTaskForm_panel.Controls.Add(this.assignTaskSeed_label);
             this.assignTaskForm_panel.Controls.Add(this.taskFertiliser_comboBox);
             this.assignTaskForm_panel.Controls.Add(this.assignTaskFertiliser_label);
+            this.assignTaskForm_panel.Controls.Add(this.taskType_comboBox);
             this.assignTaskForm_panel.Controls.Add(this.taskCrop_comboBox);
             this.assignTaskForm_panel.Controls.Add(this.assignTaskCrop_label);
-            this.assignTaskForm_panel.Controls.Add(this.taskType_txtBox);
             this.assignTaskForm_panel.Controls.Add(this.assignTaskType_label);
             this.assignTaskForm_panel.Controls.Add(this.taskField_comboBox);
             this.assignTaskForm_panel.Controls.Add(this.assignTaskField_label);
@@ -1984,15 +2554,14 @@
             this.assignTaskForm_panel.Controls.Add(this.assignTaskSubmit_btn);
             this.assignTaskForm_panel.Controls.Add(this.taskDesc_txtBox);
             this.assignTaskForm_panel.Controls.Add(this.taskTitle_txtBox);
-            this.assignTaskForm_panel.Location = new System.Drawing.Point(12, 74);
+            this.assignTaskForm_panel.Location = new System.Drawing.Point(12, 78);
             this.assignTaskForm_panel.Name = "assignTaskForm_panel";
             this.assignTaskForm_panel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.assignTaskForm_panel.Size = new System.Drawing.Size(482, 321);
+            this.assignTaskForm_panel.Size = new System.Drawing.Size(482, 317);
             this.assignTaskForm_panel.TabIndex = 18;
             // 
             // taskPesticide_numeric
             // 
-            this.taskPesticide_numeric.Enabled = false;
             this.taskPesticide_numeric.Location = new System.Drawing.Point(335, 359);
             this.taskPesticide_numeric.Name = "taskPesticide_numeric";
             this.taskPesticide_numeric.Size = new System.Drawing.Size(48, 20);
@@ -2000,7 +2569,6 @@
             // 
             // taskSeed_numeric
             // 
-            this.taskSeed_numeric.Enabled = false;
             this.taskSeed_numeric.Location = new System.Drawing.Point(335, 297);
             this.taskSeed_numeric.Name = "taskSeed_numeric";
             this.taskSeed_numeric.Size = new System.Drawing.Size(48, 20);
@@ -2008,7 +2576,6 @@
             // 
             // taskFertiliser_numeric
             // 
-            this.taskFertiliser_numeric.Enabled = false;
             this.taskFertiliser_numeric.Location = new System.Drawing.Point(335, 327);
             this.taskFertiliser_numeric.Name = "taskFertiliser_numeric";
             this.taskFertiliser_numeric.Size = new System.Drawing.Size(48, 20);
@@ -2093,7 +2660,6 @@
             // 
             // taskPesticide_comboBox
             // 
-            this.taskPesticide_comboBox.Enabled = false;
             this.taskPesticide_comboBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.taskPesticide_comboBox.FormattingEnabled = true;
             this.taskPesticide_comboBox.Location = new System.Drawing.Point(99, 358);
@@ -2114,7 +2680,6 @@
             // 
             // taskSeed_comboBox
             // 
-            this.taskSeed_comboBox.Enabled = false;
             this.taskSeed_comboBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.taskSeed_comboBox.FormattingEnabled = true;
             this.taskSeed_comboBox.Location = new System.Drawing.Point(99, 296);
@@ -2169,7 +2734,6 @@
             // 
             // taskFertiliser_comboBox
             // 
-            this.taskFertiliser_comboBox.Enabled = false;
             this.taskFertiliser_comboBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.taskFertiliser_comboBox.FormattingEnabled = true;
             this.taskFertiliser_comboBox.Location = new System.Drawing.Point(99, 326);
@@ -2188,9 +2752,22 @@
             this.assignTaskFertiliser_label.TabIndex = 22;
             this.assignTaskFertiliser_label.Text = "Fertiliser :";
             // 
+            // taskType_comboBox
+            // 
+            this.taskType_comboBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.taskType_comboBox.FormattingEnabled = true;
+            this.taskType_comboBox.Items.AddRange(new object[] {
+            "SOW",
+            "TREATMENT",
+            "HARVEST"});
+            this.taskType_comboBox.Location = new System.Drawing.Point(99, 203);
+            this.taskType_comboBox.Name = "taskType_comboBox";
+            this.taskType_comboBox.Size = new System.Drawing.Size(125, 21);
+            this.taskType_comboBox.TabIndex = 23;
+            this.taskType_comboBox.SelectedIndexChanged += new System.EventHandler(this.taskType_comboBox_SelectedIndexChanged);
+            // 
             // taskCrop_comboBox
             // 
-            this.taskCrop_comboBox.Enabled = false;
             this.taskCrop_comboBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.taskCrop_comboBox.FormattingEnabled = true;
             this.taskCrop_comboBox.Location = new System.Drawing.Point(99, 234);
@@ -2208,15 +2785,6 @@
             this.assignTaskCrop_label.Size = new System.Drawing.Size(38, 13);
             this.assignTaskCrop_label.TabIndex = 22;
             this.assignTaskCrop_label.Text = "Crop :";
-            // 
-            // taskType_txtBox
-            // 
-            this.taskType_txtBox.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taskType_txtBox.Location = new System.Drawing.Point(99, 203);
-            this.taskType_txtBox.Name = "taskType_txtBox";
-            this.taskType_txtBox.ReadOnly = true;
-            this.taskType_txtBox.Size = new System.Drawing.Size(125, 22);
-            this.taskType_txtBox.TabIndex = 21;
             // 
             // assignTaskType_label
             // 
@@ -2236,7 +2804,6 @@
             this.taskField_comboBox.Name = "taskField_comboBox";
             this.taskField_comboBox.Size = new System.Drawing.Size(212, 21);
             this.taskField_comboBox.TabIndex = 19;
-            this.taskField_comboBox.SelectedIndexChanged += new System.EventHandler(this.taskField_comboBox_SelectedIndexChanged);
             // 
             // assignTaskField_label
             // 
@@ -2313,7 +2880,6 @@
             // 
             // assignTaskSubmit_btn
             // 
-            this.assignTaskSubmit_btn.Enabled = false;
             this.assignTaskSubmit_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.assignTaskSubmit_btn.Location = new System.Drawing.Point(379, 473);
             this.assignTaskSubmit_btn.Name = "assignTaskSubmit_btn";
@@ -2547,6 +3113,7 @@
             this.labourerPhoneNum_header,
             this.labourerJoinedDate_header,
             this.labourerStatus_header});
+            this.labourers_listView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labourers_listView.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labourers_listView.FullRowSelect = true;
             this.labourers_listView.GridLines = true;
@@ -2559,6 +3126,7 @@
             this.labourers_listView.TabIndex = 20;
             this.labourers_listView.UseCompatibleStateImageBehavior = false;
             this.labourers_listView.View = System.Windows.Forms.View.Details;
+            this.labourers_listView.SelectedIndexChanged += new System.EventHandler(this.labourers_listView_SelectedIndexChanged);
             // 
             // labourerID_header
             // 
@@ -3180,7 +3748,7 @@
             this.home_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.home_panel.Location = new System.Drawing.Point(0, 0);
             this.home_panel.Name = "home_panel";
-            this.home_panel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.home_panel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.home_panel.Size = new System.Drawing.Size(506, 405);
             this.home_panel.TabIndex = 0;
             // 
@@ -3218,10 +3786,9 @@
             this.lbHome_panel.Controls.Add(this.labTitle_title_label);
             this.lbHome_panel.Controls.Add(this.labHomeTitle_label);
             this.lbHome_panel.Controls.Add(this.labTask_listView);
-            this.lbHome_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbHome_panel.Location = new System.Drawing.Point(0, 37);
+            this.lbHome_panel.Location = new System.Drawing.Point(2, 36);
             this.lbHome_panel.Name = "lbHome_panel";
-            this.lbHome_panel.Size = new System.Drawing.Size(506, 358);
+            this.lbHome_panel.Size = new System.Drawing.Size(506, 369);
             this.lbHome_panel.TabIndex = 13;
             this.lbHome_panel.Visible = false;
             // 
@@ -3568,13 +4135,86 @@
             // 
             // mgHome_panel
             // 
+            this.mgHome_panel.AutoScroll = true;
+            this.mgHome_panel.Controls.Add(this.farmReport_groupBox);
             this.mgHome_panel.Controls.Add(this.sections_groupBox);
             this.mgHome_panel.Controls.Add(this.fieldTitle_label);
-            this.mgHome_panel.Location = new System.Drawing.Point(0, 39);
+            this.mgHome_panel.Location = new System.Drawing.Point(0, 36);
             this.mgHome_panel.Name = "mgHome_panel";
-            this.mgHome_panel.Size = new System.Drawing.Size(508, 366);
+            this.mgHome_panel.Size = new System.Drawing.Size(506, 364);
             this.mgHome_panel.TabIndex = 12;
             this.mgHome_panel.Visible = false;
+            // 
+            // farmReport_groupBox
+            // 
+            this.farmReport_groupBox.Controls.Add(this.farmReportExport_btn);
+            this.farmReport_groupBox.Controls.Add(this.farmReportEndDateTitle_label);
+            this.farmReport_groupBox.Controls.Add(this.farmReportStartDateTitle_label);
+            this.farmReport_groupBox.Controls.Add(this.farmReportEndDate_datePicker);
+            this.farmReport_groupBox.Controls.Add(this.farmReportStartDate_datePicker);
+            this.farmReport_groupBox.Controls.Add(this.farmReportInst_label);
+            this.farmReport_groupBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.farmReport_groupBox.Location = new System.Drawing.Point(0, 326);
+            this.farmReport_groupBox.Margin = new System.Windows.Forms.Padding(10);
+            this.farmReport_groupBox.Name = "farmReport_groupBox";
+            this.farmReport_groupBox.Size = new System.Drawing.Size(489, 96);
+            this.farmReport_groupBox.TabIndex = 33;
+            this.farmReport_groupBox.TabStop = false;
+            this.farmReport_groupBox.Text = "Generate Farm Report";
+            // 
+            // farmReportExport_btn
+            // 
+            this.farmReportExport_btn.Location = new System.Drawing.Point(379, 55);
+            this.farmReportExport_btn.Name = "farmReportExport_btn";
+            this.farmReportExport_btn.Size = new System.Drawing.Size(75, 23);
+            this.farmReportExport_btn.TabIndex = 34;
+            this.farmReportExport_btn.Text = "Export";
+            this.farmReportExport_btn.UseVisualStyleBackColor = true;
+            this.farmReportExport_btn.Click += new System.EventHandler(this.farmReportExport_btn_Click);
+            // 
+            // farmReportEndDateTitle_label
+            // 
+            this.farmReportEndDateTitle_label.AutoSize = true;
+            this.farmReportEndDateTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.farmReportEndDateTitle_label.Location = new System.Drawing.Point(196, 59);
+            this.farmReportEndDateTitle_label.Name = "farmReportEndDateTitle_label";
+            this.farmReportEndDateTitle_label.Size = new System.Drawing.Size(26, 15);
+            this.farmReportEndDateTitle_label.TabIndex = 33;
+            this.farmReportEndDateTitle_label.Text = "To :";
+            // 
+            // farmReportStartDateTitle_label
+            // 
+            this.farmReportStartDateTitle_label.AutoSize = true;
+            this.farmReportStartDateTitle_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.farmReportStartDateTitle_label.Location = new System.Drawing.Point(6, 59);
+            this.farmReportStartDateTitle_label.Name = "farmReportStartDateTitle_label";
+            this.farmReportStartDateTitle_label.Size = new System.Drawing.Size(41, 15);
+            this.farmReportStartDateTitle_label.TabIndex = 33;
+            this.farmReportStartDateTitle_label.Text = "From :";
+            // 
+            // farmReportEndDate_datePicker
+            // 
+            this.farmReportEndDate_datePicker.Location = new System.Drawing.Point(225, 57);
+            this.farmReportEndDate_datePicker.Name = "farmReportEndDate_datePicker";
+            this.farmReportEndDate_datePicker.Size = new System.Drawing.Size(125, 20);
+            this.farmReportEndDate_datePicker.TabIndex = 31;
+            // 
+            // farmReportStartDate_datePicker
+            // 
+            this.farmReportStartDate_datePicker.Location = new System.Drawing.Point(50, 57);
+            this.farmReportStartDate_datePicker.Name = "farmReportStartDate_datePicker";
+            this.farmReportStartDate_datePicker.Size = new System.Drawing.Size(125, 20);
+            this.farmReportStartDate_datePicker.TabIndex = 32;
+            // 
+            // farmReportInst_label
+            // 
+            this.farmReportInst_label.AutoSize = true;
+            this.farmReportInst_label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.farmReportInst_label.Location = new System.Drawing.Point(5, 27);
+            this.farmReportInst_label.Name = "farmReportInst_label";
+            this.farmReportInst_label.Size = new System.Drawing.Size(238, 19);
+            this.farmReportInst_label.TabIndex = 25;
+            this.farmReportInst_label.Text = "Select dates for exporting farm report";
             // 
             // sections_groupBox
             // 
@@ -3589,7 +4229,7 @@
             this.sections_groupBox.Controls.Add(this.section1_panel);
             this.sections_groupBox.Location = new System.Drawing.Point(11, 29);
             this.sections_groupBox.Name = "sections_groupBox";
-            this.sections_groupBox.Size = new System.Drawing.Size(446, 296);
+            this.sections_groupBox.Size = new System.Drawing.Size(446, 297);
             this.sections_groupBox.TabIndex = 13;
             this.sections_groupBox.TabStop = false;
             // 
@@ -3689,9 +4329,9 @@
             this.fieldTitle_label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.fieldTitle_label.Location = new System.Drawing.Point(8, 6);
             this.fieldTitle_label.Name = "fieldTitle_label";
-            this.fieldTitle_label.Size = new System.Drawing.Size(89, 21);
+            this.fieldTitle_label.Size = new System.Drawing.Size(146, 21);
             this.fieldTitle_label.TabIndex = 12;
-            this.fieldTitle_label.Text = "Farm Fields";
+            this.fieldTitle_label.Text = "Current Farm Fields";
             // 
             // homeTitle_label
             // 
@@ -3735,6 +4375,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.simulateSaleQuantity_numeric)).EndInit();
             this.wholesale_panel.ResumeLayout(false);
             this.wholesale_panel.PerformLayout();
+            this.wholesaleReport_groupBox.ResumeLayout(false);
+            this.wholesaleReport_groupBox.PerformLayout();
             this.salesReport_panel.ResumeLayout(false);
             this.salesReport_panel.PerformLayout();
             this.buyers_panel.ResumeLayout(false);
@@ -3749,6 +4391,8 @@
             this.machineTop_panel.ResumeLayout(false);
             this.machineTop_panel.PerformLayout();
             this.labourerTop_panel.ResumeLayout(false);
+            this.labourerTask_panel.ResumeLayout(false);
+            this.labourerTask_panel.PerformLayout();
             this.assignTask_panel.ResumeLayout(false);
             this.assignTask_panel.PerformLayout();
             this.assignTaskForm_panel.ResumeLayout(false);
@@ -3781,6 +4425,8 @@
             this.lbHome_panel.PerformLayout();
             this.mgHome_panel.ResumeLayout(false);
             this.mgHome_panel.PerformLayout();
+            this.farmReport_groupBox.ResumeLayout(false);
+            this.farmReport_groupBox.PerformLayout();
             this.sections_groupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -3922,7 +4568,6 @@
         private System.Windows.Forms.TextBox taskDesc_txtBox;
         private System.Windows.Forms.TextBox taskTitle_txtBox;
         private System.Windows.Forms.Label assignTaskField_label;
-        private System.Windows.Forms.TextBox taskType_txtBox;
         private System.Windows.Forms.Label assignTaskType_label;
         private System.Windows.Forms.ComboBox taskField_comboBox;
         private System.Windows.Forms.Label assignTaskMethod_label;
@@ -4110,5 +4755,63 @@
         private System.Windows.Forms.Label storageStockID_label;
         private System.Windows.Forms.TextBox storageStockID_txtBox;
         private System.Windows.Forms.Panel updateStock_panel;
+        private System.Windows.Forms.Panel labourerTask_panel;
+        private System.Windows.Forms.Button labourerTaskCompleted_btn;
+        private System.Windows.Forms.Label labourerTaskDescription_label;
+        private System.Windows.Forms.Label labourerTaskDescriptionTitle_label;
+        private System.Windows.Forms.Label labourerTaskEndDate_label;
+        private System.Windows.Forms.Label labourerTaskStartDate_label;
+        private System.Windows.Forms.Label labourerTaskField_label;
+        private System.Windows.Forms.Label labourerTaskManager_label;
+        private System.Windows.Forms.Label labourerTaskAssignedDate_label;
+        private System.Windows.Forms.Label labourerTaskPesticide_label;
+        private System.Windows.Forms.Label labourerTaskSeed_label;
+        private System.Windows.Forms.Label labourerTaskFertiliser_label;
+        private System.Windows.Forms.Label labourerTaskMethod_label;
+        private System.Windows.Forms.Label labourerTaskCrop_label;
+        private System.Windows.Forms.Label labourerTaskStatus_label;
+        private System.Windows.Forms.Label labourerTaskEndDateTitle_label;
+        private System.Windows.Forms.Label labourerTaskManagerTitle_label;
+        private System.Windows.Forms.Label labourerTaskAssignedDateTitle_label;
+        private System.Windows.Forms.Label labourerTaskPesticideTitle_label;
+        private System.Windows.Forms.Label labourerTaskSeedTitle_label;
+        private System.Windows.Forms.Label labourerTaskFertiliserTitle_label;
+        private System.Windows.Forms.Label labourerTaskStartDateTitle_label;
+        private System.Windows.Forms.Label labourerTaskMethodTitle_label;
+        private System.Windows.Forms.Label labourerTaskFieldTitle_label;
+        private System.Windows.Forms.Label labourerTaskCropTitle_label;
+        private System.Windows.Forms.Label labourerTaskType_label;
+        private System.Windows.Forms.Label labourerTaskStatusTitle_label;
+        private System.Windows.Forms.Label labourerTaskTypeTitle_label;
+        private System.Windows.Forms.Label labourerTaskTitle_label;
+        private System.Windows.Forms.Label labourerTaskTitle_title_label;
+        private System.Windows.Forms.Label labourerTaskPageTitle_label;
+        private System.Windows.Forms.ListView labourerTask_listView;
+        private System.Windows.Forms.ColumnHeader labourerTask_title_header;
+        private System.Windows.Forms.ColumnHeader labourerTask_type_header;
+        private System.Windows.Forms.ColumnHeader labourerTask_description_header;
+        private System.Windows.Forms.ColumnHeader labourerTask_status_header;
+        private System.Windows.Forms.ColumnHeader labourerTask_field_header;
+        private System.Windows.Forms.ColumnHeader labourerTask_startDate_header;
+        private System.Windows.Forms.ColumnHeader labourerTask_endDate_header;
+        private System.Windows.Forms.Button labourerTaskRemove_btn;
+        private System.Windows.Forms.Button labourerTask_back;
+        private System.Windows.Forms.GroupBox wholesaleReport_groupBox;
+        private System.Windows.Forms.Button wholesaleExportReport_btn;
+        private System.Windows.Forms.Label wholesaleReportTo_label;
+        private System.Windows.Forms.Label wholesaleReportFrom_label;
+        private System.Windows.Forms.DateTimePicker wholesaleReportEndDate_datePicker;
+        private System.Windows.Forms.DateTimePicker wholesaleReportStartDate_datePicker;
+        private System.Windows.Forms.Label wholesaleReportInst_label;
+        private System.Windows.Forms.Button exportSalesTrx_btn;
+        private System.Windows.Forms.GroupBox farmReport_groupBox;
+        private System.Windows.Forms.Button farmReportExport_btn;
+        private System.Windows.Forms.Label farmReportEndDateTitle_label;
+        private System.Windows.Forms.Label farmReportStartDateTitle_label;
+        private System.Windows.Forms.DateTimePicker farmReportEndDate_datePicker;
+        private System.Windows.Forms.DateTimePicker farmReportStartDate_datePicker;
+        private System.Windows.Forms.Label farmReportInst_label;
+        private System.Windows.Forms.ComboBox taskType_comboBox;
+        private System.Windows.Forms.Button addProduct_btn;
     }
 }

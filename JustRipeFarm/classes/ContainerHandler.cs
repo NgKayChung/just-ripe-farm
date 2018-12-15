@@ -63,6 +63,34 @@ namespace JustRipeFarm
             return containers;
         }
 
+        public List<Container> GetContainersForTask(int task_id)
+        {
+            List<Container> containers = null;
+            string sqlString = "SELECT `containers`.`container_id`, `containers`.`container_type` FROM `task_container` " +
+                    "INNER JOIN `containers` ON `task_container`.`container_id` = `containers`.`container_id` " +
+                    "WHERE `task_container`.`task_id` = " + task_id.ToString() + ";";
+
+            MySqlCommand sqlCommand = new MySqlCommand(sqlString, DbConnector.Instance.getConn());
+            MySqlDataReader reader = sqlCommand.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                containers = new List<Container>();
+                while (reader.Read())
+                {
+                    string container_id = reader.GetString(0);
+                    string container_type = reader.GetString(1);
+                    
+                    containers.Add(new Container(container_id, container_type, 0, "", new Crop()));
+                }
+            }
+
+            if (!reader.IsClosed) reader.Close();
+            sqlCommand.Dispose();
+
+            return containers;
+        }
+
         public List<Container> GetWholesaleContainers()
         {
             List<Container> containers = null;
@@ -100,19 +128,13 @@ namespace JustRipeFarm
             return containers;
         }
 
-        public int UseContainer(Container container, string crop_id)
+        public int UseContainer(int task_id, Container container, string crop_id)
         {
             string sql = "UPDATE `containers` SET `containers`.`status` = 'FULL', `containers`.`crop_id` = '" + crop_id + "' WHERE `containers`.`container_id` = '" + container.ContainerID + "';";
-
             MySqlCommand sqlComm = new MySqlCommand(sql, DbConnector.Instance.getConn());
-            return sqlComm.ExecuteNonQuery();
-        }
+            sqlComm.ExecuteNonQuery();
 
-        public int ClearContainer(Container container)
-        {
-            string sql = "UPDATE `containers` SET `containers`.`status` = 'AVAILABLE', `containers`.`crop_id` = NULL WHERE `containers`.`container_id` = '" + container.ContainerID + "';";
-
-            MySqlCommand sqlComm = new MySqlCommand(sql, DbConnector.Instance.getConn());
+            sqlComm.CommandText = "INSERT INTO `task_container`() VALUES(" + task_id.ToString() + ", '" + container.ContainerID + "')";
             return sqlComm.ExecuteNonQuery();
         }
     }

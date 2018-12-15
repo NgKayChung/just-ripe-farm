@@ -112,6 +112,44 @@ namespace JustRipeFarm
             return tasks;
         }
 
+        public List<Task> GetAllValidTasks(DateTime startDate, DateTime endDate)
+        {
+            List<Task> tasks = null;
+            string sqlString = "SELECT * FROM `tasks` " +
+                "WHERE `tasks`.`status` != 'FAILED' AND `start_datetime` BETWEEN '" + startDate.ToString("yyyy-MM-dd") + "' AND '" + endDate.ToString("yyyy-MM-dd") + "' " +
+                "ORDER BY `field_id`, `start_datetime`;";
+
+            MySqlCommand sqlCommand = new MySqlCommand(sqlString, DbConnector.Instance.getConn());
+            MySqlDataReader reader = sqlCommand.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                tasks = new List<Task>();
+                while (reader.Read())
+                {
+                    int task_id = reader.GetInt32(0);
+                    string task_title = reader.GetString(1);
+                    string task_type = reader.GetString(2);
+                    string task_description = reader.GetString(3);
+                    string status = reader.GetString(4);
+                    DateTime startDateTime = reader.GetDateTime(5);
+                    DateTime endDateTime = reader.GetDateTime(6);
+                    string field_id = reader.GetString(7);
+                    string crop_id = reader.GetString(8);
+                    int method_id = reader.GetInt32(9);
+                    DateTime assignDateTime = reader.GetDateTime(10);
+                    string manager_id = reader.GetString(11);
+
+                    tasks.Add(new Task(task_id, task_title, task_type, task_description, status, startDateTime, endDateTime, field_id, crop_id, method_id, assignDateTime, manager_id));
+                }
+            }
+
+            if (!reader.IsClosed) reader.Close();
+            sqlCommand.Dispose();
+
+            return tasks;
+        }
+
         public List<Task> GetTasksForLabourer(string labourer_id)
         {
             List<Task> tasks = null;

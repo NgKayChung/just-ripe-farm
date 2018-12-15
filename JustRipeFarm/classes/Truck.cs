@@ -13,7 +13,7 @@ namespace JustRipeFarm
         private int containerQuantity;
         private DateTime timeRequired;
 
-        public Truck(string machine_id, string machine_name, string manufacturer, string model, string description, string machine_type, string status, int total_quantity, int quantity_in_use, int container_quantity, DateTime time_required)
+        public Truck(string machine_id = "", string machine_name = "", string manufacturer = "", string model = "", string description = "", string machine_type = "", string status = "", int total_quantity = 0, int quantity_in_use = 0, int container_quantity = 0, DateTime time_required = new DateTime())
             : base(machine_id, machine_name, manufacturer, model, description, machine_type, status)
         {
             TotalQuantity = total_quantity;

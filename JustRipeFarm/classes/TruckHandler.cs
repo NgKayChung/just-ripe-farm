@@ -46,13 +46,5 @@ namespace JustRipeFarm
 
             return trucks;
         }
-
-        public int UpdateTruckQuantity(Truck truck, int newQuantity)
-        {
-            string sql = "UPDATE `trucks` SET `trucks`.`quantity_in_use` = '" + newQuantity + "' WHERE `trucks`.`truck_id` = '" + truck.mac_id + "';";
-
-            MySqlCommand sqlComm = new MySqlCommand(sql, DbConnector.Instance.getConn());
-            return sqlComm.ExecuteNonQuery();
-        }
     }
 }
