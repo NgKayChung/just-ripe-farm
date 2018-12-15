@@ -910,7 +910,7 @@
             this.simulateSale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.simulateSale_panel.Location = new System.Drawing.Point(0, 0);
             this.simulateSale_panel.Name = "simulateSale_panel";
-            this.simulateSale_panel.Size = new System.Drawing.Size(496, 405);
+            this.simulateSale_panel.Size = new System.Drawing.Size(506, 405);
             this.simulateSale_panel.TabIndex = 15;
             this.simulateSale_panel.Visible = false;
             // 
@@ -1169,7 +1169,7 @@
             this.wholesale_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wholesale_panel.Location = new System.Drawing.Point(0, 0);
             this.wholesale_panel.Name = "wholesale_panel";
-            this.wholesale_panel.Size = new System.Drawing.Size(496, 405);
+            this.wholesale_panel.Size = new System.Drawing.Size(506, 405);
             this.wholesale_panel.TabIndex = 14;
             this.wholesale_panel.Visible = false;
             // 
@@ -1184,7 +1184,7 @@
             this.wholesaleReport_groupBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wholesaleReport_groupBox.Location = new System.Drawing.Point(0, 305);
             this.wholesaleReport_groupBox.Name = "wholesaleReport_groupBox";
-            this.wholesaleReport_groupBox.Size = new System.Drawing.Size(496, 100);
+            this.wholesaleReport_groupBox.Size = new System.Drawing.Size(506, 100);
             this.wholesaleReport_groupBox.TabIndex = 32;
             this.wholesaleReport_groupBox.TabStop = false;
             this.wholesaleReport_groupBox.Text = "Export Wholesale Report";
@@ -1371,7 +1371,7 @@
             this.salesReport_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.salesReport_panel.Location = new System.Drawing.Point(0, 0);
             this.salesReport_panel.Name = "salesReport_panel";
-            this.salesReport_panel.Size = new System.Drawing.Size(496, 405);
+            this.salesReport_panel.Size = new System.Drawing.Size(506, 405);
             this.salesReport_panel.TabIndex = 13;
             this.salesReport_panel.Visible = false;
             // 
@@ -1527,10 +1527,10 @@
             this.buyers_panel.Controls.Add(this.buyers_listView);
             this.buyers_panel.Controls.Add(this.shopBuyersTitle_label);
             this.buyers_panel.Controls.Add(this.buyers_back);
-            this.buyers_panel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buyers_panel.Location = new System.Drawing.Point(496, 0);
+            this.buyers_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buyers_panel.Location = new System.Drawing.Point(0, 0);
             this.buyers_panel.Name = "buyers_panel";
-            this.buyers_panel.Size = new System.Drawing.Size(10, 405);
+            this.buyers_panel.Size = new System.Drawing.Size(506, 405);
             this.buyers_panel.TabIndex = 12;
             this.buyers_panel.Visible = false;
             // 
