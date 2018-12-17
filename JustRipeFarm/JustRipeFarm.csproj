@@ -105,12 +105,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Testing page.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Testing page.Designer.cs">
-      <DependentUpon>Testing page.cs</DependentUpon>
-    </Compile>
     <Compile Include="classes\UserSession.cs" />
     <Compile Include="classes\UserHandler.cs" />
     <Compile Include="classes\Vehicle.cs" />
@@ -134,9 +128,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Testing page.resx">
-      <DependentUpon>Testing page.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -153,15 +144,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\h8ujpY.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\seed-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fertiliser-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pesticide_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\just-ripe-farm-icon.jpg" />
